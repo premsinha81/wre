@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.slider{
+  background: url(./img/slider1.png) no-repeat 0 0;
+  background-size: 100%;
+  min-height: 500px;
+  position:relative
+}
+.slider .searchPanel{
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 4px #000029;
+  padding:15px;
+  right:0;
+  top:100px;
+  border-radius: 5px;
+}
+.posRelative{
+  position:relative;
+}
+.rightSection{
+  margin: 30px 0;
+}
+.rightSection .searchBox{
+  box-shadow: 0 0 2px 1px #000029;
+  border-radius: 6px;;
+}
+.rightSection .searchBox ul{
+  padding:20px 25px;
+}
+.rightSection .courseTop{
+  background-color: #3D55A5;
+  padding:15px 15px;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 100%;
+  border-radius: 6px;
+}
