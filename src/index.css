@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,16 +13,24 @@ code {
   background: url(./img/slider1.png) no-repeat 0 0;
   background-size: 100%;
   min-height: 500px;
-  position:relative
+  position:relative;
 }
-.slider .searchPanel{
+.slider .gradient{
+  background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+  position: absolute;
+  width:100%;
+  bottom:0;
+  min-height: 200px;
+}
+.slider .searchPanel {
   position: absolute;
   background-color: #fff;
   box-shadow: 0 0 4px #000029;
-  padding:15px;
-  right:0;
-  top:100px;
+  padding: 15px;
+  right: 70px;
+  top: 50px;
   border-radius: 5px;
+  width: 385px;
 }
 .posRelative{
   position:relative;
@@ -46,4 +52,40 @@ code {
   font-size: 1.5rem;
   line-height: 100%;
   border-radius: 6px;
+}
+.button{
+  background-color: #3D55A5!important;
+  border-radius: 26px!important;
+  font-size: 21px!important;
+}
+.svgLogo{
+  width:126px;
+  height:26px;
+}
+header{
+  padding:15px 0;
+}
+.slider{
+  position:relative;
+}
+.slider h1{
+  position:absolute;
+  bottom:50px;
+  color:#fff;
+  font-weight: bold;
+}
+select{
+    border-radius: 25px;
+    margin-bottom: 10px;
+    background: #ECECEC;
+    padding: 8px 10px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    border: 0;
+    margin-bottom: 5px!important;
+}
+.btnLoadMore{
+  width:250px!important;
+  margin:15px auto!important;
 }

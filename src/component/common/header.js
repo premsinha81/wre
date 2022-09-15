@@ -1,19 +1,27 @@
 import Menu from "./menu";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ReactComponent as YourSvg } from './svg.svg';
 
 function Header() {
     return (
         <>
+        <header>
         <div className="container">
             <div className="row">
                 <div className="col-12 col-xl-6 col-lg-6 col-lg-6 col-sm-6 col-xs-12">
-                    <h1>WRE</h1>
+                    <a href="#">
+                        <div className="svgLogo"><YourSvg /></div>
+                    </a>
+
                 </div>
                 <div className="col-12 col-xl-6 col-lg-6 col-lg-6 col-sm-6 col-xs-12">
-                   <Menu></Menu>
+                    <div className="text-right">
+                        <Menu></Menu>
+                    </div>
                 </div>
             </div>
-        </div>        
+        </div>
+        </header>    
         </>
     )
 }

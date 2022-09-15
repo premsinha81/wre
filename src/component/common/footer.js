@@ -2,6 +2,18 @@
 
 export default function Footer() {
     return (
-        <>Footer</>
+        <>
+            <ul>
+                <li>
+                    <h4>WRE Services</h4>
+                    <ul>
+                        <li><a href="#">Community</a></li> 
+                        <li><a href="#">Career</a></li> 
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </>
     )
 }

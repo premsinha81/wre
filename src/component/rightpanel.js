@@ -73,6 +73,8 @@ function RightPanel() {
                     </ul>
                     </div>
                 </div>
+                <div className="clearfix"></div>
+                <button className="btn btn-primary button btnLoadMore">LOAD MORE</button>
             </div>
         </div>
         </>

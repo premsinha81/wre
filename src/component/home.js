@@ -3,6 +3,8 @@ import Footer from "./common/footer";
 import Slider from "./slider";
 import Leftpanel from "./leftpanel";
 import RightPanel from "./rightpanel";
+import LeftTabsExample from "./tabs"
+import Resources from "./resources";
 
 function Home() {
     return (
@@ -17,7 +19,10 @@ function Home() {
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
                         <RightPanel></RightPanel>
                     </div>
+                    <LeftTabsExample></LeftTabsExample>
+                    <Resources></Resources>
                 </div>
+                
             </div>
             <Footer></Footer>
         </>

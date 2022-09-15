@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
+import './menu.css';
 
 function Menu() {
     return (

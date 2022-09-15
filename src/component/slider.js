@@ -18,32 +18,32 @@ function Slider() {
         getdegree();
         getduration();
     }, []);
-    
+
 
     const getprogram = () => {
 
         axios.get("https://workreadyeducation.com/wre/api/programs")
-        .then(function (response) {
-            setProgram(response.data);
-        })
-        
+            .then(function (response) {
+                setProgram(response.data);
+            })
+
     }
 
     const getdegree = () => {
         axios.get("https://workreadyeducation.com/wre/api/degree")
-        .then(function (response) {
-            setDegree(response.data);
-        })
+            .then(function (response) {
+                setDegree(response.data);
+            })
     }
 
     const getduration = () => {
         axios.get("https://workreadyeducation.com/wre/api/duration")
-        .then(function (response) {
-            setDuration(response.data);
-        })
+            .then(function (response) {
+                setDuration(response.data);
+            })
     }
 
-    const handleProgramChange = (e) => { 
+    const handleProgramChange = (e) => {
         setSelprog(e.target.value)
     }
 
@@ -57,17 +57,17 @@ function Slider() {
 
     const searchsubmit = () => {
 
-        if(!selprog){
+        if (!selprog) {
             setErrorprog("Select Program");
             return;
         }
 
-        if(!seldegree){
+        if (!seldegree) {
             setErrordegree("Select Degree");
             return
         }
 
-        if(!selduration){
+        if (!selduration) {
             setErrordur("Select Duration")
             return
         }
@@ -82,34 +82,38 @@ function Slider() {
 
     return (
         <div className="slider">
-            <div className="container posRelative">
-           <div className="searchPanel">
-            <h2>SEARCH PROGRAMS</h2>
-            <hr />
-            <form onSubmit={searchsubmit()}>
-                <select onChange={e => handleProgramChange(e)} className="form-control" >
-                    <option>Select Program</option>
-                    {
-                        program.map((resp, key) => <option key={key}value={resp.id}>{resp.title}</option>)
-                    }
-                </select>
-                <select onChange={e => handleDegreeChange(e)} className="form-control">
-                    <option>Select Degree</option>
-                    {
-                        degree.map((resp, key) => <option key={key}value={resp.id}>{resp.degree}</option>)
-                    }
-                </select>
-                <select onChange={e => handleDurationChange(e)} className="form-control">
-                    <option>Select Duration</option>
-                    {
-                        duration.map((resp, key) => <option key={key}value={resp.id}>{resp.duration}</option>)
-                    }
-                </select>
-                <button className="btn btn-primary" type="submit">Search Now</button>
-            </form>
-            
-           </div>
-           </div>
+            <div className="gradient"></div>
+            <div className="container">
+                <h1>WRE's Trade Education<br/>Rankings</h1>
+                <div className="container posRelative">
+                    <div className="searchPanel">
+                        <h2>SEARCH PROGRAMS</h2>
+                        <hr />
+                        <form onSubmit={searchsubmit()}>
+                            <select onChange={e => handleProgramChange(e)} >
+                                <option>Select Program</option>
+                                {
+                                    program.map((resp, key) => <option key={key} value={resp.id}>{resp.title}</option>)
+                                }
+                            </select>
+                            <select onChange={e => handleDegreeChange(e)}>
+                                <option>Select Degree</option>
+                                {
+                                    degree.map((resp, key) => <option key={key} value={resp.id}>{resp.degree}</option>)
+                                }
+                            </select>
+                            <select onChange={e => handleDurationChange(e)}>
+                                <option>Select Duration</option>
+                                {
+                                    duration.map((resp, key) => <option key={key} value={resp.id}>{resp.duration}</option>)
+                                }
+                            </select>
+                            <button className="btn btn-primary button" type="submit">SEARCH NOW</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
