@@ -2,10 +2,16 @@ function Leftpanel() {
     return (
         <>
             <div className="leftSection">
+               
                 <h2>Search Ranking</h2>
-                <imput type="checkbox" /> <label>Only Remote Program</label>
-                <hr />
+                <select>
+                    <option>Select Course</option>
+                    <option>Select Course1</option>
+                    <option>Select Course2</option>
+                </select>
+                <label><input type="checkbox" /> Only Remote Program</label>
                 <label>Sort By</label>
+                <hr />
                 <div className="radio">
                     <label>
                         <input type="radio" value="option1" checked={true} />

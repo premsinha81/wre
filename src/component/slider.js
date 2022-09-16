@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from "axios";
 
 function Slider() {
@@ -84,10 +85,11 @@ function Slider() {
         <div className="slider">
             <div className="gradient"></div>
             <div className="container">
-                <h1>WRE's Trade Education<br/>Rankings</h1>
                 <div className="container posRelative">
                     <div className="searchPanel">
-                        <h2>SEARCH PROGRAMS</h2>
+                        <input type="text" className="form-control" placeholder="SEARCH FOR A TRADE"/>
+                        <button className="btn btn-primary button btnSearch">SEARCH NOW</button>
+                        {/* <h2>SEARCH PROGRAMS</h2>
                         <hr />
                         <form onSubmit={searchsubmit()}>
                             <select onChange={e => handleProgramChange(e)} >
@@ -109,7 +111,7 @@ function Slider() {
                                 }
                             </select>
                             <button className="btn btn-primary button" type="submit">SEARCH NOW</button>
-                        </form>
+                        </form> */}
 
                     </div>
                 </div>
