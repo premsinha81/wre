@@ -1,85 +1,43 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from "axios";
+import  TextField  from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
 function Slider() {
 
-    const [program, setProgram] = useState([])
-    const [selprog, setSelprog] = useState([])
-    const [errorprog, setErrorprog] = useState([])
-    const [degree, setDegree] = useState([])
-    const [seldegree, setSeldegree] = useState([])
-    const [errordegree, setErrordegree] = useState([])
-    const [duration, setDuration] = useState([])
-    const [selduration, setSelduration] = useState([])
-    const [errordur, setErrordur] = useState([])
+    const [trade, setTrade] = useState()
 
     useEffect(() => {
-        getprogram();
-        getdegree();
-        getduration();
+
+        axios.get("https://workreadyeducation.com/wre/api/get/trades")
+        .then(function (result) {
+            console.log(result.data)
+            setTrade(result.data)
+            
+        })
+        
     }, []);
 
+    function handletradeChange(event) {
+        console.log(event.target.value);
+        axios.get("https://workreadyeducation.com/wre/api/get/trades/")
+        .then(function (result) {
+            console.log(result)
+            setTrade(event.target.value)
+        })
+      }
 
-    const getprogram = () => {
-
-        axios.get("https://workreadyeducation.com/wre/api/programs")
-            .then(function (response) {
-                setProgram(response.data);
-            })
-
-    }
-
-    const getdegree = () => {
-        axios.get("https://workreadyeducation.com/wre/api/degree")
-            .then(function (response) {
-                setDegree(response.data);
-            })
-    }
-
-    const getduration = () => {
-        axios.get("https://workreadyeducation.com/wre/api/duration")
-            .then(function (response) {
-                setDuration(response.data);
-            })
-    }
-
-    const handleProgramChange = (e) => {
-        setSelprog(e.target.value)
-    }
-
-    const handleDegreeChange = (e) => {
-        setSeldegree(e.target.value)
-    }
-
-    const handleDurationChange = (e) => {
-        setSelduration(e.target.value)
-    }
-
-    const searchsubmit = () => {
-
-        if (!selprog) {
-            setErrorprog("Select Program");
-            return;
+      function handleSearchChange(event) {
+          console.log(event.target.value);
+          axios.post("https://workreadyeducation.com/wre/api/get/search/",{
+            title:trade
+          })
+          .then(function (result) {
+              console.log(result)
+          })
         }
 
-        if (!seldegree) {
-            setErrordegree("Select Degree");
-            return
-        }
-
-        if (!selduration) {
-            setErrordur("Select Duration")
-            return
-        }
-
-        // const url = "https://workreadyeducation.com/wre/api/programs/"+selprog+"/"+seldegree+"/"+selduration
-        // console.log(url)
-        // axios.post(url)
-        // .then(function (response) {
-        //     console.log(response);
-        // })
-    }
 
     return (
         <div className="slider">
@@ -87,8 +45,16 @@ function Slider() {
             <div className="container">
                 <div className="container posRelative">
                     <div className="searchPanel">
-                        <input type="text" className="form-control" placeholder="SEARCH FOR A TRADE"/>
-                        <button className="btn btn-primary button btnSearch">SEARCH NOW</button>
+                        <Autocomplete
+                        disablePortal
+                        className="form-control"
+                        options={trade}
+                        getOptionLabel={(option) => option.title}
+                        sx={{width:300}}
+                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
+                        />
+                        <input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>
+                        <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>SEARCH NOW</button>
                         {/* <h2>SEARCH PROGRAMS</h2>
                         <hr />
                         <form onSubmit={searchsubmit()}>
