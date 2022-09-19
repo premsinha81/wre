@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from "axios";
 import  TextField  from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -12,7 +11,6 @@ function Slider() {
 
         axios.get("https://workreadyeducation.com/wre/api/get/trades")
         .then(function (result) {
-            console.log(result.data)
             setTrade(result.data)
             
         })
@@ -20,18 +18,16 @@ function Slider() {
     }, []);
 
     function handletradeChange(event) {
-        console.log(event.target.value);
-        axios.get("https://workreadyeducation.com/wre/api/get/trades/")
+        axios.get("https://workreadyeducation.com/wre/api/get/trades?q="+event.target.value)
         .then(function (result) {
-            console.log(result)
-            setTrade(event.target.value)
+            setTrade(result.data)
         })
       }
 
-      function handleSearchChange(event) {
-          console.log(event.target.value);
-          axios.post("https://workreadyeducation.com/wre/api/get/search/",{
-            title:trade
+      function handleSearchChange() {
+          console.log(trade);
+          axios.post("https://workreadyeducation.com/wre/api/get/search",{
+            trade:trade
           })
           .then(function (result) {
               console.log(result)
@@ -51,9 +47,9 @@ function Slider() {
                         options={trade}
                         getOptionLabel={(option) => option.title}
                         sx={{width:300}}
-                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
+                        renderInput={(params) => <TextField {...params} onChange={handletradeChange} labal="SEARCH FOR A TRADE" />}
                         />
-                        <input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>
+                        <input type="text" onChange={(event) => handletradeChange(event)} className="form-control" placeholder="SEARCH FOR A TRADE"/>
                         <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>SEARCH NOW</button>
                         {/* <h2>SEARCH PROGRAMS</h2>
                         <hr />
