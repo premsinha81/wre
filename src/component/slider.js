@@ -47,13 +47,12 @@ function Slider() {
                     <div className="searchPanel">
                         <Autocomplete
                         disablePortal
-                        className="form-control"
+                        className=""
                         options={trade}
                         getOptionLabel={(option) => option.title}
-                        sx={{width:300}}
-                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
+                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" placeholder="SEARCH FOR A TRADE" />}
                         />
-                        <input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>
+                        {/*<input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>*/}
                         <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>SEARCH NOW</button>
                         {/* <h2>SEARCH PROGRAMS</h2>
                         <hr />

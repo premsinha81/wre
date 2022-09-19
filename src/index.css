@@ -48,7 +48,7 @@ code {
 
 .slider .searchPanel .btnSearch {
   position: absolute;
-  top: 6px;
+  top: 4px;
   right: 5px;
   font-size: 15px !important;
   font-weight: 500;
@@ -181,4 +181,10 @@ h2{
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
   background-color: #3D55A5!important;
+}
+.MuiAutocomplete-hasPopupIcon.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root, .MuiAutocomplete-hasClearIcon.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root{
+  padding-right:0!important;
+}
+.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root{
+  padding:0!important;
 }
