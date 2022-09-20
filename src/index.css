@@ -127,64 +127,138 @@ select {
   margin: 15px auto !important;
 }
 
-.leftSection{
+.leftSection {
   background-color: #F6F6F6;
-  padding:10px;
-  height:100%;
-  margin-top:25px;
+  padding: 10px;
+  height: 100%;
+  margin-top: 25px;
   border-radius: 10px;
 }
-h2{
-  font-size: 25px!important;
+
+h2 {
+  font-size: 25px !important;
   font-weight: 500;
 }
-.rightSection .searchBox{
+
+.rightSection .searchBox {
   margin-bottom: 15px;
 }
-.rightSection .searchBox ul{
+
+.rightSection .searchBox ul {
   list-style: none;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
-.rightSection .searchBox ul li{
+
+.rightSection .searchBox ul li {
   display: inline-block;
   vertical-align: middle;
-  padding:15px 25px;
+  padding: 15px 25px;
 }
-.rightSection .searchBox ul li img{
-  max-width:200px;
-  margin:0 auto;
+
+.rightSection .searchBox ul li img {
+  max-width: 200px;
+  margin: 0 auto;
 }
-.rightSection .searchBox ul li h2{
+
+.rightSection .searchBox ul li h2 {
   font-weight: bold;
   text-align: center;
 }
-.rightSection .searchBox ul li p{
+
+.rightSection .searchBox ul li p {
   margin-bottom: 0;
-  margin-top:0;
-  padding:2px 0
+  margin-top: 0;
+  padding: 2px 0
 }
-.rightSection .searchBox ul li h6{
+
+.rightSection .searchBox ul li h6 {
   font-weight: 500;
-  color:#3d55a5;
+  color: #3d55a5;
 }
+
 .checked {
   color: orange;
 }
-.tabs{
-  padding:100px 0;
+
+.tabs {
+  padding: 50px 0;
 }
-.tabs .tab-content{
+
+.tabs .tab-content {
   background-color: #ECECEC;
-  padding:50px;
+  padding: 50px;
   border-radius: 10px;
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-  background-color: #3D55A5!important;
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  background-color: #3D55A5 !important;
 }
-.MuiAutocomplete-hasPopupIcon.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root, .MuiAutocomplete-hasClearIcon.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root{
-  padding-right:0!important;
+
+.MuiAutocomplete-hasPopupIcon.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root,
+.MuiAutocomplete-hasClearIcon.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding-right: 0 !important;
 }
-.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root{
-  padding:0!important;
+
+.css-1qqsdnr-MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding: 0 !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0 !important;
+}
+
+ul li {
+  padding: 6px 0;
+}
+ul li small{
+  color:#3D55A5;
+  font-size: 12px;
+  font-weight: 500;
+}
+ul li{
+  color: #1E1E1E!important;
+}
+footer{
+  background-color: #ECECEC;
+  padding:60px 0;
+}
+footer h4{
+  font-size:16px;
+  font-weight:bold;
+}
+footer ul li:last-child a{
+  background-color: transparent;
+  color:#3D55A5
+}
+footer ul li ul li{
+  display:block;
+}
+footer ul li{
+  width:23%;
+}
+footer ul li:last-child a, footer ul li ul li:last-child a{
+  background-color: transparent;
+  color:#3D55A5;
+  text-align: left;
+  padding:0;
+}
+footer ul li ul li a{
+  padding:0;
+}
+footer .stayConnected{
+  width:45%;
+  margin:0 auto;
+  position:relative;
+}
+footer input[type="text"]{
+  border-radius:26px;
+}
+footer button{
+  position: absolute;
+  top: 28px;
+  right: 3px;
+  padding: 1px 10px!important;
 }

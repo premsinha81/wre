@@ -68,7 +68,7 @@ function Slider() {
                         getOptionLabel={(option) => option.title}
                         onInputChange={handletradeChange}
                         onChange={handleSearchChange}
-                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
+                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" placeholder="SEARCH FOR A TRADE" />}
                         />
                        
                         {/*<input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>*/}
