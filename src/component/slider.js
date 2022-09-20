@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import  TextField  from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import RightPanel from "./rightpanel";
 
 function Slider() {
 
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState();
+    const [search_result, setSearcResult] = useState();
 
     useEffect(() => {
 
@@ -37,20 +39,22 @@ function Slider() {
       }
 
       function handleSearchChange(event, value) {
+        let search_term;
           console.log(value)
           if(value !== '' && value !== undefined){
-            console.log('111')
-            setEnterValue(value.title)
+            search_term = value.title
           }else{
-            console.log('222')
+            search_term = entervalue
           }
           
-          console.log(entervalue)
           axios.post("https://workreadyeducation.com/wre/api/get/search",{
-            trade:entervalue
+            trade:search_term
           })
           .then(function (result) {
               console.log(result)
+              if(result.data.status.status_code === 200){
+                setSearcResult(result.data.results.result)
+              }
           })
         }
 
@@ -71,36 +75,11 @@ function Slider() {
                         onChange={handleSearchChange}
                         renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                         />
-                       
-                        {/*<input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>*/}
-                        <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>SEARCH NOW</button>
-                        {/* <h2>SEARCH PROGRAMS</h2>
-                        <hr />
-                        <form onSubmit={searchsubmit()}>
-                            <select onChange={e => handleProgramChange(e)} >
-                                <option>Select Program</option>
-                                {
-                                    program.map((resp, key) => <option key={key} value={resp.id}>{resp.title}</option>)
-                                }
-                            </select>
-                            <select onChange={e => handleDegreeChange(e)}>
-                                <option>Select Degree</option>
-                                {
-                                    degree.map((resp, key) => <option key={key} value={resp.id}>{resp.degree}</option>)
-                                }
-                            </select>
-                            <select onChange={e => handleDurationChange(e)}>
-                                <option>Select Duration</option>
-                                {
-                                    duration.map((resp, key) => <option key={key} value={resp.id}>{resp.duration}</option>)
-                                }
-                            </select>
-                            <button className="btn btn-primary button" type="submit">SEARCH NOW</button>
-                        </form> */}
-
+                       <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>SEARCH NOW</button>
                     </div>
                 </div>
             </div>
+            <RightPanel data={search_result} />
         </div>
     )
 }
