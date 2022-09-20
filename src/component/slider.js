@@ -5,29 +5,49 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 function Slider() {
 
+    const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
+    const [entervalue, setEnterValue] = useState();
 
     useEffect(() => {
 
         axios.get("https://workreadyeducation.com/wre/api/get/trades")
         .then(function (result) {
             setTrade(result.data)
-            
+            setMainTrade(result.data)
         })
         
     }, []);
 
     function handletradeChange(event) {
-        axios.get("https://workreadyeducation.com/wre/api/get/trades?q="+event.target.value)
-        .then(function (result) {
-            setTrade(result.data)
-        })
+        setEnterValue(event.target.value)
+        if(entervalue !== '' && entervalue !== undefined){
+            axios.get("https://workreadyeducation.com/wre/api/get/trades?q="+entervalue)
+            .then(function (result) {
+                // console.log(result.data)
+                if(result.data.status.status_code === 200){
+                    setTrade(result.data.results)
+                    
+                }else{
+                    setTrade(maintrade)
+                }
+            })
+        }
+        
       }
 
-      function handleSearchChange() {
-          console.log(trade);
+      function handleSearchChange(event, value) {
+          console.log(value)
+          if(value !== '' && value !== undefined){
+            console.log('111')
+            setEnterValue(value.title)
+          }else{
+            console.log('222')
+          }
+          
+          console.log(entervalue)
           axios.post("https://workreadyeducation.com/wre/api/get/search",{
-            trade:trade
+            trade:entervalue
           })
           .then(function (result) {
               console.log(result)
@@ -47,7 +67,9 @@ function Slider() {
                         options={trade}
                         getOptionLabel={(option) => option.title}
                         sx={{width:300}}
-                        renderInput={(params) => <TextField {...params} onChange={handletradeChange} labal="SEARCH FOR A TRADE" />}
+                        onInputChange={handletradeChange}
+                        onChange={handleSearchChange}
+                        renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                         />
                        
                         {/*<input type="text" onChange={handletradeChange} className="form-control" placeholder="SEARCH FOR A TRADE"/>*/}
