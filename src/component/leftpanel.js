@@ -1,3 +1,4 @@
+import RangeSlider from "./rangeSlider";
 function Leftpanel() {
     return (
         <>
@@ -34,10 +35,7 @@ function Leftpanel() {
                 <label>Filter</label>
                 <div className="radio">
                    <label>Budget</label>
-                   <div class="profileRight">
-                   <label for="customRange1" class="form-label">Example range</label>
-                    <input type="range" class="form-range" id="customRange1" />
-				</div>
+                   <RangeSlider></RangeSlider>
                 </div>
             </div>
         </>
