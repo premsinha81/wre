@@ -3,7 +3,6 @@ function Leftpanel() {
     return (
         <>
             <div className="leftSection">
-               
                 <h2>Search Ranking</h2>
                 <select>
                     <option>Select Course</option>
