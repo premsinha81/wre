@@ -19,6 +19,7 @@ function Slider() {
             .then(function (result) {
                 setTrade(result.data)
                 setMainTrade(result.data)
+                setSearcResult(result.data)
             })
 
     }, []);
@@ -76,7 +77,7 @@ function Slider() {
                     <div className="container posRelative">
                         <div className="searchPanel">
                             <Autocomplete
-                                disablePortal
+                                id="combo-box-demo"
                                 className=""
                                 options={trade}
                                 getOptionLabel={(option) => option.title}
