@@ -1,20 +1,20 @@
-ul{
+ul.menu{
     padding:0;
     margin:0;
     list-style: none;
 }
-ul li{
+ul.menu li{
     display:inline-block;
     line-height: 120%;
 }
-ul li a{
+ul.menu li a{
     padding:10px 20px;
     color:#3D55A5;
     line-height: 22px;
     text-decoration: none;
     font-weight: 500;
 }
-ul li:last-child a{
+ul.menu li:last-child a{
     background-color: #3D55A5;
     color: #FFFFFF;
     border-radius: 26px;

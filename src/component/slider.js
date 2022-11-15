@@ -41,7 +41,7 @@ function Slider() {
     }
 
     const handleSearchChange = (event, value) => {
-        console.log(event.type,event,value)
+        console.log(event.type, event, value)
         let search_term;
         if (value !== '' && value !== undefined) {
             search_term = value.title
@@ -53,15 +53,15 @@ function Slider() {
         axios.post("https://workreadyeducation.com/wre/api/get/search", {
             trade: search_term
         })
-        .then(function (result) {
-            if (result.data.status.status_code == 200) {
-                setSearcResult((result.data.results))
-            }
-            if (result.data.status.status_code == 400) {
-                setSearcResult((result.data.results))
-            }
+            .then(function (result) {
+                if (result.data.status.status_code == 200) {
+                    setSearcResult((result.data.results))
+                }
+                if (result.data.status.status_code == 400) {
+                    setSearcResult((result.data.results))
+                }
 
-        })
+            })
     }
 
     useEffect(() => {
@@ -76,6 +76,7 @@ function Slider() {
                 <div className="container">
                     <div className="container posRelative">
                         <div className="searchPanel">
+                            <h1>WRE's Trade Educatoion Rankings</h1>
                             <Autocomplete
                                 id="combo-box-demo"
                                 className=""
@@ -98,45 +99,45 @@ function Slider() {
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                        {search_result ? 
-                        search_result.length > 0 && ( 
-                        <div className="rightSection">
-                            <div className="row">
-                                <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    
-                                    {search_result.map((res,key) => (
-                                        <div className="searchBox">
-                                        <ul>
-                                            <li>
-                                                <h2>{key+1}</h2>
-                                                <p>NIRF - 01</p>
-                                            </li>
-                                            <li>
-                                                <img src={res.image_path} alt='' className="img-fluid" />
-                                            </li>
-                                            <li>
-                                                <h6>{res.college_name} - {res.title}</h6>
-                                                <p>Course Duration - {res.duration}</p>
-                                                <p>Rating : <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star checked"></span>
-                                                    <span className="fa fa-star"></span>
-                                                    <span className="fa fa-star"></span></p>
-                                                <p>Fee : <strong>${res.fees}</strong></p>
-                                            </li>
-                                        </ul>
+                        {search_result ?
+                            search_result.length > 0 && (
+                                <div className="rightSection">
+                                    <div className="row">
+                                        <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
+                                            {search_result.map((res, key) => (
+                                                <div className="searchBox">
+                                                    <ul>
+                                                        <li>
+                                                            <h2>{key + 1}</h2>
+                                                            <p>NIRF - 01</p>
+                                                        </li>
+                                                        <li>
+                                                            <img src={res.image_path} alt='' className="img-fluid" />
+                                                        </li>
+                                                        <li>
+                                                            <h6>{res.college_name} - {res.title}</h6>
+                                                            <p>Course Duration - {res.duration}</p>
+                                                            <p>Rating : <span className="fa fa-star checked"></span>
+                                                                <span className="fa fa-star checked"></span>
+                                                                <span className="fa fa-star checked"></span>
+                                                                <span className="fa fa-star"></span>
+                                                                <span className="fa fa-star"></span></p>
+                                                            <p>Fee : <strong>${res.fees}</strong></p>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            ))}
+
+                                        </div>
+
+                                        <div className="clearfix"></div>
+                                        <button className="btn btn-primary button btnLoadMore">LOAD MORE</button>
                                     </div>
-                                    ))}
 
                                 </div>
-
-                                <div className="clearfix"></div>
-                                <button className="btn btn-primary button btnLoadMore">LOAD MORE</button>
-                            </div>
-
-                        </div>
-                         ):'' }
+                            ) : ''}
 
                     </div>
                     <LeftTabsExample></LeftTabsExample>

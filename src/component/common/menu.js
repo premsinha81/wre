@@ -4,7 +4,7 @@ import './menu.css';
 function Menu() {
     return (
         <ul>
-            <li><a href="#">CAREER</a></li>
+            <li><a href="/about">CAREER</a></li>
             <li><a href="#">COMMUNITY</a></li>
             <li><a href="#">JOBS</a></li>
             <li><a href="#">RESOURCES</a></li>
