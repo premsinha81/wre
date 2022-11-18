@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from 'react-router-dom';
 import './menu.css';
 
 function Menu() {
     return (
         <ul>
-            <li><a href="#">CAREER</a></li>
-            <li><a href="#">COMMUNITY</a></li>
-            <li><a href="#">JOBS</a></li>
-            <li><a href="#">RESOURCES</a></li>
-            <li className="active"><a href="#">JOIN</a></li>
+            <li> <Link to="Career"  >CAREER</Link></li>
+            <li><Link to="/"  >COMMUNITY</Link></li>
+            <li><Link to="/"  >JOBS</Link></li>
+            <li><Link to="/"  >RESOURCES</Link></li>
+            <li className="active"><Link to="/"  >JOIN</Link></li>
         </ul>
     )
 }
