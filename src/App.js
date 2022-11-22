@@ -1,7 +1,8 @@
 import React from 'react';
+import  './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Home from './component/home';
+import Carrier from './component/Carrier';
+import Home from './component/Home';
 import About from './component/about';
 import Login from './component/login';
 import Rankingdetails from './component/ranking-details';
@@ -11,6 +12,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+      </Routes>
+      <Routes>
+      <Route path = "Career" element={<Carrier/>}/>
       </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
