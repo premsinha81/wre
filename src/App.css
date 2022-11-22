@@ -540,8 +540,8 @@ form h3 {
 }
 
 select.form-control.selectOption {
-  margin-bottom: 20px;
-  border-radius: 20px;
+  margin-bottom: 20px !important;
+  border-radius: 20px!important;
 
 }
 
@@ -990,7 +990,7 @@ div#slider-range {
   display: grid;
   gap: 10px;
   align-items: center;
-  margin-bottom: 15px;
+ 
   grid-template-columns: 7% 91%;
 }
 
@@ -2968,4 +2968,17 @@ img.iconP {
 }
 button.btn.btn-primary.btnBSidebar.RefilterBtn {
   color: #fff !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background: #3D55A5;
+  color: #fff;
+  border-radius: 19px;
+
+  display: grid;
+
+  align-items: center;
+
+  /* grid-template-columns: 7% 91%; */
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: var(--bs-nav-pills-link-active-bg);
 }
