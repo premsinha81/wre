@@ -1,161 +1,119 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
 
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
 
+function Tabsystemsection() {
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
-}
-
-export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
-  return (
-   <div class="tabSystems">
+    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
        <div class="container">
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
-    >  
-   
-       <div class="row">
-          <div class="col-lg-4">
-  
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-       
-      >
-          <div class="leftSideBtn">
-           <div class="plusCercle">+</div>
-        <Tab label="How We Rank Trade Institutes and Colleges in the U.S." {...a11yProps(0)} />
-      
-   
-   
-        </div>
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
-      </Tabs>
-      </div>
-      <div class="col-lg-8">
-      <TabPanel class="tabPanel" value={value} index={0}>
-
-                  <p>Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <Row>
+     
+        <Col sm={4}>
+        <div class="leftSidebar">
+          <Nav variant="pills" className="flex-column">
+            <Nav.Item>
            
-      </TabPanel>
-     
-      <TabPanel  class="tabPanel" value={value} index={1}>
-  
-                  <p>imply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-           
-      </TabPanel>
-     
-      <TabPanel  class="tabPanel" value={value} index={2}>
-      
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          
-      </TabPanel>
-      <TabPanel  class="tabPanel" value={value} index={3}>
-     
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-               
-      </TabPanel>
-      <TabPanel  class="tabPanel" value={value} index={4}>
-
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <Nav.Link eventKey="first">
+                 <div class="leftSideBtn">
+                     <div class="plusCercle">+</div>
+                     <p>How We Rank Trade Institutes and Colleges in the U.S.</p>
+                     </div></Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second"><div class="leftSideBtn">
+                     <div class="plusCercle">+</div>
+                     <p>Data Collection & Rankings Methodology</p>
+                  </div></Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="third"><div class="leftSideBtn">
+                     <div class="plusCercle">+</div>
+                     <p>Ranking Factors WRE Uses for different States</p>
+                  </div></Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="fourth"><div class="leftSideBtn">
+                     <div class="plusCercle">+</div>
+                     <p>How We Rank Trade Institutes and Colleges in the U.S.</p>
+                  </div></Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="five"><div class="leftSideBtn">
+                     <div class="plusCercle">+</div>
+                     <p>Data Collection & Rankings Methodology</p>
+                  </div></Nav.Link>
+            </Nav.Item>
+         
              
-      </TabPanel>
-      <TabPanel  class="tabPanel" value={value} index={5}>
+          </Nav>
+          </div>
+        </Col>
+     
+        <Col sm={8}>
+        <div class="tabPanel">
+          <Tab.Content>
+      
+            <Tab.Pane eventKey="first">
+        
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     
+            </Tab.Pane>
+            <Tab.Pane eventKey="second">
+       
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                      and scrambled it to make a type specimen book. It has survived not only five centuries, but also
                      the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
                      1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
                      desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-             
-      </TabPanel>
-      <TabPanel  class="tabPanel" value={value} index={6}>
 
+            </Tab.Pane>
+            <Tab.Pane eventKey="third">
+          
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                      and scrambled it to make a type specimen book. It has survived not only five centuries, but also
                      the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
                      1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
                      desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          
-      </TabPanel>
-      </div>
-      </div>
+  
+            </Tab.Pane>
+            <Tab.Pane eventKey="fourth">
+         
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
    
-   
-    </Box>
-    </div>
-       </div>
+            </Tab.Pane>
+            <Tab.Pane eventKey="five">
+           
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                     the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  
+            </Tab.Pane>
+          </Tab.Content>
+          </div>
+         
+        </Col>
+      </Row>
+      </div>
+    </Tab.Container>
   );
 }
+
+export default Tabsystemsection;

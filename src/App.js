@@ -5,7 +5,7 @@ import Carrier from './component/Carrier';
 import Home from './component/Home';
 import About from './component/about';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
-
+import OnlineCoursesSearch from './component/OnlineCoursesSearch';
 function App() {
   return (
     <Router>
@@ -20,6 +20,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path = "OnlineCoursesDetail" element={<OnlineCoursesDetail/>}/>
+</Routes>
+ <Routes>
+        <Route path = "OnlineCoursesSearch" element={<OnlineCoursesSearch/>}/>
 </Routes>
     </Router>
   )
