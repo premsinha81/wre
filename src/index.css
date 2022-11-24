@@ -214,7 +214,7 @@ h2 {
 }
 
 .btn-square1 {
-  width: 90px!important;
+    width: 90px!important;
     height: 25px!important;
     border-radius: 15px;
     background-color: #3d55a5!important;
@@ -224,7 +224,7 @@ h2 {
     font-size: 14px !important;
     text-transform: uppercase!important;
     padding: 0!important;
-    margin: 23px 0px 0;
+    margin: 10px 0px 0!important;
 }
 
 .fw-medium {
@@ -830,13 +830,6 @@ select.form-control.selectOption {
 .padding25 {
   padding: 25px 0px;
 }
-.programsSection .container .row .col-lg-6.col-xl-6 {
-  padding: 0px 7px;
-}
-.programsSection3 .container .row .col-lg-6.col-xl-6 {
-  padding: 0px 7px;
-}
-
 button.btn.btn-primary.btnSidebar {
   border-radius: 20px;
   padding: 5px 10px;
@@ -2561,11 +2554,12 @@ ul.tandcLink2 a {
 .navigation-menu ul {
   display: flex;
   padding: 0;
+  margin-bottom:0!important;
 }
 
 .navigation-menu li {
   list-style-type: none;
-  margin: 0 1rem;
+  margin: 0;
 }
 
 .navigation-menu li a {

@@ -7,39 +7,24 @@ import LeftTabsExample from "./tabs"
 import Resources from "./resources";
 
 function Slider() {
-
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState();
     const [search_result, setSearcResult] = useState();
 
-    useEffect(() => {
-
-        axios.get("https://workreadyeducation.com/wre/api/get/trades")
-            .then(function (result) {
-                setTrade(result.data)
-                setMainTrade(result.data)
-                setSearcResult(result.data)
-            })
-
-    }, []);
-
-    function handletradeChange(event) {
+     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
             axios.get("https://workreadyeducation.com/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
                     if (result.data.status.status_code === 200) {
                         setTrade(result.data.results)
-
                     } else {
                         setTrade(maintrade)
                     }
                 })
         }
-
     }
-
     const handleSearchChange = (event, value) => {
         console.log(event.type, event, value)
         let search_term;

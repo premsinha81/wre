@@ -1,6 +1,6 @@
 import React from 'react'
 import Online from './Online'
-import Slider from './Slider'
+import Slider from './slider'
 import Accordiansection from './Tabsystemsection'
 const Middle = () => {
   return (

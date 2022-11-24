@@ -1,17 +1,11 @@
 import Header from "./common/header";
-import Middle from "./Middle";
-
 import Footer from "./common/footer";
-
-
-
+import Slider from "./slider"
 function Home() {
     return (
         <>
             <Header/>
-            <Middle/> 
-  
-            
+            <Slider></Slider>
             <Footer/>
         </>
     )
