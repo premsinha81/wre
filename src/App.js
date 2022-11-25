@@ -5,7 +5,8 @@ import Carrier from './component/Carrier';
 import Home from './component/Home';
 import About from './component/about';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
-import OnlineCoursesSearch from './component/OnlineCoursesSearch';
+import RankingDetail from './component/RankingDetail';
+
 function App() {
   return (
     <Router>
@@ -19,12 +20,14 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
       <Routes>
-        <Route path = "OnlineCoursesDetail" element={<OnlineCoursesDetail/>}/>
+        <Route path = "/OnlineCoursesDetail" element={<OnlineCoursesDetail/>}/>
 </Routes>
- <Routes>
-        <Route path = "OnlineCoursesSearch" element={<OnlineCoursesSearch/>}/>
+ 
+<Routes>
+        <Route path = "/RankingDetail" element={<RankingDetail/>}/>
 </Routes>
     </Router>
+    
   )
 
 }
