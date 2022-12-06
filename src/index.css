@@ -1380,6 +1380,7 @@ button .inner-pulse {
 footer.footerSection {
   padding: 80px 0px 20px 0px;
   background: #ECECEC;
+  margin-top:60px;
 }
 
 .footerTitle {
