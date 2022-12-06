@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from "./common/header";
-import slider from './slider';
 import Footer from "./common/footer";
 import Imagesection1 from '../Image/man-avatar-reading-student-education-book store.svg'
 import Imagesection2 from '../Image/Group 500.svg'
@@ -356,8 +355,9 @@ const Carrier = () => {
             </div>
          </div>
          <div className='container'>
-            <slider />
+            <slider/>
          </div>
+         <slider/>
          <Footer />
       </div>
    )

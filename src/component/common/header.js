@@ -28,6 +28,7 @@ function Header() {
                         <ul>
                             <li><a href="#" class="nav-item nav-link active"><i class="fa fa-search"></i></a></li>
                             <li><a href="/about" class="nav-item nav-link">About</a></li>
+                            <li><a href="/Career" class="nav-item nav-link">Career</a></li>
                             <li><a href="#" class="nav-item nav-link">Community</a></li>
                             <li><a href="#" class="nav-item nav-link">Jobs</a></li>
                             <li><a href="#" class="nav-item nav-link">Resources</a></li>

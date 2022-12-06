@@ -7,9 +7,10 @@ import About from './component/about';
 import Login from './component/login';
 import Rankingdetails from './component/Rankingdetails';
 import Signup from './component/signup';
+import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 import BusinessInformation from './component/account/businessInformation';
 import AccountInformation from './component/account/accountownerinformation';
-
+import UserProfileposts from './component/UserProfileposts';
 import Accountowner from './component/account/accountowner';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
       </Routes>
       <Routes>
-      <Route path = "Career" element={<Carrier/>}/>
+      <Route path = "/Career" element={<Carrier/>}/>
       </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
@@ -40,9 +41,14 @@ function App() {
       <Routes>
         <Route path='/AccountInformation' element={<AccountInformation />}/>
       </Routes>
-     
+      <Routes>
+        <Route path='/OnlineCoursesDetail' element={<OnlineCoursesDetail />}/>
+      </Routes>
       <Routes>
         <Route path='/Accountowner' element={<Accountowner />}/>
+      </Routes>
+      <Routes>
+      <Route path = "/UserProfileposts" element={<UserProfileposts/>}/>
       </Routes>
     </Router>
     </>

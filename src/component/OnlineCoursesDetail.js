@@ -3,8 +3,9 @@ import Header from "./common/header";
 
 
 import Footer from "./common/footer";
-import Slider from './Slider'
-import Tabsystemsection from './Tabsystemsection';
+import LeftTabsExample from "./tabs"
+import Resources from "./resources";
+
 const OnlineCoursesDetail = () => {
   return (
     <div>
@@ -218,11 +219,12 @@ const OnlineCoursesDetail = () => {
        <div class="space"></div>
        <div class="row">
           <div class="coreModule">
-            
+          <h1 class="coreModuleH">Elective Modules</h1>
 
              <div class="row">
                 <div class="col-lg-9">
-                   <div class="accordion" id="">
+                  <div class="accordion" id="accordionExample2">
+                     
                       <div class="accordion-item">
                          <h2 class="accordion-header" id="headingsix">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -308,23 +310,7 @@ const OnlineCoursesDetail = () => {
                             </div>
                          </div>
                       </div>
-                      <div class="accordion-item">
-                         <h2 class="accordion-header" id="headingeleven">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                               data-bs-target="#collapseeleven" aria-expanded="false" aria-controls="collapseeleven">
-                               <div class="plusCercle pCerclePadding">+</div>Speech and Audio Coding for Communication
-                            </button>
-                         </h2>
-                         <div id="collapseeleven" class="accordion-collapse collapse" aria-labelledby="headingeleven"
-                            data-bs-parent="#accordionExample2">
-                            <div class="accordion-body">
-                               <ul class="accourdionCourseBullot">
-                                  <li>Concepts and insights behind the development of modern wireless communication technologies. Detailed performance analysis of 4G/ 5G wireless technologies such as OFDM, MIMO, Multi-user MIMO</li>
-                                   <li>Detailed performance analysis of 4G/ 5G wireless technologies such as OFDM, MIMO, Multi-user MIMO</li>
-                               </ul>
-                            </div>
-                         </div>
-                      </div>
+                     
                       <div class="accordion-item">
                          <h2 class="accordion-header" id="headingtwel">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -370,11 +356,10 @@ const OnlineCoursesDetail = () => {
        </div>
     </div>
  </div>
-
- <Tabsystemsection/>
- 
-
-    <Slider/>
+ <div class="container">
+ <LeftTabsExample></LeftTabsExample>
+                    <Resources></Resources>
+                    </div>
     <Footer/>
  </div>
   )
