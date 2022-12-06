@@ -2,13 +2,19 @@ import React from 'react';
 import  './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Carrier from './component/Carrier';
-import Home from './component/Home';
+import Home from './component/home';
 import About from './component/about';
-import OnlineCoursesDetail from './component/OnlineCoursesDetail';
-import RankingDetail from './component/RankingDetail';
+import Login from './component/login';
+import Rankingdetails from './component/Rankingdetails';
+import Signup from './component/signup';
+import BusinessInformation from './component/account/businessInformation';
+import AccountInformation from './component/account/accountownerinformation';
+
+import Accountowner from './component/account/accountowner';
 
 function App() {
   return (
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,16 +26,27 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
       <Routes>
-        <Route path = "/OnlineCoursesDetail" element={<OnlineCoursesDetail/>}/>
-</Routes>
- 
-<Routes>
-        <Route path = "/RankingDetail" element={<RankingDetail/>}/>
-</Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Routes>
+        <Route path='/Rankingdetails' element={<Rankingdetails/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/signup' element={<Signup />}/>
+      </Routes>
+      <Routes>
+        <Route path='/BusinessInformation' element={<BusinessInformation />}/>
+      </Routes>
+      <Routes>
+        <Route path='/AccountInformation' element={<AccountInformation />}/>
+      </Routes>
+     
+      <Routes>
+        <Route path='/Accountowner' element={<Accountowner />}/>
+      </Routes>
     </Router>
-    
+    </>
   )
-
 }
 
-export default App
+export default App;

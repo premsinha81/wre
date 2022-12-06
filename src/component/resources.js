@@ -1,41 +1,37 @@
 import './resources.css';
+import Img1 from '../img/section1.jpg';
+import Img2 from '../img/section2.jpg';
+import Img3 from '../img/section3.jpg';
 function Resources() {
     return (
-        <div>
-            <h2>RELATED TOP RESOURCES</h2>
-            <div className='row'>
-            <div className='col-12 col-lg-3 col-lg-3 col-sm-6 col-xs-12'>
-                <ul>
-                    <li><img src='img1.png' className='img-fluid' /></li>
-                    <li><small>JUNE 14, 2022</small></li>
-                    <li><p>WRE and FORD partner up to raise awareness of Auto Tech Manufacturing in N. Jersey</p></li>
-                </ul>
-            </div>
-            <div className='col-12 col-lg-3 col-lg-3 col-sm-6 col-xs-12'>
-                <ul>
-                <li><img src='img1.png' className='img-fluid' /></li>
-                    <li><small>JUNE 14, 2022</small></li>
-                    <li><p>WRE and FORD partner up to raise awareness of Auto Tech Manufacturing in N. Jersey</p></li>
-                </ul>
-            </div>
-            <div className='col-12 col-lg-3 col-lg-3 col-sm-6 col-xs-12'>
-                <ul>
-                <li><img src='img1.png' className='img-fluid' /></li>
-                    <li><small>JUNE 14, 2022</small></li>
-                    <li><p>WRE and FORD partner up to raise awareness of Auto Tech Manufacturing in N. Jersey</p></li>
-                </ul>
-                
-            </div>
-            <div className='col-12 col-lg-3 col-lg-3 col-sm-6 col-xs-12'>
-                <ul>
-                <li><img src='img1.png' className='img-fluid' /></li>
-                    <li><small>JUNE 14, 2022</small></li>
-                    <li><p>WRE and FORD partner up to raise awareness of Auto Tech Manufacturing in N. Jersey</p></li>
-                </ul>
-                
-            </div>
-            </div>
-        </div>
+            <section>
+               
+                        <h4 class=" related">Related Top Resources</h4>
+                        <div class="row ">
+                            <div class="col-md-4 col-lg-4 col-sm-12 related">
+                                <img class="img-fluid w-100" src={Img1} />
+                                    <div class="border-top related-p">
+                                        <span> June 14 2022</span>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                                    </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-12 related">
+                                <img class="img-fluid w-100" src={Img2} />
+                                    <div class="border-top related-p">
+                                        <span> June 14 2022</span>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                                    </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-12 related">
+                                <img class="img-fluid w-100" src={Img3} />
+                                    <div class="border-top related-p">
+                                        <span> June 14 2022</span>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                                    </div>
+                            </div>
+                        </div>
+                  
+            </section>
     )
 }
 

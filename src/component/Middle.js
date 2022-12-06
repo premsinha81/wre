@@ -1,11 +1,11 @@
-import React from 'react'
-import Filtersection from './Filtersection'
-import Homebanner from './Homebanner.Js'
-import Online from './Online'
-import Slider from './Slider'
-import Tabsystemsection from './Tabsystemsection'
+import React from 'react';
+import Filtersection from './Filtersection';
+import Homebanner from './Homebanner.Js';
+import Online from './Online';
+import Tabsystemsection from './Tabsystemsection';
 
-const Middle = () => {
+
+const Middle=() => {
   return (
     <div>
         <section class="headerImage"> 
@@ -36,10 +36,9 @@ const Middle = () => {
 
  <Tabsystemsection/>
 
-<Slider/>
+
    
    </div>
   )
 }
-
-export default Middle
+export default Middle;
