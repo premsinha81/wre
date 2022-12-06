@@ -2508,7 +2508,7 @@ ul.tandcLink2 a {
   width:95%!important;
 }
 .nav-item a{
-  padding-left:35px;
+  padding-left:0px;
   font-size: 16px;
   line-height: 120%;
   position: relative;
@@ -2516,7 +2516,7 @@ ul.tandcLink2 a {
   margin: 10px 0;
   color:#fff;
 }
-.nav-item a:before {
+/*.nav-item a:before {
   content: '+';
   position: absolute;
   border: 1px solid #fff;
@@ -2528,7 +2528,7 @@ ul.tandcLink2 a {
   font-weight: bold;
   top: 10px;
   line-height: 100%;
-}
+}*/
 .navigation {
   position: relative;
   display: flex;

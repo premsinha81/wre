@@ -17,11 +17,9 @@ function Slider() {
         if (entervalue !== '' && entervalue !== undefined) {
             axios.get("https://workreadyeducation.com/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
-                    if (result.data.status.status_code === 200) {
-                        setTrade(result.data.results)
-                    } else {
-                        setTrade(maintrade)
-                    }
+                    setTrade(result.data)
+                    setMainTrade(result.data)
+                setSearcResult(result.data)
                 })
         }
     }
@@ -83,7 +81,6 @@ function Slider() {
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                         {search_result ?
                             search_result.length > 0 && (
                                 <div className="rightSection">

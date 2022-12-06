@@ -13,6 +13,9 @@ import Ranking from './component/ranking';
 import Accountowner from './component/account/accountowner';
 import Header from './component/common/header';
 import Footer from './component/common/footer';
+import UserProfileposts from './component/userProfile';
+import UserProfileCommunities from './component/userprofileCommunities';
+import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 
 function App() {
   return (
@@ -48,6 +51,15 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/Account-owner' element={<Accountowner />}/>
+      </Routes>
+      <Routes>
+        <Route path='/user-profile-post' element={<UserProfileposts />}/>
+      </Routes>
+      <Routes>
+        <Route path='/user-profile-communities' element={<UserProfileCommunities />} />
+      </Routes>
+      <Routes>
+        <Route path='/online-course-details' element={<OnlineCoursesDetail />} />
       </Routes>
     </Router>
     <Footer/>

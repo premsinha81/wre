@@ -988,8 +988,7 @@ div#slider-range {
   display: grid;
   gap: 10px;
   align-items: center;
- 
-  grid-template-columns: 7% 91%;
+  grid-template-columns: 7% 81%;
 }
 
 .tabSystems {
