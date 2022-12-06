@@ -1,10 +1,7 @@
-import Header from "./common/header";
-import Footer from "./common/footer";
 function Signup() {
     return (
         <>
-            <Header></Header>
-            <section className="headerImagesign ">
+        <section className="headerImagesign ">
                 <div className="backgroundsign ">
                     <div className="container">
 
@@ -86,10 +83,7 @@ function Signup() {
                     </div>
                 </div>
 
-
-
             </section>
-            <Footer></Footer>
         </>
     )
 }

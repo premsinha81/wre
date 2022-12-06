@@ -1,8 +1,5 @@
 import React from 'react'
-import Header from "./common/header";
 import Resources from './resources';
-
-import Footer from "./common/footer";
 import Slider from './slider'
 import Imagesection1 from '../Image/man-avatar-reading-student-education-book store.svg'
 import Imagesection2 from '../Image/Group 500.svg'
@@ -10,7 +7,6 @@ import Imagesection2 from '../Image/Group 500.svg'
 const Carrier = () => {
    return (
       <div>
-         <Header />
          <section className="headerImagecoun headerImagecoun1">
             <div className="backgroundcoun ">
                <div className="container">
@@ -360,7 +356,6 @@ const Carrier = () => {
          <div className='container'>
             <Resources></Resources>
          </div>
-         <Footer />
       </div>
    )
 }

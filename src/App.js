@@ -11,10 +11,13 @@ import BusinessInformation from './component/account/businessInformation';
 import AccountInformation from './component/account/accountownerinformation';
 import Ranking from './component/ranking';
 import Accountowner from './component/account/accountowner';
+import Header from './component/common/header';
+import Footer from './component/common/footer';
 
 function App() {
   return (
     <>
+    <Header/>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -47,6 +50,7 @@ function App() {
         <Route path='/Account-owner' element={<Accountowner />}/>
       </Routes>
     </Router>
+    <Footer/>
     </>
   )
 }

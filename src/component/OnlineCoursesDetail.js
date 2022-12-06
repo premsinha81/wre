@@ -1,14 +1,9 @@
 import React from 'react'
-import Header from "./common/header";
-
-
-import Footer from "./common/footer";
 import Slider from './Slider'
 import Tabsystemsection from './Tabsystemsection';
 const OnlineCoursesDetail = () => {
   return (
     <div>
-           <Header/>
       <section class="headerImage2">
     <div class="background ">
        <div class="container">
@@ -372,10 +367,7 @@ const OnlineCoursesDetail = () => {
  </div>
 
  <Tabsystemsection/>
- 
-
-    <Slider/>
-    <Footer/>
+     <Slider/>
  </div>
   )
 }
