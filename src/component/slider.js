@@ -12,19 +12,42 @@ function Slider() {
     const [entervalue, setEnterValue] = useState();
     const [search_result, setSearcResult] = useState();
 
-     function handletradeChange(event) {
+
+    useEffect(() => {
+
+        axios.get("https://workreadyeducation.com/wre/api/get/trades")
+            .then(function (result) {
+                console.log(result)
+                if (result.data.status.status_code == 200) {
+                    setTrade(result.data.results)
+                    setMainTrade(result.data.results)
+                    setSearcResult(result.data.results)
+                }
+            })
+
+    }, []);
+
+    function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
             axios.get("https://workreadyeducation.com/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
-                    setTrade(result.data)
-                    setMainTrade(result.data)
-                setSearcResult(result.data)
+                    console.log(result)
+                    if(result.data.status.status_code == 200){
+                        setTrade(result.data.results)
+                        setSearcResult(result.data.results)
+                    }else{
+                        setTrade(maintrade)
+                        setSearcResult('')
+                    }
+                    
                 })
         }
     }
     const handleSearchChange = (event, value) => {
-        console.log(event.type, event, value)
+        console.log(event.type)
+        console.log(event)
+        console.log(value)
         let search_term;
         if (value !== '' && value !== undefined) {
             search_term = value.title
@@ -38,10 +61,10 @@ function Slider() {
         })
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
-                    setSearcResult((result.data.results))
+                    setSearcResult(result.data.results)
                 }
                 if (result.data.status.status_code == 400) {
-                    setSearcResult((result.data.results))
+                    setSearcResult('')
                 }
 
             })
@@ -64,7 +87,7 @@ function Slider() {
                                 id="combo-box-demo"
                                 className=""
                                 options={trade}
-                                getOptionLabel={(option) => option.title}
+                                getOptionLabel={(option) => option && option.title}
                                 onInputChange={handletradeChange}
                                 onChange={handleSearchChange}
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
@@ -119,7 +142,7 @@ function Slider() {
                                     </div>
 
                                 </div>
-                            ) : ''}
+                            ) : <div className="rightSection">No Record match.</div>}
 
                     </div>
                     <LeftTabsExample></LeftTabsExample>
