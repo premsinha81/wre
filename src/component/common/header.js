@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Menu from "./menu";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ReactComponent as YourSvg } from './svg.svg';
@@ -7,10 +7,23 @@ import {ReactComponent as BurgerSvg} from './burger.svg';
 
 function Header() {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
+    const stickyHeader = useRef()
+    useLayoutEffect(() => {
+        const mainHeader = document.getElementById('mainHeader')
+        let fixedTop = stickyHeader.current.offsetTop
+        const fixedHeader = () => {
+          if (window.pageYOffset > fixedTop) {
+            mainHeader.classList.add('fixedTop')
+          } else {
+            mainHeader.classList.remove('fixedTop')
+          }
+        }
+        window.addEventListener('scroll', fixedHeader)
+      }, [])
     return (
         <>
 
-            <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+            <nav id="mainHeader" ref={stickyHeader} class="navbar navbar-expand-lg bg-white navbar-light mainHeader">
                 <a href="index.html" class="navbar-brand d-flex align-items-center">
                     <div className="svgLogo"><YourSvg /></div>
                 </a>

@@ -6,7 +6,13 @@ import Tab from 'react-bootstrap/Tab';
 
 function LeftTabsExample() {
   return (
+
+    
+
     <div className='tabs'>
+
+
+
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
         <Col sm={4}>
