@@ -656,8 +656,8 @@ input[type=checkbox] {
 
 .radioBox p,
 .priceRange p {
-  font-size: 15px;
-  font-weight: 100;
+  font-size: 13px;
+  font-weight: bold;
   border-bottom: 1px solid #000;
   padding-bottom: 5px;
   color: #000;
@@ -1200,9 +1200,10 @@ footer.footerSection {
 }
 
 .footerTitle h3 {
-  font-size: 25px;
+  font-size: 18px;
   font-family: 'Lato', sans-serif;
   margin: 0;
+  font-weight: bold;
 }
 
 .footerBody ul {
@@ -1227,11 +1228,12 @@ footer.footerSection {
 }
 
 h1.subscribeTitle {
-  font-size: 25px;
+  font-size: 18px!important;
   font-family: 'Lato', sans-serif;
   margin: 0;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .inputField input {
