@@ -24,6 +24,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/:slug' element={<Rankingdetails />} />
       </Routes>
       <Routes>
       <Route path = "Career" element={<Carrier/>}/>
