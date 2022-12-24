@@ -14,7 +14,7 @@
 .btn-square1 {
   width: 90px;
   height: 25px;
-  border-radius: 15px;
+  border-radius: 30px!important;
   background-color: #3d55a5;
   color: #fff;
   font-weight: 300 !important;
@@ -599,6 +599,14 @@ button.btn.btn-primary.btnSidebar {
   border: none;
   font-family: 'Lato';
   margin-top: 10px;
+  min-width:100px!important;
+  margin-right:5px;
+}
+.modal-backdrop{
+  z-index: 99999!important;
+}
+.modal{
+  z-index:999999!important;
 }
 
 .btnFuture {
