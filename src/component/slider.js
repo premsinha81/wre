@@ -125,7 +125,7 @@ function Slider() {
                                                             <img src={res.image_path} alt='' className="img-fluid" />
                                                         </li>
                                                         <li>
-                                                            <h6>{res.college_name} - {res.title}</h6>
+                                                            <a href={res.slug}><h6>{res.college_name} - {res.title}</h6></a>
                                                             <p>Course Duration - {res.duration}</p>
                                                             <p>Rating : <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
