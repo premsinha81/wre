@@ -1,9 +1,6 @@
-import Header from "./common/header";
-import Footer from "./common/footer";
 function Login() {
     return (
         <>
-            <Header></Header>
             <div className="container">
                 <div className="row  pad">
                     <div className="col-md-12">
@@ -38,7 +35,6 @@ function Login() {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
         </>
     )
 }

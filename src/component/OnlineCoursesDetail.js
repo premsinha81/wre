@@ -1,15 +1,9 @@
-import React from 'react'
-import Header from "./common/header";
-
-
-import Footer from "./common/footer";
-import LeftTabsExample from "./tabs"
+import React from 'react';
+import LeftTabsExample from "./tabs";
 import Resources from "./resources";
-
 const OnlineCoursesDetail = () => {
   return (
     <div>
-           <Header/>
       <section class="headerImage2">
     <div class="background ">
        <div class="container">
@@ -360,7 +354,7 @@ const OnlineCoursesDetail = () => {
  <LeftTabsExample></LeftTabsExample>
                     <Resources></Resources>
                     </div>
-    <Footer/>
+
  </div>
   )
 }

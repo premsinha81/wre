@@ -1,13 +1,11 @@
-import React from 'react'
-import Header from "./common/header";
-import Footer from "./common/footer";
-import Imagesection1 from '../Image/man-avatar-reading-student-education-book store.svg'
-import Imagesection2 from '../Image/Group 500.svg'
+import React from 'react';
+import Imagesection1 from '../Image/man-avatar-reading-student-education-book store.svg';
+import Imagesection2 from '../Image/Group 500.svg';
 
 const Carrier = () => {
    return (
       <div>
-         <Header />
+        
          <section className="headerImagecoun headerImagecoun1">
             <div className="backgroundcoun ">
                <div className="container">
@@ -357,10 +355,10 @@ const Carrier = () => {
          <div className='container'>
             <slider/>
          </div>
-         <slider/>
-         <Footer />
+        
+     
       </div>
    )
 }
 
-export default Carrier
+export default Carrier;

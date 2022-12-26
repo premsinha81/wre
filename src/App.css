@@ -3192,8 +3192,7 @@ button.btn.btn-primary.btnBSidebar.RefilterBtn {
     display: grid;
     gap: 10px;
     align-items: center;
-    margin-bottom: 15px;
-    grid-template-columns: 7% 91%;
+    
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   background: #3D55A5;

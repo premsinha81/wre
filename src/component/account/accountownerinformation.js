@@ -1,11 +1,8 @@
 import React from 'react'
-import Header from '../common/header'
-import Footer from '../common/footer'
 
 const accountInformation = () => {
     return (
         <div>
-            <Header />
             <div className="postSection">
                 <div className="container">
                     <div className="row">
@@ -74,7 +71,7 @@ const accountInformation = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <Footer />
+                                
                             </div>
     )}
 export default accountInformation

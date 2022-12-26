@@ -1,11 +1,8 @@
-import Header from "./common/header";
-import Footer from "./common/footer";
 import Resources from './resources';
 
 function Ranking() {
     return (
         <>
-            <Header></Header>
             <section className="headerImage">
                 <div className="background ">
                     <div className="container">
@@ -587,7 +584,6 @@ function Ranking() {
 
             </div>
             
-            <Footer></Footer>
         </>
     )
 }
