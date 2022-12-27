@@ -15,6 +15,9 @@ import Accountowner from './component/account/accountowner';
 import Header from './component/common/header';
 import Footer from './component/common/footer';
 
+import UserprofileCommunities from './component/userprofileCommunities';
+
+
 function App() {
   return (
     <>
@@ -22,6 +25,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/:slug' element={<Rankingdetails />} />
       </Routes>
       <Routes>
       <Route path = "/Career" element={<Carrier/>}/>
@@ -53,6 +57,11 @@ function App() {
       <Routes>
       <Route path = "/UserProfileposts" element={<UserProfileposts/>}/>
       </Routes>
+      
+      <Routes>
+        <Route path='/userprofileCommunities' element={<UserprofileCommunities />} />
+      </Routes>
+     
     </Router>
     <Footer/>
     </>

@@ -5,6 +5,8 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
 import LeftTabsExample from "./tabs"
 import Resources from "./resources";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch} from '@fortawesome/fontawesome-free-solid';
 
 function Slider() {
     const [maintrade, setMainTrade] = useState()
@@ -12,21 +14,42 @@ function Slider() {
     const [entervalue, setEnterValue] = useState();
     const [search_result, setSearcResult] = useState();
 
-     function handletradeChange(event) {
+
+    useEffect(() => {
+
+        axios.get("https://workreadyeducation.com/wre/api/get/trades")
+            .then(function (result) {
+                console.log(result)
+                if (result.data.status.status_code == 200) {
+                    setTrade(result.data.results)
+                    setMainTrade(result.data.results)
+                    setSearcResult(result.data.results)
+                }
+            })
+
+    }, []);
+
+    function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
             axios.get("https://workreadyeducation.com/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
-                    if (result.data.status.status_code === 200) {
+                    console.log(result)
+                    if(result.data.status.status_code == 200){
                         setTrade(result.data.results)
-                    } else {
+                        setSearcResult(result.data.results)
+                    }else{
                         setTrade(maintrade)
+                        setSearcResult('')
                     }
+                    
                 })
         }
     }
     const handleSearchChange = (event, value) => {
-        console.log(event.type, event, value)
+        console.log(event.type)
+        console.log(event)
+        console.log(value)
         let search_term;
         if (value !== '' && value !== undefined) {
             search_term = value.title
@@ -40,10 +63,10 @@ function Slider() {
         })
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
-                    setSearcResult((result.data.results))
+                    setSearcResult(result.data.results)
                 }
                 if (result.data.status.status_code == 400) {
-                    setSearcResult((result.data.results))
+                    setSearcResult('')
                 }
 
             })
@@ -66,12 +89,14 @@ function Slider() {
                                 id="combo-box-demo"
                                 className=""
                                 options={trade}
-                                getOptionLabel={(option) => option.title}
+                                getOptionLabel={(option) => option && option.title}
                                 onInputChange={handletradeChange}
                                 onChange={handleSearchChange}
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
-                            <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>SEARCH NOW</button>
+                            <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
+                                <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +108,6 @@ function Slider() {
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                         {search_result ?
                             search_result.length > 0 && (
                                 <div className="rightSection">
@@ -101,7 +125,7 @@ function Slider() {
                                                             <img src={res.image_path} alt='' className="img-fluid" />
                                                         </li>
                                                         <li>
-                                                            <h6>{res.college_name} - {res.title}</h6>
+                                                            <a href={res.slug}><h6>{res.college_name} - {res.title}</h6></a>
                                                             <p>Course Duration - {res.duration}</p>
                                                             <p>Rating : <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
@@ -122,7 +146,7 @@ function Slider() {
                                     </div>
 
                                 </div>
-                            ) : ''}
+                            ) : <div className="rightSection">No Record match.</div>}
 
                     </div>
                     <LeftTabsExample></LeftTabsExample>

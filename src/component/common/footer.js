@@ -1,4 +1,6 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF,faTwitter,faInstagram,faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer() {
     return (
@@ -77,10 +79,10 @@ export default function Footer() {
                                 </form>
                                 <div class="followUs">
                                     <ul class="solialLink">
-                                        <li><a href="" class="socialLinkItem"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="" class="socialLinkItem"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="" class="socialLinkItem"><i class="fa fa-youtube-play"></i></a></li>
-                                        <li><a href="" class="socialLinkItem"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faInstagram} /></a></li>
+                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faYoutube} /></a></li>
                                     </ul>
                                 </div>
                                 <div class="termsLink">

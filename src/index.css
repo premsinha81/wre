@@ -14,7 +14,7 @@ code {
 .slider {
   background: url(./img/slider1.png) no-repeat 0 0;
   background-size: 100%;
-  min-height: 500px;
+  min-height: 360px;
   position: relative;
 }
 
@@ -30,7 +30,7 @@ code {
   text-align: center;
   width: 700px;
   position: absolute;
-  top: 250px;
+  top: 150px;
   left: 50%;
   margin-left: -350px;
 }
@@ -49,7 +49,7 @@ code {
 
 .slider .searchPanel .btnSearch {
   position: absolute;
-  top: 60px;
+  top: 50px;
   right: 5px;
   font-size: 15px !important;
   font-weight: 500;
@@ -94,6 +94,7 @@ code {
 .svgLogo {
   width: 126px;
   height: 26px;
+  margin-top:-5px;
 }
 
 header {
@@ -227,6 +228,11 @@ h2 {
     text-transform: uppercase!important;
     padding: 0!important;
     margin: 10px 0px 0!important;
+    line-height: 24px!important;
+}
+h1{
+  font-size:2.0em!important;
+  font-weight: bold!important;
 }
 
 .fw-medium {
@@ -434,6 +440,10 @@ img.iconP {
 }
 .pad {
   padding: 6% !important;
+}
+
+.modal-body .form-control{
+  margin-bottom: 10px;
 }
 
 @media (max-width: 991.98px) {
@@ -649,7 +659,9 @@ img.iconP {
   vertical-align: middle;
   margin-left: 8px;
 }
-
+.mainHeader{
+  padding:0 15px!important;
+}
 @media (max-width: 991.98px) {
   .navbar .navbar-nav .nav-link {
     margin-right: 0;
@@ -1381,8 +1393,7 @@ button .inner-pulse {
 /* Footer Css Start */
 footer.footerSection {
   padding: 80px 0px 20px 0px;
-  background: #ECECEC;
-  margin-top:60px;
+  background-image: linear-gradient(0deg, #ffffff, #d0d0d0, #d0d0d0);
 }
 
 .footerTitle {
@@ -1842,7 +1853,18 @@ p.groupFollowers {
 .gPlus {
   color: #3D55A5;
 }
-
+.btnConselling {
+  position: fixed;
+  top: 60%;
+  background-color: #FFA845!important;
+  border-radius: 0 0 5px 5px!important;
+  rotate: 90deg;
+  border: 0!important;
+  right: -64px;
+}
+.btnConselling:hover{
+  background-color: #f6982c!important;
+}
 @media only screen and (max-width:767px) {
   .trendingButton button {
     margin-bottom: 5px;
@@ -2510,15 +2532,16 @@ ul.tandcLink2 a {
   width:95%!important;
 }
 .nav-item a{
-  padding-left:35px;
+  padding-left:0px;
   font-size: 16px;
   line-height: 120%;
   position: relative;
   background-color: #3D55A5 !important;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   color:#fff;
 }
-.nav-item a:before {
+
+/*.nav-item a:before {
   content: '+';
   position: absolute;
   border: 1px solid #fff;
@@ -2530,7 +2553,7 @@ ul.tandcLink2 a {
   font-weight: bold;
   top: 10px;
   line-height: 100%;
-}
+}*/
 .navigation {
   position: relative;
   display: flex;
@@ -2677,6 +2700,48 @@ ul.tandcLink2 a {
   object-fit: cover;
   object-position: left;
 }
+.main-block {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.fixedTop {
+  width: 100%;
+  position: fixed!important;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 1px 1px #a9a3a3;
+}
+.fixedTop + .main-block {
+  padding-top: 102px;
+}
+.navbar{
+  padding:0 15px;
+}
+.nav-pills .nav-link {
+  padding: 12px 0 12px 35px!important;
+  font-size: 14px!important;
+  position: relative;
+}
+.nav-pills .nav-link:before {
+  content: "+";
+  position: absolute;
+  left: 5px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  height: 22px;
+  width: 22px;
+  text-align: center;
+  top:10px;
+}
+.nav-pills .nav-link.active:before{
+  content: "-";
+}
+
 @media(max-width:991px){
   .navigation-menu{display:none;}
   .navigation-menu.expanded{display:block;}
