@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
 
 
 function Popup() {
@@ -11,8 +12,8 @@ function Popup() {
   
     return (
       <>
-        <Button className='btnConselling' onClick={handleShow}>Online Counselling</Button>
-  
+        {/*<Button className='btnConselling' href="/online-counselling">Online Counselling</Button>*/}
+        <Link to="/online-counselling" className='btn btn-primary btnConselling' > Online Counselling</Link> 
         <Modal
           show={show}
           onHide={handleClose}

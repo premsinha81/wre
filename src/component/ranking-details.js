@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import tradeImg1 from '../img/trade-schools.jpeg';
 import tradeImg2 from '../img/section1.jpg';
-import Resources from './resources';
+//import Resources from './resources';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -82,7 +82,7 @@ function Rankingdetails() {
                             </p>
                         </div>
                     </div>
-                    <Resources></Resources>
+                    
                 </div>
             </div>
 
@@ -151,6 +151,7 @@ function Rankingdetails() {
                     <Resources></Resources>
                 </div>
             </div> */}
+           
         </>
     )
 }

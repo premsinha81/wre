@@ -593,7 +593,7 @@ select.form-control.selectOption {
 
 button.btn.btn-primary.btnSidebar {
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 10px 25px;
   font-size: 15px;
   background-color: #3D55A5;
   border: none;
@@ -741,7 +741,7 @@ input[type=checkbox] {
 .programTitle {
   background: #3D55A5;
   padding: 15px;
-  border-radius: 19px;
+  border-radius: 10px 10px 0 0;
   box-shadow: 0px 3px 6px #00000029;
 }
 
@@ -2136,16 +2136,18 @@ form.searchForm button {
 }
 .onlinecousectinstu {
   background-color: #ECECEC !important;
-  border-radius: 30px;
-  padding: 45px !important;
-  height: 100%;
+  border-radius: 10px;
+  padding: 15px !important;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .onlinecousectinstu1 {
   background-color: #ECECEC !important;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 45px !important;
-  height: 100%;
+  height: auto;
+  margin-bottom: 25px;
 }
 
 .onlinecousectinstu Image {
@@ -2220,7 +2222,7 @@ form.searchForm button {
 }
 
 .programBox1 {
-  border-radius: 19px;
+  border-radius: 10px;
   box-shadow: 0px 3px 6px #00000029;
   margin-bottom: 20px;
   background-color: #ECECEC;
@@ -2932,6 +2934,11 @@ blockquote{
 }
 .ss{
   padding: 10px!important;
+}
+.programTitle h3{
+  color:#fff;
+  font-size: 18px;
+  font-weight: bold;
 }
 @media (max-width:767px){
    .messageSidePadding {

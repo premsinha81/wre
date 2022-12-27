@@ -16,6 +16,7 @@ import Footer from './component/common/footer';
 import UserProfileposts from './component/userProfile';
 import UserProfileCommunities from './component/userprofileCommunities';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
+import OnlineCounselling from './component/OnlineCounselling';
 
 function App() {
   return (
@@ -62,6 +63,10 @@ function App() {
       <Routes>
         <Route path='/online-course-details' element={<OnlineCoursesDetail />} />
       </Routes>
+      <Routes>
+        <Route path='/online-counselling' element={<OnlineCounselling />} />
+      </Routes>
+     
     </Router>
     <Footer/>
     </>
