@@ -4,7 +4,7 @@ import profile from '../Image/profile2.jpg';
 import Profilep from '../Image/profile.jpg';
 import background from '../Image/profile.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera, faEdit, faThumbsUp, faShare, faRetweet, faEye, faComment } from '@fortawesome/fontawesome-free-solid';
+// import { faCamera, faEdit, faThumbsUp, faShare, faRetweet, faEye, faComment } from '@fortawesome/fontawesome-free-solid';
 import './userprofile.css';
 //import  './Responshive.css';
 
@@ -22,7 +22,7 @@ const UserProfileCommunities = () => {
                             <div id="profile-pic">
                                 <div className="avatar-upload">
                                     <div className="avatar-edit">
-                                        <FontAwesomeIcon icon={faEdit} />
+                                        {/* <FontAwesomeIcon icon={faEdit} /> */}
                                         <input type="file" id="imageUpload" />
 
                                         <label htmlFor="imageUpload" />
@@ -42,7 +42,7 @@ const UserProfileCommunities = () => {
                                     <button type="button" className=" btn btn-primary btnSidebar1 filterBtn position-relative bg-dark ">
                                         <p className="mb-0 ms-4 text-light"><input id="file-input" type="file" hidden /> <label htmlFor="file-input" style={{ cursor: 'pointer' }}>Change Picture</label></p>
                                         <div className="position-absolute start-0 top-0">
-                                            <p> <FontAwesomeIcon icon={faCamera} /></p>
+                                            {/* <p> <FontAwesomeIcon icon={faCamera} /></p> */}
                                         </div>
                                     </button>
                                 </div>

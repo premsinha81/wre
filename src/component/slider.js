@@ -6,7 +6,7 @@ import Leftpanel from "./leftpanel";
 import LeftTabsExample from "./tabs"
 import Resources from "./resources";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch} from '@fortawesome/fontawesome-free-solid';
+// import { faSearch} from '@fortawesome/fontawesome-free-solid';
 
 function Slider() {
     const [maintrade, setMainTrade] = useState()
@@ -95,7 +95,7 @@ function Slider() {
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
                             <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
-                                <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+                                {/* <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> */}
                             </button>
                         </div>
                     </div>

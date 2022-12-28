@@ -3,9 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Tabsystemsection() {
+
+
+
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
        <div class="container">

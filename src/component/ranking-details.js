@@ -5,7 +5,7 @@ import Resources from './resources';
 function Rankingdetails() {
 
     const [detail, setDetail] = useState([]);
-    const params = useParams();
+ 
 
     useEffect(() => {
 
