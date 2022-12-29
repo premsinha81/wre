@@ -17,7 +17,7 @@ function Slider() {
 
     useEffect(() => {
 
-        axios.get("https://workreadyeducation.com/wre/api/get/trades")
+        axios.get("http://162.144.98.113/~work/wre/api/get/trades")
             .then(function (result) {
                 console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -32,7 +32,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get("https://workreadyeducation.com/wre/api/get/trades?q=" + entervalue)
+            axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
                     console.log(result)
                     if(result.data.status.status_code == 200){
@@ -58,7 +58,7 @@ function Slider() {
             search_term = entervalue
         }
 
-        axios.post("https://workreadyeducation.com/wre/api/get/search", {
+        axios.post("http://162.144.98.113/~work/wre/api/get/search", {
             trade: search_term
         })
             .then(function (result) {
