@@ -1,7 +1,7 @@
 import {React,useState,useEffect} from 'react'
 
 const Online = () => {
-    const url="http://workreadyeducation.com/wre/api/get/onlinecourse";
+    const url=process.env.REACT_APP_BASE_URL + "get/onlinecourse";
   const[data,setdata]=useState([]);
   
 const getuser=async()=>{
