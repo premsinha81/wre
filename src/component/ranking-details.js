@@ -4,6 +4,12 @@ import tradeImg2 from '../img/section1.jpg';
 //import Resources from './resources';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+const styles = {
+    main: {
+      backgroundColor: "#f1f1f1",
+      width: "100%",
+    }
+  };
 
 function Rankingdetails() {
 
@@ -17,6 +23,7 @@ function Rankingdetails() {
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
                     setDetail(result.data.results)
+                    console.log({_html :result.data.results.description})
                 }
             })
     });
@@ -28,7 +35,7 @@ function Rankingdetails() {
                         <div className="row  ">
                             <div className="col-md-8 section-h">
                                 <div className="bannerHeading">
-                                    <h1>{detail.title}</h1>
+                                    
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -78,7 +85,8 @@ function Rankingdetails() {
                         <div className="col-lg-12 test-design">
                             
                             <p className='m25'>
-                                {detail.description}
+                            <div id="terms-content" dangerouslySetInnerHTML={{__html: detail.description}}/>
+                                
                             </p>
                         </div>
                     </div>

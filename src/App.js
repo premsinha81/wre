@@ -19,6 +19,7 @@ import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 import OnlineCounselling from './component/OnlineCounselling';
 import Dashboard from './component/Dashboard';
 import useToken from './component/app/useToken';
+import Slider from './component/slider';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
       <Header />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Slider />} />
           <Route path='/:slug' element={<Rankingdetails />} />
         </Routes>
         <Routes>
