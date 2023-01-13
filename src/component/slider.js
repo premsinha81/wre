@@ -17,7 +17,7 @@ function Slider() {
 
     useEffect(() => {
 
-        axios.get("https://workreadyeducation.com/wre/api/get/trades")
+        axios.get(process.env.REACT_APP_BASE_URL + "get/trades")
             .then(function (result) {
                 console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -32,7 +32,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get("https://workreadyeducation.com/wre/api/get/trades?q=" + entervalue)
+            axios.get(process.env.REACT_APP_BASE_URL + "get/trades?q=" + entervalue)
                 .then(function (result) {
                     console.log(result)
                     if(result.data.status.status_code == 200){
@@ -58,7 +58,7 @@ function Slider() {
             search_term = entervalue
         }
 
-        axios.post("https://workreadyeducation.com/wre/api/get/search", {
+        axios.post(process.env.REACT_APP_BASE_URL + "get/search", {
             trade: search_term
         })
             .then(function (result) {
@@ -95,7 +95,7 @@ function Slider() {
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
                             <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
-                                {/* <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> */}
+                            <i class="fa fa-search" ></i>
                             </button>
                         </div>
                     </div>

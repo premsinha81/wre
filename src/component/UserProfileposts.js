@@ -1,7 +1,6 @@
 import React from 'react';
 import profile from '../img/profile2.jpg';
 import Profilep from '../img/profile.jpg';
-
 import Img1 from '../img/css-gradient.webp';
 import background from '../img/profile1.jpg';
 import  './Responshive.css';

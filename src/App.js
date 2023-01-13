@@ -1,5 +1,5 @@
-import React from 'react';
-import  './App.css';
+import React, { useState } from 'react';
+import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Carrier from './component/Carrier';
 import Home from './component/home';
@@ -19,13 +19,20 @@ import UserprofileCommunities from './component/userprofileCommunities';
 
 
 function App() {
+
+  // const { token, setToken } = useToken();
+
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
+
   return (
     <>
     <Header/>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/:slug' element={<Rankingdetails />} />
+        {/* <Route path='/:slug' element={<Rankingdetails />} /> */}
       </Routes>
       <Routes>
       <Route path = "/Career" element={<Carrier/>}/>

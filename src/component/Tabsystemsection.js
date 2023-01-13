@@ -60,7 +60,7 @@ function Tabsystemsection() {
         <div class="tabPanel">
           <Tab.Content>
       
-            <Tab.Pane eventKey="first">
+            <Tab.Pane eventKey="first active">
         
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type

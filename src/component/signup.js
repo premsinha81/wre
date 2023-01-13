@@ -1,13 +1,60 @@
+
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Signup() {
+    const navigate = useNavigate();
+    const [user, setUser] = useState({
+        name: "", email: "", mob: "", password: ""
+    })
+    let name, value
+    const handleInputChange = (e) => {
+        name = e.target.name;
+        value = e.target.value;
+        setUser({ ...user, [name]: value });
+    }
+    const handleSubmit = async (e) => {
+        const { name, email, mob, password } = user;
+
+        const res = await fetch("http://162.144.98.113/~work/wre/api/get/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                name, email, mob, password
+            })
+            
+            
+        })
+        const data = await res.json();
+        console.log(data);
+        if (data.status === "Success") {
+            window.alert("Registration Successfully");
+            console.log("Registration Successfully");
+            navigate("/login");
+
+        } else if (data.status === "Failed") {
+            window.alert("User Already Exist");
+            console.log("User Already Exist");
+
+        } else {
+            window.alert("Something went wrong please try again!");
+            console.log("Something went wrong please try again!");
+
+        }
+    }
     return (
         <>
-        <section className="headerImagesign ">
+            <section className="headerImagesign ">
                 <div className="backgroundsign ">
                     <div className="container">
 
                         <div className="row">
                             <div className="col-md-12">
-                                <main>
+
+                                {/* <main>
                                     <div className="wrappers SignUpForm">
 
                                         <form id="regForm" action="">
@@ -66,20 +113,48 @@ function Signup() {
                                               <button type="button" className="btn text-white buttonsignUp sortBtn" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                             </center>
                                         </form></div>
-                                </main></div>
-                            
-                            <div>
+                                </main></div> */}
+
+                                {/* <div>
                                 <span className="step active"></span>
                                 <span className="step"></span>
                                 <span className="step"></span>
                                 <span className="step"></span>
+                            </div> */}
+
+
+                                <main>
+                                    <div className="wrappers">
+                                        <div>
+                                            <div className="form-group">
+                                                <input className="form-control logininpute" type="text" name="name" value={user.name} onChange={handleInputChange} id="Name" placeholder="Name" />
+                                            </div>
+                                            <div className="form-group">
+                                                <input className="form-control logininpute" type="text" name="email" value={user.email} onChange={handleInputChange} id="Email" placeholder="Email" />
+
+                                            </div>
+                                            <div className="form-group">
+                                                <input className="form-control logininpute" type="password" name="password" value={user.password} onChange={handleInputChange} id="Password" placeholder="Password" />
+
+                                            </div>
+                                            <div className="form-group">
+                                                <input className="form-control logininpute" type="text" name="mob" value={user.mob} onChange={handleInputChange} id="Mobile" placeholder="Mobile" />
+
+                                            </div>
+                                            <div className="col-md-12 section-h py-4">
+                                                <div className="input-box">
+                                                    <button type="submit" onClick={() => handleSubmit()} className="submitButton" >Sign Up</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </main>
+
                             </div>
 
-
-
-
                         </div>
-
                     </div>
                 </div>
 
@@ -87,5 +162,6 @@ function Signup() {
         </>
     )
 }
+
 
 export default Signup

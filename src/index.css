@@ -10,7 +10,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+input#submitButton1 {
+  background: #3D55A5;
+  border: 1px solid #3D55A5;
+  color: #fff;
+  text-transform: lowercase;
+  padding: 4px 95px;
+  border-radius: 20px;
+  font-size: 18px;
+}
 .slider {
   background: url(./img/slider1.png) no-repeat 0 0;
   background-size: 100%;
@@ -23,18 +31,22 @@ code {
   position: absolute;
   width: 100%;
   bottom: 0;
-  min-height: 200px;
+  min-height: 280px;
+}
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 900 !important;
 }
 
 .slider .searchPanel {
   text-align: center;
-  width: 700px;
+  min-width: 700px;
   position: absolute;
   top: 150px;
-  left: 50%;
-  margin-left: -350px;
+  left: 190px;
+  /* margin-left: -350px; */
 }
-
 .slider .searchPanel input[type="text"]::placeholder {
   font-weight: 500;
   color: #3C3C3C;
@@ -42,7 +54,7 @@ code {
 
 .slider .searchPanel input[type="text"] {
   border-radius: 26px;
-  background-color: #ECECEC;
+  background-color: #f9f9f9;
   padding: 15px;
   font-weight: 500;
 }
@@ -2720,8 +2732,7 @@ ul.tandcLink2 a {
   padding:0 15px;
 }
 .nav-pills .nav-link {
-  padding: 12px 0 12px 35px!important;
-  font-size: 14px!important;
+  padding: 10px 0 1px 19px!important;
   position: relative;
 }
 .nav-pills .nav-link:before {
@@ -2729,14 +2740,14 @@ ul.tandcLink2 a {
   position: absolute;
   left: 5px;
   color: #fff;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   border: 2px solid #fff;
   border-radius: 50px;
   height: 22px;
   width: 22px;
   text-align: center;
-  top:10px;
+  top: 10px;
 }
 .nav-pills .nav-link.active:before{
   content: "-";

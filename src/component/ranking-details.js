@@ -10,7 +10,7 @@ function Rankingdetails() {
     useEffect(() => {
 
         let slug_url = params.slug
-        axios.get("https://workreadyeducation.com/wre/api/get/trades/" + slug_url)
+        axios.get(process.env.REACT_APP_BASE_URL + "get/trades/" + slug_url)
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
                     setDetail(result.data.results)
@@ -79,7 +79,7 @@ function Rankingdetails() {
                             </p>
                         </div>
                     </div>
-                    <Resources></Resources>
+                    
                 </div>
             </div>
 
@@ -148,6 +148,7 @@ function Rankingdetails() {
                     <Resources></Resources>
                 </div>
             </div> */}
+           
         </>
     )
 }
