@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import tradeImg1 from '../img/trade-schools.jpeg';
 import tradeImg2 from '../img/section1.jpg';
+<<<<<<< HEAD
 import Resources from './resources';
+=======
+//import Resources from './resources';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+const styles = {
+    main: {
+      backgroundColor: "#f1f1f1",
+      width: "100%",
+    }
+  };
+
+>>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
 function Rankingdetails() {
 
     const [detail, setDetail] = useState([]);
@@ -14,6 +27,7 @@ function Rankingdetails() {
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
                     setDetail(result.data.results)
+                    console.log({_html :result.data.results.description})
                 }
             })
     });
@@ -25,7 +39,7 @@ function Rankingdetails() {
                         <div className="row  ">
                             <div className="col-md-8 section-h">
                                 <div className="bannerHeading">
-                                    <h1>{detail.title}</h1>
+                                    
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -75,7 +89,8 @@ function Rankingdetails() {
                         <div className="col-lg-12 test-design">
                             
                             <p className='m25'>
-                                {detail.description}
+                            <div id="terms-content" dangerouslySetInnerHTML={{__html: detail.description}}/>
+                                
                             </p>
                         </div>
                     </div>

@@ -40,6 +40,7 @@ const [user, setUser] = useState([]);
     
 
   return (
+<<<<<<< HEAD
     <Tab.Container id="left-tabs-example" defaultActiveKey="Leanne Graham">
        <div class="container">
       <Row>
@@ -76,6 +77,46 @@ const [user, setUser] = useState([]);
       </Row>
       </div>
     </Tab.Container>
+=======
+
+    <div className='tabs'>
+      <Tab.Container id="left-tabs-example" defaultActiveKey="Welding Technology and Trainingnne Graham">
+        <div class="container">
+          <Row>
+
+            <Col sm={4}>
+              <div class="leftSidebar">
+                <Nav variant="pills" className="flex-column">
+                  {user.data && user.data.length > 0 && user.data.map((userObj, index) => (
+                    <Nav.Item>
+                      <Nav.Link eventKey={userObj.Title}>
+                        <div class="leftSideBtn">
+                          {/* <div class="plusCercle">+</div> */}
+                          <p>{userObj.Title}</p>
+                        </div></Nav.Link>
+                    </Nav.Item>
+                  ))}
+                </Nav>
+              </div>
+            </Col>
+
+            <Col sm={8}>
+              <div class="tabPanel">
+                <Tab.Content>
+                  {user.data && user.data.length > 0 && user.data.map((userObj, index) => (
+                    <Tab.Pane eventKey={userObj.Title}>
+                      <p>{userObj.Description}</p>
+                    </Tab.Pane>
+                  ))}
+                </Tab.Content>
+              </div>
+
+            </Col>
+          </Row>
+        </div>
+      </Tab.Container>
+    </div>
+>>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
   );
 }
 

@@ -2400,7 +2400,7 @@ ul.tandcLink2 a {
 }
 
 .logininpute {
-  margin-bottom: 25px;
+  margin-bottom: 0;
   border-radius: 10px;
   background-color: #ffffff;
   color: #000;
@@ -2482,7 +2482,7 @@ footer.lFooter {
 }
 
 .backgroundsign {
-  padding: 70px 0px 70px;
+  padding: 150px 0px 150px;
 }
 
 .radioBoxRowsign {
@@ -3170,6 +3170,13 @@ ol, .ser, dl {
     font-size: 20px;
     padding: 0px 0px;
     margin: 0;
+}
+.btn-primary{
+  border-radius: 50px!important;
+}
+.btn-block{
+  width:100%;
+  display:block;
 }
 @media (max-width:767px){
    .messageSidePadding {
