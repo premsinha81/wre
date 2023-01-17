@@ -14,18 +14,8 @@ import UserProfileposts from './component/UserProfileposts';
 import Accountowner from './component/account/accountowner';
 import Header from './component/common/header';
 import Footer from './component/common/footer';
-<<<<<<< HEAD
 
 import UserprofileCommunities from './component/userprofileCommunities';
-=======
-import UserProfileposts from './component/userProfile';
-import UserProfileCommunities from './component/userprofileCommunities';
-import OnlineCoursesDetail from './component/OnlineCoursesDetail';
-import OnlineCounselling from './component/OnlineCounselling';
-import Dashboard from './component/Dashboard';
-import useToken from './component/app/useToken';
-import Slider from './component/slider';
->>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
 
 
 function App() {
@@ -38,18 +28,19 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
     <Header/>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path='/:slug' element={<Rankingdetails />} /> */}
+      
       </Routes>
+      <Routes><Route path='/:slug' element={<Rankingdetails />}/> </Routes>
       <Routes>
       <Route path = "/Career" element={<Carrier/>}/>
       </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
+        
       </Routes>
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -82,62 +73,6 @@ function App() {
      
     </Router>
     <Footer/>
-=======
-      <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Slider />} />
-          <Route path='/:slug' element={<Rankingdetails />} />
-        </Routes>
-        <Routes>
-          <Route path="Career" element={<Carrier />} />
-        </Routes>
-        <Routes>
-          <Route path="/about" element={<About />} />
-        </Routes>
-        <Routes>
-          if(!token) {
-            <Route path="/login" element={<Login setToken={setToken} />} />
-          }
-          if(token){
-            <Route path="/dashboard" element={<Dashboard />} />
-          }
-
-        </Routes>
-        <Routes>
-          <Route path='/ranking-details' element={<Rankingdetails />} />
-        </Routes>
-        <Routes>
-          <Route path='/signup' element={<Signup />} />
-        </Routes>
-        <Routes>
-          <Route path='/business-information' element={<BusinessInformation />} />
-        </Routes>
-        <Routes>
-          <Route path='/account-information' element={<AccountInformation />} />
-        </Routes>
-        <Routes>
-          <Route path='/ranking' element={<Ranking />} />
-        </Routes>
-        <Routes>
-          <Route path='/Account-owner' element={<Accountowner />} />
-        </Routes>
-        <Routes>
-          <Route path='/user-profile-post' element={<UserProfileposts />} />
-        </Routes>
-        <Routes>
-          <Route path='/user-profile-communities' element={<UserProfileCommunities />} />
-        </Routes>
-        <Routes>
-          <Route path='/online-course-details' element={<OnlineCoursesDetail />} />
-        </Routes>
-        <Routes>
-          <Route path='/online-counselling' element={<OnlineCounselling />} />
-        </Routes>
-
-      </Router>
-      <Footer />
->>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
     </>
   )
 }

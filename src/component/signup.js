@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-=======
-import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
-//import './signup.css'
-
-
->>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
 
 function Signup() {
     const navigate = useNavigate();
@@ -38,11 +30,7 @@ function Signup() {
         })
         const data = await res.json();
         console.log(data);
-<<<<<<< HEAD
         if (data.status === "Success") {
-=======
-        if (data.status === "Succes") {
->>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
             window.alert("Registration Successfully");
             console.log("Registration Successfully");
             navigate("/login");
@@ -155,11 +143,7 @@ function Signup() {
                                             </div>
                                             <div className="col-md-12 section-h py-4">
                                                 <div className="input-box">
-<<<<<<< HEAD
                                                     <button type="submit" onClick={() => handleSubmit()} className="submitButton" >Sign Up</button>
-=======
-                                                    <button type="submit" onClick={() => handleSubmit()} className="submitButton btn btn-primary btn-block" >Sign Up</button>
->>>>>>> 729e89b2a17e7266028f969810bf54c5462f68f4
                                                 </div>
                                             </div>
                                         </div>
