@@ -36,7 +36,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Slider />} />
-          <Route path='/:slug' element={<Rankingdetails />} />
+          
         </Routes>
         <Routes>
           <Route path="Career" element={<Carrier />} />
@@ -53,9 +53,7 @@ function App() {
           }
 
         </Routes>
-        <Routes>
-          <Route path='/ranking-details' element={<Rankingdetails />} />
-        </Routes>
+        
         <Routes>
           <Route path='/signup' element={<Signup />} />
         </Routes>
@@ -83,7 +81,10 @@ function App() {
         <Routes>
           <Route path='/online-counselling' element={<OnlineCounselling />} />
         </Routes>
-
+        <Routes>
+          <Route path='/ranking-details' element={<Rankingdetails />} />
+          <Route path='/:slug' element={<Rankingdetails />} />
+        </Routes>
       </Router>
       <Footer />
     </>
