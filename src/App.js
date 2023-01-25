@@ -8,6 +8,7 @@ import Login from './component/login';
 import Rankingdetails from './component/Rankingdetails';
 import Signup from './component/signup';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
+import OnlineCoursesSearch from './component/OnlineCoursesSearch';
 import BusinessInformation from './component/account/businessInformation';
 import AccountInformation from './component/account/accountownerinformation';
 import UserProfileposts from './component/UserProfileposts';
@@ -23,18 +24,21 @@ function App() {
   // const { token, setToken } = useToken();
 
   // if(!token) {
-  //   return <Login setToken={setToken} />
+  //   return <Login setToken={setToken} /> 
+
   // }
 
   return (
     <>
-    <Header/>
+      <Header/>
     <Router>
+
       <Routes>
         <Route path="/" element={<Home />} />
-      
+     <Route path='search/:slug' element={<Rankingdetails />} />
       </Routes>
-      <Routes><Route path='/:slug' element={<Rankingdetails />}/> </Routes>
+      
+    
       <Routes>
       <Route path = "/Career" element={<Carrier/>}/>
       </Routes>
@@ -70,7 +74,9 @@ function App() {
       <Routes>
         <Route path='/userprofileCommunities' element={<UserprofileCommunities />} />
       </Routes>
-     
+      <Routes>
+        <Route path='/OnlineCoursesSearch' element={<OnlineCoursesSearch />} />
+      </Routes>
     </Router>
     <Footer/>
     </>

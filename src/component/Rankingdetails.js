@@ -1,13 +1,12 @@
 import tradeImg1 from '../img/trade-schools.jpeg';
 import tradeImg2 from '../img/section1.jpg';
-import Header from "./common/header";
-import Footer from "./common/footer";
+
 import Resources from './resources';
 
 function Rankingdetails() {
     return (
         <>
-            <Header></Header>
+        
             <section className="headerImage">
                 <div className="background ">
                     <div className="container">
@@ -123,7 +122,7 @@ function Rankingdetails() {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+            
         </>
     )
 }

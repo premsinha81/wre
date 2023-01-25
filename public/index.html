@@ -156,6 +156,19 @@ $("#imageUpload").change(function() {
    readURL(this);
 });
   </script>
+  <script>
+  $(document).ready(function(){
+   $(".content1").slice(0, 4).show();
+   $("#loadMore").on("click", function(e){
+     e.preventDefault();
+     $(".content1:hidden").slice(0, 4).slideDown();
+     if($(".content1:hidden").length == 0) {
+       $("#loadMore").text("No Content").addClass("noContent");
+     }
+   });
+   
+ })
+ </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>

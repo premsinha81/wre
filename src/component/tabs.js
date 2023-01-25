@@ -65,7 +65,7 @@ const [user, setUser] = useState([]);
           <Tab.Content>
           {user.data && user.data.length > 0 && user.data.map((userObj, index) => (
             <Tab.Pane eventKey={userObj.Title}>
-                  <p>{userObj.Description}</p>
+                  <p className='active'>{userObj.Description}</p>
     
             </Tab.Pane>
             ))}

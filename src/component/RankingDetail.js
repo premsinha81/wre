@@ -1,14 +1,14 @@
 import React from 'react'
-import Header from "./common/header";
+
 import logo1 from '../Image/logo1.jpg';
 import logo2 from '../Image/Group 512.svg';
-import Footer from "./common/footer";
+
 import Slider from './Slider'
 import Tabsystemsection from './Tabsystemsection';
 const RankingDetail = () => {
   return (
     <div>
-        <Header/>
+      
         <>
      
   <section className="headerImage">
@@ -688,7 +688,7 @@ const RankingDetail = () => {
         <Tabsystemsection/>
         <Slider/>
         
-    <Footer/>
+
     </div>
   )
 }

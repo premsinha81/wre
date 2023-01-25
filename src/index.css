@@ -1337,28 +1337,18 @@ button .inner-pulse {
   margin-top: 50px !important;
 }
 
-.test-design p::before {
-  content: '' !important;
-  position: absolute !important;
-  left: 13% !important;
-  height: 1px !important;
-  width: 8% !important;
-  margin-top: -2% !important;
-  background: #d5763e !important;
 
-  transform: translateX(-50%) !important;
-}
 
 .test-design h6::before {
   content: '' !important;
   position: absolute !important;
-  left: 13% !important;
-  height: 1px !important;
+ 
+  height: 2px !important;
   width: 8% !important;
   margin-top: -2% !important;
   background: #d5763e !important;
 
-  transform: translateX(-50%) !important;
+
 }
 
 .img-design img {

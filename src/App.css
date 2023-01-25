@@ -575,6 +575,7 @@ select.form-control.selectOption {
 /* Program Section Css Start */
 .programsSection {
   padding: 0;
+  margin-top: 30px;
   overflow: hidden;
 }
 .m25{
@@ -741,7 +742,7 @@ input[type=checkbox] {
 .programTitle {
   background: #3D55A5;
   padding: 15px;
-  border-radius: 10px 10px 0 0;
+ 
   box-shadow: 0px 3px 6px #00000029;
 }
 
@@ -750,6 +751,15 @@ input[type=checkbox] {
   margin: 0;
   color: #fff;
   font-family: 'Lato', sans-serif;
+}
+.filterBody h4 {
+  color: #000 !important;
+}
+.programsSection h4 {
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+  font-weight: 600;
 }
 
 .programsContentInfo {
@@ -765,7 +775,8 @@ input[type=checkbox] {
 
 .loadBtn {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .loadBtn button {
@@ -3247,4 +3258,38 @@ button.btn.btn-primary.btnBSidebar.RefilterBtn {
 }
 .nav-item a:hover {
   color: #fff !important;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.content1 {
+ 
+
+  display: none;
+}
+#loadMore {
+  width: 200px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: blue;
+  transition: .3s;
+}
+#loadMore:hover {
+  color: blue;
+  background-color: #fff;
+  border: 1px solid blue;
+  text-decoration: none;
+}
+.noContent {
+  color: #000 !important;
+  background-color: transparent !important;
+  pointer-events: none;
 }
