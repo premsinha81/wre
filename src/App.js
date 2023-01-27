@@ -22,6 +22,7 @@ import useToken from './component/app/useToken';
 import Slider from './component/slider';
 
 
+
 function App() {
 
   const { token, setToken } = useToken();
@@ -35,7 +36,8 @@ function App() {
       <Header />
       <Router>
         <Routes>
-          <Route path="/" element={<Slider />} />
+        <Route path="/" element={<Home />} />
+     <Route path='search/:slug' element={<Rankingdetails />} />
           
         </Routes>
         <Routes>
@@ -82,8 +84,7 @@ function App() {
           <Route path='/online-counselling' element={<OnlineCounselling />} />
         </Routes>
         <Routes>
-          <Route path='/ranking-details' element={<Rankingdetails />} />
-          <Route path='/:slug' element={<Rankingdetails />} />
+          <Route path='/Rankingdetails' element={<Rankingdetails/>}/>
         </Routes>
       </Router>
       <Footer />
