@@ -1,3 +1,4 @@
+import React from 'react';
 import './resources.css';
 import Slider from 'react-slick';
 import Img1 from '../img/section1.jpg';

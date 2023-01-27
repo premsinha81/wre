@@ -1,49 +1,60 @@
 import {React,useState,useEffect} from 'react'
+import { slice } from 'lodash'
 
-const Online = () => {
-    const url=process.env.REACT_APP_BASE_URL + "get/onlinecourse";
-  const[data,setdata]=useState([]);
-  
-const getuser=async()=>{
-    const respond = await fetch(url);
-    const user =await  respond.json();
-      setdata(user);
+function Online() {
+  const [post, setPost] = useState([])
+  const [isCompleted, setIsCompleted] = useState(false)
+  const [index, setIndex] = useState(5)
+  const initialOnline = slice(post, 0, index)
+  const getData = () => {
+    fetch('http://162.144.98.113/~work/wre/api/get/onlinecourse')
+      .then((res) => res.json())
+      .then((json) => setPost(json))
+      .catch((e) => console.log(e))
+  }
+  const loadMore = () => {
+    setIndex(index + 5)
+    console.log(index)
+    if (index >= post.length) {
+      setIsCompleted(true)
+    } else {
+      setIsCompleted(false)
+    }
+  }
+  useEffect(() => {
+    getData()
+  }, [])
 
-}
-
-useEffect(() => {
-getuser();
-  },[])
     
   return (
 
-        <div class="row">
-            {
-    data.map((s)=>{
-    const{  Course_title,Course_name,Duration,Course_type}=s;
+        <div class="row ">
+            
+   {initialOnline.map((item) => {
 
     return(
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-4 col-lg-4  ">
 
        
 
  
-            <div class="programBox">
+            <div class="programBox  "  key={item.id}>
+           
                         <div class="programTitle">
-                           <h1>{Course_title}</h1>
+                           <h4>{item.Course_title}</h4>
                         </div>
                         <div class="programContent">
                            <div class="programsContentInfo">
                               <i class="fa fa-certificate"></i>
-                              <h5>{Course_name}</h5>
+                              <h5>{item.Course_name}</h5>
                            </div>
                            <div class="programsContentInfo">
                               <i class="fa fa-clock-o"></i>
-                              <h5>{Duration}</h5>
+                              <h5>{item.Duration}</h5>
                            </div>
                            <div class="programsContentInfo">
                               <i class="fa fa-location-arrow"></i>
-                              <h5>{Course_type}</h5>
+                              <h5>{item.Course_type}</h5>
                            </div>
                         </div>
                      </div>
@@ -55,7 +66,23 @@ getuser();
     })
 
 }
-
+{isCompleted ? (
+    <div class="loadBtn">
+          <button
+            onClick={loadMore}
+            type="button"
+            
+          >
+            That's It
+          </button>
+          </div>
+        ) : (
+          <div class="loadBtn">
+          <button onClick={loadMore} type="button" >
+            Load More +
+          </button>
+          </div>
+        )}
 </div>
  
   )

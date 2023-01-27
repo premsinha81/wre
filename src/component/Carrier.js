@@ -1,12 +1,11 @@
-import React from 'react'
-import Resources from './resources';
-import Slider from './slider'
-import Imagesection1 from '../Image/man-avatar-reading-student-education-book store.svg'
-import Imagesection2 from '../Image/Group 500.svg'
+import React from 'react';
+import Imagesection1 from '../Image/man-avatar-reading-student-education-book store.svg';
+import Imagesection2 from '../Image/Group 500.svg';
 
 const Carrier = () => {
    return (
       <div>
+        
          <section className="headerImagecoun headerImagecoun1">
             <div className="backgroundcoun ">
                <div className="container">
@@ -354,10 +353,12 @@ const Carrier = () => {
             </div>
          </div>
          <div className='container'>
-            <Resources></Resources>
+            <slider/>
          </div>
+        
+     
       </div>
    )
 }
 
-export default Carrier
+export default Carrier;

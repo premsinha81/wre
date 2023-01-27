@@ -3,9 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Tabsystemsection() {
+
+
+
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
        <div class="container">
@@ -56,7 +60,7 @@ function Tabsystemsection() {
         <div class="tabPanel">
           <Tab.Content>
       
-            <Tab.Pane eventKey="first">
+            <Tab.Pane eventKey="first active">
         
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type

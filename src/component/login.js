@@ -1,34 +1,41 @@
-import React, { useState } from "react"
-import PropTyes from 'prop-types'
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-async function loginUser(credentials) {
-    // return fetch('http://localhost:8080/login', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(credentials)
-    // })
-    //   .then(
-    //     data => data.json()
-    //     )
+export default function Login() {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
+    const handleSubmit = async (e) => {
+        const email_phone = email;
+        const res = await fetch("http://162.144.98.113/~work/wre/api/get/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                email_phone, password
+            })
+        })
+        const data = await res.json();
+        console.log(data);
+        if (data.status === "Success") {
+            window.alert("Login Succesfully");
+            console.log("Login Succesfully");
+            navigate("/");
 
-    return 'abc';
-   }
+        } else if (data.status === "failed") {
+            window.alert("Username and Password Incorrect");
+            console.log("Username and Password Incorrect");
 
-export default function Login({ setToken }) {
-    const [username, setUsername] = useState();
-    const [password, SetPassword] = useState();
+        } else {
+            window.alert("Something went wrong please try again!");
+            console.log("Something went wrong please try again!");
 
-    const handleSubmit = async e => {
-        e.preventDefault();
-        const token = await loginUser({
-          username,
-          password
-        });
-        setToken(token);
-      }
-
+        }
+    }
+     
     return (
         <>
             <div className="container">
@@ -36,26 +43,26 @@ export default function Login({ setToken }) {
                     <div className="col-md-12">
                         <main>
                             <div className="wrappers">
-                                <form onSubmit={handleSubmit}>
+                                <div >
                                     <div className="form-group">
-                                        <input className="form-control logininpute" type="text" placeholder="Email Or Mobile" onChange={e => setUsername(e.target.value)} />
+                                        <input className="form-control logininpute" type="text" placeholder="Email Or Mobile" value={email} onChange={e => setEmail(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control logininpute" type="password" placeholder="Password" onChange={e => SetPassword(e.target.value)} />
+                                        <input className="form-control logininpute" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                                         <div className="forgetP"> <a href="#">Forgot password?</a></div>
                                     </div>
                                     <div className="col-md-12 section-h py-4">
                                         <div className="input-box">
-                                            <button type="submit" className="searchBtn">Log In</button>
+                                            <button type="submit" className="submitButton" onClick={handleSubmit} >Log In</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                                 <div className="col-md-12 section-h py-4">
                                     <article>
                                         <p className="h11">or</p>
                                     </article>
                                     <div className="input-box">
-                                        <input type="submit" name="submitButton" className="searchBtn" id="submitButton2" value="Sign Up" />
+                                      <a href="signup">  <input type="submit" name="submitButton"  className="searchBtn" id="submitButton2" value="Sign Up" /></a >
                                     </div>
                                     <div className="countryFlag">
                                         <img src="https://cdn.britannica.com/73/4473-050-0D875725/Grand-Union-Flag-January-1-1776.jpg" alt="" />
@@ -70,8 +77,4 @@ export default function Login({ setToken }) {
             </div>
         </>
     )
-}
-
-Login.prototype = {
-    setToken: PropTyes.func.isRequired
 }

@@ -1,8 +1,6 @@
-import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
-//import './signup.css'
 
-
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
     const navigate = useNavigate();
@@ -32,7 +30,7 @@ function Signup() {
         })
         const data = await res.json();
         console.log(data);
-        if (data.status === "Succes") {
+        if (data.status === "Success") {
             window.alert("Registration Successfully");
             console.log("Registration Successfully");
             navigate("/login");
@@ -145,7 +143,7 @@ function Signup() {
                                             </div>
                                             <div className="col-md-12 section-h py-4">
                                                 <div className="input-box">
-                                                    <button type="submit" onClick={() => handleSubmit()} className="submitButton btn btn-primary btn-block" >Sign Up</button>
+                                                    <button type="submit" onClick={() => handleSubmit()} className="submitButton" >Sign Up</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,5 +162,6 @@ function Signup() {
         </>
     )
 }
+
 
 export default Signup

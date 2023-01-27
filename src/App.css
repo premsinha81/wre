@@ -575,6 +575,7 @@ select.form-control.selectOption {
 /* Program Section Css Start */
 .programsSection {
   padding: 0;
+  margin-top: 30px;
   overflow: hidden;
 }
 .m25{
@@ -741,7 +742,7 @@ input[type=checkbox] {
 .programTitle {
   background: #3D55A5;
   padding: 15px;
-  border-radius: 10px 10px 0 0;
+ 
   box-shadow: 0px 3px 6px #00000029;
 }
 
@@ -750,6 +751,15 @@ input[type=checkbox] {
   margin: 0;
   color: #fff;
   font-family: 'Lato', sans-serif;
+}
+.filterBody h4 {
+  color: #000 !important;
+}
+.programsSection h4 {
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+  font-weight: 600;
 }
 
 .programsContentInfo {
@@ -765,7 +775,8 @@ input[type=checkbox] {
 
 .loadBtn {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .loadBtn button {
@@ -1001,7 +1012,19 @@ div#slider-range {
   display: block;
   align-items: center;
 }
-
+.submitButton {
+  background: #3D55A5;
+  border: 1px solid #3D55A5;
+  color: #fff;
+  text-transform: lowercase;
+  padding: 4px 95px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+.input-box {
+  /* float: revert; */
+  text-align: center;
+}
 .tabSystems {
   padding-bottom: 50px;
 }
@@ -1621,7 +1644,7 @@ small.postAuthorUsername {
 h4.gName {
   font-size: 14px;
   color: #3C3C3C;
-  font-weight: 200;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -1801,14 +1824,14 @@ h1.coursePrice {
 }
 
 .accordion-button:not(.collapsed) {
-  color: #fff;
-  background-color: #3D55A5;
-  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+  color: #fff !important;
+  background-color: #3D55A5 !important;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%) !important;
 }
 
 .accordion-button {
-  color: #fff;
-  background-color: #3D55A5;
+  color: #fff !important;
+  background-color: #3D55A5 !important;
 }
 
 button.accordion-button {
@@ -1816,49 +1839,49 @@ button.accordion-button {
 }
 
 .accordion-item {
-  border: none;
-  background-color: #ECECEC;
-  margin-bottom: 10px;
-  border-radius: 19px;
+  border: none !important;
+  background-color: #ECECEC !important;
+  margin-bottom: 10px !important;
+  border-radius: 19px !important;
 }
 
 .accordion-button::after,
 .accordion-button:not(.collapsed)::after {
-  background-image: none;
+  background-image: none !important;
 }
 
 .plusCercle.pCerclePadding {
-  margin-right: 25px;
+  margin-right: 25px !important;
 }
 
 ul.accourdionCourseBullot {
-  padding-left: 50px;
+  padding-left: 50px !important;
 }
 
 .coreModuleRight {
-  background: #ECECEC;
-  border-radius: 30px;
-  padding: 30px;
+  background: #ECECEC !important;
+  border-radius: 30px !important;
+  padding: 30px !important;
 }
 
 .coreModuleRight h1 {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 .coreModuleRight p {
-  font-size: 13px;
+  font-size: 13px !important;
 }
 
 .coreModuleRight p a {
-  color: #2A38FF;
+  color: #2A38FF !important;
 }
 
 h1.coreModuleH {
-  color: #3D55A5;
-  font-family: 'Lato';
-  font-size: 30px;
-  font-weight: 800;
-  margin-bottom: 20px;
+  color: #3D55A5 !important;
+  font-family: 'Lato' !important;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  margin-bottom: 20px !important;
 }
 
 .space {
@@ -2388,7 +2411,7 @@ ul.tandcLink2 a {
 }
 
 .logininpute {
-  margin-bottom: 0;
+  margin-bottom: 25px;
   border-radius: 10px;
   background-color: #ffffff;
   color: #000;
@@ -2470,7 +2493,7 @@ footer.lFooter {
 }
 
 .backgroundsign {
-  padding: 150px 0px 150px;
+  padding: 70px 0px 70px;
 }
 
 .radioBoxRowsign {
@@ -3010,6 +3033,9 @@ button.newMessage {
 
 
       }
+      .css-1v5z18m {
+        width: 260px !important;
+    }
       .messageGrop hr {
     display: none;
 }
@@ -3156,13 +3182,6 @@ ol, .ser, dl {
     padding: 0px 0px;
     margin: 0;
 }
-.btn-primary{
-  border-radius: 50px!important;
-}
-.btn-block{
-  width:100%;
-  display:block;
-}
 @media (max-width:767px){
    .messageSidePadding {
       padding-left: 0;
@@ -3208,18 +3227,69 @@ ol, .ser, dl {
 button.btn.btn-primary.btnBSidebar.RefilterBtn {
   color: #fff !important;
   background-color: #3D55A5!important;
+  background: #3D55A5;
+    color: #fff;
+    border-radius: 19px!important;
+    padding: 6px 15px;
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   background: #3D55A5;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 19px!important;
   display: grid;
   align-items: center;
   /* grid-template-columns: 7% 91%; */
   color: var(--bs-nav-pills-link-active-color);
   background-color: var(--bs-nav-pills-link-active-bg);
 }
+.nav-item {
+  border-radius: 19px !important;
+}
+.nav-pills .nav-link{
+  border-radius: 19px !important;
+}
 @media(max-width:767px){
   .futurecolor h1{text-align: center;}
   .programTitle1{margin:0 auto!important;width:80%!important;}
+}
+.nav-item a:hover {
+  color: #fff !important;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.content1 {
+ 
+
+  display: none;
+}
+#loadMore {
+  width: 200px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: blue;
+  transition: .3s;
+}
+#loadMore:hover {
+  color: blue;
+  background-color: #fff;
+  border: 1px solid blue;
+  text-decoration: none;
+}
+.noContent {
+  color: #000 !important;
+  background-color: transparent !important;
+  pointer-events: none;
 }
