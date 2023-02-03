@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import img_logo from '../img/sk.jpeg';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
@@ -17,7 +18,7 @@ function Slider() {
 
     useEffect(() => {
 
-        axios.get(process.env.REACT_APP_BASE_URL + "get/trades")
+        axios.get("http://162.144.98.113/~work/wre/api/get/trades")
             .then(function (result) {
                 console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -32,7 +33,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get(process.env.REACT_APP_BASE_URL + "get/trades?q=" + entervalue)
+            axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
                     console.log(result)
                     if(result.data.status.status_code == 200){
@@ -58,7 +59,7 @@ function Slider() {
             search_term = entervalue
         }
 
-        axios.post(process.env.REACT_APP_BASE_URL + "get/search", {
+        axios.post("http://162.144.98.113/~work/wre/api/get/search", {
             trade: search_term
         })
             .then(function (result) {
@@ -118,22 +119,27 @@ function Slider() {
                                                 <div className="searchBox">
                                                     <ul>
                                                         <li>
-                                                            <h2>{key + 1}</h2>
-                                                            <p>NIRF - 01</p>
+                                                         
+                                                            {/* <h2>{key + 1}</h2> */}
+                                                            {<img src={img_logo} alt='' className="img-fluid" />}
                                                         </li>
+                                                        <li></li>
                                                         <li>
-                                                            <img src={res.image_path} alt='' className="img-fluid" />
-                                                        </li>
-                                                        <li>
-                                                            <a href={"search/"+res.slug}><h6>{res.college_name} - {res.title}</h6></a>
+                                                            <a href={"search/"+res.slug}><h5>{res.college_name} - {res.title}</h5></a>
                                                             <p>Course Duration - {res.duration}</p>
                                                             <p>Rating : <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star"></span>
                                                                 <span className="fa fa-star"></span></p>
-                                                            <p>Fee : <strong>${res.fees}</strong></p>
+                                                            <p>Course Duration :<b>6 Months</b></p>
                                                         </li>
+                                                        <li className="location">
+                                                         
+                                                        <p>Location-<b>Kompalli</b></p>
+                                                        <a href={"search/"+res.slug}>  <h6>Siva Sivani Institute of Management</h6></a>
+                                                 
+                                                     </li>
                                                     </ul>
 
                                                 </div>

@@ -137,7 +137,7 @@ select {
 .leftSection {
   background-color: #F6F6F6;
   padding: 10px;
-  height: 100%;
+  height: 90%;
   margin-top: 25px;
   border-radius: 10px;
 }
@@ -160,7 +160,7 @@ h2 {
 .rightSection .searchBox ul li {
   display: inline-block;
   vertical-align: middle;
-  padding: 15px 25px;
+  padding: 15px 8px;
 }
 
 .rightSection .searchBox ul li img {
@@ -1337,7 +1337,17 @@ button .inner-pulse {
   margin-top: 50px !important;
 }
 
-
+.rightSection .searchBox ul li img {
+  max-width: 80px;
+  background-color: #f6f6f6;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
 
 .test-design h6::before {
   content: '' !important;
@@ -1349,6 +1359,9 @@ button .inner-pulse {
   background: #d5763e !important;
 
 
+}
+.form-control:focus {
+  box-shadow: unset !important;
 }
 
 .img-design img {
@@ -2810,3 +2823,54 @@ ul.tandcLink2 a {
     top: 30px;
   }
 }
+li.location {
+  margin-top: 40px !important;
+}
+.scrollview .scrollview1{
+  height: 140px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+
+/* width */
+.scrollview::-webkit-scrollbar p {
+  width: 10px;
+}
+
+/* Track */
+.scrollview::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scrollview::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.scrollview::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.scrollview1::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.scrollview1::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+.scrollview1::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.scrollview1::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
