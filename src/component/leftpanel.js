@@ -17,9 +17,7 @@ function Leftpanel() {
                         <div class="form-group">
                             <select name="programs" id="" class="form-control selectOptionSidebar">
                                 <option value="">By Trade</option>
-                                <option value="">Program 1</option>
-                                <option value="">Program 2</option>
-                                <option value="">Program 3</option>
+                                
                             </select>
                         </div>
                     </div>
@@ -101,9 +99,7 @@ function Leftpanel() {
                     <div class="form-group">
                         <select name="programs" id="" class="form-control selectOptionSidebar">
                             <option value="">By Cities</option>
-                            <option value="">Program 1</option>
-                            <option value="">Program 2</option>
-                            <option value="">Program 3</option>
+                            
                         </select>
                     </div>
                      <div class="scrollview">
@@ -168,9 +164,7 @@ function Leftpanel() {
                     <div class="form-group">
                         <select name="programs" id="" class="form-control selectOptionSidebar">
                             <option value="">By Rating</option>
-                            <option value="">Program 1</option>
-                            <option value="">Program 2</option>
-                            <option value="">Program 3</option>
+                           
 
 
 
@@ -228,9 +222,7 @@ function Leftpanel() {
                     <div class="form-group">
                         <select name="programs" id="" class="form-control selectOptionSidebar">
                             <option value="">By Program Type</option>
-                            <option value="">Program 1</option>
-                            <option value="">Program 2</option>
-                            <option value="">Program 3</option>
+                           
                         </select>
                         
                     </div>
