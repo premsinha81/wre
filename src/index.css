@@ -41,11 +41,11 @@ h1 {
 
 .slider .searchPanel {
   text-align: center;
-  min-width: 700px;
-  position: absolute;
-  top: 150px;
-  left: 190px;
-  /* margin-left: -350px; */
+    min-width: 700px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -350px!important;
 }
 .slider .searchPanel input[type="text"]::placeholder {
   font-weight: 500;
