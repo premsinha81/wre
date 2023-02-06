@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import img_logo from '../img/sk.jpeg';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
 import LeftTabsExample from "./tabs"
-import Resources from "./resources"; 
+import Resources from "./resources";
+import { slice } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSearch} from '@fortawesome/fontawesome-free-solid';
 
@@ -12,12 +14,25 @@ function Slider() {
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState();
-    const [search_result, setSearcResult] = useState();
+    const [search_result, setSearcResult] = useState([]);
 
+    const [isCompleted, setIsCompleted] = useState(false)
+    const [index, setIndex] = useState(5)
+    const initialOnline = slice(search_result, 0, index)
+
+    const loadMore = () => {
+        setIndex(index + 5)
+        console.log(index)
+        if (index >= search_result.length) {
+            setIsCompleted(true)
+        } else {
+            setIsCompleted(false)
+        }
+    }
 
     useEffect(() => {
 
-        axios.get(process.env.REACT_APP_BASE_URL + "get/trades")
+        axios.get("http://162.144.98.113/~work/wre/api/get/trades")
             .then(function (result) {
                 console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -32,17 +47,17 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get(process.env.REACT_APP_BASE_URL + "get/trades?q=" + entervalue)
+            axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
                     console.log(result)
-                    if(result.data.status.status_code == 200){
+                    if (result.data.status.status_code == 200) {
                         setTrade(result.data.results)
                         setSearcResult(result.data.results)
-                    }else{
+                    } else {
                         setTrade(maintrade)
                         setSearcResult('')
                     }
-                    
+
                 })
         }
     }
@@ -58,7 +73,7 @@ function Slider() {
             search_term = entervalue
         }
 
-        axios.post(process.env.REACT_APP_BASE_URL + "get/search", {
+        axios.post("http://162.144.98.113/~work/wre/api/get/search", {
             trade: search_term
         })
             .then(function (result) {
@@ -73,8 +88,8 @@ function Slider() {
     }
 
     useEffect(() => {
-        console.log(search_result)
-    }, [search_result])
+        console.log(initialOnline)
+    }, [initialOnline])
 
 
     return (
@@ -95,7 +110,7 @@ function Slider() {
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
                             <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
-                            <i class="fa fa-search" ></i>
+                                <i class="fa fa-search" ></i>
                             </button>
                         </div>
                     </div>
@@ -108,31 +123,36 @@ function Slider() {
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
-                        {search_result ?
-                            search_result.length > 0 && (
+                        {initialOnline ?
+                            initialOnline.length > 0 && (
                                 <div className="rightSection">
                                     <div className="row">
                                         <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                            {search_result.map((res, key) => (
+                                            {initialOnline.map((res, key) => (
                                                 <div className="searchBox">
                                                     <ul>
                                                         <li>
-                                                            <h2>{key + 1}</h2>
-                                                            <p>NIRF - 01</p>
+
+                                                            {/* <h2>{key + 1}</h2> */}
+                                                            {<img src={img_logo} alt='' className="img-fluid" />}
                                                         </li>
+                                                        <li></li>
                                                         <li>
-                                                            <img src={res.image_path} alt='' className="img-fluid" />
-                                                        </li>
-                                                        <li>
-                                                            <a href={"search/"+res.slug}><h6>{res.college_name} - {res.title}</h6></a>
+                                                            <a href={"search/" + res.slug}><h5>{res.college_name} - {res.title}</h5></a>
                                                             <p>Course Duration - {res.duration}</p>
                                                             <p>Rating : <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star"></span>
                                                                 <span className="fa fa-star"></span></p>
-                                                            <p>Fee : <strong>${res.fees}</strong></p>
+                                                            <p>Course Duration :<b>6 Months</b></p>
+                                                        </li>
+                                                        <li className="location">
+
+                                                            <p>Location-<b>Kompalli</b></p>
+                                                            <a href={"search/" + res.slug}>  <h6>Siva Sivani Institute of Management</h6></a>
+
                                                         </li>
                                                     </ul>
 
@@ -142,7 +162,16 @@ function Slider() {
                                         </div>
 
                                         <div className="clearfix"></div>
-                                        <button className="btn btn-primary button btnLoadMore">LOAD MORE</button>
+                                        {isCompleted ? (
+                                            <div class="loadBtn">
+                                                
+                                                <button onClick={loadMore} type="button" className="btn btn-primary button btnLoadMore">That's It</button>
+                                            </div>
+                                        ) : (
+                                            
+                                            <button onClick={loadMore} type="button" className="btn btn-primary button btnLoadMore">LOAD MORE</button>
+                                        )}
+                                        
                                     </div>
 
                                 </div>

@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Onlinesearchbannersection = () => {
-  return (
+
+  
     <div>
 
 
@@ -55,7 +56,7 @@ const Onlinesearchbannersection = () => {
   </div>
 </section>
     </div>
-  )
+  
 }
 
 export default Onlinesearchbannersection
