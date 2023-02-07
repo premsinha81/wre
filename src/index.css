@@ -41,7 +41,7 @@ h1 {
 
 .slider .searchPanel {
   text-align: center;
-  min-width: 700px;
+  min-width: 700px  !important;
   position: absolute;
   top: 150px;
   left: 190px;

@@ -1,4 +1,7 @@
 @media only screen and (max-width: 767px) {
+    .slider .searchPanel {
+        min-width: 100% !important;;
+    }
     #m-btns {
     position: absolute;
    
@@ -63,9 +66,7 @@ button.btn.btn-primary.btnSidebar1 {
         border-bottom-left-radius: 45px!important;
         width: 28px;
     }
-    .programsSideBar {
-        margin-top: 271px;
-    }
+    
     .call-fixed-button1 {
         right: -13px;
         top: 490px;
