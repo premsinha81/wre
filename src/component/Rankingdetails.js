@@ -59,18 +59,18 @@ function Rankingdetails() {
 
             <div className="programsSection">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12 test-design">
-                            <h4 className='m25'>
+                    <div className="row mt-10">
+                        <div className="col-lg-12 test-design mt-10">
+                            <h5 className='m5 text-white'>
                                 Graduates with a degree in health may find employment opportunities for healthcare professionals across the U.S. as physical therapy assistants, occupational therapy assistants, or a medical administrative assistant offering hospital or medical office assistance. With some clinical experience and perhaps a bachelor's degree from a healthcare administration program, these professionals might find jobs as health services managers, medical assistants, or a senior medical administrative assistant, though, often, medical assisting or healthcare administration might require a master's degree and clinical experience in healthcare facilities. A good next step if you have already earned a degree in health is to earn a higher-level degree in health information management, health services management, or a healthcare management or healthcare administration program.
-                            </h4>
-                            <p className='m25'>
+                            </h5>
+                            <p className=''>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<br /><br />
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                                 <br /><br />
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                             </p>
-                            <p className='m25'>
+                            <p className='m5'>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<br /><br />
                             </p>
                         </div>
@@ -78,13 +78,13 @@ function Rankingdetails() {
                     <div className="row">
                         <div className="col-lg-12 img-design">
                             <img width="100%" src={tradeImg1} />
-                            <p className='m25'>
+                            <p className='m5'>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<br /><br />
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                                 <br /><br />
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                             </p>
-                            <blockquote className='m25'>
+                            <blockquote className='m5'>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
                             </blockquote>
                         </div>
@@ -104,14 +104,14 @@ function Rankingdetails() {
                         </div>
                         <div className="row">
                             <div className="col-md-12 col-sm-12 img-design">
-                                <blockquote className='m25'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                                <blockquote className='m5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
                                 </blockquote>
                             </div>
                         </div>
                         <div className="programsSection">
                             <div className="row">
                                 <div className="col-md-8 col-sm-12 img-design1">
-                                    <p className='m25'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p className='m5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                                 </div>
                                 <div className="col-md-4 col-sm-12 img-design">
                                     <img className="img-fluid w-100" src={tradeImg2} />

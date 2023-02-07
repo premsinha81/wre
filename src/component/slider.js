@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import img_logo from '../img/sk.jpeg';
+//import img_logo from '../img/sk.jpeg';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
@@ -135,7 +135,7 @@ function Slider() {
                                                         <li>
 
                                                             {/* <h2>{key + 1}</h2> */}
-                                                            {<img src={img_logo} alt='' className="img-fluid" />}
+                                                            {/*<img src={img_logo} alt='' className="img-fluid" />*/}
                                                         </li>
                                                         <li></li>
                                                         <li>
