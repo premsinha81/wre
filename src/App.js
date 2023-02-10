@@ -78,6 +78,7 @@ function App() {
       <Routes>
         <Route path='/OnlineCoursesSearch' element={<OnlineCoursesSearch />} />
       </Routes>
+      
     </Router>
     <Footer/>
     </>

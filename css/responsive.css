@@ -1,0 +1,39 @@
+@media only screen and (max-width: 767px) {
+    .wrappers {
+        border-radius: 19px;
+        position: absolute;
+    }
+    .background.mobileCssBG {
+        height: 100%;
+        padding-top: 350px;
+    }
+    .bannerHeading h1 {
+        font-size: 30px;
+    }
+    .headerImage {
+        height: 480px;
+        background-position: -240px 0px;
+    }
+    .pulsating {
+        height: 156px;
+        border-top-left-radius: 45px!important;
+        border-bottom-left-radius: 45px!important;
+        width: 28px;
+    }
+    .programsSideBar {
+        margin-top: 271px;
+    }
+    .call-fixed-button1 {
+        right: -13px;
+        top: 490px;
+    }
+    .pulsating p {
+        padding: 0;
+    }
+    .onlinecousectinstu1 {
+    margin-top: 22px !important;;
+    }
+    .programsSection3 {
+        margin-top: 20px !important;;
+    }
+}

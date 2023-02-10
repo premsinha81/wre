@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-//import img_logo from '../img/sk.jpeg';
+import { slice } from 'lodash';
+import img_logo from '../img/sk.jpeg';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
 import LeftTabsExample from "./tabs"
-import Resources from "./resources"; 
+import Resources from "./resources";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSearch} from '@fortawesome/fontawesome-free-solid';
 
@@ -13,9 +14,20 @@ function Slider() {
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState();
+    const [isCompleted, setIsCompleted] = useState(false)
+    const [index, setIndex] = useState(5)
+    const initialOnline = slice(search_result, 0, index)
     const [search_result, setSearcResult] = useState();
 
-
+    const loadMore = () => {
+        setIndex(index + 5)
+        console.log(index)
+        if (index >= search_result.length) {
+            setIsCompleted(true)
+        } else {
+            setIsCompleted(false)
+        }
+    }
     useEffect(() => {
 
         axios.get("http://162.144.98.113/~work/wre/api/get/trades")
@@ -36,14 +48,14 @@ function Slider() {
             axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
                     console.log(result)
-                    if(result.data.status.status_code == 200){
+                    if (result.data.status.status_code == 200) {
                         setTrade(result.data.results)
                         setSearcResult(result.data.results)
-                    }else{
+                    } else {
                         setTrade(maintrade)
                         setSearcResult('')
                     }
-                    
+
                 })
         }
     }
@@ -74,8 +86,8 @@ function Slider() {
     }
 
     useEffect(() => {
-        console.log(search_result)
-    }, [search_result])
+        console.log(initialOnline)
+    }, [initialOnline])
 
 
     return (
@@ -96,7 +108,7 @@ function Slider() {
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
                             <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
-                            <i class="fa fa-search" ></i>
+                                <i class="fa fa-search" ></i>
                             </button>
                         </div>
                     </div>
@@ -109,23 +121,23 @@ function Slider() {
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
-                        {search_result ?
-                            search_result.length > 0 && (
+                        {initialOnline ?
+                            initialOnline.length > 0 && (
                                 <div className="rightSection">
                                     <div className="row">
                                         <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                            {search_result.map((res, key) => (
+                                            {initialOnline.map((res, key) => (
                                                 <div className="searchBox">
                                                     <ul>
                                                         <li>
-                                                         
+
                                                             {/* <h2>{key + 1}</h2> */}
-                                                            {/*<img src={img_logo} alt='' className="img-fluid" />*/}
+                                                            {<img src={img_logo} alt='' className="img-fluid" />}
                                                         </li>
                                                         <li></li>
                                                         <li>
-                                                            <a href={"search/"+res.slug}><h5>{res.college_name} - {res.title}</h5></a>
+                                                            <a href={"search/" + res.slug}><h5>{res.college_name} - {res.title}</h5></a>
                                                             <p>Course Duration - {res.duration}</p>
                                                             <p>Rating : <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
@@ -135,11 +147,11 @@ function Slider() {
                                                             <p>Course Duration :<b>6 Months</b></p>
                                                         </li>
                                                         <li className="location">
-                                                         
-                                                        <p>Location-<b>Kompalli</b></p>
-                                                        <a href={"search/"+res.slug}>  <h6>Siva Sivani Institute of Management</h6></a>
-                                                 
-                                                     </li>
+
+                                                            <p>Location-<b>Kompalli</b></p>
+                                                            <a href={"search/" + res.slug}>  <h6>Siva Sivani Institute of Management</h6></a>
+
+                                                        </li>
                                                     </ul>
 
                                                 </div>
@@ -148,7 +160,12 @@ function Slider() {
                                         </div>
 
                                         <div className="clearfix"></div>
-                                        <button className="btn btn-primary button btnLoadMore">LOAD MORE</button>
+                                        {isCompleted ? (
+                                            <button className="btn btn-primary button btnLoadMore" onClick={loadMore}>That's It</button>
+                                        ) : (
+                                            <button className="btn btn-primary button btnLoadMore" onClick={loadMore}>LOAD MORE</button>
+                                        )}
+                                        <button className="btn btn-primary button btnLoadMore" onClick={loadMore}>LOAD MORE</button>
                                     </div>
 
                                 </div>

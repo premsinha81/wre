@@ -14,14 +14,13 @@
 .btn-square1 {
   width: 90px;
   height: 25px;
-  border-radius: 30px!important;
+  border-radius: 15px;
   background-color: #3d55a5;
   color: #fff;
   font-weight: 300 !important;
   padding: 0px;
   font-size: 14px !important;
   text-transform: uppercase;
-  margin-top:17px!important;
 }
 
 .fw-medium {
@@ -142,7 +141,7 @@
   transform: translateY(-50%);
 }
 
-Image.iconP {
+img.iconP {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -220,7 +219,7 @@ Image.iconP {
 }
 
 .headerImage {
-  background-image: url("./Image/trade-schools.jpeg");
+  background-image: url("../img/trade-schools.jpeg");
   top: 0;
   left: 0;
   background-position: center;
@@ -237,7 +236,7 @@ Image.iconP {
 }
 
 .headerImage1 {
-  background-image: url("./Image/online_courses.png");
+  background-image: url("../img/online_courses.png");
   top: 0;
   left: 0;
   background-position: center;
@@ -246,7 +245,7 @@ Image.iconP {
 }
 
 .headerImage2 {
-  background-image: url("./Image/What-are-5G-Cell-Towers.png");
+  background-image: url("../img/What-are-5G-Cell-Towers.png");
   top: 0;
   left: 0;
   background-position: center;
@@ -378,9 +377,9 @@ Image.iconP {
 
 .navbar .navbar-nav .nav-link {
   text-transform: uppercase;
-  margin-right: 0;
+  margin-right: 30px;
   font-size: 14px !important;
-  padding: 20px 15px!important;
+  padding: 25px 0;
   color: #3d55a5;
   font-weight: 600;
   outline: none;
@@ -436,7 +435,7 @@ Image.iconP {
 }
 
 .headerImage {
-  background-image: url("./Image/trade-schools.jpeg");
+  background-image: url("../img/trade-schools.jpeg");
   top: 0;
   left: 0;
   background-position: center;
@@ -541,8 +540,8 @@ form h3 {
 }
 
 select.form-control.selectOption {
-  margin-bottom: 20px !important;
-  border-radius: 20px!important;
+  margin-bottom: 20px;
+  border-radius: 20px;
 
 }
 
@@ -574,16 +573,10 @@ select.form-control.selectOption {
 
 /* Program Section Css Start */
 .programsSection {
-  padding: 0;
-  margin-top: 30px;
+  padding: 15px 0px;
   overflow: hidden;
 }
-.m25{
-  margin:25px 0!important;
-}
-.programsSection3{
-  margin:25px 0!important;
-}
+
 .padding45 {
   padding: 45px 0px;
 }
@@ -592,22 +585,22 @@ select.form-control.selectOption {
   padding: 25px 0px;
 }
 
+.programsSection .container .row .col-lg-6.col-xl-6 {
+  padding: 0px 7px;
+}
+
+.programsSection3 .container .row .col-lg-6.col-xl-6 {
+  padding: 0px 7px;
+}
+
 button.btn.btn-primary.btnSidebar {
   border-radius: 20px;
-  padding: 10px 25px;
+  padding: 5px 10px;
   font-size: 15px;
   background-color: #3D55A5;
   border: none;
   font-family: 'Lato';
   margin-top: 10px;
-  min-width:100px!important;
-  margin-right:5px;
-}
-.modal-backdrop{
-  z-index: 99999!important;
-}
-.modal{
-  z-index:999999!important;
 }
 
 .btnFuture {
@@ -633,7 +626,7 @@ input[type=checkbox] {
 
 .checkBox label {
   color: #000;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .radioBoxRow {
@@ -665,8 +658,8 @@ input[type=checkbox] {
 
 .radioBox p,
 .priceRange p {
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 100;
   border-bottom: 1px solid #000;
   padding-bottom: 5px;
   color: #000;
@@ -742,7 +735,7 @@ input[type=checkbox] {
 .programTitle {
   background: #3D55A5;
   padding: 15px;
- 
+  border-radius: 19px;
   box-shadow: 0px 3px 6px #00000029;
 }
 
@@ -751,15 +744,6 @@ input[type=checkbox] {
   margin: 0;
   color: #fff;
   font-family: 'Lato', sans-serif;
-}
-.filterBody h4 {
-  color: #000 !important;
-}
-.programsSection h4 {
-  font-size: 18px;
-  line-height: 30px;
-  color: #fff;
-  font-weight: 600;
 }
 
 .programsContentInfo {
@@ -775,8 +759,7 @@ input[type=checkbox] {
 
 .loadBtn {
   text-align: center;
-  margin-top: 20px;
-    margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .loadBtn button {
@@ -796,9 +779,7 @@ input[type=checkbox] {
 /* Tab Systmes Css Start */
 .leftSideBtn p {
   margin: 0;
-  font-size: 15px;
-  padding: 2px 5px 0px;
-  font-weight: 500;
+  font-size: 17px;
 }
 
 .plusCercle {
@@ -858,7 +839,7 @@ input[type=checkbox] {
     right: 0!important;
     top: 0!important;
 }
-.borederlio1 Image {
+.borederlio1 img {
   width: 50px!important;
   position: absolute!important;
   right: 11px!important;
@@ -870,7 +851,7 @@ input[type=checkbox] {
   top: -18px!important;
   bottom: 0!important;
 }
-  .borederlio2 Image {
+  .borederlio2 img {
     width: 40px!important;
     top: 25px;
     left: 10px!important;
@@ -1001,30 +982,18 @@ div#slider-range {
 }
 
 /* Tab Systmes Css Start */
-.leftSidebar{
-  margin-left:-15px!important;
-}
 .leftSideBtn {
   background: #3D55A5;
   color: #fff;
   border-radius: 19px;
-  padding: 0px 15px;
-  display: block;
+  padding: 6px 15px;
+  display: grid;
+  gap: 10px;
   align-items: center;
+  margin-bottom: 15px;
+  grid-template-columns: 7% 91%;
 }
-.submitButton {
-  background: #3D55A5;
-  border: 1px solid #3D55A5;
-  color: #fff;
-  text-transform: lowercase;
-  padding: 4px 95px;
-  border-radius: 20px;
-  font-size: 18px;
-}
-.input-box {
-  /* float: revert; */
-  text-align: center;
-}
+
 .tabSystems {
   padding-bottom: 50px;
 }
@@ -1033,8 +1002,8 @@ div#slider-range {
   background: #ECECEC;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 19px;
+  padding: 84px 49px 0px 58px;
 }
 
 .tabPanel p {
@@ -1180,29 +1149,29 @@ button .inner-pulse {
   transform: translateX(-50%) !important;
 }
 
-.Image-design Image {
+.img-design img {
   border-radius: 20px !important;
 }
 
-.Image-design h5 {
+.img-design h5 {
   color: #221f1f !important;
   text-align: left;
   margin-top: 50px !important;
 }
 
-.Image-design p {
+.img-design p {
   color: #221f1f !important;
   text-align: left;
   margin-top: 50px !important;
 }
 
-.Image-design1 p {
+.img-design1 p {
   color: #221f1f !important;
   text-align: left;
 
 }
 
-.Image-design h6::before {
+.img-design h6::before {
   content: '' !important;
   position: absolute !important;
   left: 13% !important;
@@ -1214,7 +1183,7 @@ button .inner-pulse {
   transform: translateX(-50%) !important;
 }
 
-.Image-design h6 {
+.img-design h6 {
   color: #221f1f !important;
   text-align: left;
   font-size: 18px;
@@ -1234,10 +1203,9 @@ footer.footerSection {
 }
 
 .footerTitle h3 {
-  font-size: 18px;
+  font-size: 25px;
   font-family: 'Lato', sans-serif;
   margin: 0;
-  font-weight: bold;
 }
 
 .footerBody ul {
@@ -1262,12 +1230,11 @@ footer.footerSection {
 }
 
 h1.subscribeTitle {
-  font-size: 18px!important;
+  font-size: 25px;
   font-family: 'Lato', sans-serif;
   margin: 0;
   color: #000;
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .inputField input {
@@ -1367,13 +1334,13 @@ body {
   border-radius: 30px;
 }
 
-.profileIconPost.profileImage1 {
+.profileIconPost.profileImg1 {
   width: 40px;
 }
 
 .profileIconPost,
-.postPImage,
-.commentUserImage,
+.postPimg,
+.commentUserImg,
 .groupIcon {
   width: 35px;
   height: 35px;
@@ -1381,10 +1348,10 @@ body {
   overflow: hidden;
 }
 
-Image.newPostProfileImage,
-.commentUserImage Image,
-.postPImage Image,
-.groupIcon Image {
+img.newPostProfileImg,
+.commentUserImg img,
+.postPimg img,
+.groupIcon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1525,11 +1492,11 @@ small.postAuthorUsername {
   margin-top: 20px;
 }
 
-.postImage Image {
+.postImg img {
   width: 100%;
 }
 
-.postImage {
+.postImg {
   margin: 15px 0px;
 }
 
@@ -1644,7 +1611,7 @@ small.postAuthorUsername {
 h4.gName {
   font-size: 14px;
   color: #3C3C3C;
-  font-weight: 600;
+  font-weight: 200;
   margin: 0;
 }
 
@@ -1735,7 +1702,7 @@ p.groupFollowers1 {
     font-size: 10px;
   }
 
-  .profileIconPost.profileImage1 {
+  .profileIconPost.profileImg1 {
     width: 55px;
   }
 }
@@ -1824,14 +1791,14 @@ h1.coursePrice {
 }
 
 .accordion-button:not(.collapsed) {
-  color: #fff !important;
-  background-color: #3D55A5 !important;
-  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%) !important;
+  color: #fff;
+  background-color: #3D55A5;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
 
 .accordion-button {
-  color: #fff !important;
-  background-color: #3D55A5 !important;
+  color: #fff;
+  background-color: #3D55A5;
 }
 
 button.accordion-button {
@@ -1839,49 +1806,49 @@ button.accordion-button {
 }
 
 .accordion-item {
-  border: none !important;
-  background-color: #ECECEC !important;
-  margin-bottom: 10px !important;
-  border-radius: 19px !important;
+  border: none;
+  background-color: #ECECEC;
+  margin-bottom: 10px;
+  border-radius: 19px;
 }
 
 .accordion-button::after,
 .accordion-button:not(.collapsed)::after {
-  background-image: none !important;
+  background-image: none;
 }
 
 .plusCercle.pCerclePadding {
-  margin-right: 25px !important;
+  margin-right: 25px;
 }
 
 ul.accourdionCourseBullot {
-  padding-left: 50px !important;
+  padding-left: 50px;
 }
 
 .coreModuleRight {
-  background: #ECECEC !important;
-  border-radius: 30px !important;
-  padding: 30px !important;
+  background: #ECECEC;
+  border-radius: 30px;
+  padding: 30px;
 }
 
 .coreModuleRight h1 {
-  font-size: 20px !important;
+  font-size: 20px;
 }
 
 .coreModuleRight p {
-  font-size: 13px !important;
+  font-size: 13px;
 }
 
 .coreModuleRight p a {
-  color: #2A38FF !important;
+  color: #2A38FF;
 }
 
 h1.coreModuleH {
-  color: #3D55A5 !important;
-  font-family: 'Lato' !important;
-  font-size: 30px !important;
-  font-weight: 800 !important;
-  margin-bottom: 20px !important;
+  color: #3D55A5;
+  font-family: 'Lato';
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 20px;
 }
 
 .space {
@@ -1910,14 +1877,14 @@ h1.coreModuleH {
   margin-right: 10px;
 }
 
-.courseDImage {
+.courseDimg {
   width: 30px;
   height: 30px;
   border-radius: 30px;
   overflow: hidden;
 }
 
-.courseDImage Image {
+.courseDimg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1990,7 +1957,7 @@ form.searchForm button {
 /* online counselling */
 
 .headerImagecoun {
-  background-image: url(./Image/1637330549549.jpg);
+  background-image: url(../img/1637330549549.jpg);
   top: 0;
   left: 0;
   padding-top: 20%;
@@ -2003,12 +1970,12 @@ form.searchForm button {
 }
 
 .headerImagecoun2 {
-  background-image: url("./Image/bg2.jpg") !important;
+  background-image: url("../img/bg2.jpg") !important;
   background-position: top;
 }
 
 .headerImagecoun1 {
-  background-image: url("./Image/how-career-counselors-can-help-you-find-your-calling-4.png") !important;
+  background-image: url("../img/how-career-counselors-can-help-you-find-your-calling-4.png") !important;
   background-position: top;
 }
 
@@ -2056,7 +2023,6 @@ form.searchForm button {
   color: #FFA845;
   margin: 0;
   font-size: 50px;
-  font-weight: bold;
 }
 
 .programTitle1 h1 {
@@ -2101,7 +2067,6 @@ form.searchForm button {
   border: 3px solid #ECECEC;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  margin-bottom: 25px!important;
 }
 
 .onlinecousectinp {
@@ -2155,33 +2120,30 @@ form.searchForm button {
 }
 
 .programsSection1 {
-  padding: 0px 0px 30px 0px;
+  padding: 20px 0px 0px 0px;
 }
-.m25{
-  margin:25px!important;
-}
+
+
 .onlinecousectinstu {
   background-color: #ECECEC !important;
-  border-radius: 10px;
-  padding: 15px !important;
-  height: auto;
-  margin-bottom: 20px;
+  border-radius: 30px;
+  padding: 45px !important;
+  height: 100%;
 }
 
 .onlinecousectinstu1 {
   background-color: #ECECEC !important;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 45px !important;
-  height: auto;
-  margin-bottom: 25px;
+  height: 100%;
 }
 
-.onlinecousectinstu Image {
+.onlinecousectinstu img {
   width: 124px !important;
   text-align: center !important;
 }
 
-.onlinecousectinstu1 Image {
+.onlinecousectinstu1 img {
   width: 89px !important;
   text-align: center !important;
 }
@@ -2248,7 +2210,7 @@ form.searchForm button {
 }
 
 .programBox1 {
-  border-radius: 10px;
+  border-radius: 19px;
   box-shadow: 0px 3px 6px #00000029;
   margin-bottom: 20px;
   background-color: #ECECEC;
@@ -2368,7 +2330,7 @@ ul.tandcLink1 a {
   margin-bottom: 20px;
 }
 
-.countryFlag Image {
+.countryFlag img {
   width: 35px;
   height: 35px;
   border-radius: 35px;
@@ -2471,7 +2433,7 @@ article {
 }
 
 .col-md-12.section-h.py-4 {
-  padding-top: 10px !important;
+  padding-top: 60px !important;
 }
 
 footer.lFooter {
@@ -2484,7 +2446,7 @@ footer.lFooter {
 }
 
 .headerImagesign {
-  background-image: url(./Image/backsign.jpg);
+  background-image: url(../img/backsign.jpg);
   top: 0;
   left: 0;
   background-position: center;
@@ -2526,7 +2488,6 @@ h6.accoTypeTitle {
   font-size: 15px;
   font-family: 'Lato';
   margin: 0;
-  font-weight: bold;
 }
 
 span.accouDes {
@@ -2549,10 +2510,10 @@ ul.accountTypeDetals {
 }
 
 .buttonsignUp {
-  border-radius: 20px!important;
-  padding: 5px 40px!important;
+  border-radius: 20px;
+  padding: 5px 40px;
   font-size: 15px;
-  background-color: #3D55A5!important;
+  background-color: #3D55A5;
   border: none;
   text-align: center;
   font-family: 'Lato';
@@ -2655,14 +2616,14 @@ padding-right: 30px;
   border-radius: 20px;
 }
 
-.borederlio1 Image {
+.borederlio1 img {
   width: 80px;
   position: absolute;
   right: 20px;
   bottom: 31px;
 }
 
-.borederlio2 Image {
+.borederlio2 img {
   width: 70px;
   position: relative;
   justify-content: space-around !important;
@@ -2768,7 +2729,6 @@ padding: 10px;
 }
 td a {
   color: #1347A0;
-  text-decoration: none;
 }
 td.nameM {
   color: #323232;
@@ -2848,20 +2808,19 @@ button.newMessage {
   margin-bottom: 15px;
 }
 
-.datapri {
-  background: #fff !important;
-  /* background-position: 10px 12px; */
-  background-repeat: no-repeat !important;
-  width: 100% !important;
-  border-left: 4px solid #0f1878 !important;
-  font-size: 16px !important;
-  /* border-radius: 15px; */
-  padding: 1px px 1px 10px !important;
-  /* margin-bottom: 12px; */
-}
-.postSection{
-  background-color: #ECECEC;
-}
+
+      #myInput {
+         background-image: url(img/searchicon.png);
+         background-position: 10px 12px;
+         background-repeat: no-repeat;
+         width: 100%;
+         font-size: 16px;
+         border-radius: 15px;
+         padding: 7px 20px 7px 40px;
+         border: 1px solid #ddd;
+         margin-bottom: 40px;
+         margin-top: 20px;
+      }
 
       #myUL {
          list-style-type: none;
@@ -2946,26 +2905,6 @@ ol, .ser, dl {
     padding: 0px 0px;
     margin: 0;
 }
-.programsSection h4{
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 600;
-}
-blockquote{
-  font-size: 18px;
-  font-style: italic;
-}
-.mtb25{
-  margin:15px 0!important;
-}
-.ss{
-  padding: 10px!important;
-}
-.programTitle h3{
-  color:#fff;
-  font-size: 18px;
-  font-weight: bold;
-}
 @media (max-width:767px){
    .messageSidePadding {
       padding-left: 0;
@@ -2979,321 +2918,4 @@ blockquote{
    .HeadingTitleSetting {
       padding: 15px 10px;
    }
-}
-img.iconP {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
- .courseDimg img{
-  width: 600px;
-  height: 600px;
- }
- .swiper {
-  height: auto;
-}
-.swiper .swiper-slide {
-  padding-top: 5rem;
-  padding-bottom: 2rem;
-}
-
-.MessageTitle {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-button.newMessage {
-  width: 168px;
-  height: 36px;
-  color: #1347A0;
-  border: 2px solid #1347A0;
-  border-radius: 30px;
-  outline: none;
-  font-weight: 600;
-
-}
-.newMessageButton {
-  text-align: right;
-  margin-bottom: 15px;
-}
-
-.viewShowProfile1{
-  padding:10%;
-}
-      .viewPostSection {
-         height: 430px;
-         overflow-x: hidden;
-         overflow: scroll;
-         overflow-x: hidden;
-
-         width: 80%;
-         max-width: 600px;
-         margin: 0 auto;
-         padding: 3em;
-
-
-      }
-      .css-1v5z18m {
-        width: 260px !important;
-    }
-      .messageGrop hr {
-    display: none;
-}
-.messageGrop {
-    padding: 30px 40px;
-    border-radius: 30px;
-}
-table#table-id tr td {
-    padding: 25px 10px;
-}
-
-      /* width */
-      .viewPostSection::-webkit-scrollbar p {
-         width: 10px;
-      }
-
-      /* Track */
-      .viewPostSection::-webkit-scrollbar-track {
-         background: #f1f1f1;
-      }
-
-      /* Handle */
-      .viewPostSection::-webkit-scrollbar-thumb {
-         background: #888;
-      }
-
-      /* Handle on hover */
-      .viewPostSection::-webkit-scrollbar-thumb:hover {
-         background: #555;
-      }
-
-      .viewShowProfile::-webkit-scrollbar {
-         width: 2px;
-      }
-
-      /* Track */
-      .viewShowProfile::-webkit-scrollbar-track {
-         background: #fff;
-      }
-
-      /* Handle */
-      .viewShowProfile::-webkit-scrollbar-thumb {
-         background: #888;
-      }
-
-      /* Handle on hover */
-      .viewShowProfile::-webkit-scrollbar-thumb:hover {
-         background: #555;
-      }
-
-      #myInput {
-         background-image: url(./Image/searchicon.png);
-         background-position: 10px 12px;
-         background-repeat: no-repeat;
-         width: 100%;
-         font-size: 16px;
-         border-radius: 15px;
-         padding: 7px 20px 7px 40px;
-         border: 1px solid #ddd;
-         margin-bottom: 40px;
-         margin-top: 20px;
-      }
-
-      #myUL {
-         list-style-type: none;
-         padding: 0;
-         margin: 0;
-      }
-
-      #myUL li a {
-         border: 1px solid #ddd;
-         margin-top: -1px;
-         /* Prevent double borders */
-         background-color: #f6f6f6;
-         padding: 12px;
-         text-decoration: none;
-         font-size: 18px;
-         color: black;
-         display: block
-      }
-
-      #myUL li a:hover:not(.header) {
-         background-color: #eee;
-      }
-
-      .datapri {
-         background: #fff !important;
-         /* background-position: 10px 12px; */
-         background-repeat: no-repeat !important;
-         width: 100% !important;
-         border-left: 4px solid #0f1878 !important;
-         font-size: 16px !important;
-         /* border-radius: 15px; */
-
-         padding: 1px px 1px 10px !important;
-
-         /* margin-bottom: 12px; */
-      }
-
-      .datapri p {
-         padding-top: 10px;
-         margin: 0;
-         padding-bottom: 10px;
-         padding-left: 5px;
-      }
-
-      .ser li {
-         padding: 2% 4%;
-         list-style: none;
-      }
-
-      .ser a {
-         color: #000;
-         text-decoration: none;
-      }
-
-      .h6font {
-         font-size: 16px !important;
-      }
-
-      thead,
-      tbody,
-      tfoot,
-      tr,
-      td,
-      th {
-         border-color: inherit;
-         border-style: none !important;
-         border-width: 0;
-      }
-      .messageSidePadding {
-    padding-left: 60px;
-}
-ol, .ser, dl {
-    margin-top: 0;
-    margin-left: -10%;
-    margin-bottom: 1rem;
-    left: 0px !important;
-}
-.HeadingTitleSetting {
-    color: #000;
-    font-weight: 700;
-    font-size: 20px;
-    padding: 0px 0px;
-    margin: 0;
-}
-@media (max-width:767px){
-   .messageSidePadding {
-      padding-left: 0;
-   }
-   .messageGrop {
-      padding: 30px 20px;
-   }
-   table#table-id tr td {
-      padding: 8px 10px;
-   }
-   .HeadingTitleSetting {
-      padding: 15px 10px;
-   }
-}
-
-@media screen and (min-width: 576px) {
-  .swiper-container {
-    width: 576px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .swiper-container {
-    width: 968px;
-  }
-}
-
-
-@media (min-width: 992px) {
-  .swiper .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-   
-  }
-}
-.courseDimg img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50% !important;
-}
-button.btn.btn-primary.btnBSidebar.RefilterBtn {
-  color: #fff !important;
-  background-color: #3D55A5!important;
-  background: #3D55A5;
-    color: #fff;
-    border-radius: 19px!important;
-    padding: 6px 15px;
-    display: grid;
-    gap: 10px;
-    align-items: center;
-    
-}
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  background: #3D55A5;
-  color: #fff;
-  border-radius: 19px!important;
-  display: grid;
-  align-items: center;
-  /* grid-template-columns: 7% 91%; */
-  color: var(--bs-nav-pills-link-active-color);
-  background-color: var(--bs-nav-pills-link-active-bg);
-}
-.nav-item {
-  border-radius: 19px !important;
-}
-.nav-pills .nav-link{
-  border-radius: 19px !important;
-}
-@media(max-width:767px){
-  .futurecolor h1{text-align: center;}
-  .programTitle1{margin:0 auto!important;width:80%!important;}
-}
-.nav-item a:hover {
-  color: #fff !important;
-}
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.content1 {
- 
-
-  display: none;
-}
-#loadMore {
-  width: 200px;
-  color: #fff;
-  display: block;
-  text-align: center;
-  margin: 20px auto;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  background-color: blue;
-  transition: .3s;
-}
-#loadMore:hover {
-  color: blue;
-  background-color: #fff;
-  border: 1px solid blue;
-  text-decoration: none;
-}
-.noContent {
-  color: #000 !important;
-  background-color: transparent !important;
-  pointer-events: none;
-}
-.backgroundimg {
-  padding:140px 0px 50px;
-  background: linear-gradient(1deg, black, black, #fff0, #fff0);
 }
