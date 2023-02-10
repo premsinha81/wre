@@ -7,8 +7,9 @@ function Rankingdetails() {
     return (
         <>
         
+        
             <section className="headerImage">
-                <div className="background ">
+                <div className="backgroundimg ">
                     <div className="container">
                         <div className="row  ">
                             <div className="col-md-8 section-h">
@@ -17,40 +18,7 @@ function Rankingdetails() {
                                 </div>
                             </div>
                             <div className="col-md-4">
-                                <main>
-                                    <div className="wrappers">
-                                        <h2>Search Programs</h2>
-                                        <form action="#">
-                                            <div className="form-group">
-                                                <select name="programs" id="" className="form-control selectOption">
-                                                    <option value="">- Select Program -</option>
-                                                    <option value="">Program 1</option>
-                                                    <option value="">Program 2</option>
-                                                    <option value="">Program 3</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <select name="programs" id="" className="form-control selectOption">
-                                                    <option value="">- Select Degree -</option>
-                                                    <option value="">Degree 1</option>
-                                                    <option value="">Degree 2</option>
-                                                    <option value="">Degree 3</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group">
-                                                <select name="programs" id="" className="form-control selectOption">
-                                                    <option value="">- Select Duration -</option>
-                                                    <option value="">Duration 1</option>
-                                                    <option value="">Duration 2</option>
-                                                    <option value="">Duration 3</option>
-                                                </select>
-                                            </div>
-                                            <div className="input-box button">
-                                                <input type="submit" name="submitButton" className="searchBtn" id="submitButton" value="Search Now" />
-                                            </div>
-                                        </form>
-                                    </div>
-                                </main>
+                             
                             </div>
                         </div>
                     </div>
