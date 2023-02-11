@@ -44,7 +44,7 @@ h1 {
   min-width: 700px  !important;
   position: absolute;
   top: 150px;
-  left: 190px;
+  left: 350px;
   /* margin-left: -350px; */
 }
 .slider .searchPanel input[type="text"]::placeholder {
