@@ -129,13 +129,20 @@ function Slider() {
                                     <div className="row">
                                         <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                            {initialOnline.map((res, key) => (
+                                            {initialOnline.map((res, key) => {
+                                         
+                                         let data=res.image_path.split("https://workreadyeducation.com")
+                                         data[0]="http://162.144.98.113/~work"
+                                         let url=`${data[0]+data[1]}`
+                                          return(
                                                 <div className="searchBox">
                                                     <ul>
                                                         <li>
 
                                                             {/* <h2>{key + 1}</h2> */}
-                                                            {<img src={"http://162.144.98.113/~work/wre/public" + res.image_path} alt='' className="img-fluid" />}
+                                                            {
+                                                                
+                                                       <img src={ url} alt='' className="img-fluid" />}
                                                         </li>
                                                         <li></li>
                                                         <li>
@@ -157,7 +164,7 @@ function Slider() {
                                                     </ul>
 
                                                 </div>
-                                            ))}
+                                            )})}
 
                                         </div>
 

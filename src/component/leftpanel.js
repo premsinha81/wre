@@ -3,7 +3,14 @@ import { React, useState, useEffect } from 'react'
 const Leftpanel = () => {
     const [data, setdata] = useState([]);
     const [rating, setRating] = useState([]);
+    const [trade, setTrade] = useState([]);
 
+    const getTrade = async () => {
+        const respond = await fetch("http://162.144.98.113/~work/wre/api/get/trades");
+        const dataTrade = await respond.json();
+        setTrade(dataTrade);
+
+    }
     const getuser = async () => {
         const respond = await fetch("http://162.144.98.113/~work/wre/api/get/location");
         const user = await respond.json();
@@ -18,9 +25,8 @@ const Leftpanel = () => {
     }
 
     useEffect(() => {
+        getTrade();
         getuser();
-    }, [])
-    useEffect(() => {
         getRating();
     }, [])
 
@@ -49,78 +55,15 @@ const Leftpanel = () => {
                     </div>
                 </div>
                 <div class="scrollview">
-                    <div class="scrollview1">
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
+                        <div class="scrollview1">
+                            {trade.results && trade.results.length > 0 && trade.results.map((trade, index) => (
+                                <div class="checkBox" key={index}>
+                                    <input type="checkbox" id={"myCheck" + trade.id} />
+                                    <label htmlFor={"myCheck" + trade.id}>{trade.title}</label>
+                                </div>
+                            ))}
                         </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div> <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div> <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div> <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-                        <div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div><div class="checkBox">
-                            <input type="checkbox" id="myCheck" />
-                            <label htmlFor="myCheck">Welding Training</label>
-                        </div>
-
                     </div>
-                </div>
 
                 <div class="stateBox" >
                     <div class="form-group">
