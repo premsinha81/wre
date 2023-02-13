@@ -154,7 +154,7 @@ function Slider() {
                                                         </li>
                                                         <li className="location">
                                                             <p>Location: <b>Kompalli</b></p>
-                                                            <a href={"search/" + res.college_id}>  <h6>{res.college_name}</h6></a>
+                                                            <a href={"collegeDetails/" + res.college_id}>  <h6>{res.college_name}</h6></a>
                                                         </li>
                                                     </ul>
 

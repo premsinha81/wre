@@ -6,10 +6,10 @@ import { useParams } from 'react-router-dom';
 function CollgeDetails() {
     // const [search_result, setSearcResult] = useState([]);
     const [ranking, setRanking] = useState([])
-    const { slug } = useParams();
+    const params = useParams();
 
     useEffect(() => {
-        axios.get(`http://162.144.98.113/~work/wre/api/get/trades/${id}`)
+        axios.get(`http://162.144.98.113/~work/wre/api/college_detail?college_id=`+params.id)
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
