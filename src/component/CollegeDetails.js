@@ -1,18 +1,15 @@
-import tradeImg1 from '../img/trade-schools.jpeg';
-import tradeImg2 from '../img/section1.jpg';
-
 import Resources from './resources';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
-function RankingDetails() {
+function CollgeDetails() {
     // const [search_result, setSearcResult] = useState([]);
     const [ranking, setRanking] = useState([])
     const { slug } = useParams();
 
     useEffect(() => {
-        axios.get(`http://162.144.98.113/~work/wre/api/get/trades/${slug}`)
+        axios.get(`http://162.144.98.113/~work/wre/api/get/trades/${id}`)
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -34,7 +31,7 @@ function RankingDetails() {
                         <div className="row  ">
                             <div className="col-md-8 section-h">
                                 <div className="bannerHeading">
-                                    <h1>{ranking.title}</h1>
+                                    <h1>{ranking.id}</h1>
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -51,7 +48,7 @@ function RankingDetails() {
                         <div className="col-lg-12 test-design">
                             
                             <p className='m25'>
-                            {ranking.description}
+                                {ranking.college_name}
                             </p>
                         </div>
                     </div>
@@ -106,4 +103,4 @@ function RankingDetails() {
         </>
     )
 }
-export default RankingDetails
+export default CollgeDetails

@@ -16,6 +16,7 @@ import Accountowner from './component/account/accountowner';
 import Header from './component/common/header';
 import Footer from './component/common/footer';
 import Ranking from './component/ranking-details';
+import CollgeDetails from './component/CollegeDetails';
 
 import UserprofileCommunities from './component/userprofileCommunities';
 
@@ -38,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='search/:slug' element={<Ranking />} />
-        
+        <Route path='search/:id' element={<CollgeDetails />} />
       </Routes>
       
     
