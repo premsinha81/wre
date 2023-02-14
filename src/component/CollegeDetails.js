@@ -7,31 +7,31 @@ function CollgeDetails() {
     // const [search_result, setSearcResult] = useState([]);
     const [ranking, setRanking] = useState([])
     const params = useParams();
-
+    console.log(params.id);
     useEffect(() => {
         axios.get(`http://162.144.98.113/~work/wre/api/college_detail?college_id=`+params.id)
             .then(function (result) {
-                // console.log(result)
+                console.log('prem'+ result)
                 if (result.data.status.status_code == 200) {
                     setRanking(result.data.results)
-                    console.log(result.data.results)
-                    // setRanking(result.data.results)
+                    //console.log(result.data.results)
+                    //setRanking(result.data.results)
                 } else {
                     setRanking('')
                 }
             })
     }, [])
-    // console.log(ranking.results.title)
+    //console.log(ranking.results.title)
+    //console.log('prem' + params.id);
     return (
         <>
-
             <section className="headerImage">
-                <div className="background ">
+                <div className="background">
                     <div className="container">
-                        <div className="row  ">
+                        <div className="row">
                             <div className="col-md-8 section-h">
                                 <div className="bannerHeading">
-                                    <h1>{ranking.id}</h1>
+                                    <h1>result</h1>
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -48,7 +48,7 @@ function CollgeDetails() {
                         <div className="col-lg-12 test-design">
                             
                             <p className='m25'>
-                                {ranking.college_name}
+                               test
                             </p>
                         </div>
                     </div>

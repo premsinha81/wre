@@ -55,23 +55,14 @@ const Leftpanel = (props) => {
         <>
 
             <div className="leftSection">
-
-                <div class="programsSideBar">
-                    <div class="filterArea">
-                        <button type="button" class="btn btn-primary btnSidebar sortBtn ">Filters</button>
-
-                    </div>
-                </div>
-
+            <h4>Filter</h4>
+            <hr />
                 <div class="searchRank">
 
                     <div class="searchProgram">
                         <div class="form-group">
 
-                            <select name="programs" id="" class="form-control selectOptionSidebar">
-                                <option value="">By Trade</option>
-
-                            </select>
+                            <input type="text" class="form-control" placeholder='Search by Trade' />
                         </div>
                     </div>
                 </div>
@@ -84,6 +75,7 @@ const Leftpanel = (props) => {
                                 </div>
                             ))}
                         </div>
+                        <hr />
                     </div>
 
                 <div class="stateBox" >
@@ -106,7 +98,7 @@ const Leftpanel = (props) => {
                     </div>
 
                 </div>
-
+                <hr />
 
 
                 <div class="stateBox">
@@ -126,6 +118,7 @@ const Leftpanel = (props) => {
                         </div>
                     </div>
                 </div>
+                <hr />
                 <div class="stateBox">
                     <div class="form-group">
                         <select name="programs" id="" class="form-control selectOptionSidebar">
@@ -172,12 +165,13 @@ const Leftpanel = (props) => {
                         </div>
                     </div>
                 </div>
+                 {/* <hr />
                 <div class="sideBarFooter">
                     <button type="button" class="btn btn-primary btnBSidebar RefilterBtn">Reset
                         Filters</button>
                     <button type="button" class="btn btn-primary btnBSidebar saveBtn">Save</button>
                 </div>
-
+                <hr /> */}
             </div>
         </>
     )

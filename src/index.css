@@ -2839,7 +2839,7 @@ li.location {
   width: 30%;
 }
 .scrollview .scrollview1{
-  height: 140px;
+  height: 150px;
     overflow: scroll;
     overflow-x: hidden;
     padding-left: 10px;
@@ -2885,4 +2885,19 @@ li.location {
 .scrollview1::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+.checkBox label {
+  color: #000;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 0px dotted #ccc;
+  width: 100%;
+}
+.checkBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 0px dotted #ccc;
+}
+.searchProgram{
+  margin-bottom:0!important;
+}
