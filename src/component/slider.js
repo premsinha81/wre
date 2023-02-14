@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import img_logo from '../img/sk.jpeg';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Slider() {
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
-    const [entervalue, setEnterValue] = useState();
+    const [entervalue, setEnterValue] = useState('');
     const [search_result, setSearcResult] = useState([]);
 
     const [isCompleted, setIsCompleted] = useState(false)
@@ -34,7 +34,7 @@ function Slider() {
 
         axios.get("http://162.144.98.113/~work/wre/api/get/trades")
             .then(function (result) {
-                console.log(result)
+                // console.log(result)
                 if (result.data.status.status_code == 200) {
                     setTrade(result.data.results)
                     setMainTrade(result.data.results)
@@ -49,7 +49,7 @@ function Slider() {
         if (entervalue !== '' && entervalue !== undefined) {
             axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + entervalue)
                 .then(function (result) {
-                    console.log(result)
+                    // console.log(result)
                     if (result.data.status.status_code == 200) {
                         setTrade(result.data.results)
                         setSearcResult(result.data.results)
@@ -86,14 +86,35 @@ function Slider() {
 
             })
     }
+ 
+    // Trade Filter Code Start
+    function handleChange(e) {
+        // Destructuring
+        const { value, checked } = e.target;
+        
+        if (checked) {
+            axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + value)
+                .then(function (result) {
+                    if (result.data.status.status_code == 200) {
+                        setSearcResult(result.data.results)
+                    } else {
+                        setSearcResult('')
+                    }
+                })
+        }
+    };
+    // Trade Filter Code End
 
     useEffect(() => {
-        console.log(initialOnline)
+        
     }, [initialOnline])
+
+
 
 
     return (
         <>
+
             <div className="slider">
                 <div className="gradient"></div>
                 <div className="container">
@@ -119,7 +140,7 @@ function Slider() {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
-                        <Leftpanel></Leftpanel>
+                        <Leftpanel alert={handleChange}></Leftpanel>
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
@@ -129,20 +150,12 @@ function Slider() {
                                     <div className="row">
                                         <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                            {initialOnline.map((res, key) => {
-                                         
-                                         let data=res.image_path.split("https://workreadyeducation.com")
-                                         data[0]="http://162.144.98.113/~work"
-                                         let url=`${data[0]+data[1]}`
-                                          return(
+                                            {initialOnline.map((res, key) => (
                                                 <div className="searchBox">
                                                     <ul>
                                                         <li>
 
-                                                            {/* <h2>{key + 1}</h2> */}
-                                                            {
-                                                                
-                                                       <img src={ url} alt='' className="img-fluid" />}
+                                                            <img src={res.image_path} alt='' className="img-fluid" />
                                                         </li>
                                                         <li></li>
                                                         <li>
@@ -153,7 +166,7 @@ function Slider() {
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star"></span>
                                                                 <span className="fa fa-star"></span></p>
-                                                            <p>Course Duration :<b>6 Months</b></p>
+                                                          
                                                         </li>
                                                         <li className="location">
 
@@ -164,21 +177,21 @@ function Slider() {
                                                     </ul>
 
                                                 </div>
-                                            )})}
+                                            ))}
 
                                         </div>
 
                                         <div className="clearfix"></div>
                                         {isCompleted ? (
                                             <div class="loadBtn">
-                                                
+
                                                 <button onClick={loadMore} type="button" className="btn btn-primary button btnLoadMore">That's It</button>
                                             </div>
                                         ) : (
-                                            
+
                                             <button onClick={loadMore} type="button" className="btn btn-primary button btnLoadMore">LOAD MORE</button>
                                         )}
-                                        
+
                                     </div>
 
                                 </div>

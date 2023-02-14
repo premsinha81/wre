@@ -1,6 +1,7 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react';
+// import axios from "axios";
 
-const Leftpanel = () => {
+const Leftpanel = (props) => {
     const [data, setdata] = useState([]);
     const [rating, setRating] = useState([]);
     const [trade, setTrade] = useState([]);
@@ -23,12 +24,32 @@ const Leftpanel = () => {
         setRating(dataRating);
 
     }
+    
 
     useEffect(() => {
         getTrade();
         getuser();
         getRating();
     }, [])
+
+      // Trade Filtering
+      
+    //   useEffect(() => {
+
+    //     axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + tradeinfo.response)
+    //             .then(function (result) {
+    //                 // console.log(result)
+    //                 if (result.data.status.status_code == 200) {
+    //                     // setTrade(result.data.results)
+    //                     // setSearcResult(result.data.results)
+    //                 } else {
+    //                     // setTrade(maintrade)
+    //                     // setSearcResult('')
+    //                 }
+
+    //             })
+
+    // }, [handleChange]);
 
     return (
         <>
@@ -58,7 +79,7 @@ const Leftpanel = () => {
                         <div class="scrollview1">
                             {trade.results && trade.results.length > 0 && trade.results.map((trade, index) => (
                                 <div class="checkBox" key={index}>
-                                    <input type="checkbox" id={"myCheck" + trade.id} />
+                                    <input type="radio" onClick={props.alert} name="myCheck" value={trade.title} id={"check1" + trade.id} />
                                     <label htmlFor={"myCheck" + trade.id}>{trade.title}</label>
                                 </div>
                             ))}
@@ -77,7 +98,7 @@ const Leftpanel = () => {
                         <div class="scrollview1">
                             {data.results && data.results.length > 0 && data.results.map((cities, index) => (
                                 <div class="checkBox" key={index}>
-                                    <input type="checkbox" id={"myCheck" + cities.id} />
+                                    <input type="radio" id={"check2" + cities.id} />
                                     <label htmlFor={"myCheck" + cities.id}>{cities.name}</label>
                                 </div>
                             ))}
@@ -98,7 +119,7 @@ const Leftpanel = () => {
                         <div class="scrollview1">
                             {rating.data && rating.data.length > 0 && rating.data.map((rating, x) => (
                                 <div class="checkBox" key={x}>
-                                    <input type="checkbox" id={"Rating" + rating.rating} />
+                                    <input type="radio" id={"Rating" + rating.rating} />
                                     <label htmlFor={"Rating" + rating.rating}>{rating.rating} Star</label>
                                 </div>
                             ))}
@@ -116,36 +137,36 @@ const Leftpanel = () => {
                     <div class="scrollview">
                         <div class="scrollview1">
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
 
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                             <div class="checkBox">
-                                <input type="checkbox" id="myCheck" />
+                                <input type="radio" id="myCheck" />
                                 <label htmlFor="myCheck">Online</label>
                             </div>
                         </div>
