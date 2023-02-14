@@ -1,21 +1,24 @@
+import tradeImg1 from '../img/trade-schools.jpeg';
+import tradeImg2 from '../img/section1.jpg';
+
 import Resources from './resources';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
-function CollgeDetails() {
+function CollegeDetails() {
     // const [search_result, setSearcResult] = useState([]);
     const [ranking, setRanking] = useState([])
-    const params = useParams();
-    console.log(params.id);
+    const { id } = useParams();
+
     useEffect(() => {
-        axios.get(`http://162.144.98.113/~work/wre/api/college_detail?college_id=`+params.id)
+        axios.get(`http://162.144.98.113/~work/wre/api/college_detail?college_id=${id}`)
             .then(function (result) {
-                console.log('prem'+ result)
+                console.log(result)
                 if (result.data.status.status_code == 200) {
-                    setRanking(result.data.results)
-                    //console.log(result.data.results)
-                    //setRanking(result.data.results)
+                    setRanking(result.data.data)
+                    console.log(result.data.data)
+                    // setRanking(result.data.results)
                 } else {
                     setRanking('')
                 }
@@ -31,7 +34,7 @@ function CollgeDetails() {
                         <div className="row">
                             <div className="col-md-8 section-h">
                                 <div className="bannerHeading">
-                                    <h1>result</h1>
+                                    <h1>{ranking.college}</h1>
                                 </div>
                             </div>
                             <div className="col-md-4">
@@ -48,7 +51,7 @@ function CollgeDetails() {
                         <div className="col-lg-12 test-design">
                             
                             <p className='m25'>
-                               test
+                            {ranking.description}
                             </p>
                         </div>
                     </div>
@@ -103,4 +106,4 @@ function CollgeDetails() {
         </>
     )
 }
-export default CollgeDetails
+export default CollegeDetails

@@ -50,8 +50,10 @@ function RankingDetails() {
                     <div className="row">
                         <div className="col-lg-12 test-design">
                             
-                            <p className='m25'>
-                            {ranking.description}
+                            <p className='m25' dangerouslySetInnerHTML={{__html:ranking.description}}>
+                                    
+                            
+                                
                             </p>
                         </div>
                     </div>
