@@ -9,6 +9,9 @@ const getuser=async()=>{
       setdata(user);
 
 }
+const fruit = ['apple', 'banana', 'orange', 'grapefruit',
+'mango', 'strawberry', 'peach', 'apricot'];
+
 
 useEffect(() => {
 getuser();
@@ -30,11 +33,20 @@ getuser();
                    
                     <div class="searchProgram">
                         <div class="form-group">
-                            
-                            <select name="programs" id="" class="form-control selectOptionSidebar">
-                                <option value="">By Trade</option>
-                                
-                            </select>
+                        <div className="form-control selectOptionSidebar">
+                        <p>
+    Type to filter the list:
+    <input id="filter"
+      name="filter"
+      type="text"
+    />
+  </p>
+  <ul>
+  {fruit.map(f => <li key={f}>{f}</li>)}
+  </ul>
+    </div>
+                           
+                           
                         </div>
                     </div>
                 </div>

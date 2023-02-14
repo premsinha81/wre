@@ -24,7 +24,10 @@ const Leftpanel = (props) => {
         setRating(dataRating);
 
     }
-    
+    const fruit = ['Welding Technology Post', 'Welding Technology and Training', 'Welding Technology and Training Program', 'Welding',
+ 'hellodf', 'Manufacturing and Automation', 'Manufacturing'];
+const [filter, setFilter] = useState('');
+ 
 
     useEffect(() => {
         getTrade();
@@ -66,17 +69,26 @@ const Leftpanel = (props) => {
                 <div class="searchRank">
 
                     <div class="searchProgram">
-                        <div class="form-group">
-
-                            <select name="programs" id="" class="form-control selectOptionSidebar">
-                                <option value="">By Trade</option>
-
-                            </select>
-                        </div>
+                    <div className="App">
+      <div className='form-control'>
+      
+        <input id="filter" placeholder='By Trade' name="filter"
+          type="text"
+          value={filter}
+          onChange={event => setFilter(event.target.value)}
+        />
+      </div>
+      <ul>
+      
+      </ul>
+    </div>
                     </div>
                 </div>
                 <div class="scrollview">
                         <div class="scrollview1">
+                        {fruit.filter(f => f.includes(filter) || filter === '')
+                         
+            .map(f => <div key={f}><input type="radio" id="input" />  {f}</div>)}
                             {trade.results && trade.results.length > 0 && trade.results.map((trade, index) => (
                                 <div class="checkBox" key={index}>
                                     <input type="radio" onClick={props.alert} name="myCheck" value={trade.title} id={"check1" + trade.id} />

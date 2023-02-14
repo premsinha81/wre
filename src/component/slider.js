@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-<<<<<<< HEAD
-import img_logo from '../img/sk.jpeg';
-=======
->>>>>>> 6b108303e0fcc1f469d976a30246883fb9d06832
+
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
@@ -12,7 +9,6 @@ import Resources from "./resources";
 import { slice } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSearch} from '@fortawesome/fontawesome-free-solid';
-
 function Slider() {
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
@@ -20,7 +16,7 @@ function Slider() {
     const [search_result, setSearcResult] = useState([]);
 
     const [isCompleted, setIsCompleted] = useState(false)
-    const [index, setIndex] = useState(3)
+    const [index, setIndex] = useState(5)
     const initialOnline = slice(search_result, 0, index)
 
     const loadMore = () => {
@@ -167,11 +163,7 @@ function Slider() {
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star"></span>
                                                                 <span className="fa fa-star"></span></p>
-<<<<<<< HEAD
                                                           
-=======
-                                                                <p>Course Duration : {res.duration}</p>
->>>>>>> 6b108303e0fcc1f469d976a30246883fb9d06832
                                                         </li>
                                                         <li className="location">
                                                             <p>Location: <b>Kompalli</b></p>

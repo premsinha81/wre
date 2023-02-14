@@ -2836,7 +2836,7 @@ li.schoolDetails{
 li.location {
   margin-top: 30px !important;
   text-align: right;
-  width: 30%;
+
 }
 .scrollview .scrollview1{
   height: 140px;
@@ -2885,4 +2885,10 @@ li.location {
 .scrollview1::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+button, input, optgroup, select, textarea {
+  margin: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
