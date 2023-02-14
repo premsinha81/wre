@@ -44,7 +44,7 @@ h1 {
   min-width: 700px  !important;
   position: absolute;
   top: 150px;
-  left: 190px;
+  left: 350px;
   /* margin-left: -350px; */
 }
 .slider .searchPanel input[type="text"]::placeholder {
@@ -148,7 +148,7 @@ h2 {
 }
 
 .rightSection .searchBox {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .rightSection .searchBox ul {
@@ -159,7 +159,7 @@ h2 {
 
 .rightSection .searchBox ul li {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   padding: 15px 8px;
 }
 
@@ -1338,11 +1338,15 @@ button .inner-pulse {
 }
 
 .rightSection .searchBox ul li img {
-  max-width: 80px;
+  max-width: 120px;
   background-color: #f6f6f6;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 0;
   margin: 0 auto;
+  min-height: 120px;
+  width: 500px;
+  height: 130px;
+  border: 1px solid #ccc;
 }
 .img-fluid {
   max-width: 100%;
@@ -2825,6 +2829,14 @@ ul.tandcLink2 a {
 }
 li.location {
   margin-top: 40px !important;
+}
+li.schoolDetails{
+  min-width:500px;
+}
+li.location {
+  margin-top: 30px !important;
+  text-align: right;
+  width: 30%;
 }
 .scrollview .scrollview1{
   height: 140px;

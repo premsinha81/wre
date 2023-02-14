@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+<<<<<<< HEAD
 import img_logo from '../img/sk.jpeg';
+=======
+>>>>>>> 6b108303e0fcc1f469d976a30246883fb9d06832
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Leftpanel from "./leftpanel";
@@ -120,7 +123,7 @@ function Slider() {
                 <div className="container">
                     <div className="container posRelative">
                         <div className="searchPanel">
-                            <h1>WRE's Trade Educatoion Rankings</h1>
+                            <h1>WRE's Trade Education Rankings</h1>
                             <Autocomplete
                                 id="combo-box-demo"
                                 className=""
@@ -157,22 +160,22 @@ function Slider() {
 
                                                             <img src={res.image_path} alt='' className="img-fluid" />
                                                         </li>
-                                                        <li></li>
-                                                        <li>
+                                                        <li className="schoolDetails">
                                                             <a href={"search/" + res.slug}><h5>{res.college_name} - {res.title}</h5></a>
-                                                            <p>Course Duration - {res.duration}</p>
                                                             <p>Rating : <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star"></span>
                                                                 <span className="fa fa-star"></span></p>
+<<<<<<< HEAD
                                                           
+=======
+                                                                <p>Course Duration : {res.duration}</p>
+>>>>>>> 6b108303e0fcc1f469d976a30246883fb9d06832
                                                         </li>
                                                         <li className="location">
-
-                                                            <p>Location-<b>Kompalli</b></p>
-                                                            <a href={"search/" + res.slug}>  <h6>Siva Sivani Institute of Management</h6></a>
-
+                                                            <p>Location: <b>Kompalli</b></p>
+                                                            <a href={"collegeDetails/" + res.college_id}>  <h6>{res.college_name}</h6></a>
                                                         </li>
                                                     </ul>
 
