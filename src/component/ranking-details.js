@@ -29,29 +29,36 @@ function RankingDetails() {
         <>
 
             <section className="headerImage">
-                <div className="background ">
+                <div className="background pb10">
                     <div className="container">
                         <div className="row  ">
-                            <div className="col-md-8 section-h">
+                            <div className="col-md-7 section-h">
                                 <div className="bannerHeading">
                                     <h1>{ranking.title}</h1>
+                                    <h4>{ranking.degree}</h4>
                                 </div>
                             </div>
-                            <div className="col-md-4">
-                                
+                            <div className="col-md-5">
+                                <ul className='rankingList'>
+                                    <li className='duration'>Duration : {ranking.duration}</li>
+                                    <li className='degree'>Program Type : {ranking.RemoteProgram}</li>
+                                    <li className='fees'>Fees : ${ranking.fees}</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <div className="programsSection">
+            <div className="programsSection mt0">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 test-design">
                             
-                            <p className='m25'>
-                            {ranking.description}
+                            <p className='m25' dangerouslySetInnerHTML={{__html:ranking.description}}>
+                                    
+                            
+                                
                             </p>
                         </div>
                     </div>

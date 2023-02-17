@@ -451,9 +451,8 @@ Image.iconP {
 
 
 .bannerHeading {
-  display: flex;
+  display: block;
   height: 100%;
-  align-items: flex-end;
 }
 
 .bannerHeading h1 {
@@ -461,7 +460,13 @@ Image.iconP {
   font-size: 60px;
   margin-top: 0px;
 }
-
+.bannerHeading h4{
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
 .shadow {
   display: flex !important;
   align-items: center !important;
@@ -1153,10 +1158,11 @@ button .inner-pulse {
 .test-design p {
   color: #221f1f !important;
   text-align: left;
-  margin-top: 50px !important;
+  margin-top: 0px !important;
+  margin-bottom: 20px!important;
 }
 
-.test-design p::before {
+/*.test-design p::before {
   content: '' !important;
   position: absolute !important;
   left: 13% !important;
@@ -1166,7 +1172,7 @@ button .inner-pulse {
   background: #d5763e !important;
 
   transform: translateX(-50%) !important;
-}
+}*/
 
 .test-design h6::before {
   content: '' !important;
@@ -1851,7 +1857,7 @@ button.accordion-button {
 }
 
 .plusCercle.pCerclePadding {
-  margin-right: 25px !important;
+  margin-right: 10px !important;
 }
 
 ul.accourdionCourseBullot {
@@ -1866,6 +1872,7 @@ ul.accourdionCourseBullot {
 
 .coreModuleRight h1 {
   font-size: 20px !important;
+  color:#000;
 }
 
 .coreModuleRight p {
@@ -1879,13 +1886,14 @@ ul.accourdionCourseBullot {
 h1.coreModuleH {
   color: #3D55A5 !important;
   font-family: 'Lato' !important;
-  font-size: 30px !important;
-  font-weight: 800 !important;
+  font-size: 25px !important;
+  font-weight: bold!important;
   margin-bottom: 20px !important;
+  margin-top: 20px;
 }
 
 .space {
-  height: 60px;
+  height: auto;
 }
 
 .outcomeSection {
@@ -2947,9 +2955,10 @@ ol, .ser, dl {
     margin: 0;
 }
 .programsSection h4{
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+  color: #3d55a5;
 }
 blockquote{
   font-size: 18px;
@@ -3296,4 +3305,12 @@ button.btn.btn-primary.btnBSidebar.RefilterBtn {
 .backgroundimg {
   padding:140px 0px 50px;
   background: linear-gradient(1deg, black, black, #fff0, #fff0);
+}
+.star-ratings svg{
+  width:20px!important;
+  height:20px!important;
+  margin-top:-8px!important;
+}
+.star-ratings .star-container{
+  padding-left:0!important;
 }

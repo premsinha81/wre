@@ -160,7 +160,7 @@ h2 {
 .rightSection .searchBox ul li {
   display: inline-block;
   vertical-align: top;
-  padding: 15px 8px;
+  padding: 15px 4px;
 }
 
 .rightSection .searchBox ul li img {
@@ -1338,15 +1338,15 @@ button .inner-pulse {
 }
 
 .rightSection .searchBox ul li img {
-  max-width: 120px;
-  background-color: #f6f6f6;
-  padding: 10px;
-  border-radius: 0;
-  margin: 0 auto;
-  min-height: 120px;
-  width: 500px;
-  height: 130px;
-  border: 1px solid #ccc;
+  max-width: 100px;
+    background-color: #f6f6f6;
+    padding: 10px;
+    border-radius: 0;
+    margin: 0 auto;
+    min-height: 100%;
+    width: 1500px;
+    height: 100px;
+    border: 1px solid #ccc;
 }
 .img-fluid {
   max-width: 100%;
@@ -2839,7 +2839,7 @@ li.location {
 
 }
 .scrollview .scrollview1{
-  height: 140px;
+  height: 150px;
     overflow: scroll;
     overflow-x: hidden;
     padding-left: 10px;

@@ -24,10 +24,10 @@ const Leftpanel = (props) => {
         setRating(dataRating);
 
     }
-    const fruit = ['Welding Technology Post', 'Welding Technology and Training', 'Welding Technology and Training Program', 'Welding',
- 'hellodf', 'Manufacturing and Automation', 'Manufacturing'];
-const [filter, setFilter] = useState('');
- 
+    // const fruit = ['Welding Technology Post', 'Welding Technology and Training', 'Welding Technology and Training Program', 'Welding',
+    //     'hellodf', 'Manufacturing and Automation', 'Manufacturing'];
+    const [query, setQuery] = useState('');
+
 
     useEffect(() => {
         getTrade();
@@ -35,8 +35,8 @@ const [filter, setFilter] = useState('');
         getRating();
     }, [])
 
-      // Trade Filtering
-      
+    // Trade Filtering
+
     //   useEffect(() => {
 
     //     axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + tradeinfo.response)
@@ -69,34 +69,31 @@ const [filter, setFilter] = useState('');
                 <div class="searchRank">
 
                     <div class="searchProgram">
-                    <div className="App">
-      <div className='form-control'>
-      
-        <input id="filter" placeholder='By Trade' name="filter"
-          type="text"
-          value={filter}
-          onChange={event => setFilter(event.target.value)}
-        />
-      </div>
-      <ul>
-      
-      </ul>
-    </div>
+                        <div className="App">
+                            <div className='form-control'>
+
+                                <input id="filter" placeholder='By Trade' name="filter"
+                                    type="text"
+                                    value={query}
+                                    onChange={event => setQuery(event.target.value)}
+                                />
+                            </div>
+                            <ul>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="scrollview">
-                        <div class="scrollview1">
-                        {fruit.filter(f => f.includes(filter) || filter === '')
-                         
-            .map(f => <div key={f}><input type="radio" id="input" />  {f}</div>)}
-                            {trade.results && trade.results.length > 0 && trade.results.map((trade, index) => (
-                                <div class="checkBox" key={index}>
-                                    <input type="radio" onClick={props.alert} name="myCheck" value={trade.title} id={"check1" + trade.id} />
-                                    <label htmlFor={"myCheck" + trade.id}>{trade.title}</label>
-                                </div>
-                            ))}
-                        </div>
+                    <div class="scrollview1">
+                        {trade.results && trade.results.length > 0 && trade.results.filter(trade => trade.title.toLowerCase().includes(query)).map((trade) => (
+                            <div class="checkBox" key={trade.id}>
+                                <input type="radio" onClick={props.alert} name="myCheck" value={trade.title} id={"check1" + trade.id} />
+                                <label htmlFor={"myCheck" + trade.id}>{trade.title}</label>
+                            </div>
+                        ))}
                     </div>
+                </div>
 
                 <div class="stateBox" >
                     <div class="form-group">

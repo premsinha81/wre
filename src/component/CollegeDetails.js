@@ -24,14 +24,14 @@ function CollegeDetails() {
                 }
             })
     }, [])
-    // console.log(ranking.results.title)
+    //console.log(ranking.results.title)
+    //console.log('prem' + params.id);
     return (
         <>
-
             <section className="headerImage">
-                <div className="background ">
+                <div className="background">
                     <div className="container">
-                        <div className="row  ">
+                        <div className="row">
                             <div className="col-md-8 section-h">
                                 <div className="bannerHeading">
                                     <h1>{ranking.college}</h1>
@@ -50,9 +50,7 @@ function CollegeDetails() {
                     <div className="row">
                         <div className="col-lg-12 test-design">
                             
-                            <p className='m25'>
-                            {ranking.description}
-                            </p>
+                            <p className='m25' dangerouslySetInnerHTML={{__html:ranking.description}}></p>
                         </div>
                     </div>
                     {/* <div className="row">
