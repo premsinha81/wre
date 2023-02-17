@@ -8,17 +8,22 @@ import LeftTabsExample from "./tabs"
 import Resources from "./resources";
 import { slice } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import StarRatings from "react-star-ratings";
 // import { faSearch} from '@fortawesome/fontawesome-free-solid';
+
+
 
 function Slider() {
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState('');
     const [search_result, setSearcResult] = useState([]);
-
+    
     const [isCompleted, setIsCompleted] = useState(false)
     const [index, setIndex] = useState(5)
     const initialOnline = slice(search_result, 0, index)
+
+    const [rating, setRating] = useState([]);
 
     const loadMore = () => {
         setIndex(index + 5)
@@ -36,6 +41,7 @@ function Slider() {
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
+                    console.log("http://162.144.98.113/~work/wre/api/get/trades")
                     setTrade(result.data.results)
                     setMainTrade(result.data.results)
                     setSearcResult(result.data.results)
@@ -86,12 +92,12 @@ function Slider() {
 
             })
     }
- 
+
     // Trade Filter Code Start
     function handleChange(e) {
         // Destructuring
         const { value, checked } = e.target;
-        
+
         if (checked) {
             axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + value)
                 .then(function (result) {
@@ -106,12 +112,12 @@ function Slider() {
     // Trade Filter Code End
 
     useEffect(() => {
-        
+
     }, [initialOnline])
 
-
-
-
+   function changeRating(newRating) {
+          setRating(newRating)
+   }
     return (
         <>
 
@@ -159,12 +165,20 @@ function Slider() {
                                                         </li>
                                                         <li className="schoolDetails">
                                                             <a href={"search/" + res.slug}><h5>{res.college_name} - {res.title}</h5></a>
-                                                            <p>Rating : <span className="fa fa-star checked"></span>
+                                                            <p>Rating : {/*<span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star checked"></span>
                                                                 <span className="fa fa-star"></span>
-                                                                <span className="fa fa-star"></span></p>
-                                                                <p>Course Duration : {res.duration}</p>
+                                            <span className="fa fa-star"></span>*/}
+                                                            <StarRatings
+                                                                rating={2}
+                                                                starRatedColor="#FFA845"
+                                                                changeRating={res.rating}
+                                                                numberOfStars={5}
+                                                                name='rating'
+                                            /></p>
+
+                                                            <p>Course Duration : {res.duration}</p>
                                                         </li>
                                                         <li className="location">
                                                             <p>Location: <b>Kompalli</b></p>
