@@ -76,6 +76,7 @@ const Leftpanel = (props) => {
                                     type="text"
                                     value={query}
                                     onChange={event => setQuery(event.target.value)}
+                                  
                                 />
                             </div>
                             <ul>
@@ -95,7 +96,7 @@ const Leftpanel = (props) => {
                     </div>
                 </div>
 
-                <div class="stateBox" >
+                <div class="stateBox"  >
                     <div class="form-group">
                         <select name="programs" id="" class="form-control selectOptionSidebar">
                             <option value="">By Cities</option>
@@ -107,7 +108,7 @@ const Leftpanel = (props) => {
                         <div class="scrollview1">
                             {data.results && data.results.length > 0 && data.results.filter(data => data.name.toLowerCase().includes(query)).map((data) => (
                                 <div class="checkBox" key={data.id}>
-                                    <input type="radio"onClick={props.alert} name="myCheck" value={data.name} id={"check1" + data.id} />
+                                    <input type="radio"onClick={props.alert1} name="myCheck" value={data.name} id={"check1" + data.id} />
                                     <label htmlFor={"myCheck" + data.id}>{data.name}</label>
                                 </div>
                             ))}

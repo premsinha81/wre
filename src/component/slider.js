@@ -53,7 +53,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?q=" + entervalue)
+            axios.get("http://162.144.98.113/~work/wre/api/home_search?trade=" + entervalue)
                 .then(function (result) {
                     // console.log(result)
                     if (result.data.status.status_code == 200) {
@@ -99,7 +99,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + value)
+            axios.get("http://162.144.98.113/~work/wre/api/home_search?trade=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -108,8 +108,34 @@ function Slider() {
                     }
                 })
         }
+
+        
+        
          
     };
+    // Trade Filter Code End
+    // Lotaion Filter Code Start
+    function handleChange1(e) {
+        // Destructuring
+        const { value, checked } = e.target;
+        
+        if (checked) {
+            axios.get("http://162.144.98.113/~work/wre/api/home_search?location=" + value)
+                .then(function (result) {
+                    if (result.data.status.status_code == 200) {
+                        setSearcResult(result.data.results)
+                    } else {
+                        setSearcResult('')
+                    }
+                })
+        }
+
+        
+        
+         
+    };
+    // location Filter Code End
+     
     // Trade Filter Code End
     
     useEffect(() => {
@@ -144,7 +170,7 @@ function Slider() {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
-                        <Leftpanel  alert={handleChange}></Leftpanel>
+                        <Leftpanel alert1={handleChange1}  alert={handleChange}></Leftpanel>
                        
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
