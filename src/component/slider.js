@@ -37,11 +37,11 @@ function Slider() {
 
     useEffect(() => {
 
-        axios.get("http://162.144.98.113/~work/wre/api/get/trades")
+        axios.get("http://162.144.98.113/~work/wre/api/home_search")
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
-                    console.log("http://162.144.98.113/~work/wre/api/get/trades")
+                    console.log("http://162.144.98.113/~work/wre/api/home_search")
                     setTrade(result.data.results)
                     setMainTrade(result.data.results)
                     setSearcResult(result.data.results)
@@ -53,7 +53,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + entervalue)
+            axios.get("http://162.144.98.113/~work/wre/api/home_search?q=" + entervalue)
                 .then(function (result) {
                     // console.log(result)
                     if (result.data.status.status_code == 200) {
@@ -93,11 +93,11 @@ function Slider() {
             })
     }
 
-    // Trade Filter Code Start
-    function handleChange(e) {
+     // Trade Filter Code Start
+     function handleChange(e) {
         // Destructuring
         const { value, checked } = e.target;
-
+        
         if (checked) {
             axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + value)
                 .then(function (result) {
@@ -108,21 +108,14 @@ function Slider() {
                     }
                 })
         }
+         
     };
     // Trade Filter Code End
-
-    useEffect(() => {
-
-    }, [initialOnline])
-
-   function changeRating(newRating) {
     
-        this.setState({
-          rating: newRating
-        });
-          
-   }
-   
+    useEffect(() => {
+        
+    }, [initialOnline])
+    
     return (
         <>
 
@@ -151,7 +144,8 @@ function Slider() {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
-                        <Leftpanel alert={handleChange}></Leftpanel>
+                        <Leftpanel  alert={handleChange}></Leftpanel>
+                       
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
 
@@ -186,7 +180,7 @@ function Slider() {
                                                             <p>Course Duration : {res.duration}</p>
                                                         </li>
                                                         <li className="location">
-                                                            <p>Location: <b>Kompalli</b></p>
+                                                            <p>Location: <b>{res.location}</b></p>
                                                             <p>Name of Training School : <a href={"collegeDetails/" + res.college_id}>{res.college_name}</a></p>
                                                         </li>
                                                     </ul>

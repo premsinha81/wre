@@ -7,7 +7,7 @@ const Leftpanel = (props) => {
     const [trade, setTrade] = useState([]);
 
     const getTrade = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/get/trades");
+        const respond = await fetch("http://162.144.98.113/~work/wre/api/home_search");
         const dataTrade = await respond.json();
         setTrade(dataTrade);
 
@@ -105,10 +105,10 @@ const Leftpanel = (props) => {
 
                     <div class="scrollview">
                         <div class="scrollview1">
-                            {data.results && data.results.length > 0 && data.results.map((cities, index) => (
-                                <div class="checkBox" key={index}>
-                                    <input type="radio" id={"check2" + cities.id} />
-                                    <label htmlFor={"myCheck" + cities.id}>{cities.name}</label>
+                            {data.results && data.results.length > 0 && data.results.filter(data => data.name.toLowerCase().includes(query)).map((data) => (
+                                <div class="checkBox" key={data.id}>
+                                    <input type="radio"onClick={props.alert} name="myCheck" value={data.name} id={"check1" + data.id} />
+                                    <label htmlFor={"myCheck" + data.id}>{data.name}</label>
                                 </div>
                             ))}
                         </div>
@@ -135,6 +135,7 @@ const Leftpanel = (props) => {
                         </div>
                     </div>
                 </div>
+                
                 <div class="stateBox">
                     <div class="form-group">
                         <select name="programs" id="" class="form-control selectOptionSidebar">
