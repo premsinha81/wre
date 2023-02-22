@@ -26,7 +26,10 @@ input#submitButton1 {
   min-height: 360px;
   position: relative;
 }
-
+*:focus {
+  outline: none;
+  border: none;
+}
 .slider .gradient {
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
   position: absolute;
@@ -42,10 +45,10 @@ h1 {
 
 .slider .searchPanel {
   text-align: center;
-  min-width: 700px  !important;
+  min-width: 600px  !important;
   position: absolute;
   top: 150px;
-  left: 350px;
+  margin-left: 250px !important;
   /* margin-left: -350px; */
 }
 .slider .searchPanel input[type="text"]::placeholder {
@@ -101,9 +104,19 @@ h1 {
 .button {
   background-color: #3D55A5 !important;
   border-radius: 26px !important;
-  font-size: 21px !important;
+  font-size: 16px !important;
 }
-
+.input:focus{
+  outline: none;
+}
+.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(213 214 215);
+  border: none;
+}
+.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(213 214 215);
+  border: none;
+}
 .svgLogo {
   width: 126px;
   height: 26px;
@@ -131,7 +144,7 @@ select {
 }
 
 .btnLoadMore {
-  width: 250px !important;
+  width: 160px !important;
   margin: 15px auto !important;
 }
 
@@ -2846,7 +2859,13 @@ li.location {
     padding-left: 10px;
     padding-right: 20px;
 }
-
+.scrollview .scrollview2{
+  height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-right: 20px;
+}
 
 /* width */
 .scrollview::-webkit-scrollbar p {
@@ -2864,16 +2883,22 @@ li.location {
 }
 
 /* Handle on hover */
-.scrollview::-webkit-scrollbar-thumb:hover {
+.scrollview1::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.scrollview2::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
+.scrollview2::-webkit-scrollbar {
+  width: 3px;
+}
 .scrollview1::-webkit-scrollbar {
   width: 3px;
 }
 
 /* Track */
-.scrollview1::-webkit-scrollbar-track {
+.scrollview2::-webkit-scrollbar-track {
   background: #fff;
 }
 
@@ -2884,6 +2909,20 @@ li.location {
 
 /* Handle on hover */
 .scrollview1::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Track */
+.scrollview2::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+.scrollview2::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.scrollview2::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 button, input, optgroup, select, textarea {

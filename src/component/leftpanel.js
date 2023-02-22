@@ -5,7 +5,7 @@ const Leftpanel = (props) => {
     const [data, setdata] = useState([]);
     const [rating, setRating] = useState([]);
     const [trade, setTrade] = useState([]);
-
+    const [program, setProgram] = useState([]);
     const getTrade = async () => {
         const respond = await fetch("http://162.144.98.113/~work/wre/api/home_search");
         const dataTrade = await respond.json();
@@ -24,15 +24,22 @@ const Leftpanel = (props) => {
         setRating(dataRating);
 
     }
+    const getProgram = async () => {
+        const respond = await fetch("http://162.144.98.113/~work/wre/api/program_type");
+        const dataProgram = await respond.json();
+        setProgram(dataProgram);
+
+    }
     // const fruit = ['Welding Technology Post', 'Welding Technology and Training', 'Welding Technology and Training Program', 'Welding',
     //     'hellodf', 'Manufacturing and Automation', 'Manufacturing'];
-    const [query, setQuery] = useState('');
-
+    const [query,  setQuery] = useState('');
+    const [query1,  setQuery1] = useState('');
 
     useEffect(() => {
         getTrade();
         getuser();
         getRating();
+        getProgram();
     }, [])
 
     // Trade Filtering
@@ -79,9 +86,7 @@ const Leftpanel = (props) => {
                                   
                                 />
                             </div>
-                            <ul>
-
-                            </ul>
+                           
                         </div>
                     </div>
                 </div>
@@ -96,26 +101,36 @@ const Leftpanel = (props) => {
                     </div>
                 </div>
 
-                <div class="stateBox"  >
-                    <div class="form-group">
-                        <select name="programs" id="" class="form-control selectOptionSidebar">
-                            <option value="">By Cities</option>
+                <div class="searchRank">
 
-                        </select>
-                    </div>
+<div class="searchProgram">
+    <div className="App">
+        <div className='form-control'>
+
+            <input id="filters" placeholder='By Cities' name="filters"
+                type="text"
+                value={query1}
+                onChange={event => setQuery1(event.target.value)}
+              
+            />
+        </div>
+       
+    </div>
+</div>
+</div>
 
                     <div class="scrollview">
-                        <div class="scrollview1">
+                        <div class="scrollview2">
                             {data.results && data.results.length > 0 && data.results.filter(data => data.name.toLowerCase().includes(query)).map((data) => (
                                 <div class="checkBox" key={data.id}>
-                                    <input type="radio"onClick={props.alert1} name="myCheck" value={data.name} id={"check1" + data.id} />
-                                    <label htmlFor={"myCheck" + data.id}>{data.name}</label>
+                                    <input type="radio"onClick={props.alert1} name="myCheck1" value={data.name} id={"check2" + data.id} />
+                                    <label htmlFor={"myCheck1" + data.id}>{data.name}</label>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                </div>
+          
 
 
 
@@ -126,10 +141,10 @@ const Leftpanel = (props) => {
                         </select>
                     </div>
                     <div class="scrollview">
-                        <div class="scrollview1">
-                            {rating.data && rating.data.length > 0 && rating.data.map((rating, x) => (
+                        <div class="scrollview2">
+                        {rating.data && rating.data.length > 0 && rating.data.map((rating, x) => (
                                 <div class="checkBox" key={x}>
-                                    <input type="radio" id={"Rating" + rating.rating} />
+                                    <input type="radio" onClick={props.alert2} name="myCheck" value={rating.rating} id={"check1" + rating.rating}  />
                                     <label htmlFor={"Rating" + rating.rating}>{rating.rating} Star</label>
                                 </div>
                             ))}
@@ -147,41 +162,14 @@ const Leftpanel = (props) => {
                     </div>
                     <div class="scrollview">
                         <div class="scrollview1">
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                            <div class="checkBox">
-                                <input type="radio" id="myCheck" />
-                                <label htmlFor="myCheck">Online</label>
-                            </div>
-                        </div>
+                        {program.data && program.data.length > 0 && program.data.map((program, x) => (
+                                <div class="checkBox" key={x}>
+                                    <input type="radio"  onClick={props.alert3} name="myCheck" value={program.RemoteProgram} id={"check1" + program.RemoteProgram} />
+                                    <label htmlFor={"Rating" + program.RemoteProgram}>{program.RemoteProgram} Star</label>
+                                </div>
+                            ))}   
                     </div>
+                </div>
                 </div>
                 <div class="sideBarFooter">
                     <button type="button" class="btn btn-primary btnBSidebar RefilterBtn">Reset

@@ -2,6 +2,24 @@
     .slider .searchPanel {
         min-width: 100% !important;;
     }
+    .slider .searchPanel {
+        text-align: center;
+        min-width: 100%  !important;
+        position: absolute;
+        top: 20px;
+        
+      
+        /* margin-left: -350px; */
+      }
+      li.schoolDetails {
+        min-width: 100%;
+    }
+    .rightSection .searchBox ul li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px !important;
+        padding: 15px 4px;
+    }
     #m-btns {
     position: absolute;
    
@@ -464,4 +482,8 @@ button.btn.btn-primary.btnSidebar2.filterBtn span {
     border-radius: 30px;
     margin-top: 20px;
   }
-  
+  @media (max-width: 991px){
+.slider .searchPanel {
+    margin-left: 0px !important;
+}}
+
