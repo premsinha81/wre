@@ -49,7 +49,18 @@ function Slider() {
             })
 
     }, []);
-
+    function handleChangeL() {
+        axios.get("http://162.144.98.113/~work/wre/api/get/trades")
+            .then(function (result) {
+                // console.log(result)
+                if (result.data.status.status_code == 200) {
+                    setTrade(result.data.results)
+                    setMainTrade(result.data.results)
+                    setSearcResult(result.data.results)
+                }
+            })
+    }
+    
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
@@ -188,10 +199,9 @@ function Slider() {
     return (
         <>
 
-<div className="slider">
+                <div className="slider">
                 <div className="gradient"></div>
                 <div className="container">
-                    
                     <div className="container posRelative">
                         <div className="searchPanel">
                             <h1>WRE's Trade Educatoion Rankings</h1>
@@ -214,7 +224,7 @@ function Slider() {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
-                        <Leftpanel alert1={handleChange1} alert2={handleChange2} alert3={handleChange3} alert={handleChange}></Leftpanel>
+                        <Leftpanel alert1={handleChange1} alert2={handleChange2} alert4={handleChangeL} alert3={handleChange3} alert={handleChange}></Leftpanel>
                        
                     </div>
                     <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">

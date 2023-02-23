@@ -1,3 +1,4 @@
+import { reverse } from 'lodash';
 import { React, useState, useEffect } from 'react';
 // import axios from "axios";
 
@@ -60,7 +61,9 @@ const Leftpanel = (props) => {
     //             })
 
     // }, [handleChange]);
+    const resetFilter = () => {
 
+    }
     return (
         <>
 
@@ -171,8 +174,8 @@ const Leftpanel = (props) => {
                     </div>
                 </div>
                 </div>
-                <div class="sideBarFooter">
-                    <button type="button" class="btn btn-primary btnBSidebar RefilterBtn">Reset
+                <div class="sideBarFooter" onClick={props.alert4}>
+                    <button type="button"   class="btn btn-primary btnBSidebar RefilterBtn" onClick={resetFilter}>Reset
                         Filters</button>
                     <button type="button" class="btn btn-primary btnBSidebar saveBtn">Save</button>
                 </div>

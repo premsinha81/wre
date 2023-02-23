@@ -24,7 +24,7 @@ function Header() {
         <>
 
             <nav id="mainHeader" ref={stickyHeader} class="navbar navbar-expand-lg bg-white navbar-light mainHeader">
-                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <a href="http://localhost:3000/" class="navbar-brand d-flex align-items-center">
                     <div className="svgLogo"><YourSvg /></div>
                 </a>
                 <button className="hamburger" onClick={() => {
