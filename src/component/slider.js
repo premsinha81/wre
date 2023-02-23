@@ -50,7 +50,7 @@ function Slider() {
 
     }, []);
     function handleChangeL() {
-        axios.get("http://162.144.98.113/~work/wre/api/get/trades")
+        axios.get("http://162.144.98.113/~work/wre/api/home_search")
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
