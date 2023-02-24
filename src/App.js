@@ -5,7 +5,7 @@ import Carrier from './component/Carrier';
 import Home from './component/home';
 import About from './component/about';
 import Login from './component/login';
-//import Rankingdetails from './component/Rankingdetails';
+
 import Signup from './component/signup';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 import OnlineCoursesSearch from './component/OnlineCoursesSearch';
@@ -17,7 +17,7 @@ import Header from './component/common/header';
 import Footer from './component/common/footer';
 import Ranking from './component/ranking-details';
 import CollgeDetails from './component/CollegeDetails';
-
+import RankingDetail from './component/RankingDetail';
 import UserprofileCommunities from './component/userprofileCommunities';
 
 
@@ -79,7 +79,9 @@ function App() {
       <Routes>
         <Route path='/OnlineCoursesSearch' element={<OnlineCoursesSearch />} />
       </Routes>
-      
+      <Routes>
+        <Route path='/RankingDetail' element={<RankingDetail />} />
+      </Routes>
     </Router>
     <Footer/>
     </>

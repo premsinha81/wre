@@ -1,4 +1,30 @@
 @media only screen and (max-width: 767px) {
+    .borederlio1 img {
+        width: 50px!important;
+        position: absolute!important;
+        right: 11px!important;
+        bottom: -26px!important;
+    }
+    .borederlio1 span {
+        font-size: 25px!important;
+        right: -14px!important;
+        top: -18px!important;
+        bottom: 0!important;
+      }
+    .rr.borederlio h2 {
+        width: 100%!important;
+        font-size: 20px!important;
+        padding-left: 20px!important;
+    }
+    .tradeTitle {
+        width: 100%;
+    }
+    .test-design1 h2 {
+        color: #1E1E1E;
+        font-size: 35px;
+        font-weight: 300;
+        padding-right: 30px;
+    }
     .slider .searchPanel {
         min-width: 100% !important;;
     }
@@ -76,6 +102,10 @@ button.btn.btn-primary.btnSidebar1 {
     }
     .headerImage {
         height: 480px;
+        background-position: -240px 0px;
+    }
+    .headerImage1 {
+       
         background-position: -240px 0px;
     }
     .pulsating {
@@ -485,5 +515,14 @@ button.btn.btn-primary.btnSidebar2.filterBtn span {
   @media (max-width: 991px){
 .slider .searchPanel {
     margin-left: 0px !important;
-}}
+}
+  }
+  @media (min-width: 768){
+    .borederlio1 span {
+        font-size: 25px!important;
+        right: 0px!important;
+        top: -18px!important;
+        bottom: 0!important;
+      }
+}
 

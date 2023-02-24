@@ -77,7 +77,7 @@ h1 {
 }
 
 .rightSection {
-  margin: 30px 0;
+  margin: 60px 0;
 }
 
 .rightSection .searchBox {
@@ -150,9 +150,9 @@ select {
 
 .leftSection {
   background-color: #F6F6F6;
-  padding: 10px;
+  padding: 7px;
   height: 90%;
-  margin-top: 25px;
+  margin: 60px 0px;
   border-radius: 10px;
 }
 

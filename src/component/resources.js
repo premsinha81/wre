@@ -43,7 +43,7 @@ export default function SimpleSlider() {
   };
 
   return (
-    <section>
+    <section className='banneerSection'>
       <h4 className=" related">Related Top Resources</h4>
       <Slider {...settings}>
         <div>

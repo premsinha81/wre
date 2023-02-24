@@ -20,7 +20,7 @@ function Slider() {
     const [search_result, setSearcResult] = useState([]);
     
     const [isCompleted, setIsCompleted] = useState(false)
-    const [index, setIndex] = useState(5)
+    const [index, setIndex] = useState(6)
     const initialOnline = slice(search_result, 0, index)
 
     const [rating, setRating] = useState([]);

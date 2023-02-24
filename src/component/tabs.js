@@ -42,7 +42,7 @@ const [user, setUser] = useState([]);
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="Welding Technology and Training">
        <div class="container">
-      <Row>
+      <Row className='banneerSection'>
      
         <Col sm={4}>
         <div class="leftSidebar">
