@@ -9,19 +9,20 @@ import Resources from "./resources";
 import { slice } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarRatings from "react-star-ratings";
+import Homepage_leftcomponent from "./Homepage_leftcomponent";
 // import { faSearch} from '@fortawesome/fontawesome-free-solid';
 
 
 
 function Slider() {
-    const [RatingNewpage, setRatingNewpage] = useState([]);
+  
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState('');
     const [search_result, setSearcResult] = useState([]);
     
     const [isCompleted, setIsCompleted] = useState(false)
-    const [index, setIndex] = useState(4)
+    const [index, setIndex] = useState(5)
     const initialOnline = slice(search_result, 0, index)
 
     const [rating, setRating] = useState([]);
@@ -35,12 +36,7 @@ function Slider() {
             setIsCompleted(false)
         }
     }
-    const getRatingNewpage = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/suggestion_question");
-        const dataRatingNewpage = await respond.json();
-        setRatingNewpage(dataRatingNewpage);
-
-    }
+   
 
     useEffect(() => {
        
@@ -202,7 +198,7 @@ function Slider() {
     useEffect(() => {
         
     }, [initialOnline])
-    getRatingNewpage();
+
     return (
         <>
 
@@ -265,9 +261,13 @@ function Slider() {
                                             /></p>
 
                                                             <p>Course Duration : {res.duration}</p>
-                                                            <div className="location">
-                                                            <p>Location: <b>{res.location}</b></p>
-                                                            <p>Name of Training School : <a href={"collegeDetails/" + res.college_id}>{res.college_name}</a></p>
+                                                           
+                                                        </li>
+                                                        <li>
+
+                                                        <div className="location">
+                                                            <p className="par">Location: <b>{res.location}</b><br/>
+                                                            Name of Training School : <a href={"collegeDetails/" + res.college_id}>{res.college_name}</a></p>
                                                         </div>
                                                         </li>
                                                         
@@ -298,36 +298,7 @@ function Slider() {
                     <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
 
 
-        <div className="rightSection">
-            <div className="row">
-                <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                        <div className="searchBox">
-                            <ul>
-                                <br></br>
-                            <h5 className="cssh">Main Top Ranking Schools</h5>
-                            {RatingNewpage.data && RatingNewpage.data.length > 0 && RatingNewpage.data.map((RatingNewpage, x) => (
-                   
-                                <li className="schoolDetails schoolDetailsss">
-                                    
-                                    <a href={"search_Ranking/" + RatingNewpage.slug}><h6>{RatingNewpage.question}</h6></a>
-                                  
-                                 
-                                </li>
-                             ))}   
-                            </ul>
-
-                        </div>
-                  
-
-                </div>
-
-            
-              
-
-            </div>
-
-        </div>
+ <Homepage_leftcomponent></Homepage_leftcomponent>
   
 
 </div>

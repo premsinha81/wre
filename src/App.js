@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='search/:slug' element={<Ranking />} />
-        <Route path='search_Ranking/:slug' element={<RankingDetail />} />
+        <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
       </Routes>
       

@@ -7,7 +7,7 @@ function Online() {
   const [index, setIndex] = useState(5)
   const initialOnline = slice(post, 0, index)
   const getData = () => {
-    fetch('http://162.144.98.113/~work/wre/api/get/onlinecourse')
+    fetch('https://admin.allnuud.com/api/get/onlinecourse')
       .then((res) => res.json())
       .then((json) => setPost(json))
       .catch((e) => console.log(e))

@@ -12,7 +12,7 @@ function CollegeDetails() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://162.144.98.113/~work/wre/api/college_detail?college_id=${id}`)
+        axios.get(`https://admin.allnuud.com/api/college_detail?college_id=${id}`)
             .then(function (result) {
                 console.log(result)
                 if (result.data.status.status_code == 200) {

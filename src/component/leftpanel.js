@@ -8,26 +8,26 @@ const Leftpanel = (props) => {
     const [trade, setTrade] = useState([]);
     const [program, setProgram] = useState([]);
     const getTrade = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/home_search");
+        const respond = await fetch("https://admin.allnuud.com/api/home_search");
         const dataTrade = await respond.json();
         setTrade(dataTrade);
 
     }
    
     const getuser = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/get/location");
+        const respond = await fetch("https://admin.allnuud.com/api/get/location");
         const user = await respond.json();
         setdata(user);
 
     }
     const getRating = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/rating");
+        const respond = await fetch("https://admin.allnuud.com/api/rating");
         const dataRating = await respond.json();
         setRating(dataRating);
 
     }
     const getProgram = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/program_type");
+        const respond = await fetch("https://admin.allnuud.com/api/program_type");
         const dataProgram = await respond.json();
         setProgram(dataProgram);
 
@@ -49,7 +49,7 @@ const Leftpanel = (props) => {
 
     //   useEffect(() => {
 
-    //     axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + tradeinfo.response)
+    //     axios.get("https://admin.allnuud.com/api/get/trades?q=" + tradeinfo.response)
     //             .then(function (result) {
     //                 // console.log(result)
     //                 if (result.data.status.status_code == 200) {
@@ -69,12 +69,12 @@ const Leftpanel = (props) => {
     return (
         <>
 
-            <div className="leftSection">
+            <div className="leftSection postGroups1">
 
                 <div class="programsSideBar">
                     <div class="filterArea">
-                        <button type="button" class="btn btn-primary btnSidebar sortBtn ">Filters</button>
-
+                        <h5 className='cssh' >Filters</h5>
+                        <div class="divider"></div>
                     </div>
                 </div>
 
@@ -183,6 +183,7 @@ const Leftpanel = (props) => {
                 </div>
 
             </div>
+            
         </>
     )
 }

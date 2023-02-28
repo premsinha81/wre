@@ -151,7 +151,7 @@ select {
 .leftSection {
   background-color: #F6F6F6;
   padding: 7px;
-  height: 90%;
+  height: 87%;
   margin: 60px 0px;
   border-radius: 10px;
 }
@@ -1213,7 +1213,7 @@ div#slider-range {
   background: #3D55A5;
   color: #fff;
   border-radius: 19px;
-  padding: 6px 15px;
+  padding: 6px 20px;
   display: grid;
   gap: 10px;
   align-items: center;
@@ -2771,7 +2771,7 @@ ul.tandcLink2 a {
 .nav-pills .nav-link:before {
   content: "+";
   position: absolute;
-  left: 5px;
+  left: 25px;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
