@@ -961,6 +961,16 @@ input[type=checkbox] {
   width: 96%;
   margin-left: 8px;
 }
+h5.cssh {
+  color: #404b71 !important;
+  font-size: 18px!important;
+  font-weight: 800!important;
+  margin: 5px!important;
+  text-align: center!important;
+}
+li.schoolDetails.schoolDetailsss {
+  padding: 15px 20px 0px !important;
+}
 
 .price-range-slider .range-bar .ui-slider-range {
   background: #3D55A5;

@@ -13,6 +13,7 @@ const Leftpanel = (props) => {
         setTrade(dataTrade);
 
     }
+   
     const getuser = async () => {
         const respond = await fetch("http://162.144.98.113/~work/wre/api/get/location");
         const user = await respond.json();
@@ -20,7 +21,7 @@ const Leftpanel = (props) => {
 
     }
     const getRating = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/get/rating");
+        const respond = await fetch("http://162.144.98.113/~work/wre/api/rating");
         const dataRating = await respond.json();
         setRating(dataRating);
 
@@ -38,6 +39,7 @@ const Leftpanel = (props) => {
 
     useEffect(() => {
         getTrade();
+    
         getuser();
         getRating();
         getProgram();
@@ -147,8 +149,8 @@ const Leftpanel = (props) => {
                         <div class="scrollview2">
                         {rating.data && rating.data.length > 0 && rating.data.map((rating, x) => (
                                 <div class="checkBox" key={x}>
-                                    <input type="radio" onClick={props.alert2} name="myCheck" value={rating.rating} id={"check1" + rating.rating}  />
-                                    <label htmlFor={"Rating" + rating.rating}>{rating.rating} Star</label>
+                                    <input type="radio" onClick={props.alert2} name="myCheck" value={rating.rating} id={"check2" + rating.rating}  />
+                                    <label htmlFor={"myCheck1" + rating.rating}>{rating.rating} Star</label>
                                 </div>
                             ))}
                         </div>
@@ -164,7 +166,7 @@ const Leftpanel = (props) => {
 
                     </div>
                     <div class="scrollview">
-                        <div class="scrollview1">
+                        <div class="scrollview">
                         {program.data && program.data.length > 0 && program.data.map((program, x) => (
                                 <div class="checkBox" key={x}>
                                     <input type="radio"  onClick={props.alert3} name="myCheck" value={program.RemoteProgram} id={"check1" + program.RemoteProgram} />
@@ -177,7 +179,7 @@ const Leftpanel = (props) => {
                 <div class="sideBarFooter" onClick={props.alert4}>
                     <button type="button"   class="btn btn-primary btnBSidebar RefilterBtn" onClick={resetFilter}>Reset
                         Filters</button>
-                    <button type="button" class="btn btn-primary btnBSidebar saveBtn">Save</button>
+                   
                 </div>
 
             </div>

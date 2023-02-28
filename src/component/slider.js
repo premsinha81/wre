@@ -14,13 +14,14 @@ import StarRatings from "react-star-ratings";
 
 
 function Slider() {
+    const [RatingNewpage, setRatingNewpage] = useState([]);
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState('');
     const [search_result, setSearcResult] = useState([]);
     
     const [isCompleted, setIsCompleted] = useState(false)
-    const [index, setIndex] = useState(6)
+    const [index, setIndex] = useState(4)
     const initialOnline = slice(search_result, 0, index)
 
     const [rating, setRating] = useState([]);
@@ -34,9 +35,15 @@ function Slider() {
             setIsCompleted(false)
         }
     }
+    const getRatingNewpage = async () => {
+        const respond = await fetch("http://162.144.98.113/~work/wre/api/suggestion_question");
+        const dataRatingNewpage = await respond.json();
+        setRatingNewpage(dataRatingNewpage);
+
+    }
 
     useEffect(() => {
-
+       
         axios.get("http://162.144.98.113/~work/wre/api/home_search")
             .then(function (result) {
                 // console.log(result)
@@ -195,7 +202,7 @@ function Slider() {
     useEffect(() => {
         
     }, [initialOnline])
-    
+    getRatingNewpage();
     return (
         <>
 
@@ -227,7 +234,7 @@ function Slider() {
                         <Leftpanel alert1={handleChange1} alert2={handleChange2} alert4={handleChangeL} alert3={handleChange3} alert={handleChange}></Leftpanel>
                        
                     </div>
-                    <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
+                    <div className="col-12 col-xl-6 col-lg-6 col-md-6 col-xs-12">
 
                         {initialOnline ?
                             initialOnline.length > 0 && (
@@ -258,11 +265,12 @@ function Slider() {
                                             /></p>
 
                                                             <p>Course Duration : {res.duration}</p>
-                                                        </li>
-                                                        <li className="location">
+                                                            <div className="location">
                                                             <p>Location: <b>{res.location}</b></p>
                                                             <p>Name of Training School : <a href={"collegeDetails/" + res.college_id}>{res.college_name}</a></p>
+                                                        </div>
                                                         </li>
+                                                        
                                                     </ul>
 
                                                 </div>
@@ -287,6 +295,42 @@ function Slider() {
                             ) : <div className="rightSection">No Record match.</div>}
 
                     </div>
+                    <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
+
+
+        <div className="rightSection">
+            <div className="row">
+                <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div className="searchBox">
+                            <ul>
+                                <br></br>
+                            <h5 className="cssh">Main Top Ranking Schools</h5>
+                            {RatingNewpage.data && RatingNewpage.data.length > 0 && RatingNewpage.data.map((RatingNewpage, x) => (
+                   
+                                <li className="schoolDetails schoolDetailsss">
+                                    
+                                    <a href={"search_Ranking/" + RatingNewpage.slug}><h6>{RatingNewpage.question}</h6></a>
+                                  
+                                 
+                                </li>
+                             ))}   
+                            </ul>
+
+                        </div>
+                  
+
+                </div>
+
+            
+              
+
+            </div>
+
+        </div>
+  
+
+</div>
                     <LeftTabsExample></LeftTabsExample>
                     <Resources></Resources>
                 </div>
