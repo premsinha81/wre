@@ -23,6 +23,7 @@ import Ranking_view from './component/Ranking_view';
 
 
 function App() {
+  
 
   // const { token, setToken } = useToken();
 
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <>
+    
       <Header/>
     <Router>
 

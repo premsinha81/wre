@@ -8,7 +8,7 @@ export default function Login() {
     
     const handleSubmit = async (e) => {
         const email_phone = email;
-        const res = await fetch("http://162.144.98.113/~work/wre/api/get/login", {
+        const res = await fetch("https://admin.allnuud.com/api/get/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

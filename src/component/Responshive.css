@@ -25,20 +25,49 @@
         font-weight: 300;
         padding-right: 30px;
     }
-    .slider .searchPanel {
-        min-width: 100% !important;;
+    .posRelative {
+        position: relative;
+        height: auto;
+    }
+    p.par {
+        margin-top: 0px !important;
+    }
+    .h5, h5 {
+        font-size: 16px;
+    }
+    .rightSection .searchBox ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+    .rightSection .searchBox ul li img {
+        max-width: 100px;
+        background-color: #f6f6f6;
+        padding: 10px;
+        border-radius: 0;
+        margin: 0 auto;
+        min-height: auto;
+        width: 300px
+    px
+    ;
+        height: 80px;
+        border: 1px solid #ccc;
     }
     .slider .searchPanel {
-        text-align: center;
-        min-width: 100%  !important;
-        position: absolute;
-        top: 20px;
-        
-      
-        /* margin-left: -350px; */
+        min-width: 100%!important;
+    position: absolute;
+    text-align: center;
+    /* top: 50%; */
+    margin-top: 40px;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
       }
       li.schoolDetails {
-        min-width: 100%;
+        min-width: 0%;
+    }
+    .rightSection {
+       margin: 0px 0; 
     }
     .rightSection .searchBox ul li {
         display: inline-block;

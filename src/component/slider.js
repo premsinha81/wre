@@ -40,11 +40,11 @@ function Slider() {
 
     useEffect(() => {
        
-        axios.get("http://162.144.98.113/~work/wre/api/home_search")
+        axios.get("https://admin.allnuud.com/api/home_search")
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
-                    console.log("http://162.144.98.113/~work/wre/api/home_search")
+                    console.log("https://admin.allnuud.com/api/home_search")
                     setTrade(result.data.results)
                     setMainTrade(result.data.results)
                     setSearcResult(result.data.results)
@@ -53,7 +53,7 @@ function Slider() {
 
     }, []);
     function handleChangeL() {
-        axios.get("http://162.144.98.113/~work/wre/api/home_search")
+        axios.get("https://admin.allnuud.com/api/home_search")
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -67,7 +67,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?trade=" + entervalue)
+            axios.get("https://admin.allnuud.com/api/home_search?trade=" + entervalue)
                 .then(function (result) {
                     // console.log(result)
                     if (result.data.status.status_code == 200) {
@@ -93,7 +93,7 @@ function Slider() {
             search_term = entervalue
         }
 
-        axios.post("http://162.144.98.113/~work/wre/api/get/search", {
+        axios.post("https://admin.allnuud.com/api/get/search", {
             trade: search_term
         })
             .then(function (result) {
@@ -113,7 +113,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?trade=" + value)
+            axios.get("https://admin.allnuud.com/api/home_search?trade=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -134,7 +134,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?location=" + value)
+            axios.get("https://admin.allnuud.com/api/home_search?location=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -157,7 +157,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?top_rated=" + value)
+            axios.get("https://admin.allnuud.com/api/home_search?top_rated=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -179,7 +179,7 @@ function Slider() {
     const { value, checked } = e.target;
     
     if (checked) {
-        axios.get("http://162.144.98.113/~work/wre/api/home_search?program_type=" + value)
+        axios.get("https://admin.allnuud.com/api/home_search?program_type=" + value)
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
                     setSearcResult(result.data.results)
@@ -217,7 +217,7 @@ function Slider() {
                                 onChange={handleSearchChange}
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
-                            <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
+                            <button className="btn btn-primary button btnSearch" onClick={()=>handleSearchChange}>
                                 <i class="fa fa-search" ></i>
                             </button>
                         </div>

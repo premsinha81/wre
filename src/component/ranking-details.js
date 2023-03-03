@@ -12,7 +12,7 @@ function RankingDetails() {
     const { slug } = useParams();
 
     useEffect(() => {
-        axios.get(`http://162.144.98.113/~work/wre/api/get/trades/${slug}`)
+        axios.get(`https://admin.allnuud.com/api/get/trades/${slug}`)
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {

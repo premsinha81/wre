@@ -16,7 +16,7 @@ function Signup() {
     const handleSubmit = async (e) => {
         const { name, email, mob, password } = user;
 
-        const res = await fetch("http://162.144.98.113/~work/wre/api/get/signup", {
+        const res = await fetch("https://admin.allnuud.com/api/get/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

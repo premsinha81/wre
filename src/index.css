@@ -44,12 +44,13 @@ h1 {
 }
 
 .slider .searchPanel {
-  text-align: center;
-  min-width: 600px  !important;
+  min-width: 600px!important;
   position: absolute;
-  top: 150px;
-  margin-left: 250px !important;
-  /* margin-left: -350px; */
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
 }
 .slider .searchPanel input[type="text"]::placeholder {
   font-weight: 500;
@@ -73,7 +74,9 @@ h1 {
 }
 
 .posRelative {
+ 
   position: relative;
+  height: 360px;
 }
 
 .rightSection {
@@ -506,7 +509,10 @@ img.iconP {
   color: #FFFFFF !important;
   background: var(--primary) !important;
 }
-
+a {
+  color: var(--bs-link-color);
+  text-decoration: none !important;
+}
 .headerImage {
   background-image: url("./img/trade-schools.jpeg");
   top: 0;

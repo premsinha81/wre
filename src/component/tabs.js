@@ -29,7 +29,7 @@ function LeftTabsExample() {
 const [user, setUser] = useState([]);
 
   const fetchData = () => {
-    return fetch("http://162.144.98.113/~work/wre/api/get/tab")
+    return fetch("https://admin.allnuud.com/api/get/tab")
           .then((response) => response.json())
           .then((data) => setUser(data));
   }
