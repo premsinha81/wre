@@ -71,8 +71,7 @@ const Leftpanel = (props) => {
 
                 <div class="programsSideBar">
                     <div class="filterArea">
-                        <button type="button" class="btn btn-primary btnSidebar sortBtn ">Filters</button>
-
+                        <h2>Filter</h2>    
                     </div>
                 </div>
 

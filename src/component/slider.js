@@ -204,7 +204,7 @@ function Slider() {
                 <div className="container">
                     <div className="container posRelative">
                         <div className="searchPanel">
-                            <h1>WRE's Trade Educatoion Rankings</h1>
+                            <h1>WRE's Trade School Search</h1>
                             <Autocomplete
                                 id="combo-box-demo"
                                 className=""

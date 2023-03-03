@@ -628,6 +628,7 @@ button.btn.btn-primary.btnSidebar {
   display: flex;
   align-items: center;
   gap: 10px;
+  border-bottom: 1px dotted #ccc;
 }
 
 input[type=checkbox] {
@@ -637,8 +638,10 @@ input[type=checkbox] {
 }
 
 .checkBox label {
-  color: #000;
-  font-size: 16px;
+    color: #000;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 10px 0px;
 }
 
 .radioBoxRow {
@@ -707,7 +710,7 @@ input[type=checkbox] {
 
 .sideBarFooter {
   display: flex;
-  margin-top: 20px;
+  margin-top: 0px;
   gap: 5px;
 }
 
