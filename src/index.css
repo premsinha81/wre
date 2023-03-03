@@ -64,15 +64,17 @@ h1 {
 
 .slider .searchPanel .btnSearch {
   position: absolute;
-  top: 50px;
-  right: 5px;
+  right: 50px;
+    top: 60px;
   font-size: 15px !important;
   font-weight: 500;
   padding: 10px 15px;
 }
 
 .posRelative {
+ 
   position: relative;
+  height: 360px;
 }
 
 .rightSection {
@@ -150,7 +152,7 @@ select {
 .leftSection {
   background-color: #F6F6F6;
   padding: 7px;
-  height: 90%;
+  height: 87%;
   margin: 60px 0px;
   border-radius: 10px;
 }
@@ -177,7 +179,7 @@ h2 {
 }
 
 .rightSection .searchBox ul li img {
-  max-width: 200px;
+  max-width: 100px;
   margin: 0 auto;
 }
 
@@ -505,7 +507,10 @@ img.iconP {
   color: #FFFFFF !important;
   background: var(--primary) !important;
 }
-
+a {
+  color: var(--bs-link-color);
+  text-decoration: none !important;
+}
 .headerImage {
   background-image: url("./img/trade-schools.jpeg");
   top: 0;
@@ -1212,7 +1217,7 @@ div#slider-range {
   background: #3D55A5;
   color: #fff;
   border-radius: 19px;
-  padding: 6px 15px;
+  padding: 6px 20px;
   display: grid;
   gap: 10px;
   align-items: center;
@@ -1349,7 +1354,13 @@ button .inner-pulse {
   text-align: left;
   margin-top: 50px !important;
 }
-
+.location {
+  float: right;
+}
+a {
+  color: var(--bs-link-color);
+  text-decoration: auto;
+}
 .rightSection .searchBox ul li img {
   max-width: 100px;
     background-color: #f6f6f6;
@@ -1357,8 +1368,8 @@ button .inner-pulse {
     border-radius: 0;
     margin: 0 auto;
     min-height: 100%;
-    width: 1500px;
-    height: 100px;
+    width: 300px;
+    height: 80px;
     border: 1px solid #ccc;
 }
 .img-fluid {
@@ -1524,7 +1535,7 @@ ul.tandcLink {
 
 ul.tandcLink a {
   color: #000;
-  text-decoration: underline;
+  text-decoration: none;
   padding: 0px 20px;
 }
 
@@ -1913,7 +1924,13 @@ p.groupFollowers {
   button.postButton {
     padding: 9px 14px;
   }
-
+  h5.cssh {
+    color: #404b71 !important;
+    font-size: 18px!important;
+    font-weight: 800!important;
+    margin: 5px!important;
+    text-align: center!important;
+}
   .newPostContainer input[type="text"]::placeholder {
     font-size: 10px;
   }
@@ -2758,7 +2775,7 @@ ul.tandcLink2 a {
 .nav-pills .nav-link:before {
   content: "+";
   position: absolute;
-  left: 5px;
+  left: 25px;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
@@ -2843,9 +2860,8 @@ ul.tandcLink2 a {
 li.location {
   margin-top: 40px !important;
 }
-li.schoolDetails{
-  min-width:500px;
-}
+
+  
 li.location {
   margin-top: 30px !important;
   text-align: right;

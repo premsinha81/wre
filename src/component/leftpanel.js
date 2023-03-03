@@ -8,25 +8,26 @@ const Leftpanel = (props) => {
     const [trade, setTrade] = useState([]);
     const [program, setProgram] = useState([]);
     const getTrade = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/home_search");
+        const respond = await fetch("https://admin.allnuud.com/api/home_search");
         const dataTrade = await respond.json();
         setTrade(dataTrade);
 
     }
+   
     const getuser = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/get/location");
+        const respond = await fetch("https://admin.allnuud.com/api/get/location");
         const user = await respond.json();
         setdata(user);
 
     }
     const getRating = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/get/rating");
+        const respond = await fetch("https://admin.allnuud.com/api/rating");
         const dataRating = await respond.json();
         setRating(dataRating);
 
     }
     const getProgram = async () => {
-        const respond = await fetch("http://162.144.98.113/~work/wre/api/program_type");
+        const respond = await fetch("https://admin.allnuud.com/api/program_type");
         const dataProgram = await respond.json();
         setProgram(dataProgram);
 
@@ -38,6 +39,7 @@ const Leftpanel = (props) => {
 
     useEffect(() => {
         getTrade();
+    
         getuser();
         getRating();
         getProgram();
@@ -47,7 +49,7 @@ const Leftpanel = (props) => {
 
     //   useEffect(() => {
 
-    //     axios.get("http://162.144.98.113/~work/wre/api/get/trades?q=" + tradeinfo.response)
+    //     axios.get("https://admin.allnuud.com/api/get/trades?q=" + tradeinfo.response)
     //             .then(function (result) {
     //                 // console.log(result)
     //                 if (result.data.status.status_code == 200) {
@@ -67,11 +69,12 @@ const Leftpanel = (props) => {
     return (
         <>
 
-            <div className="leftSection">
+            <div className="leftSection postGroups1">
 
                 <div class="programsSideBar">
                     <div class="filterArea">
-                        <h2>Filter</h2>    
+                        <h5 className='cssh'>Filters</h5>
+                        <div class="divider"></div>
                     </div>
                 </div>
 
@@ -146,8 +149,8 @@ const Leftpanel = (props) => {
                         <div class="scrollview2">
                         {rating.data && rating.data.length > 0 && rating.data.map((rating, x) => (
                                 <div class="checkBox" key={x}>
-                                    <input type="radio" onClick={props.alert2} name="myCheck" value={rating.rating} id={"check1" + rating.rating}  />
-                                    <label htmlFor={"Rating" + rating.rating}>{rating.rating} Star</label>
+                                    <input type="radio" onClick={props.alert2} name="myCheck" value={rating.rating} id={"check2" + rating.rating}  />
+                                    <label htmlFor={"myCheck1" + rating.rating}>{rating.rating} Star</label>
                                 </div>
                             ))}
                         </div>
@@ -163,7 +166,7 @@ const Leftpanel = (props) => {
 
                     </div>
                     <div class="scrollview">
-                        <div class="scrollview1">
+                        <div class="scrollview">
                         {program.data && program.data.length > 0 && program.data.map((program, x) => (
                                 <div class="checkBox" key={x}>
                                     <input type="radio"  onClick={props.alert3} name="myCheck" value={program.RemoteProgram} id={"check1" + program.RemoteProgram} />
@@ -176,10 +179,11 @@ const Leftpanel = (props) => {
                 <div class="sideBarFooter" onClick={props.alert4}>
                     <button type="button"   class="btn btn-primary btnBSidebar RefilterBtn" onClick={resetFilter}>Reset
                         Filters</button>
-                    <button type="button" class="btn btn-primary btnBSidebar saveBtn">Save</button>
+                   
                 </div>
 
             </div>
+            
         </>
     )
 }

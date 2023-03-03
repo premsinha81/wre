@@ -1,9 +1,9 @@
 import React from 'react'
 import LeftTabsExample from "./tabs"
 import Resources from "./resources";
-import Rankingright_component from "./Rankingright_component";
-import Rankingleft_component from "./Rankingleft_component";
 
+import Rankingright_component from "./Rankingright_component";
+import Homepage_leftcomponent from "./Homepage_leftcomponent";
 
 import Tabsystemsection from './Tabsystemsection';
 const RankingDetail = () => {
@@ -37,7 +37,7 @@ const RankingDetail = () => {
           </div>
        
         <div className="col-lg-4 cpl-md-12 col-sm-12 ">
-        <Rankingleft_component></Rankingleft_component>
+       <Homepage_leftcomponent></Homepage_leftcomponent>
         </div>
       </div>
       {/* Programs Section End*/}

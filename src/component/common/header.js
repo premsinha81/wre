@@ -3,6 +3,7 @@ import Menu from "./menu";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ReactComponent as YourSvg } from './svg.svg';
 import {ReactComponent as BurgerSvg} from './burger.svg';
+
 //import { useState } from React
 
 function Header() {
@@ -24,7 +25,7 @@ function Header() {
         <>
 
             <nav id="mainHeader" ref={stickyHeader} class="navbar navbar-expand-lg bg-white navbar-light mainHeader">
-                <a href="http://localhost:3000/" class="navbar-brand d-flex align-items-center">
+                <a href="\" class="navbar-brand d-flex align-items-center">
                     <div className="svgLogo"><YourSvg /></div>
                 </a>
                 <button className="hamburger" onClick={() => {

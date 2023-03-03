@@ -9,18 +9,20 @@ import Resources from "./resources";
 import { slice } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StarRatings from "react-star-ratings";
+import Homepage_leftcomponent from "./Homepage_leftcomponent";
 // import { faSearch} from '@fortawesome/fontawesome-free-solid';
 
 
 
 function Slider() {
+  
     const [maintrade, setMainTrade] = useState()
     const [trade, setTrade] = useState()
     const [entervalue, setEnterValue] = useState('');
     const [search_result, setSearcResult] = useState([]);
     
     const [isCompleted, setIsCompleted] = useState(false)
-    const [index, setIndex] = useState(6)
+    const [index, setIndex] = useState(5)
     const initialOnline = slice(search_result, 0, index)
 
     const [rating, setRating] = useState([]);
@@ -34,14 +36,15 @@ function Slider() {
             setIsCompleted(false)
         }
     }
+   
 
     useEffect(() => {
-
-        axios.get("http://162.144.98.113/~work/wre/api/home_search")
+       
+        axios.get("https://admin.allnuud.com/api/home_search")
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
-                    console.log("http://162.144.98.113/~work/wre/api/home_search")
+                    console.log("https://admin.allnuud.com/api/home_search")
                     setTrade(result.data.results)
                     setMainTrade(result.data.results)
                     setSearcResult(result.data.results)
@@ -50,7 +53,7 @@ function Slider() {
 
     }, []);
     function handleChangeL() {
-        axios.get("http://162.144.98.113/~work/wre/api/home_search")
+        axios.get("https://admin.allnuud.com/api/home_search")
             .then(function (result) {
                 // console.log(result)
                 if (result.data.status.status_code == 200) {
@@ -64,7 +67,7 @@ function Slider() {
     function handletradeChange(event) {
         setEnterValue(event.target.value)
         if (entervalue !== '' && entervalue !== undefined) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?trade=" + entervalue)
+            axios.get("https://admin.allnuud.com/api/home_search?trade=" + entervalue)
                 .then(function (result) {
                     // console.log(result)
                     if (result.data.status.status_code == 200) {
@@ -90,7 +93,7 @@ function Slider() {
             search_term = entervalue
         }
 
-        axios.post("http://162.144.98.113/~work/wre/api/get/search", {
+        axios.post("https://admin.allnuud.com/api/get/search", {
             trade: search_term
         })
             .then(function (result) {
@@ -110,7 +113,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?trade=" + value)
+            axios.get("https://admin.allnuud.com/api/home_search?trade=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -131,7 +134,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?location=" + value)
+            axios.get("https://admin.allnuud.com/api/home_search?location=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -154,7 +157,7 @@ function Slider() {
         const { value, checked } = e.target;
         
         if (checked) {
-            axios.get("http://162.144.98.113/~work/wre/api/home_search?top_rated=" + value)
+            axios.get("https://admin.allnuud.com/api/home_search?top_rated=" + value)
                 .then(function (result) {
                     if (result.data.status.status_code == 200) {
                         setSearcResult(result.data.results)
@@ -176,7 +179,7 @@ function Slider() {
     const { value, checked } = e.target;
     
     if (checked) {
-        axios.get("http://162.144.98.113/~work/wre/api/home_search?program_type=" + value)
+        axios.get("https://admin.allnuud.com/api/home_search?program_type=" + value)
             .then(function (result) {
                 if (result.data.status.status_code == 200) {
                     setSearcResult(result.data.results)
@@ -195,7 +198,7 @@ function Slider() {
     useEffect(() => {
         
     }, [initialOnline])
-    
+
     return (
         <>
 
@@ -214,7 +217,7 @@ function Slider() {
                                 onChange={handleSearchChange}
                                 renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
                             />
-                            <button className="btn btn-primary button btnSearch" onClick={handleSearchChange}>
+                            <button className="btn btn-primary button btnSearch" onClick={()=>handleSearchChange}>
                                 <i class="fa fa-search" ></i>
                             </button>
                         </div>
@@ -227,7 +230,7 @@ function Slider() {
                         <Leftpanel alert1={handleChange1} alert2={handleChange2} alert4={handleChangeL} alert3={handleChange3} alert={handleChange}></Leftpanel>
                        
                     </div>
-                    <div className="col-12 col-xl-9 col-lg-9 col-md-9 col-xs-12">
+                    <div className="col-12 col-xl-6 col-lg-6 col-md-6 col-xs-12">
 
                         {initialOnline ?
                             initialOnline.length > 0 && (
@@ -258,11 +261,16 @@ function Slider() {
                                             /></p>
 
                                                             <p>Course Duration : {res.duration}</p>
+                                                           
                                                         </li>
-                                                        <li className="location">
-                                                            <p>Location: <b>{res.location}</b></p>
-                                                            <p>Name of Training School : <a href={"collegeDetails/" + res.college_id}>{res.college_name}</a></p>
+                                                        <li>
+
+                                                        <div className="location">
+                                                            <p className="par">Location: <b>{res.location}</b><br/>
+                                                            Name of Training School : <a href={"collegeDetails/" + res.college_id}>{res.college_name}</a></p>
+                                                        </div>
                                                         </li>
+                                                        
                                                     </ul>
 
                                                 </div>
@@ -287,6 +295,13 @@ function Slider() {
                             ) : <div className="rightSection">No Record match.</div>}
 
                     </div>
+                    <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">
+
+
+ <Homepage_leftcomponent></Homepage_leftcomponent>
+  
+
+</div>
                     <LeftTabsExample></LeftTabsExample>
                     <Resources></Resources>
                 </div>

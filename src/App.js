@@ -19,10 +19,11 @@ import Ranking from './component/ranking-details';
 import CollgeDetails from './component/CollegeDetails';
 import RankingDetail from './component/RankingDetail';
 import UserprofileCommunities from './component/userprofileCommunities';
-
+import Ranking_view from './component/Ranking_view';
 
 
 function App() {
+  
 
   // const { token, setToken } = useToken();
 
@@ -33,12 +34,14 @@ function App() {
 
   return (
     <>
+    
       <Header/>
     <Router>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='search/:slug' element={<Ranking />} />
+        <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
       </Routes>
       
@@ -81,6 +84,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/RankingDetail' element={<RankingDetail />} />
+      </Routes>
+      <Routes>
+        <Route path='/Ranking_view' element={<Ranking_view />} />
       </Routes>
     </Router>
     <Footer/>
