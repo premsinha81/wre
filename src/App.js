@@ -5,7 +5,7 @@ import Carrier from './component/Carrier';
 import Home from './component/home';
 import About from './component/about';
 import Login from './component/login';
-
+import Pathfinder from './component/pathfinder'
 import Signup from './component/signup';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 import OnlineCoursesSearch from './component/OnlineCoursesSearch';
@@ -87,6 +87,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/Ranking_view' element={<Ranking_view />} />
+      </Routes>
+      <Routes>
+        <Route path='/pathfinder' element={<Pathfinder />} />
       </Routes>
     </Router>
     <Footer/>
