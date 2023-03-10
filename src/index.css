@@ -473,6 +473,13 @@ img.iconP {
   margin-bottom: 10px;
 }
 
+.formSetup{
+  border:1px solid #ccc;
+  margin:50px;
+  border-radius: 10px;
+  padding:50px;
+}
+
 @media (max-width: 991.98px) {
   .navbar .navbar-nav .nav-link {
     margin-right: 0;
