@@ -2,43 +2,39 @@ import React from 'react'
 
 import logo1 from '../Image/logo1.jpg';
 import logo2 from '../Image/Group 512.svg';
-
+import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 
 
 const Rankingright_component = () => {
+  const [ranking, setRanking] = useState([])
+    const { id } = useParams();
+
+    useEffect(() => {
+        axios.get(`https://admin.allnuud.com/api/suggestion_question_detail?id/${id}`)
+            .then(function (result) {
+                console.log(result)
+                if (result.data.status.status_code == 200) {
+                    setRanking(result.data.data)
+                    console.log(result.data.data)
+                    // setRanking(result.data.results)
+                } else {
+                    setRanking('')
+                }
+            })
+    }, [])
   return (
    <div>
 
-<h1>Top 10 Carpentry Schools in New Jersey</h1>
+<h1>{ranking.question}</h1>
           <h2 className="py-3">
-            Graduates with a degree in health may find employment opportunities
-            for healthcare professionals across the U.S. as physical therapy
-            assistants, occupational therapy assistants, or a medical
-            administrative
+          {ranking.question}
           </h2>
-          <p>
-            An associate degree in healthcare is a two-year degree that students
-            may complete on campus, online, or in a combination of on-campus and
-            online learning. Healthcare is a major part of the US economy, and
-            an associate in health, health information management, health
-            services management, or a healthcare administration program can open
-            many paths to employment opportunities in the healthcare industry.
-            Population changes drive much of the growth of healthcare in the US,
-            while national policies have increased levels of health insurance
-            available and the need for workers in healthcare support jobs to
-            maintain healthcare records.
-            <br /> <br />
-            Jobs in health represent the largest projected increase among
-            occupational groups in the US for the next several years. There may
-            be up to 1.9 million new jobs created in the sector in that time.
-            <br /> <br />
-            An associate degree is an entry-level degree and students can use
-            this to move into jobs in the healthcare industry or as a foundation
-            for further education if they want to make it into healthcare
-            management or healthcare administration as an associate degree
-            program may not be enough to gain a
-          </p>
+        
+          <p className='m25' dangerouslySetInnerHTML={{__html:ranking.description}}></p>
+       
           <div className="row">
             <div className="col">
               <div className="accordion py-5" id="accordionExample2 ">
