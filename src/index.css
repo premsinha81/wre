@@ -44,11 +44,13 @@ h1 {
 }
 
 .slider .searchPanel {
-  text-align: center;
-  min-width: 700px  !important;
+  left: 50%;
+  min-width: 600px!important;
   position: absolute;
-  top: 150px;
-  margin-left: 350px !important;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 .slider .searchPanel input[type="text"]::placeholder {
   font-weight: 500;
