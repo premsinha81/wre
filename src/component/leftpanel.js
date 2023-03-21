@@ -73,7 +73,7 @@ const Leftpanel = (props) => {
 
                 <div class="programsSideBar">
                     <div class="filterArea">
-                        <h5 className='cssh' >Filters</h5>
+                        <h5 className='cssh'>Filters</h5>
                         <div class="divider"></div>
                     </div>
                 </div>

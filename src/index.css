@@ -44,13 +44,11 @@ h1 {
 }
 
 .slider .searchPanel {
-  min-width: 600px!important;
-  position: absolute;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- 
+  min-width: 700px  !important;
+  position: absolute;
+  top: 150px;
+  margin-left: 350px !important;
 }
 .slider .searchPanel input[type="text"]::placeholder {
   font-weight: 500;
@@ -473,6 +471,13 @@ img.iconP {
 
 .modal-body .form-control{
   margin-bottom: 10px;
+}
+
+.formSetup{
+  border:1px solid #ccc;
+  margin:50px;
+  border-radius: 10px;
+  padding:50px;
 }
 
 @media (max-width: 991.98px) {
