@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'; 
+import React, {useState,useEffect} from 'react'; 
 
 
 
@@ -15,7 +15,10 @@ function Homepage_leftcomponent() {
         setRatingNewpage(dataRatingNewpage);
 
     }
-    getRatingNewpage();
+    useEffect(() => {
+        getRatingNewpage();
+    }, [])
+
     return (
         <div>
                  <div className="rightSection">
@@ -23,7 +26,7 @@ function Homepage_leftcomponent() {
                 <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                         <div className=" postGroups3">
-                        <h5 className="cssh">Main Top Ranking Schools</h5>
+                        <h5 className="cssh">Top Ranking Schools</h5>
                         <div class="divider"></div>
                         {RatingNewpage.data && RatingNewpage.data.length > 0 && RatingNewpage.data.map((RatingNewpage, x) => (
                    

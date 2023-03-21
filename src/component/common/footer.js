@@ -1,24 +1,40 @@
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faFacebookF,faTwitter,faInstagram,faYoutube } from '@fortawesome/free-brands-svg-icons'
-
 export default function Footer() {
     return (
         <>
             <footer class="footerSection">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3">
+                    <div class="col-lg-4">
                             <div class="footerBox footer1">
                                 <div class="footerTitle">
-                                    <h3>WRE Services</h3>
+                                    <h3>About Us </h3>
                                 </div>
                                 <div class="footerBody">
                                     <ul>
+                                        <li className="about">PTTI was founded on this exact philosophy 10 years ago. PTTI was formed by a Drexel University graduate who believes in our youth to receive a technology-driven education so that they can secure great technical careers and eventually give a direction to their lives...</li>
+                                        <li><div class="followUs1">
+                        <ul class="solialLink">
+                           <li><a href="" class="socialLinkItem"><i class="fa fa-facebook"></i></a></li>
+                           <li><a href="" class="socialLinkItem"><i class="fa fa-twitter"></i></a></li>
+                           <li><a href="" class="socialLinkItem"><i class="fa fa-youtube-play"></i></a></li>
+                           <li><a href="" class="socialLinkItem"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                     </div></li>
+                                    </ul></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="footerBox footer1">
+                                <div class="footerTitle">
+                                    <h3>Services</h3>
+                                </div>
+                                <div class="footerBody">
+                                    <ul>
+                                        <li><a href="">Find a Program</a></li>
+                                        <li><a href=""> Job Search</a></li>
                                         <li><a href="">Community</a></li>
-                                        <li><a href="">Career</a></li>
-                                        <li><a href="">Jobs</a></li>
-                                        <li><a href="">Newsroom</a></li>
+                                        <li><a href=""> Resources</a></li>
                                     </ul></div>
                             </div>
                         </div>
@@ -29,73 +45,68 @@ export default function Footer() {
                                 </div>
                                 <div class="footerBody">
                                     <ul>
-                                        <li><a href="">About WRE &amp; Sources</a></li>
-                                        <li><a href="">Contributors &amp; Experts</a></li>
-                                        <li><a href="">Our Methodology</a></li>
-                                        <li><a href="">Contact Us</a></li>
+                                        <li><a href="">About WRE</a></li>
+                                        <li><a href=""> Contributors  &amp; Experts</a></li>
+                                      
                                         <li><a href="">FAQ's</a></li>
-                                        <li><a href="">Sitemap</a></li>
-                                    </ul></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="footerBox footer1">
-                                <div class="footerTitle">
-                                    <h3>Account Services</h3>
-                                </div>
-                                <div class="footerBody">
-                                    <ul>
                                         <li><a href="">Pricing</a></li>
-                                        <li><a href="">Settings</a></li>
-                                        <li><a href="">Links </a></li>
-                                        <li><a href="">Network</a></li>
                                     </ul></div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                       
+                        <div class="col-lg-2">
                             <div class="footerBox footer1">
-                                <div class="footerTitle">
-                                    <h3>WRE Services</h3>
+                                <div class="footerTitle1">
+                                    <h3>Contact Details</h3>
                                 </div>
                                 <div class="footerBody">
-                                    <ul>
-                                        <li><a href="">Community</a></li>
-                                        <li><a href="">Career</a></li>
-                                        <li><a href="">Jobs</a></li>
-                                        <li><a href="">Newsroom</a></li>
-                                    </ul></div>
+                                <ul >
+                           <li><a href="" class="socialLinkItem1"><i class="fa fa-phone"> <spam>  +91-89898988988</spam></i></a></li><br></br>
+                           <li><a href="" class="socialLinkItem1"><i class="fa fa-envelope"> <spam>    wre@gmail.com </spam></i></a></li>
+                        </ul>
+                        </div>
+                        
+                        
+                         
                             </div>
+
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="subscirpSection">
-                                <h1 class="subscribeTitle">Stay Connected</h1>
+                            <h1 class="subscribeTitle">Stay Connected</h1>
                                 <form action="" class="subscribeForm">
                                     <div class="inputField">
                                         <input type="text" name="email" placeholder="e-Mail ID" required=""/>
                                             <button type="submit" class="subscribeBtn">Subscribe</button>
                                     </div>
                                 </form>
-                                <div class="followUs">
-                                    {/* <ul class="solialLink">
-                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faFacebookF} /></a></li>
-                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faInstagram} /></a></li>
-                                        <li><a href="" class="socialLinkItem"><FontAwesomeIcon icon={faYoutube} /></a></li>
-                                    </ul> */}
-                                </div>
+                                <div class="termsLink"><ul class="tandcLink"><li><a href="" class=""></a></li><li><a href="" class=""></a></li></ul></div>
                                 <div class="termsLink">
                                     <ul class="tandcLink"> 
                                         <li><a href="" class="">Privacy Policy</a></li>
-                                        <li><a href="" class="">Terms</a></li>
+                                        <li><a href="" class="">Terms of use</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </footer>
+            <div class="footerBottom">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="copyright">
+                     <p>© 2022 WRE. All Rights Reserved.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+            
         </>
     )
 }

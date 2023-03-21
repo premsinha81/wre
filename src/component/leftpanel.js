@@ -128,7 +128,7 @@ const Leftpanel = (props) => {
                         <div class="scrollview2">
                             {data.results && data.results.length > 0 && data.results.filter(data => data.name.toLowerCase().includes(query1)).map((data) => (
                                 <div class="checkBox" key={data.id}>
-                                    <input type="radio"onClick={props.alert} name="myCheck1" value={data.name} id={"check2" + data.id} />
+                                    <input type="radio"onClick={props.alert1} name="myCheck1" value={data.name} id={"check2" + data.id} />
                                     <label htmlFor={"myCheck1" + data.id}>{data.name}</label>
                                 </div>
                             ))}

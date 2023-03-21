@@ -1336,7 +1336,7 @@ ul.solialLink {
 
 a.socialLinkItem {
   color: #000;
-  padding: 0px 30px;
+  padding: 0px 20px;
   font-size: 20px;
 }
 
@@ -3045,11 +3045,6 @@ img.iconP {
  .swiper {
   height: auto;
 }
-.swiper .swiper-slide {
-  padding-top: 5rem;
-  padding-bottom: 2rem;
-}
-
 .MessageTitle {
   font-size: 20px;
   margin-bottom: 20px;
@@ -3262,15 +3257,6 @@ ol, .ser, dl {
 }
 
 
-@media (min-width: 992px) {
-  .swiper .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-   
-  }
-}
 .courseDimg img {
   width: 30px;
   height: 30px;
@@ -3399,4 +3385,14 @@ p.groupFollowers {
   padding: 15px 0px;
   background: #ECECEC;
   border-radius: 30px;
+}
+
+.programTitle h1 {
+  font-size: 20px !important;
+  margin: 0;
+  color: #fff;
+  font-family: 'Lato', sans-serif !important;
+}
+li.about {
+  width: 250px;
 }

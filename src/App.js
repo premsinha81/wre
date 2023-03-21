@@ -7,6 +7,9 @@ import About from './component/about';
 import Login from './component/login';
 import Pathfinder from './component/pathfinder'
 import Signup from './component/signup';
+import Job from './component/Job';
+import JhEmployer from './component/JhEmployer';
+import Onlinecounsellingform from './component/Onlinecounsellingform';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 import OnlineCoursesSearch from './component/OnlineCoursesSearch';
 import BusinessInformation from './component/account/businessInformation';
@@ -90,6 +93,15 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/pathfinder' element={<Pathfinder />} />
+      </Routes>
+      <Routes>
+        <Route path='/Onlinecounsellingform' element={<Onlinecounsellingform />} />
+      </Routes>
+      <Routes>
+        <Route path='/Job' element={<Job />} />
+      </Routes>
+      <Routes>
+        <Route path='/JhEmployer' element={<JhEmployer />} />
       </Routes>
     </Router>
     <Footer/>

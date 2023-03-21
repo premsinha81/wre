@@ -207,7 +207,7 @@ function Slider() {
                 <div className="container">
                     <div className="container posRelative">
                         <div className="searchPanel">
-                            <h1>WRE's Trade Educatoion Rankings</h1>
+                            <h1> Search for a School or Program</h1>
                             <Autocomplete
                                 id="combo-box-demo"
                                 className=""
@@ -215,7 +215,7 @@ function Slider() {
                                 getOptionLabel={(option) => option && option.title}
                                 onInputChange={handletradeChange}
                                 onChange={handleSearchChange}
-                                renderInput={(params) => <TextField {...params} labal="SEARCH FOR A TRADE" />}
+                                renderInput={(params) => <TextField {...params} type="text" labal="SEARCH FOR A TRADE" />}
                             />
                             <button className="btn btn-primary button btnSearch" onClick={()=>handleSearchChange}>
                                 <i class="fa fa-search" ></i>

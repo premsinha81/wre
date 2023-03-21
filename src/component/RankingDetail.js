@@ -4,9 +4,11 @@ import Resources from "./resources";
 
 import Rankingright_component from "./Rankingright_component";
 import Homepage_leftcomponent from "./Homepage_leftcomponent";
+import { useParams } from 'react-router-dom';
 
 import Tabsystemsection from './Tabsystemsection';
 const RankingDetail = () => {
+  const { id } = useParams();
   return (
     <div>
       
@@ -33,7 +35,7 @@ const RankingDetail = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-12 col-lg-8 col-sm-12 test-design1  py-4">
-        <Rankingright_component></Rankingright_component>
+        <Rankingright_component slugId={id}></Rankingright_component>
           </div>
        
         <div className="col-lg-4 cpl-md-12 col-sm-12 ">

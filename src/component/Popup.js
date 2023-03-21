@@ -13,7 +13,7 @@ function Popup() {
     return (
       <>
         {/*<Button className='btnConselling' href="/online-counselling">Online Counselling</Button>*/}
-        <Link to="/online-counselling" className='btn btn-primary btnConselling' > Online Counselling</Link> 
+        <Link to="/Onlinecounsellingform" className='btn btn-primary btnConselling' > Online Counselling</Link> 
         <Modal
           show={show}
           onHide={handleClose}

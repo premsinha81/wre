@@ -24,7 +24,7 @@ function Header() {
     return (
         <>
 
-            <nav id="mainHeader" ref={stickyHeader} class="navbar navbar-expand-lg bg-white navbar-light mainHeader">
+            <nav id="mainHeader" ref={stickyHeader} class="navbar navbar-expand-lg bg-white1 navbar-light mainHeader">
                 <a href="\" class="navbar-brand d-flex align-items-center">
                     <div className="svgLogo"><YourSvg /></div>
                 </a>
@@ -41,12 +41,16 @@ function Header() {
                     <div class="navbar-nav ms-auto py-4 py-lg-0">
                         <ul>
                             <li><a href="#" class="nav-item nav-link active"><i class="fa fa-search"></i></a></li>
-                            <li><a href="/about" class="nav-item nav-link">About</a></li>
-                            <li><a href="/Career" class="nav-item nav-link">Career</a></li>
+                            {/* <li><a href="/about" class="nav-item nav-link">About</a></li> */}
+                            {/* <li><a href="/Career" class="nav-item nav-link">Career</a></li> */}
+                               <li><a href="#" class="nav-item nav-link">Find a Program</a></li> 
+                               <li><a href="/Job" class="nav-item nav-link"> Job Search</a></li>
                             <li><a href="#" class="nav-item nav-link">Community</a></li>
-                            <li><a href="#" class="nav-item nav-link">Jobs</a></li>
+                        
                             <li><a href="#" class="nav-item nav-link">Resources</a></li>
-                            <li><a class="btn btn-square1 text-white me-2" href="/login">Join</a></li>
+                            <li><a href="/Signup" class="nav-item nav-link">Signup</a></li>
+                            <li><a class="btn btn-square1 text-white me-2" href="/login">Login</a></li>
+                            
                         </ul> 
                     </div>
                 </div>
