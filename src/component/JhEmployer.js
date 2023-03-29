@@ -20,7 +20,7 @@ const JhEmployer = () => {
       <div className="container">
         <div className="row pad2 ">
 
-          <div className="col-md-5 sec">
+          <div className="col-md-6 sec">
             <h1 className="heding1">Explore the Trades Market</h1>
             <div className="">
               <p className="paragraph1 ">
@@ -28,7 +28,7 @@ const JhEmployer = () => {
                 industry. Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s,
               </p>
-              <div className="pad1 ">
+              <div className="pad1">
                 <h6 className="h6css">Skills in high demand</h6>
                 <div className="trendingButton1">
                   <button>Electrician</button>
@@ -61,7 +61,7 @@ const JhEmployer = () => {
               </a>
             </div>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-6">
             <img width="100%" src={Imagesection2} />
           </div>
         </div>
@@ -78,7 +78,7 @@ const JhEmployer = () => {
                   // install Swiper modules
                   modules={[Pagination, EffectFade]}
                   effect="slide"
-                  spaceBetween={20}
+                  spaceBetween={6}
                   centeredSlides={true}
                   slidesPerView={3}
                   loop={true}
@@ -107,16 +107,16 @@ const JhEmployer = () => {
                       <div className="swiper-avatar">
                         <img className="img1 " src={Imagesection2} />
                       </div>
+                      <p className="cite">Requirement</p>
                       <p className="para">
                         {" "}
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                         posuere consectetur est at lobortis. Nullam id dolor id nibh
                         ultricies vehicula ut id elit. Curabitur blandit tempus porttitor.
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                        eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros."
+                        
                       </p>
-                      <p className="cite">- Katie Kookaburra, Cyclist</p>
+                    
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
@@ -124,16 +124,16 @@ const JhEmployer = () => {
                       <div className="swiper-avatar">
                         <img className="img1 " src={Imagesection2} />
                       </div>
+                      <p className="cite">Requirement</p>
                       <p className="para">
                         {" "}
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                         posuere consectetur est at lobortis. Nullam id dolor id nibh
                         ultricies vehicula ut id elit. Curabitur blandit tempus porttitor.
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                        eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros."
+                        
                       </p>
-                      <p className="cite">- Katie Kookaburra, Cyclist</p>
+                     
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
@@ -141,16 +141,16 @@ const JhEmployer = () => {
                       <div className="swiper-avatar">
                         <img className="img1 " src={Imagesection2} />
                       </div>
+                      <p className="cite">Requirement</p>
                       <p className="para">
                         {" "}
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                         posuere consectetur est at lobortis. Nullam id dolor id nibh
                         ultricies vehicula ut id elit. Curabitur blandit tempus porttitor.
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                        eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros."
+                        
                       </p>
-                      <p className="cite">- Katie Kookaburra, Cyclist</p>
+                     
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
@@ -158,16 +158,16 @@ const JhEmployer = () => {
                       <div className="swiper-avatar">
                         <img className="img1 " src={Imagesection2} />
                       </div>
+                      <p className="cite">Requirement</p>
                       <p className="para">
                         {" "}
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                         posuere consectetur est at lobortis. Nullam id dolor id nibh
                         ultricies vehicula ut id elit. Curabitur blandit tempus porttitor.
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                        eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros."
+                        
                       </p>
-                      <p className="cite">- Katie Kookaburra, Cyclist</p>
+                     
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
@@ -175,21 +175,35 @@ const JhEmployer = () => {
                       <div className="swiper-avatar">
                         <img className="img1 " src={Imagesection2} />
                       </div>
+                      <p className="cite">Requirement</p>
                       <p className="para">
                         {" "}
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                         posuere consectetur est at lobortis. Nullam id dolor id nibh
                         ultricies vehicula ut id elit. Curabitur blandit tempus porttitor.
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                        eget lacinia odio sem nec elit. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros."
+                        
                       </p>
-                      <p className="cite">- Katie Kookaburra, Cyclist</p>
+                    
                     </div>
                   </SwiperSlide>
                 </Swiper>
               </div>
             </div>
+            <div className='row'>
+              <div className='col-md-4'>
+              </div>
+              <div className='col-md-4'>
+              <div className="btncss1">
+              <a className="btn btn-square2 text-white me-2" href="">
+              Post a Job
+              </a>
+            </div>
+            </div>
+            <div className='col-md-4'>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
