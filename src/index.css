@@ -3549,3 +3549,120 @@ a.socialLinkItem1 i .spam {
 p.paragraph1 {
   width: 400px;
 }
+
+
+/* job section start css */
+.jobSection {
+  background: #ececec;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+.programTitle {
+  background: #3D55A5;
+  padding: 15px;
+  border-radius: 19px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+h1.htext {
+  font-size: 35px;
+  font-weight: 800;
+}
+.dropdown {
+  background-image: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.jobinpute {
+  margin-bottom: 8px !important;
+  border-radius: 10px !important;
+  background-color: #ffffff;
+  color: #000;
+  font-size: 14px !important;
+}
+p.ptext {
+  font-size: 27px;
+  color: #fff;
+}
+i.fa.fa-map-marker {
+  font-size: 25px;
+ 
+  color: #FFA845;
+  margin: 3px;
+}
+.jobcontent {
+  padding: 30px;
+}
+.jobTitle h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #323232;
+}
+.space30 {
+  height: 30px;
+}
+.jobbutton1 {
+  position: absolute;
+  right: 246px;
+  border: none;
+  background: #bbbbbb;
+  color: #0e0e0e;
+  border-radius: 26px;
+  padding: 1px 20px;
+  font-family: 'Lato';
+}
+.jobbutton {
+  position: absolute;
+  right: 166px;
+  border: none;
+  background: #3D55A5;
+  color: #fff;
+  border-radius: 26px;
+  padding: 1px 15px;
+  font-family: 'Lato';
+}
+.jobb {
+  position: absolute;
+  border: none;
+  background: #bbbbbb;
+  color: #0e0e0e;
+  border-radius: 26px;
+  padding: 1px 20px;
+  font-family: 'Lato';
+  margin-top: -12px;
+}
+.space30 {
+  height: 30px;
+}
+.jobcontent11 {
+  margin-left: 30px;
+  margin-top: -30px;
+}
+label {
+  display: inline-block;
+  font-weight: 600;
+}
+h1.htext {
+  font-size: 35px !important;
+  font-weight: 800 !important;
+}
+label {
+  display: inline-block;
+  font-weight: 600 !important;
+}
+.programTitlejob {
+  background: #3D55A5;
+  padding: 15px;
+  border-radius: 19px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.jobbutton1 {
+  position: absolute;
+  right: 246px;
+  border: none;
+  background: #3d55a5;
+  color: #0e0e0e;
+  border-radius: 26px;
+  color: #fff;
+  padding: 8px 30px;
+  font-family: 'Lato';
+}

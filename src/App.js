@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Carrier from './component/Carrier';
+
 import Home from './component/home';
 import About from './component/about';
 import Login from './component/login';
@@ -23,7 +23,7 @@ import CollgeDetails from './component/CollegeDetails';
 import RankingDetail from './component/RankingDetail';
 import UserprofileCommunities from './component/userprofileCommunities';
 import Ranking_view from './component/Ranking_view';
-
+import Jobpostform from './component/Jobpostform';
 
 function App() {
   
@@ -50,7 +50,11 @@ function App() {
       
     
       <Routes>
-      <Route path = "/Career" element={<Carrier/>}/>
+      <Route path = "/Jobpostform" element={<Jobpostform/>}/>
+      </Routes>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        
       </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
