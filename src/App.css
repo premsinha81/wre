@@ -1339,7 +1339,7 @@ ul.solialLink {
 
 a.socialLinkItem {
   color: #000;
-  padding: 0px 20px;
+  padding: 0px 10px;
   font-size: 20px;
 }
 
@@ -3395,7 +3395,4 @@ p.groupFollowers {
   margin: 0;
   color: #fff;
   font-family: 'Lato', sans-serif !important;
-}
-li.about {
-  width: 250px;
 }

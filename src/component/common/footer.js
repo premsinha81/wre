@@ -61,8 +61,8 @@ export default function Footer() {
                                 </div>
                                 <div class="footerBody">
                                 <ul >
-                           <li><a href="" class="socialLinkItem1"><i class="fa fa-phone"> <spam>  +91-89898988988</spam></i></a></li><br></br>
-                           <li><a href="" class="socialLinkItem1"><i class="fa fa-envelope"> <spam>    wre@gmail.com </spam></i></a></li>
+                           <li><a href="#" class="socialLinkItem1"><i class="fa fa-phone"></i> +91-89898988988</a></li>
+                           <li><a href="#" class="socialLinkItem1"><i class="fa fa-envelope"></i> info@wre.com</a></li>
                         </ul>
                         </div>
                         
