@@ -25,6 +25,7 @@ function Header() {
         <>
 
             <nav id="mainHeader" ref={stickyHeader} class="navbar navbar-expand-lg bg-white1 navbar-light mainHeader">
+            <div className="container">
                 <a href="\" class="navbar-brand d-flex align-items-center">
                     <div className="svgLogo"><YourSvg /></div>
                 </a>
@@ -38,7 +39,7 @@ function Header() {
                     <span class="navbar-toggler-icon"></span>
                 </button>*/}
                 <div className={isNavExpanded ? "navigation-menu expanded" : "navigation-menu"}>
-                    <div class="navbar-nav ms-auto py-4 py-lg-0">
+                    <div class=" navbar-nav ms-auto py-4 py-lg-0">
                         <ul>
                             <li><a href="#" class="nav-item nav-link active"><i class="fa fa-search"></i></a></li>
                             {/* <li><a href="/about" class="nav-item nav-link">About</a></li> */}
@@ -53,6 +54,7 @@ function Header() {
                             
                         </ul> 
                     </div>
+                </div>
                 </div>
             </nav>
 

@@ -3155,13 +3155,15 @@ h6 {
 }
 
 .sectontop {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .background1 {
   padding-top: 190px !important;
   background: linear-gradient(1deg, black, black, #fff0, #fff0);
 }
-
+.radioBoxDiv {
+  margin-top: 10px;
+}
 .bannerHeadingjob h1 {
     font-size: 60px !important;
     font-family: 'Lato' !important;
@@ -3207,7 +3209,11 @@ h1.heding1 {
   padding: 5px 10px;
   border-radius: 27px;
   font-size: 12px;
+  margin: 4px;
   margin-bottom: 10px;
+}
+h6.h6css {
+  font-weight: 700;
 }
 
 .content .swiper-avatar {
@@ -3400,6 +3406,7 @@ body .wrapper, html .wrapper {
   text-align: center;
   color: #fff;
   padding: 1.5em;
+  margin: 50px 0px;
 }
 .swiper {
   margin: 10px 123px;
@@ -3407,8 +3414,14 @@ body .wrapper, html .wrapper {
 }
 .content .cite {
   font-size: 20px;
-  font-weight: bold;
-  border-bottom: 1px solid #d17605;
+    margin: 3px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #444040;
+    margin-bottom: 20px;
+    padding: 20px;
+    letter-spacing: 4px;
+    border-bottom: 2px solid #d17605;
 }
 h1.heding2 {
   color: #3D55A5;
@@ -3432,7 +3445,7 @@ a.btn.btn-square2.text-white.me-2 {
   text-transform: lowercase;
 }
 .row.pad2 {
-  margin-top: 40px;
+  margin-top: 70px;
 }
 .swiper .swiper-nav-wrapper {
   bottom: 0;
@@ -3532,4 +3545,124 @@ a.socialLinkItem1 i .spam {
     flex-shrink: 0;
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     font-size: 1.5rem;
+}
+p.paragraph1 {
+  width: 400px;
+}
+
+
+/* job section start css */
+.jobSection {
+  background: #ececec;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+.programTitle {
+  background: #3D55A5;
+  padding: 15px;
+  border-radius: 19px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+h1.htext {
+  font-size: 35px;
+  font-weight: 800;
+}
+.dropdown {
+  background-image: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.jobinpute {
+  margin-bottom: 8px !important;
+  border-radius: 10px !important;
+  background-color: #ffffff;
+  color: #000;
+  font-size: 14px !important;
+}
+p.ptext {
+  font-size: 27px;
+  color: #fff;
+}
+i.fa.fa-map-marker {
+  font-size: 25px;
+ 
+  color: #FFA845;
+  margin: 3px;
+}
+.jobcontent {
+  padding: 30px;
+}
+.jobTitle h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #323232;
+}
+.space30 {
+  height: 30px;
+}
+.jobbutton1 {
+  position: absolute;
+  right: 246px;
+  border: none;
+  background: #bbbbbb;
+  color: #0e0e0e;
+  border-radius: 26px;
+  padding: 1px 20px;
+  font-family: 'Lato';
+}
+.jobbutton {
+  position: absolute;
+  right: 166px;
+  border: none;
+  background: #3D55A5;
+  color: #fff;
+  border-radius: 26px;
+  padding: 1px 15px;
+  font-family: 'Lato';
+}
+.jobb {
+  position: absolute;
+  border: none;
+  background: #bbbbbb;
+  color: #0e0e0e;
+  border-radius: 26px;
+  padding: 1px 20px;
+  font-family: 'Lato';
+  margin-top: -12px;
+}
+.space30 {
+  height: 30px;
+}
+.jobcontent11 {
+  margin-left: 30px;
+  margin-top: -30px;
+}
+label {
+  display: inline-block;
+  font-weight: 600;
+}
+h1.htext {
+  font-size: 35px !important;
+  font-weight: 800 !important;
+}
+label {
+  display: inline-block;
+  font-weight: 600 !important;
+}
+.programTitlejob {
+  background: #3D55A5;
+  padding: 15px;
+  border-radius: 19px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.jobbutton1 {
+  position: absolute;
+  right: 246px;
+  border: none;
+  background: #3d55a5;
+  color: #0e0e0e;
+  border-radius: 26px;
+  color: #fff;
+  padding: 8px 30px;
+  font-family: 'Lato';
 }

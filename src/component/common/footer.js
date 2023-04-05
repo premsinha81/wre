@@ -12,7 +12,7 @@ export default function Footer() {
                                 </div>
                                 <div class="footerBody">
                                     <ul>
-                                        <li className="about">PTTI was founded on this exact philosophy 10 years ago. PTTI was formed by a Drexel University graduate who believes in our youth to receive a technology-driven education so that they can secure great technical careers and eventually give a direction to their lives...</li>
+                                        <li className="about">PTTI was founded on this exact philosophy 10 years ago. PTTI was formed by a Drexel University graduate who believes in our youth to receive a technology-driven education so that they can secure...</li>
                                         <li><div class="followUs1">
                         <ul class="solialLink">
                            <li><a href="" class="socialLinkItem"><i class="fa fa-facebook"></i></a></li>
