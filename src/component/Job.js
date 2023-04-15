@@ -10,9 +10,9 @@ function Job() {
   const [index, setIndex] = useState(2)
   const initialJob = slice(post, 0, index)
   const getData = () => {
-    fetch('https://admin.allnuud.com/api/get/onlinecourse')
+    fetch('https://admin.allnuud.com/api/job_list_all')
       .then((res) => res.json())
-      .then((json) => setPost(json))
+      .then((json) => setPost(json.data))
       .catch((e) => console.log(e))
   }
   const loadMore = () => {
@@ -28,7 +28,7 @@ function Job() {
     getData()
   }, [])
 
-
+console.log(post);
    return (
       <div>
  
@@ -389,30 +389,24 @@ return(
               <div className="col-sm-12 col-md-12">
                 <div className="d-flex gap-5">
                  
-                  <div className="groupName" key={item.id}>
+                  <div className="groupName" key={item.user_id}>
                     <div className="jobList">
                       <div className="jobPostion" >
-                        <h6 className="groupFollowersjob">{item.Course_title}</h6>
-                        <h4 className="gName">{item.Course_name}</h4>
-                        <p>{item.Duration}</p>
+                        <h6 className="groupFollowersjob">{item.job_titile}</h6>
+                        <h4 className="gName">{item.job_company}</h4>
+                         <p>{item.employer_name}</p> 
                       </div>
                       <div
                         className="unfollow-btn1"
                         style={{ textAlign: "right" }}
                       >
-                        <div className="Apply">Apply</div>
+                       <a href='/JhEmployer' > <div className="Apply">Apply</div></a>
                       </div>
                     </div>
                     <p className="mb-2">
                     {item.Course_type}
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua. At vero eos et
-                      accusam et justo duo dolores et ea rebum. Stet clita kasd
-                      gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                      sit amet. Lorem ipsum dolor sit amet, consetetur
-                      sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                      ut labore et dolore magna aliquyam erat.
+                    {item.job_description}
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
                     </p>
                     <div className="daysAndDetails">
                       <p>2 days ago</p>

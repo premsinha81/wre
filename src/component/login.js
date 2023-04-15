@@ -28,7 +28,7 @@ export default function Login() {
         } else if (data.status === "failed") {
             window.alert("Username and Password Incorrect");
             console.log("Username and Password Incorrect");
-
+            navigate("/Jobpostform");
         } else {
             window.alert("Something went wrong please try again!");
             console.log("Something went wrong please try again!");

@@ -24,6 +24,11 @@ import RankingDetail from './component/RankingDetail';
 import UserprofileCommunities from './component/userprofileCommunities';
 import Ranking_view from './component/Ranking_view';
 import Jobpostform from './component/Jobpostform';
+import Showdata from './component/showdata';
+import Admin from './component/admin';
+import Jobpost from './component/admin/jobpost';
+import Jobedit from './component/admin/jobedit';
+
 
 function App() {
   
@@ -49,6 +54,15 @@ function App() {
       </Routes>
       
     
+      <Routes>
+      <Route path = "/admin" element={<Admin/>}/>
+      </Routes>
+      <Routes>
+      <Route path = "/jobpost" element={<Jobpost/>}/>
+      </Routes>
+      <Routes>
+      <Route path = "/jobedit/:id" element={<Jobedit/>}/>
+      </Routes>
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes>
@@ -106,6 +120,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/JhEmployer' element={<JhEmployer />} />
+      </Routes>
+      <Routes>
+        <Route path='/showdata' element={<Showdata />} />
       </Routes>
     </Router>
     <Footer/>
