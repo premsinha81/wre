@@ -3780,4 +3780,7 @@ div#sidebarCollapse1 {
 li.nav-item1 {
   padding: 10px;
 }
-
+.card.shadow.border-0.mb-7 {
+  background-color: #fff !important;
+  color: #000 !important;
+}

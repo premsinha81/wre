@@ -61,7 +61,7 @@ function App() {
       <Route path = "/jobpost" element={<Jobpost/>}/>
       </Routes>
       <Routes>
-      <Route path = "/jobedit/:id" element={<Jobedit/>}/>
+      <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
       </Routes>
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>

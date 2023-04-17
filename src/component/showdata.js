@@ -75,7 +75,7 @@ const DataShow = () => {
                                             <a className="add" title="Add" data-toggle="tooltip">
                                                 <i className="material-icons"></i>
                                             </a>
-                                            <a href={"/jobedit/" + items.id} className="edit" title="Edit" data-toggle="tooltip">
+                                            <a href={"/jobedit/" + items.user_id + "/" + items.id} className="edit" title="Edit" data-toggle="tooltip">
                                                 <i className="material-icons"></i>
                                             </a>
                                             <a className="delete" title="Delete" data-toggle="tooltip">
