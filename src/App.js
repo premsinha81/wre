@@ -25,7 +25,7 @@ import UserprofileCommunities from './component/userprofileCommunities';
 import Ranking_view from './component/Ranking_view';
 import Jobpostform from './component/Jobpostform';
 import Showdata from './component/showdata';
-import Admin from './component/admin';
+import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
 
@@ -55,7 +55,7 @@ function App() {
       
     
       <Routes>
-      <Route path = "/admin" element={<Admin/>}/>
+      <Route path = "/dashboard" element={<Dashboard/>}/>
       </Routes>
       <Routes>
       <Route path = "/jobpost" element={<Jobpost/>}/>
