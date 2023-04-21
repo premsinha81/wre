@@ -195,7 +195,7 @@ const JhEmployer = () => {
               </div>
               <div className='col-md-4'>
               <div className="btncss1">
-              <a className="btn btn-square2 text-white me-2" href="">
+              <a className="btn btn-square2 text-white me-2" href="/signup">
               Post a Job
               </a>
             </div>

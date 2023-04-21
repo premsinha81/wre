@@ -3639,7 +3639,7 @@ i.fa.fa-map-marker {
 }
 label {
   display: inline-block;
-  font-weight: 600;
+ 
 }
 h1.htext {
   font-size: 35px !important;
@@ -3647,7 +3647,7 @@ h1.htext {
 }
 label {
   display: inline-block;
-  font-weight: 600 !important;
+
 }
 .programTitlejob {
   background: #3D55A5;
@@ -3665,4 +3665,122 @@ label {
   color: #fff;
   padding: 8px 30px;
   font-family: 'Lato';
+}
+
+.table-wrapper {
+
+margin: 30px auto!important;
+  background: #fff!important;
+  padding: 20px!important;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05)!important;
+}
+.table-title {
+  padding-bottom: 10px !important;
+  margin: 0 0 10px !important;
+}
+.table-title h2 {
+  margin: 6px 0 0 !important;
+  font-size: 22px !important;
+}
+.table-title .add-new {
+  float: right !important;
+height: 30px !important;
+font-weight: bold !important;
+font-size: 12px !important;
+text-shadow: none !important;
+min-width: 100px !important;
+border-radius: 50px !important;
+line-height: 13px !important;
+}
+.table-title .add-new i {
+margin-right: 4px !important;
+}
+table.table {
+  table-layout: fixed !important;
+}
+table.table tr th, table.table tr td {
+  border-color: #e9e9e9 !important;
+}
+table.table {
+  table-layout: fixed;
+}
+.table-bordered {
+  border: 1px solid #ddd !important;
+}
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+table.table th:last-child {
+  width: 100px;
+}
+table.table td a {
+cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+min-width: 24px;
+}    
+table.table td a.add {
+  color: #27C46B;
+}
+table.table td a.edit {
+  color: #FFC107;
+}
+table.table td a.delete {
+  color: #E34724;
+}
+table.table td i {
+  font-size: 19px;
+}
+table.table td a.add i {
+  font-size: 24px;
+margin-right: -1px;
+  position: relative;
+  top: 3px;
+}    
+table.table .form-control {
+  height: 32px;
+  line-height: 32px;
+  box-shadow: none;
+  border-radius: 2px;
+}
+table.table .form-control.error {
+border-color: #f50000;
+}
+table.table td .add {
+display: none;
+}
+th, tr {
+  border: 1px solid black !important;
+}
+table.table.table-bordered  tr td  {
+  border: 1px solid #3d55a5 !important;
+}
+table.table.table-bordered tr th  {
+  border: 1px solid #3d55a5 !important;
+}
+
+
+/* Webpixels CSS */
+/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
+/* URL: https://github.com/webpixels/css */
+
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+div#sidebarCollapse1 {
+  background-color: #fff;
+  padding: 10px;
+  width: 220px;
+  height: 100%;
+}
+li.nav-item1 {
+  padding: 10px;
+}
+.card.shadow.border-0.mb-7 {
+  background-color: #fff !important;
+  color: #000 !important;
 }

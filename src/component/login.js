@@ -23,12 +23,12 @@ export default function Login() {
         if (data.status === "Success") {
             window.alert("Login Succesfully");
             console.log("Login Succesfully");
-            navigate("/");
+            navigate("/Jobpostform");
 
         } else if (data.status === "failed") {
             window.alert("Username and Password Incorrect");
             console.log("Username and Password Incorrect");
-
+         
         } else {
             window.alert("Something went wrong please try again!");
             console.log("Something went wrong please try again!");
