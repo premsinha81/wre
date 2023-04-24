@@ -9,6 +9,7 @@ import {ReactComponent as BurgerSvg} from './burger.svg';
 function Header() {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
     const stickyHeader = useRef()
+    const logged_token = localStorage.getItem('token');
     useLayoutEffect(() => {
         const mainHeader = document.getElementById('mainHeader')
         let fixedTop = stickyHeader.current.offsetTop
@@ -49,8 +50,16 @@ function Header() {
                             <li><a href="#" class="nav-item nav-link">Community</a></li>
                         
                             <li><a href="#" class="nav-item nav-link">Resources</a></li>
-                            <li><a href="/Signup" class="nav-item nav-link">Signup</a></li>
-                            <li><a class="btn btn-square1 text-white me-2" href="/login">Login</a></li>
+                            {
+                                logged_token ? (
+                                    <li><a href="/dashboard" class="nav-item nav-link">Hello {localStorage.getItem('usr_name')}</a></li>
+                                ) : (
+                                    <>
+                                    <li><a href="/Signup" class="nav-item nav-link">Signup</a></li>
+                                    <li><a class="btn btn-square1 text-white me-2" href="/login">Login</a></li>
+                                    </>
+                                )
+                            }
                             
                         </ul> 
                     </div>
