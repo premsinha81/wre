@@ -8,7 +8,7 @@ export default function Login() {
     
     const handleSubmit = async (e) => {
         const email_phone = email;
-        const res = await fetch("https://admin.allnuud.com/api/get/login", {
+        const res = await fetch("http://127.0.0.1:8000/api/get/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -20,9 +20,13 @@ export default function Login() {
         })
         const data = await res.json();
         console.log(data);
-        if (data.status === "Success") {
-            window.alert("Login Succesfully");
-            console.log("Login Succesfully");
+        if (data.token) {
+            // window.alert("Login Succesfully");
+            // console.log("Login Succesfully");
+            localStorage.setItem('usr_name',data.user.name);
+            localStorage.setItem('usr_id',data.user.id);
+            localStorage.setItem('usr_email',data.user.email);
+            localStorage.setItem('token',data.token);
             navigate("/Jobpostform");
 
         } else if (data.status === "failed") {
