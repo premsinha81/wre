@@ -66,7 +66,7 @@ function App() {
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes>
     )}
-      <Routes>
+      {/* <Routes>
       <Route path = "/dashboard" element={<Dashboard/>}/>
       </Routes>
       <Routes>
@@ -77,7 +77,7 @@ function App() {
       </Routes>
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
-      </Routes>
+      </Routes> */}
       <Routes>
         <Route path="/about" element={<About />} />
         

@@ -3696,13 +3696,13 @@ line-height: 13px !important;
 margin-right: 4px !important;
 }
 table.table {
-  table-layout: fixed !important;
+  table-layout: auto !important;
 }
 table.table tr th, table.table tr td {
   border-color: #e9e9e9 !important;
 }
 table.table {
-  table-layout: fixed;
+  table-layout: auto;
 }
 .table-bordered {
   border: 1px solid #ddd !important;
@@ -3783,4 +3783,8 @@ li.nav-item1 {
 .card.shadow.border-0.mb-7 {
   background-color: #fff !important;
   color: #000 !important;
+}
+.table td {
+    font-size: .8125rem;
+    white-space: normal !important;
 }

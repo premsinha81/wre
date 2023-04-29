@@ -56,7 +56,7 @@ function Header() {
                                 ) : (
                                     <>
                                     <li><a href="/Signup" class="nav-item nav-link">Signup</a></li>
-                                    <li><a class="btn btn-square1 text-white me-2" href="/login">Login</a></li>
+                                    <li><a class="btn btn-square1 text-white me-2" href="/Login">Login</a></li>
                                     </>
                                 )
                             }
