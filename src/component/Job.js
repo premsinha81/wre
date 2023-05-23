@@ -248,7 +248,7 @@ console.log(post);
         </div>
       </div>
     </div>
-    <br />
+
     <hr style={{ borderBottom: "1px solid #000 !important" }} />
     <div className="programsSection">
       <div className="container">

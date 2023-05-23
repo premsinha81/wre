@@ -1,82 +1,98 @@
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import Tab from 'react-bootstrap/Tab';
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import axios from "axios";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
-import React, { useState, useEffect } from 'react';
+const Tabs = () => {
+  const [welding, setWelding] = useState([]);
+  const [open, setOpen] = useState('The focus of our Welding Technology and Training Program is on technical knowledge, industry standards, trouble-shooting skills ');
+  const [save , setSave]=useState({
+   id:"",
+   true:true
+  })
 
 
-function LeftTabsExample() {
 
-
-
-//     const url="https://workreadyeducation.com/wre/api/get/tab";
-//   const[data,setdata]=useState([]);
-  
-// const getuser=async()=>{
-//     const respond = await fetch(url);
-//     const user =await  respond.json();
-//       setdata(user);
-      
-// }
-
-// useEffect(() => {
-// getuser();
-//   },[])
-
-//   working
-
-const [user, setUser] = useState([]);
-
-  const fetchData = () => {
-    return fetch("https://admin.allnuud.com/api/get/tab")
-          .then((response) => response.json())
-          .then((data) => setUser(data));
+  const dataApi = ()=>{
+    return  (
+    fetch("https://admin.allnuud.com/api/get/tab")
+    .then((res)=>res.json())
+    .then((resdata)=>setWelding(resdata.data))
+    )
   }
 
-  useEffect(() => {
-    fetchData();
+  useEffect(()=>{
+    dataApi()
   },[])
-    
+  
 
+
+  console.log(welding, "priyanka");
+
+  let weldingdata;
+  if (welding.length > 0) {
+    weldingdata = welding;
+  }
+
+
+ console.log(open,"gcsdhecdy");
   return (
-    <Tab.Container id="left-tabs-example" defaultActiveKey="Welding Technology and Training">
-       <div class="container">
-      <Row className='banneerSection'>
-     
-        <Col sm={4}>
-        <div class="leftSidebar">
-          <Nav variant="pills" className="flex-column">
-          {user.data && user.data.length > 0 && user.data.map((userObj, index) => (
-            <Nav.Item>
-              <Nav.Link eventKey={userObj.Title}>
-                 <div class="leftSideBtn">
-                     {/* <div class="plusCercle">+</div> */}
-                     <p>{userObj.Title}</p>
-                     </div></Nav.Link>
-            </Nav.Item>
-            ))}
-          </Nav>
-          </div>
-        </Col>
-     
-        <Col sm={8}>
-        <div class="tabPanel">
-          <Tab.Content>
-          {user.data && user.data.length > 0 && user.data.map((userObj, index) => (
-            <Tab.Pane eventKey={userObj.Title}>
-                  <p className='active'>{userObj.Description}</p>
-    
-            </Tab.Pane>
-            ))}
-          </Tab.Content>
-          </div>
-         
-        </Col>
-      </Row>
-      </div>
-    </Tab.Container>
-  );
-}
+    <Grid container spacing={"10px"} sx={{ pt: 3, pb:{md:6,xs:0}}}>
+      <Grid item lg={4} md={5} sm={7} xs={12}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            justifyContent: "center",
+            height: "100%",
+          }}
+        >
+          {welding &&
+            welding.length > 0 &&
+            welding.map((data,index) => {
+              const { id, Title, Description } = data;
 
-export default LeftTabsExample;
+              return (
+                <>
+                <Stack
+                  key={id}
+                  className="rounded rounded-1"
+                  direction="row"
+                  sx={{
+                    bgcolor: "#3D55A5",
+                    height: "100%",
+                    color: "#fff",
+                    alignItems: "center",
+                    gap: "10px",
+                    p: "10px",
+                    cursor:"pointer"
+                  }}
+                  onClick={()=>setOpen(()=>Description)}
+                >
+                  <Box>
+                    <div className="plusCercle" onClick={()=>setSave(id)}>+</div>
+                  </Box>
+                  <Box>
+                    <Typography sx={{ fontSize: "15px" }}>{Title}</Typography>
+                  </Box>
+                </Stack>
+                { save ==id &&<Box class="tabPanel rounded d-sm-none "><Typography sx={{ fontSize: "15px" }}>{Description}</Typography></Box>}
+                </>
+              );
+            })}
+        </Box>
+      </Grid>
+
+      <Grid item lg={8} md={6} sm={5} xs={12} className="d-sm-block d-none">
+        <Box class="tabPanel rounded ">
+          {/* {welding[0].Description} */}
+          { <Typography sx={{ fontSize: "15px" }}>{open}</Typography>}
+        </Box>
+      </Grid>
+    </Grid>
+  );
+};
+
+export default Tabs;
