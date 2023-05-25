@@ -149,8 +149,7 @@ h1 {
 }
 .svgLogo {
   width: 126px;
-  height: 26px;
-  margin-top:-5px;
+  height: auto;
 }
 
 header {
@@ -516,6 +515,9 @@ img.iconP {
   .navbar .navbar-nav {
     border-top: 1px solid #EEEEEE;
   }
+  .login_btn a{
+    max-width: 100px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -528,6 +530,7 @@ img.iconP {
     visibility: hidden;
     transition: .5s;
   }
+  
 
   .navbar .nav-item:hover .dropdown-menu {
     top: 100%;
@@ -2671,7 +2674,9 @@ ul.tandcLink2 a {
   display: block;
   width: 100%;
 }
-
+.menu_bar{
+  border-radius: 50%;
+}
 .hamburger {
   border: 0;
   height: 40px;
@@ -2685,12 +2690,13 @@ ul.tandcLink2 a {
   top: 50%;
   right: 25px;
   transform: translateY(-50%);
-  display: none;
+   display: none;
+   border-radius: 50%;
 }
 
-.hamburger:hover {
+/* .hamburger:hover {
   background-color: #2642af;
-}
+} */
 .wrappers {
   position: relative;
   max-width: 390px;
@@ -2825,7 +2831,6 @@ ul.tandcLink2 a {
   .slider .searchPanel{width:100%;}
   .slider{min-height:250px;}
   .slider .searchPanel{top:60px;}
-  .svgLogo{margin-top:-20px;}
   .hamburger {
     display: block;
   }
@@ -2839,12 +2844,12 @@ ul.tandcLink2 a {
   .navigation-menu ul {
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top:100%;
     left: 0;
     width: 100%;
-    height: calc(100vh - 60px);
     background-color: white;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
+    box-shadow: -1px -1px 1px rgba(0,0,0,.1), 1px 1px 5px rgba(0,0,0,.2);
     display: none;
   }
 
@@ -2856,7 +2861,7 @@ ul.tandcLink2 a {
   .navigation-menu li a {
     color: black;
     width: 100%;
-    padding: 1.5rem 0;
+    /* padding: 1.5rem 0; */
   }
 
   .navigation-menu li:hover {
@@ -3987,6 +3992,8 @@ li.nav-item1 {
 
 
 @media (min-width: 767px) and (max-width:992px) {
+  
+
 .wrappers.py-5.p_position {
     bottom: 40px !important;
 }
@@ -4032,3 +4039,4 @@ li.nav-item1 {
 .leftSideBtn{
   padding: 10px !important;
 }
+

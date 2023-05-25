@@ -3,14 +3,18 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const Tabs = () => {
   const [welding, setWelding] = useState([]);
   const [open, setOpen] = useState('The focus of our Welding Technology and Training Program is on technical knowledge, industry standards, trouble-shooting skills ');
   const [save , setSave]=useState({
    id:"",
-   true:true
+   true:false
   })
+
+  const [hide , setHide]=useState(false)
 
 
 
@@ -36,7 +40,7 @@ const Tabs = () => {
   }
 
 
- console.log(open,"gcsdhecdy");
+
   return (
     <Grid container spacing={"10px"} sx={{ pt: 3, pb:{md:6,xs:0}}}>
       <Grid item lg={4} md={5} sm={7} xs={12}>
@@ -71,14 +75,19 @@ const Tabs = () => {
                   }}
                   onClick={()=>setOpen(()=>Description)}
                 >
-                  <Box>
-                    <div className="plusCercle" onClick={()=>setSave(id)}>+</div>
+                  <Box onClick={()=>setSave(id)}  className="d-sm-none">
+                    { save ==id && hide ?
+                      <RemoveCircleOutlineIcon onClick={()=>setHide(!hide)}/> :<AddCircleOutlineIcon onClick={()=>setHide(true)}/>
+                    }
+                  </Box>
+                  <Box onClick={()=>setSave(id)} className="d-none d-sm-block">
+                  <AddCircleOutlineIcon />
                   </Box>
                   <Box>
                     <Typography sx={{ fontSize: "15px" }}>{Title}</Typography>
                   </Box>
                 </Stack>
-                { save ==id &&<Box class="tabPanel rounded d-sm-none "><Typography sx={{ fontSize: "15px" }}>{Description}</Typography></Box>}
+                { save ==id && hide && <Box class="tabPanel rounded d-sm-none "><Typography sx={{ fontSize: "15px" }}>{Description}</Typography></Box>}
                 </>
               );
             })}

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Signup() {
     const navigate = useNavigate();
     const [user, setUser] = useState({
-        name: "", email: "", mob: "", password: "", userRole:""
+        name: "", email: "", mob: "", password: ""
     })
     let name, value
     const handleInputChange = (e) => {
@@ -14,7 +14,7 @@ function Signup() {
         setUser({ ...user, [name]: value });
     }
     const handleSubmit = async (e) => {
-        const { name, email, mob, password, userRole } = user;
+        const { name, email, mob, password } = user;
 
         const res = await fetch("https://admin.allnuud.com/api/get/signup", {
             method: "POST",
@@ -23,10 +23,10 @@ function Signup() {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                name, email, mob, password, userRole
+                name, email, mob, password
             })
-
-
+            
+            
         })
         const data = await res.json();
         console.log(data);
@@ -140,13 +140,6 @@ function Signup() {
                                             <div className="form-group">
                                                 <input className="form-control logininpute" type="text" name="mob" value={user.mob} onChange={handleInputChange} id="Mobile" placeholder="Mobile" />
 
-                                            </div>
-                                            <div className='form-group'>
-                                            <h6 className="accoTypeTitle">I am looking for</h6>
-                                                <select name='userRole' value={user.userRole} onChange={handleInputChange}>
-                                                    <option value="Recruiter">Recruitment Solutions</option>
-                                                    <option value="jobseeker">Job Opportunities</option>
-                                                </select>
                                             </div>
                                             <div className="col-md-12 section-h py-4">
                                                 <div className="input-box">
