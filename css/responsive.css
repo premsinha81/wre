@@ -1,0 +1,195 @@
+@media only screen and (max-width: 767px) {
+    .wrappers {
+        border-radius: 19px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .programTitleuser {
+        margin-bottom: 15px;
+    }
+    .rowpadingsp {
+        margin-top: 0px!important;
+    }
+    .video-gallery {
+        margin: 20px auto 0;
+    }
+
+    .programsSection {
+        margin-top: 0px !important;
+    }
+    .sideBarFooter {
+        display: flex;
+        gap: 5px;
+        margin-top: 20px;
+    }
+    
+    .commentbox{
+    padding-bottom:0px;
+    }
+ 
+    .commentbox{
+    padding:0px;
+    }
+    .loadBtn {
+       margin-bottom: 0px  !important;
+       margin-top: 0px  !important;
+        text-align: center;
+    }
+    .banneerSection {
+        margin-top: 37px!important;
+    }
+    footer.footerSection {
+        background-image: linear-gradient(0deg,#ececec,#ececec,#ececec03);
+        margin-top: 0px;
+        padding: 80px 0 20px;
+    }
+    .tabPanel {
+        
+        margin-top: 10px;
+    }
+    .background1 {
+        padding-top: 30px!important;
+    }
+    
+    
+
+    
+    .wrappers {
+        border-radius: 19px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .programTitleuser {
+        margin-bottom: 15px;
+    }
+    .rowpadingsp {
+        margin-top: 0px!important;
+    }
+    .video-gallery {
+        margin: 20px auto 0;
+    }
+
+    .programsSection {
+        margin-top: 0px !important;
+    }
+    .sideBarFooter {
+        display: flex;
+        gap: 5px;
+        margin-top: 20px;
+    }
+
+    .commentbox{
+    padding-bottom:0px !important;
+    }
+
+    .commentbox{
+    padding:0px !important;
+    }
+    .loadBtn {
+       margin-bottom: 0px  !important;
+       margin-top: 0px  !important;
+        text-align: center;
+    }
+    .banneerSection {
+        margin-top: 37px!important;
+    }
+    footer.footerSection {
+        background-image: linear-gradient(0deg,#ececec,#ececec,#ececec03);
+        margin-top: 0px;
+        padding: 80px 0 20px;
+    }
+    .tabPanel {
+        
+        margin-top: 10px;
+    }
+    .background1 {
+        padding-top: 30px!important;
+    }
+  
+    
+    .footer.footerSection {
+         margin-top: 0px; 
+        padding: 30px 0 20px;
+    }
+    .sideBarFooter {
+        padding-bottom: 15px;
+    }
+    .subscirpSection {
+        width: 100%;
+    }
+    ul.tandcLink {
+        justify-content: left;
+    }
+    .leftSection {
+        height: 96%;
+        margin: 9px 0;
+        padding: 7px;
+    }
+    .banneerSection {
+        margin-top: 15px!important;
+    }
+    .wrappers {
+        border-radius: 19px;
+        position: absolute;
+    }
+    .background.mobileCssBG {
+        height: 100%;
+        padding-top: 350px;
+    }
+    .bannerHeading h1 {
+        font-size: 30px;
+    }
+    .headerImage {
+        height: 480px;
+        background-position: -240px 0px;
+    }
+    .pulsating {
+        height: 156px;
+        border-top-left-radius: 45px!important;
+        border-bottom-left-radius: 45px!important;
+        width: 28px;
+    }
+    .programsSideBar {
+        margin-top: 271px;
+    }
+    .call-fixed-button1 {
+        right: -13px;
+        top: 490px;
+    }
+    .pulsating p {
+        padding: 0;
+    }
+    .onlinecousectinstu1 {
+    margin-top: 22px !important;;
+    }
+    .programsSection3 {
+        margin-top: 20px !important;;
+    }
+}
+
+
+@media (min-width: 767px) and (max-width:992px) {
+.wrappers.py-5.p_position {
+    bottom: 40px;
+}
+.video-gallery {
+    margin: 38px auto 0;
+}
+
+
+.sideBarFooter {
+    margin-top: 20px;
+}
+.commentbox {
+    margin: 8px 0;
+   padding: 24px 0px 0px 0px !important;
+}
+.loadBtn {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    text-align: center;
+}
+.banneerSection {
+    margin-top: 30px !important;
+}
+}
