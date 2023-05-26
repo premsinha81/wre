@@ -126,7 +126,7 @@ function Signup() {
                                 <main>
                                     <div className="wrappers">
                                         <div>
-                                            <div className="form-group">
+                                            <div className="form-group ">
                                                 <input className="form-control logininpute" type="text" name="name" value={user.name} onChange={handleInputChange} id="Name" placeholder="Name" />
                                             </div>
                                             <div className="form-group">

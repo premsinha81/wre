@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './resources.css';
 import Slider from 'react-slick';
 import Img1 from '../img/section1.jpg';
@@ -7,6 +7,8 @@ import Img3 from '../img/section3.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 export default function SimpleSlider() {
+
+  const [saveg , setSaveg]=useState(false)
 
 
 
