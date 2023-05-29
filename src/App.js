@@ -28,6 +28,7 @@ import Showdata from './component/showdata';
 import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
+import PrivateRoutes from './component/PrivateRoutes';
 
 
 function App() {
@@ -47,15 +48,23 @@ function App() {
     <Router>
 
       <Routes>
+        <Route element={<PrivateRoutes />}>
+          <Route path = "/dashboard" element={<Dashboard/>}/>
+          <Route path = "/jobpost" element={<Jobpost/>}/>
+          <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
+          <Route path = "/Jobpostform" element={<Jobpostform/>}/>
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path='/signup' element={<Signup />}/>
         <Route path="/" element={<Home />} />
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
       </Routes>
       
-    { !logged_token ? (
+    {/* { !logged_token ? (
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" isLoggedIn={logged_token} element={<Login />} />
         <Route path='/signup' element={<Signup />}/>
       </Routes>
     ):(
@@ -65,7 +74,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes>
-    )}
+    )} */}
       {/* <Routes>
       <Route path = "/dashboard" element={<Dashboard/>}/>
       </Routes>
@@ -78,10 +87,6 @@ function App() {
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes> */}
-      <Routes>
-        <Route path="/about" element={<About />} />
-        
-      </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
         

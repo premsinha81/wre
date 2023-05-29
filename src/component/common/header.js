@@ -14,10 +14,11 @@ const Iconstyle = { width:35,height:35,borderRadius:"50%",border:0,bgcolor:"#283
 const MenuStyle = {color:"#3d55a5",fontWeight:600,textTransform:"uppercase",fontSize:14,whiteSpace:" nowrap"}
 const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize:14,backgroundColor:"#3d55a5",borderRadius:"50rem",padding:"5px 24px"}
 
-function Header() {
+function Header(props) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const stickyHeader = useRef();
   const logged_token = localStorage.getItem("token");
+  
   useLayoutEffect(() => {
     const mainHeader = document.getElementById("mainHeader");
     let fixedTop = stickyHeader.current.offsetTop;
@@ -30,6 +31,11 @@ function Header() {
     };
     window.addEventListener("scroll", fixedHeader);
   }, []);
+
+  const logout = (e) => {
+    localStorage.clear()
+    window.location.reload('/')
+  }
   return (
     <>
       <nav
@@ -111,7 +117,9 @@ function Header() {
                     <a href="/dashboard" style={MenuStyle}>
                       Hello {localStorage.getItem("usr_name")}
                     </a>
+                    <button onClick={() => logout()} >Logout</button>
                   </ListItem>
+                  
                 ) : (
                   <>
                     <ListItem>
