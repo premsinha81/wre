@@ -32,7 +32,7 @@ import Jobedit from './component/admin/jobedit';
 
 function App() {
   
-
+  const logged_token = localStorage.getItem('token');
   // const { token, setToken } = useToken();
 
   // if(!token) {
@@ -53,8 +53,20 @@ function App() {
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
       </Routes>
       
-    
+    { !logged_token ? (
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path='/signup' element={<Signup />}/>
+      </Routes>
+    ):(
+      <Routes>
+        <Route path = "/dashboard" element={<Dashboard/>}/>
+        <Route path = "/jobpost" element={<Jobpost/>}/>
+        <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
+        <Route path = "/Jobpostform" element={<Jobpostform/>}/>
+      </Routes>
+    )}
+      {/* <Routes>
       <Route path = "/dashboard" element={<Dashboard/>}/>
       </Routes>
       <Routes>
@@ -65,7 +77,7 @@ function App() {
       </Routes>
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
-      </Routes>
+      </Routes> */}
       <Routes>
         <Route path="/about" element={<About />} />
         
@@ -74,13 +86,7 @@ function App() {
         <Route path="/about" element={<About />} />
         
       </Routes>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-      </Routes>
-   
-      <Routes>
-        <Route path='/signup' element={<Signup />}/>
-      </Routes>
+      
       <Routes>
         <Route path='/BusinessInformation' element={<BusinessInformation />}/>
       </Routes>

@@ -23,3 +23,6 @@ ul.menu li:last-child a{
 .text-right{
     text-align: right;
 }
+.navbar [class^=container] {
+    position: unset !important;
+}

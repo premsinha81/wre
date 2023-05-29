@@ -3,7 +3,7 @@
     max-height: 260px;
 }
 .slick-initialized .slick-slide{
-    padding:0 15px;
+    padding:0 0px;
 }
 .related-p span{
     font-weight:bold;
@@ -14,4 +14,11 @@
 }
 .slick-dots li{
     width:10px!important;
+}
+.imgcss{
+    margin: 10px !important;
+}
+
+.slick-list{
+    margin-right: -1rem !important;
 }

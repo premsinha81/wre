@@ -7,6 +7,10 @@ import Img3 from '../img/section3.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 export default function SimpleSlider() {
+
+
+
+
   var settings = {
     dots: true,
     infinite: true,
@@ -14,6 +18,7 @@ export default function SimpleSlider() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
+    spacing:20,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -42,35 +47,39 @@ export default function SimpleSlider() {
     ]
   };
 
+
+ 
+
+ 
   return (
-    <section className='banneerSection'>
-      <h4 className=" related">Related Top Resources</h4>
-      <Slider {...settings}>
-        <div>
+    <section className='banneerSection '>
+      <h4 className=" related mb-0">Related Top Resources</h4>
+      <Slider {...settings} className=' pt-3'>
+        <div className='pe-3'>
           <img className="img-fluid w-100" src={Img1} />
           <div className="border-top related-p">
             <span> June 14 2022</span>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>
-        <div>
+        <div className='pe-3'>
           <img className="img-fluid w-100" src={Img2} />
           <div className="border-top related-p">
-            <span> June 14 2022</span>
+            <span> June 14 2023</span>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>
-        <div>
+        <div className='pe-3'>
           <img className="img-fluid w-100" src={Img3} />
           <div className="border-top related-p">
-            <span> June 14 2022</span>
+            <span> June 14 2024</span>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>
-        <div>
+        <div className='pe-3'>
           <img className="img-fluid w-100" src={Img2} />
           <div className="border-top related-p">
-            <span> June 14 2022</span>
+            <span> June 14 2025</span>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
           </div>
         </div>

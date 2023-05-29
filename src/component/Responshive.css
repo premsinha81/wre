@@ -42,17 +42,11 @@
         display: block;
     }
     .rightSection .searchBox ul li img {
-        max-width: 100px;
-        background-color: #f6f6f6;
+        background-color: unset;
+  border: none;
+  border-radius:1rem !important;
         padding: 10px;
-        border-radius: 0;
-        margin: 0 auto;
-        min-height: auto;
-        width: 300px
-    px
-    ;
-        height: 80px;
-        border: 1px solid #ccc;
+        
     }
     .slider .searchPanel {
         min-width: 100%!important;
@@ -73,7 +67,7 @@
         display: inline-block;
         vertical-align: top;
         font-size: 16px !important;
-        padding: 15px 4px;
+        padding: 0px 7px;
     }
     #m-btns {
     position: absolute;
