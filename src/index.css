@@ -85,10 +85,6 @@ h1 {
     font-weight: 500;
     padding: 10px 15px;
     position: absolute;
-<<<<<<< HEAD
-    right: 4px;
-    top: 49px;
-=======
     right: 2px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
@@ -98,7 +94,6 @@ h1 {
 }
 .search_engine .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiAutocomplete-inputRoot.css-segi59{
   padding: 0 !important;
->>>>>>> 902a808ab27ccf7a6bbabb7bd909af91c97fb3d7
 }
 
 .search_engine  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root{
