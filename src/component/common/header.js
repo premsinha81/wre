@@ -82,7 +82,7 @@ function Header() {
               <List>
                 <ListItem>
                   <a href="#" style={MenuStyle}>
-                   <SearchOutlinedIcon/>
+                   <SearchOutlinedIcon sx={{color:"#283b8b"}}/>
                   </a>
                 </ListItem>
                 <ListItem>

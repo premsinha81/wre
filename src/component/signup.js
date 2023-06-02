@@ -126,7 +126,7 @@ function Signup() {
                                 <main>
                                     <div className="wrappers">
                                         <div>
-                                            <div className="form-group ">
+                                            <div className="form-group">
                                                 <input className="form-control logininpute" type="text" name="name" value={user.name} onChange={handleInputChange} id="Name" placeholder="Name" />
                                             </div>
                                             <div className="form-group">
@@ -141,13 +141,6 @@ function Signup() {
                                                 <input className="form-control logininpute" type="text" name="mob" value={user.mob} onChange={handleInputChange} id="Mobile" placeholder="Mobile" />
 
                                             </div>
-                                            <div className='form-group'>
-<h6 className="accoTypeTitle">I am looking for</h6>
-    <select name='userRole' value={user.userRole} onChange={handleInputChange}>
-        <option value="Recruiter">Recruitment Solutions</option>
-        <option value="jobseeker">Job Opportunities</option>
-    </select>
-</div>
                                             <div className="col-md-12 section-h py-4">
                                                 <div className="input-box">
                                                     <button type="submit" onClick={() => handleSubmit()} className="submitButton" >Sign Up</button>

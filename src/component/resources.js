@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './resources.css';
 import Slider from 'react-slick';
 import Img1 from '../img/section1.jpg';
@@ -7,8 +7,6 @@ import Img3 from '../img/section3.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 export default function SimpleSlider() {
-
-  const [saveg , setSaveg]=useState(false)
 
 
 
@@ -54,7 +52,7 @@ export default function SimpleSlider() {
 
  
   return (
-    <section className='banneerSection '>
+    <section className='banneerSection program_page '>
       <h4 className=" related mb-0">Related Top Resources</h4>
       <Slider {...settings} className=' pt-3'>
         <div className='pe-3'>

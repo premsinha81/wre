@@ -28,6 +28,7 @@ import Showdata from './component/showdata';
 import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
+import Index from './component/Home/Index';
 
 
 function App() {
@@ -47,7 +48,8 @@ function App() {
     <Router>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/search-program" element={<Home />} />
+        <Route path="/" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />

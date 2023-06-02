@@ -10,6 +10,19 @@
   font-size: 18px;
   margin: 0;
 }
+.fs-14{
+  font-size: 14px !important;
+}
+.fs-16{
+  font-size: 16px !important;
+}
+.bg-grey{
+  background-color: #ECECEC !important;
+}
+
+.minh180{
+  min-height: 190px !important;
+}
 
 .btn-square1 {
   width: 90px;
