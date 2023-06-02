@@ -55,9 +55,9 @@ function App() {
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
       </Routes>
       
-    { !logged_token ? (
+    {/* { !logged_token ? (
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" isLoggedIn={logged_token} element={<Login />} />
         <Route path='/signup' element={<Signup />}/>
       </Routes>
     ):(
@@ -67,7 +67,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes>
-    )}
+    )} */}
       {/* <Routes>
       <Route path = "/dashboard" element={<Dashboard/>}/>
       </Routes>
@@ -80,10 +80,6 @@ function App() {
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes> */}
-      <Routes>
-        <Route path="/about" element={<About />} />
-        
-      </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
         
