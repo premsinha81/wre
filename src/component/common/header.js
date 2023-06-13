@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Menu from "./menu";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ReactComponent as YourSvg } from "./svg.svg";
-//import { ReactComponent as BurgerSvg } from "./burger.svg";
-//import CancelIcon from "@mui/icons-material/Cancel";
+import { ReactComponent as BurgerSvg } from "./burger.svg";
+import CancelIcon from "@mui/icons-material/Cancel";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Grid, List, ListItem, Stack } from "@mui/material";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
@@ -14,11 +14,10 @@ const Iconstyle = { width:35,height:35,borderRadius:"50%",border:0,bgcolor:"#283
 const MenuStyle = {color:"#3d55a5",fontWeight:600,textTransform:"uppercase",fontSize:14,whiteSpace:" nowrap"}
 const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize:14,backgroundColor:"#3d55a5",borderRadius:"50rem",padding:"5px 24px"}
 
-function Header(props) {
+function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const stickyHeader = useRef();
   const logged_token = localStorage.getItem("token");
-  
   useLayoutEffect(() => {
     const mainHeader = document.getElementById("mainHeader");
     let fixedTop = stickyHeader.current.offsetTop;
@@ -31,11 +30,6 @@ function Header(props) {
     };
     window.addEventListener("scroll", fixedHeader);
   }, []);
-
-  const logout = (e) => {
-    localStorage.clear()
-    window.location.reload('/')
-  }
   return (
     <>
       <nav
@@ -87,7 +81,7 @@ function Header(props) {
             <div class=" navbar-nav ms-auto ">
               <List>
                 <ListItem>
-                  <a href="#" style={MenuStyle}>
+                  <a href="/search-program" style={MenuStyle}>
                    <SearchOutlinedIcon sx={{color:"#283b8b"}}/>
                   </a>
                 </ListItem>
@@ -97,7 +91,7 @@ function Header(props) {
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="/Career" style={MenuStyle}>
+                  <a href="/carrier" style={MenuStyle}>
                     Career
                   </a>
                 </ListItem>
@@ -117,9 +111,7 @@ function Header(props) {
                     <a href="/dashboard" style={MenuStyle}>
                       Hello {localStorage.getItem("usr_name")}
                     </a>
-                    <button onClick={() => logout()} >Logout</button>
                   </ListItem>
-                  
                 ) : (
                   <>
                     <ListItem>

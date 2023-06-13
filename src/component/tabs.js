@@ -32,7 +32,7 @@ const Tabs = () => {
   
 
 
-  // console.log(welding, "priyanka");
+  console.log(welding, "priyanka");
 
   let weldingdata;
   if (welding.length > 0) {

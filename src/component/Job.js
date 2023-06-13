@@ -254,9 +254,9 @@ console.log(post);
       <div className="container">
         <div className="row">
           {/* Sidebar Start */}
-          <div className="col-lg-3 col-xl-3">
+          <div className="col-lg-3 col-xl-3 ps-0">
             <div className="programsSideBar1">
-              <div className="filterArea">
+              <div className="filterArea mb-3">
                 <button
                   type="button"
                   className="btn btn-primary btnSidebar filterBtn "
@@ -270,7 +270,7 @@ console.log(post);
                   Sort By
                 </button>
               </div>
-              <div className="filterBody">
+              <div className="filterBody p-3">
                 <div className="searchRank">
                   <h4>Search Ranking</h4>
                   <div className="searchProgram">
@@ -377,23 +377,23 @@ console.log(post);
           </div>
           {/* Sidebar End */}
           {/* Program Body Start */}
-          <div className="col-lg-9 col-xl-9">
+          <div className="col-lg-9 col-xl-9 ps-0">
             
-            <h6>
+            <h6 className='fs-20 fw-bold mb-4 mt-3 mt-lg-0 mb-lg-0'>
               We have 893.817 Jobs waiting for your best talent, Apply Now!
             </h6>
             {initialJob.map((item) => {
 
 return(
-            <div className="row commentbox py-5">
-              <div className="col-sm-12 col-md-12">
+            <div className="row commentbox py-lg-5">
+              <div className="col-sm-12 col-md-12 ps-0">
                 <div className="d-flex gap-5">
                  
                   <div className="groupName" key={item.user_id}>
                     <div className="jobList">
                       <div className="jobPostion" >
                         <h6 className="groupFollowersjob">{item.job_titile}</h6>
-                        <h4 className="gName">{item.job_company}</h4>
+                        <h4 className="gName fw-500">{item.job_company}</h4>
                          <p>{item.employer_name}</p> 
                       </div>
                       <div
@@ -456,7 +456,12 @@ return(
   </div>
   <div className="container">
   <LeftTabsExample></LeftTabsExample>
-                    <Resources></Resources>
+  <div className='row'>
+    <div className='col-md-12'>
+    <Resources></Resources>
+    </div>
+  </div>
+                   
                     </div>
         </div>
   )

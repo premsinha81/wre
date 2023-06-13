@@ -29,8 +29,8 @@ import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
 import Index from './component/Home/Index';
-
-
+import Carrier from './component/Carrier'
+import Postsinglepage from './component/Home/Postsinglepage'
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -55,9 +55,9 @@ function App() {
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
       </Routes>
       
-    {/* { !logged_token ? (
+    { !logged_token ? (
       <Routes>
-        <Route path="/login" isLoggedIn={logged_token} element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path='/signup' element={<Signup />}/>
       </Routes>
     ):(
@@ -67,7 +67,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes>
-    )} */}
+    )}
       {/* <Routes>
       <Route path = "/dashboard" element={<Dashboard/>}/>
       </Routes>
@@ -83,6 +83,11 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
         
+      </Routes>
+     
+
+      <Routes>
+      <Route path = "/carrier" element={<Carrier/>}/>
       </Routes>
       
       <Routes>
@@ -127,6 +132,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/showdata' element={<Showdata />} />
+      </Routes>
+      <Routes>
+        <Route path='/Postsinglepage' element={<Postsinglepage />} />
       </Routes>
     </Router>
     <Footer/>

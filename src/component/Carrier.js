@@ -360,5 +360,4 @@ const Carrier = () => {
       </div>
    )
 }
-
 export default Carrier;

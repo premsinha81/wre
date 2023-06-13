@@ -122,7 +122,7 @@ const Leftpanel = (props) => {
 
   return (
     <>
-      <div className="leftsectionset bg-lgrey my-lg-5 mt-3 mb-0 rounded">
+      <div className="leftsectionset bg-lgrey my-lg-5 mt-3 mb-0 rounded pp">
         <div className="bg-white pb-lg-3">
           <div className="d-flex">
             <button
@@ -147,7 +147,7 @@ const Leftpanel = (props) => {
                 color3
               }
               onClick={() => {
-                setMobfilter(true);
+                setMobfilter(!mobfilter);
                 setShortby(false);
                 setFilterShow(false);
               }}
@@ -178,11 +178,11 @@ const Leftpanel = (props) => {
 
         {mobfilter &&  (
           <div className="d-block d-md-none trade_search leftSection postGroups1 p-3  bg-lgrey rounded  mt-3">
-            <div className="d-flex justify-content-between align-items-center">
-              <div></div>
+            <div className="d-flex justify-content-center align-items-center">
+              
               <h4 className="fw-bold text-center">Search by Trade</h4>
 
-              <div>
+              {/* <div>
                 <Avatar
                   sx={style}
                   onClick={() => {
@@ -191,7 +191,7 @@ const Leftpanel = (props) => {
                 >
                   X
                 </Avatar>
-              </div>
+              </div> */}
 
               {/* <p style={{cursor:"pointer",fontWeight:"bold",border:"2px solid black",borderRadius:"50%",width:"20px",height:"25px",display}} className="blue">X</p> */}
             </div>
