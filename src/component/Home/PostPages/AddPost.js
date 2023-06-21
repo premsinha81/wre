@@ -7,7 +7,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AddPostApi } from "../../../API/PostAddApi";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+
 
 const style = {
     position: 'absolute',
@@ -21,73 +21,52 @@ const style = {
     zIndex:"99999"
   };
 
-const AddPost = ({ setAddPost }) => {
+const AddPost = ({setAddPost}) => {
 
- 
+  const idget = localStorage.getItem("usr_id")
 
- 
-    const navigate = useNavigate();
+  const [post , setPost]=useState();
+  const [id , setId]=useState(idget);
+
   
-      const [post, setPost] = useState("");
-      const [user_id, setUser_id] = useState("18");
-      const data = {
-        post : post, 
-        user_id:user_id
-        
-      };
-      function handleSubmit(e) {
-        e.preventDefault();
-        axios
-          .post("https://admin.allnuud.com/api/userpost/add", data)
-          .then(
-            setPost("")
-          )
-          
-          .catch((err) => console.log(err));
-      
+
+  const navigate = useNavigate();
+
+    let data = {
+      post :post, 
+      user_id:id
+    }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    let apidata = AddPostApi(data);
+
+    if(apidata){
+      apidata.then((res)=>{
+      console.log(res);
+      })
+      apidata.catch((error)=>{
+        alert(error)
+      })
+    }
+
     
-          if (data.status === 'Success') {
-            window.alert("Your Post Successfully");
-            console.log("Your Post Successfully");
-            navigate("/");
-          } else {
-            window.alert("Your Post Successfully");
-            console.log("Your Post Successfully");
-          }
-        }
-    
-  //   const [user_id, setUser_id] = useState("18");
-  //  const[post, setPost] = useState("");
-    
-  
-  //   const addpostbtn = async (e) => {
-  //     e.preventDefault();
-  //     let jobData = { user_id, post};
-  
-  //     const res = await fetch("https://admin.allnuud.com/api/userpost/add", {
-  //       method: 'POST',
-  //       body: JSON.stringify(jobData),
-  //       headers: {
-  //         "Content-Type": 'application/json',
-  //         "Accept": 'application/json'
-  //       }
-  //     })
-  //     const data = await res.json();
-  //     console.log(data);
-  //     if (data.status === 'Success') {
-  //       window.alert("Your Post Successfully");
-  //       console.log("Your Post Successfully");
-  //       navigate("/");
-  //     } else {
-  //       window.alert("Invalid Registration");
-  //       console.log("Invalid Registration");
-  //     }
-  //   }
+    console.log(data);
+
+    if (data.status === 'Success') {
+      window.alert("Your Post Successfully");
+      console.log("Your Post Successfully");
+      navigate("/");
+    } else {
+      window.alert("Your Post Successfully");
+      console.log("Your Post Successfully");
+    }
+  };
+
 
   return (
-    // <Modal open={() => setAddPost(true)} onClose={() => setAddPost(false)} sx={{":focus-visible":{outline:"none"}}}>
-      <Grid  sx={style} className="addPost">
-        <form method="post" onSubmit={handleSubmit}>
+   
+      <Grid container sx={style} className="addPost">
         <Grid item xs={12} sx={{bgcolor:"#4c62ac",p:1,color:"#fff",borderRadius:"0.75rem 0.75rem 0 0"}}>
           <Stack direction="row" sx={{ justifyContent: "space-between"}}>
             <Box></Box>
@@ -96,49 +75,37 @@ const AddPost = ({ setAddPost }) => {
           </Stack>
         </Grid>
 
-        <Grid item xs={12} lg={12} sx={{bgcolor:"#fff",p:3,borderRadius:"0 0 .75rem .75rem"}}>
+        <Grid item xs={12} sx={{bgcolor:"#fff",p:3,borderRadius:"0 0 .75rem .75rem"}}>
          
           <Box>
-          {/* <CKEditor
-                    editor={ ClassicEditor } value={post}
-                    onChange={(e) => setPost(e.target.value)}
-                    data="<div style={{p:5}}><p>Type Here</p></div>"
+          <CKEditor
+                    editor={ ClassicEditor }
+                    data={post}
                     onReady={ editor => {
                        
                         console.log( 'Editor is ready to use!', editor );
                     } }
-                  
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        setPost(data)
+                        console.log(data , "pppppp")
+                       
+                    } }
                     onBlur={ ( event, editor ) => {
-                        console.log( 'Blur.', editor );
+                       
                     } }
                     onFocus={ ( event, editor ) => {
-                        console.log( 'Focus.', editor );
+                        
                     } }
-                /> */}
-               <CKEditor
-        editor={ClassicEditor}
-        data={post}
-        onReady={(editor) => {
-          // You can store the "editor" and use when it is needed.
-        }}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-
-          setPost(data);
-        }}
-      />
+                />
           </Box>
-          
-       
-
+         
        
           <Box className="d-flex justify-content-center mt-5">
-            <CusButton  bgcolor={"#4c62ac"} color={"#fff"} name={<Typography sx={{px:2,py:"5px"}}>POST</Typography>}/>
+            <CusButton onClick={handleSubmit} bgcolor={"#4c62ac"} color={"#fff"} name={<Typography sx={{px:2,py:"5px"}}>POST</Typography>}/>
           </Box>
         </Grid>
-        </form>
       </Grid>
-    // </Modal>
   );
 };
 

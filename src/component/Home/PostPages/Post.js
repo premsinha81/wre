@@ -9,7 +9,7 @@ import LuggageRoundedIcon from '@mui/icons-material/LuggageRounded';
 import CallToActionRoundedIcon from '@mui/icons-material/CallToActionRounded';
 import AddPost from './AddPost';
 
-const Post = ({onClick}) => {
+const Post = ({onClick,onclick}) => {
 
 
 
@@ -21,17 +21,17 @@ const Post = ({onClick}) => {
     <Grid item xs={12}>
 
          
-        <Stack direction="row" spacing={0} className='w-100 rounded-pill border' sx={{justifyContent:"space-between",alignItems:"center",p:"3px",bgcolor:"#fff"}} >
+        <Stack direction="row" spacing={0} className='w-100 rounded-pill border' sx={{justifyContent:"space-between",alignItems:"center",p:"5px",bgcolor:"#fff"}} >
             <Box>
                 <Avatar className='img_s' src='./img1.png'  sx={{width:{lg:45,sm:35,xs:40},height:{lg:45,sm:35,xs:40}}}/>
             </Box>
            
-                <InputBase className='form-control border-0 fs10-s ps-0' placeholder='Hi Prem, start a new discussion'/>
+                <InputBase onClick={onClick} className='form-control border-0 fs10-s ps-0' placeholder='Hi Prem, start a new discussion'/>
            
             <Stack direction="row" spacing={1} sx={{justifyContent:"space-between",alignItems:"center"}}>
            
-            <Box><WatchLaterIcon sx={{width:{lg:30,xs:10},height:{lg:30,xs:10},color:"#616161"}}/></Box>
-            <CusButton name={<Typography className='px-2 px-lg-2 fs10-s' sx={{py:{lg:"2px",xs:"1px"},fontSize:{lg:"16px",xs:"14px"}}} onClick={onClick}>Post</Typography>} color="#fff" bgcolor="#3D55A5" size={"20px"}/>
+            <Box><WatchLaterIcon sx={{width:{lg:30,xs:22},height:{lg:30,xs:22},color:"#616161"}}/></Box>
+            <CusButton name={<Typography onClick={onclick} className='px-2 px-lg-0 fs10-s' sx={{py:{lg:"2px",xs:"1px"},fontSize:{lg:"15px",xs:"14px"}}} >Post</Typography>} color="#fff" bgcolor="#3D55A5" size={"20px"}/>
             </Stack>
         </Stack>
    

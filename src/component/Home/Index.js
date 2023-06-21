@@ -9,7 +9,6 @@ import CusButton from "./PostPages/CusButton";
 import HomeSlider from "./PostPages/HomeSlider";
 import { useState } from "react";
 import AddPost from "./PostPages/AddPost";
-import { Link } from "react-router-dom";
 
 const theme = createTheme({
   components: {
@@ -50,7 +49,10 @@ const Index = () => {
 
               <Grid item lg={8} md={8}  xs={12}>
                 <Box>
-                  <Post onClick={()=>setAddPost(true)} />
+                  <Post 
+                  onClick={()=>setAddPost(true)} 
+                  onclick={()=>setAddPost(true)} 
+                  />
                 </Box>
 
                 <Box sx={{ mt: 2 }}>
@@ -131,11 +133,11 @@ const Index = () => {
                    img5="./images3.jpg" 
                   />
                 </Box>
-                <Link to='/Postsinglepage'>
+
                 <Box sx={{ mt: 2 }}>
                   <ChatPost />
                 </Box>
-</Link>
+
                 <Box sx={{ mt: 2}}>
                   <img src="./form_img.jpg" className="img-fluid w-100 rounded rounded-2" style={{maxHeight:"400px",width:"100%",height:"100%"}}/>
                 </Box>
@@ -160,9 +162,9 @@ const Index = () => {
                 </Box>
 
                 
-                <Box sx={{ mt: 2 }}>
+                {/* <Box sx={{ mt: 2 }}>
                   <ChatPost />
-                </Box>
+                </Box> */}
 
                 <Box sx={{ mt: 2}}>
                   <img src="./form-img2.jpg" className="img-fluid w-100 rounded rounded-2" style={{maxHeight:"400px",width:"100%",height:"100%"}}/>

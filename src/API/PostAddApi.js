@@ -1,27 +1,42 @@
+import axios from "axios"
 
 
 
-export const AddPostApi = (props)=>{
+export const AddPostApi = (postData)=>{
 
-    const {editor} = props
 
-    var postData = new FormData()
+    console.log(postData , "api code ka data")
+  
 
-    postData.append("post",editor)
-
-    var request = {
-        method:"POST",
-        body:postData,
-        redirect: 'follow'
-    }
-
-    return fetch("https://admin.allnuud.com/api/userpost/add",{
-        request
-    })
+    let data = axios.post("https://admin.allnuud.com/api/userpost/add",{...postData})
     .then((res)=>{
-        return res.json();
+        return res
+    }).catch((error)=>{
+        // alert(error)
+        console.log("add post api error" , error);
+    })
+
+    if(data){
+        return data
+    }
+}
+
+
+export const addPostData = ()=>{
+
+    var id = localStorage.getItem("usr_id")
+
+     let data= axios.get(`https://admin.allnuud.com/api/userpost/show_by_user/${id}`)
+    .then((res)=>{
+        return res
     })
     .catch((error)=>{
-        alert(error)
+        // alert(error)
+        console.log("get post api error" , error);
+        
     })
+    if(data){
+        return data
+    }
+    
 }

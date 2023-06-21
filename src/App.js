@@ -31,6 +31,10 @@ import Jobedit from './component/admin/jobedit';
 import Index from './component/Home/Index';
 import Carrier from './component/Carrier'
 import Postsinglepage from './component/Home/Postsinglepage'
+import Loading from './Context/Loading'
+
+
+
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -43,7 +47,7 @@ function App() {
 
   return (
     <>
-    
+    <Loading>
       <Header/>
     <Router>
 
@@ -138,6 +142,7 @@ function App() {
       </Routes>
     </Router>
     <Footer/>
+    </Loading>
     </>
   )
 }
