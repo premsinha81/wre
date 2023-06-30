@@ -5,10 +5,11 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ShareSharpIcon from "@mui/icons-material/ShareSharp";
 import CusButton from './CusButton'
 import { useEffect } from "react";
-import { addPostData } from "../../../API/PostAddApi";
+import { addPostData, commentData } from "../../../API/PostAddApi";
 import Dropdown from "./Dropdown";
 import { useContext } from "react";
 import { loadingContext } from "../../../Context/Loading";
+import FirstComponent from "./PostTimer";
 
 
 const ChatPost = ({img,mb}) => {
@@ -16,15 +17,23 @@ const ChatPost = ({img,mb}) => {
   const [postdata , setPostData] = useState([]);
   const [dropdown , setDropdown] = useState(false);
 
+  const [commentid , setCommentId] = useState("");
+
   const [idsaved , setIdsaved] = useState(false)
 
   const userName = localStorage.getItem("usr_name")
   const userEmail = localStorage.getItem("usr_email")
 
+  const [commentpostcontent , setCommentText] = useState('')
+
   const {loadingd , setLoadingd} = useContext(loadingContext)
 
   console.log(loadingd , "loading data");
 
+  const idget = localStorage.getItem("usr_id")
+
+
+  
 
  
 
@@ -37,13 +46,50 @@ const ChatPost = ({img,mb}) => {
         // setLoadingd(<CircularProgress/>)
           console.log(postdata, "api data aaya hai");
       })
+
      }
-
-
-
-    // alert(Getdata)
     
   },[loadingd])
+
+ 
+
+
+  const HandlePost = (id)=>{
+
+    let commentDataPosts ={
+      user_id:idget,
+      comment:commentpostcontent,
+      user_posts_id:id
+    }
+  
+    console.log(loadingd , "before loading addon");
+    
+    setLoadingd(loadingd + 1)
+
+    console.log(loadingd , "after loading addon");
+
+    // e.preventDefault();
+    // setCommentId(e.id)
+    let data = commentData(commentDataPosts)
+    
+    if(data){
+      data.then((res)=>{
+       alert(res.data.status)
+      })
+      .catch((error)=>{
+        alert(error.data.status)
+      })
+    }
+   }
+
+  //  if(commentDataPost === "Success"){
+  //   window.alert("Your Post Successfully");
+  //  }
+  //  else{
+  //   console.log("pls check error in comment api");
+  //  }
+
+
 
   let rotate;
   if(dropdown === true){
@@ -59,11 +105,12 @@ const ChatPost = ({img,mb}) => {
    <Box>
     {
       postdata.map((data)=>{
-        const {id ,post } = data
+       
+        const {id ,post,comments} = data
 
         return(
-          <Grid container sx={{ p: 2, bgcolor: "#fff" }} className="rounded rounded-2 mb-3" key={id} >
-
+          <Grid container sx={{ p: 2, bgcolor: "#fff" }} className="rounded rounded-2 mb-3 priyanka" key={id}>
+ 
           <Grid item sm={1} xs={2}>
             <Box>
               <Avatar className='img_s' src="./img1.png"  sx={{width:{lg:45,sm:35,xs:40},height:{lg:45,sm:35,xs:40}}}/>
@@ -135,10 +182,10 @@ const ChatPost = ({img,mb}) => {
               
                 Welding Classes In Jersey
               </Typography>
-              <Typography  sx={{ color: "#3C3C3C",fontSize:{lg:"14px",xs:"12px"}}}>
-              {/* {postdata[0].post} */}
-              aaaaaaaa
-              </Typography>
+              {/* <Typography  sx={{ color: "#3C3C3C",fontSize:{lg:"14px",xs:"12px"}}}>
+              {post}
+              </Typography> */}
+              <p  style={{ color: "#3C3C3C",fontSize:{lg:"14px",xs:"12px"}}} dangerouslySetInnerHTML={{ __html:post}}></p>
               <Typography
                 sx={{color: "#3D55A5",fontSize: "14px",mt: 1,pb: 1,borderBottom: "1px solid #3D55A5"}}>
                 Idea | Welding
@@ -187,7 +234,7 @@ const ChatPost = ({img,mb}) => {
                   </Typography>
                 </Box>
                 <Box>
-                  <List className="ps-4 pt-0 m-0" sx={{ listStyleType: "number" }}>
+                  <List className="ps-0 pt-0 m-0" sx={{ listStyleType: "number" }}>
                     <ListItem
                       className="p-0 m-0"
                       sx={{ display: "list-item", listStyle: "disc" }}
@@ -200,15 +247,21 @@ const ChatPost = ({img,mb}) => {
                 </Box>
               </Stack>
             </Stack>
-            <Box>
-              <Typography className="mt-2" sx={{fontSize:{lg:"14px",xs:"12px"}}}>
-                {/* First image is of clouds, called Australian glory cloud. Second one
-                is the vortex of Saturn. These are called solitons, the best known
-                non-dispersive object which can't be perturbed easily. ... */}
-               {post}
-               
-              </Typography>
-            </Box>
+
+            {
+              comments.map((res)=>{
+                const {user_posts_comment,id} = res
+
+                return(
+                  <Box key={id}>
+                    <Typography className="mt-2" sx={{fontSize:{lg:"14px",xs:"12px"}}} >
+                      {user_posts_comment}               
+                    </Typography>
+                  </Box>
+                )
+              })
+            }
+            
           </Grid>
     
           <Grid item xs={12}>
@@ -220,10 +273,10 @@ const ChatPost = ({img,mb}) => {
           </Grid>
           <Grid item sm={11} xs={10} className="my-auto">
            <Box className="position-relative form-control rounded-pill py-1 px-lg-1 px-0" sx={{bgcolor:"#ECECEC"}}> 
-           <input type="text" className="w-100 rounded-pill input_size bg-grey fs8-s" placeholder="Start Typing your Comment here" style={{ fontSize:{lg:"10px",xs:"6px"}}}/>
+           <input type="text" className="w-100 rounded-pill input_size bg-grey fs8-s" placeholder="Start Typing your Comment here" style={{ fontSize:{lg:"10px",xs:"6px"}}} onChange={(e)=>setCommentText(e.target.value)}/>
     
             <Box sx={{position:"absolute",top:"50%",right:"5px",transform:"translatey(-50%)"}} className="fs10-s">
-            <CusButton name="send" bgcolor="#3D55A5" color="#fff"size="14px"  />
+            <CusButton onClick={(e)=>HandlePost(id)} name="send" bgcolor="#3D55A5" color="#fff"size="14px"  />
             </Box>
            </Box>
           </Grid>

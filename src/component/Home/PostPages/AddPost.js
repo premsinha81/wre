@@ -7,6 +7,8 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AddPostApi } from "../../../API/PostAddApi";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { loadingContext } from "../../../Context/Loading";
 
 
 const style = {
@@ -27,6 +29,7 @@ const AddPost = ({setAddPost}) => {
 
   const [post , setPost]=useState();
   const [id , setId]=useState(idget);
+  const {loadingd , setLoadingd} = useContext(loadingContext)
 
   
 
@@ -36,6 +39,8 @@ const AddPost = ({setAddPost}) => {
       post :post, 
       user_id:id
     }
+
+    
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -49,6 +54,8 @@ const AddPost = ({setAddPost}) => {
         alert(error)
       })
     }
+
+    
 
     
     console.log(data);

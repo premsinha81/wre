@@ -8,8 +8,11 @@ import CropOriginalRoundedIcon from '@mui/icons-material/CropOriginalRounded';
 import LuggageRoundedIcon from '@mui/icons-material/LuggageRounded';
 import CallToActionRoundedIcon from '@mui/icons-material/CallToActionRounded';
 import AddPost from './AddPost';
+import PostTimer from './PostTimer';
 
 const Post = ({onClick,onclick}) => {
+
+    const [timer , setTimer]=useState(false)
 
 
 
@@ -21,7 +24,7 @@ const Post = ({onClick,onclick}) => {
     <Grid item xs={12}>
 
          
-        <Stack direction="row" spacing={0} className='w-100 rounded-pill border' sx={{justifyContent:"space-between",alignItems:"center",p:"5px",bgcolor:"#fff"}} >
+        <Stack direction={{xs:"row",sm:"row"}} spacing={0} className='w-100 rounded-pill border' sx={{justifyContent:"space-between",alignItems:"center",p:"5px",bgcolor:"#fff"}} >
             <Box>
                 <Avatar className='img_s' src='./img1.png'  sx={{width:{lg:45,sm:35,xs:40},height:{lg:45,sm:35,xs:40}}}/>
             </Box>
@@ -30,7 +33,13 @@ const Post = ({onClick,onclick}) => {
            
             <Stack direction="row" spacing={1} sx={{justifyContent:"space-between",alignItems:"center"}}>
            
-            <Box><WatchLaterIcon sx={{width:{lg:30,xs:22},height:{lg:30,xs:22},color:"#616161"}}/></Box>
+            <Box>
+                
+                <PostTimer/>
+
+                <WatchLaterIcon sx={{width:{lg:30,xs:22},height:{lg:30,xs:22},color:"#616161",display:{sm:"none"}}} onClick={()=>setTimer(!timer)} />
+               
+            </Box>
             <CusButton name={<Typography onClick={onclick} className='px-2 px-lg-0 fs10-s' sx={{py:{lg:"2px",xs:"1px"},fontSize:{lg:"15px",xs:"14px"}}} >Post</Typography>} color="#fff" bgcolor="#3D55A5" size={"20px"}/>
             </Stack>
         </Stack>
