@@ -57,7 +57,7 @@ const Index = () => {
                 </Box>
 
                 <Box sx={{ mt: 2 }}>
-                  <ChatPost img={"./post_banner.jpeg"} mb={" mb-lg-5 mb-2 "} />
+                  <ChatPost mb={" mb-lg-5 mb-2 "} />
                 </Box>
 
                 <Box sx={{ mt: 2 }}>

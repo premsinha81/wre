@@ -30,10 +30,7 @@ import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
 import Index from './component/Home/Index';
 import Carrier from './component/Carrier'
-import Postsinglepage from './component/Home/Postsinglepage'
-import Loading from './Context/Loading'
-
-
+import Loading from './Context/Loading';
 
 function App() {
   
@@ -47,6 +44,7 @@ function App() {
 
   return (
     <>
+    
     <Loading>
       <Header/>
     <Router>
@@ -137,13 +135,13 @@ function App() {
       <Routes>
         <Route path='/showdata' element={<Showdata />} />
       </Routes>
-      <Routes>
-        <Route path='/Postsinglepage' element={<Postsinglepage />} />
-      </Routes>
     </Router>
     <Footer/>
+    
     </Loading>
+
     </>
+
   )
 }
 

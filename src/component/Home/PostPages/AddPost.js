@@ -7,6 +7,8 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AddPostApi } from "../../../API/PostAddApi";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { loadingContext } from "../../../Context/Loading";
 
 
 const style = {
@@ -27,6 +29,7 @@ const AddPost = ({setAddPost}) => {
 
   const [post , setPost]=useState();
   const [id , setId]=useState(idget);
+  const {loadingd , setLoadingd} = useContext(loadingContext)
 
   
 
@@ -37,6 +40,8 @@ const AddPost = ({setAddPost}) => {
       user_id:id
     }
 
+    
+
   const handleSubmit = (e) => {
     e.preventDefault()
     let apidata = AddPostApi(data);
@@ -46,9 +51,11 @@ const AddPost = ({setAddPost}) => {
       console.log(res);
       })
       apidata.catch((error)=>{
-        alert(error)
+        console.log(error , "erro in post api");
       })
     }
+
+    
 
     
     console.log(data);
@@ -58,10 +65,44 @@ const AddPost = ({setAddPost}) => {
       console.log("Your Post Successfully");
       navigate("/");
     } else {
-      window.alert("Your Post Successfully");
-      console.log("Your Post Successfully");
+      console.log("error");
     }
   };
+
+  // const api_URL = "https://noteyard-backend.herokuapp.com"
+  const api_URL = `https://admin.allnuud.com/api/userpost/add`
+  const Upload_Endpoint = "api/blogs/uploading"
+
+  function uploadAdapter(loader){
+    return{
+      upload:()=>{
+        return new Promise((resolve , reject)=>{
+          const body = new FormData();
+          loader.file.then((file)=>{
+            body.append("uploadImg",file);
+            fetch(`${api_URL}/${Upload_Endpoint}` , {
+              method:"post",
+              body:body
+            })
+            .then((res=>res.json()))
+            .then((res)=>{
+              resolve({default: `${api_URL}/${res.url}`})
+            })
+            .catch((err)=>{
+              //reject(err);
+              console.log(err , "errir");
+            })
+          })
+        })
+      }
+    }
+  }
+
+  function uploadPlugin(editor){
+    editor.plugins.get("FileRepository").createUploadAdapter = (loader)=>{
+      return uploadAdapter(loader)
+    }
+  }
 
 
   return (
@@ -79,6 +120,10 @@ const AddPost = ({setAddPost}) => {
          
           <Box>
           <CKEditor
+          config={{
+            extraPlugins:[uploadPlugin]
+          }}
+          
                     editor={ ClassicEditor }
                     data={post}
                     onReady={ editor => {

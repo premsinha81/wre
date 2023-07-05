@@ -26,3 +26,7 @@ ul.menu li:last-child a{
 .navbar [class^=container] {
     position: unset !important;
 }
+.r-180{
+    transform: rotate(90deg);
+    transition: all .4s;
+}

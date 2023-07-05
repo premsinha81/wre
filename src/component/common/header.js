@@ -17,6 +17,8 @@ const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const stickyHeader = useRef();
+
+  const[islogin,setislogin]=useState(false)
   const logged_token = localStorage.getItem("token");
   useLayoutEffect(() => {
     const mainHeader = document.getElementById("mainHeader");
@@ -29,7 +31,22 @@ function Header() {
       }
     };
     window.addEventListener("scroll", fixedHeader);
+  
   }, []);
+
+  useEffect(()=>{
+    const login = localStorage.getItem("usr_name");
+if(login){
+  setislogin(login)
+
+}else{
+  setislogin('login')
+}
+  },[])
+
+
+
+
   return (
     <>
       <nav
@@ -119,11 +136,20 @@ function Header() {
                         Join us
                       </a>
                     </ListItem>
+                   {islogin ?
                     <ListItem className="login_btn">
-                      <a href="/Login" style={Loginbtn}>
-                        Login
-                      </a>
-                    </ListItem>
+                     
+                    <a href="/Login" style={Loginbtn}>
+                   {islogin}
+                    </a>
+                  </ListItem> :
+                   <ListItem className="login_btn">
+                   <a href="/Login" style={Loginbtn}>
+                     {islogin} 
+                   </a>
+                 </ListItem>
+
+                   }
                   </>
                 )}
               </List>
