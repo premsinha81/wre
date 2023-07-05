@@ -9,7 +9,6 @@ export const AddPostApi = (postData)=>{
     .then((res)=>{
         return res
     }).catch((error)=>{
-        // alert(error)
         console.log("add post api error" , error);
     })
 
@@ -29,7 +28,7 @@ export const addPostData = ()=>{
         return res
     })
     .catch((error)=>{
-        // alert(error)
+       
         console.log("get post api error" , error);
         
     })
@@ -46,7 +45,7 @@ export const commentData = (comment)=>{
     return res
 })
 .catch((error)=>{
-    // alert(error)
+   
     console.log("comment post api error" , error);
 })
 

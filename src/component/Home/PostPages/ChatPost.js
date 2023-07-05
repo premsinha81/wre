@@ -173,7 +173,7 @@ const ChatPost = ({img,mb}) => {
           {
             img &&
             <Grid item xs={12} >
-            <img src={img} className={"img-fluid w-100" + mb} />
+            <img src={data.post} className={"img-fluid w-100" + mb} />
           </Grid>}
     
           <Grid item xs={12}>
