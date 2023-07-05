@@ -2,6 +2,7 @@ import { Box, Container, Grid, Stack, ThemeProvider, Typography, createTheme } f
 import React from "react";
 import Post from "./PostPages/Post";
 import Groups from "./RightSidePages/Groups";
+import FindJob from "./RightSidePages/Findjob";
 import SearchProgram from "./RightSidePages/SearchProgram";
 import ChatPost from "./PostPages/ChatPost";
 import HomeSlider2 from "./PostPages/HomeSlider2";
@@ -172,11 +173,12 @@ const Index = () => {
 
 
               </Grid>
-
+              
               <Grid item lg={4} md={4} xs={12}>
                 <Grid container spacing={{sm:2,xs:0}}>
                <Grid item xs={12} sm={6} md={12}>
                <Box>
+               <FindJob />
                   <Groups />
                 </Box>
                </Grid>

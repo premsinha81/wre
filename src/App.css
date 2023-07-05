@@ -4079,3 +4079,8 @@ line-height: 40px;
   margin: 5px !important;
   padding: 5px !important;
 }
+.findJobHome{
+  background: url(./img/jobsHome.jpg) no-repeat;
+  background-size: cover;
+  min-height: 350px;
+}
