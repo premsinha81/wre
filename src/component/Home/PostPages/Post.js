@@ -45,7 +45,7 @@ const Post = ({onClick,onclick}) => {
         </Stack>
    
     </Grid>
-
+{/* 
     <Grid item xs={11} sx={{my:{lg:2,xs:1}}}>
     
    <Stack direction="row" spacing={2}>
@@ -54,7 +54,7 @@ const Post = ({onClick,onclick}) => {
            <Box> <LuggageRoundedIcon sx={{color:"black"}}/></Box>
            <Box> <CallToActionRoundedIcon sx={{color:"black"}}/></Box>
         </Stack>
-   </Grid>
+   </Grid>*/}
     
     <Grid item xs={12} sx={{mt:2}}>
     <Typography sx={{fontSize:"25px",color:"#050505",fontWeight:"bold",mb:"5px"}}>WRE Services at a Glance</Typography>

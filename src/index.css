@@ -4049,4 +4049,11 @@ li.nav-item1 {
 .leftSideBtn{
   padding: 10px !important;
 }
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root:hover {
+  background-color: transparent;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+  width: auto !important;
+  min-width: auto !important;
+}
 

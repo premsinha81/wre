@@ -11,7 +11,6 @@ import { useContext } from "react";
 import { loadingContext } from "../../../Context/Loading";
 
 
-
 const style = {
     position: 'absolute',
     top: '50%',
@@ -71,8 +70,8 @@ const AddPost = ({setAddPost}) => {
   };
 
   // const api_URL = "https://noteyard-backend.herokuapp.com"
-  const api_URL = `https://admin.allnuud.com/`
-  const Upload_Endpoint = "userpost/image"
+  const api_URL = `https://admin.allnuud.com/api/userpost/add`
+  const Upload_Endpoint = "api/blogs/uploading"
 
   function uploadAdapter(loader){
     return{
@@ -80,15 +79,16 @@ const AddPost = ({setAddPost}) => {
         return new Promise((resolve , reject)=>{
           const body = new FormData();
           loader.file.then((file)=>{
-            body.append("fileToUpload",file);
+            body.append("uploadImg",file);
             fetch(`${api_URL}/${Upload_Endpoint}` , {
               method:"post",
               body:body
             })
-            .then((res=>res.json()))
+            .then((res)=>{
+              res.json()
+            })
             .then((res)=>{
               resolve({default: `${api_URL}/${res.url}`})
-              console.log(res);
             })
             .catch((err)=>{
               //reject(err);
@@ -125,7 +125,6 @@ const AddPost = ({setAddPost}) => {
           config={{
             extraPlugins:[uploadPlugin]
           }}
-          
                     editor={ ClassicEditor }
                     data={post}
                     onReady={ editor => {
