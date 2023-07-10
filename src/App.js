@@ -29,6 +29,7 @@ import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
 import Index from './component/Home/Index';
+import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 
@@ -68,6 +69,7 @@ function App() {
         <Route path = "/jobpost" element={<Jobpost/>}/>
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
+        <Route path = "/User_post" element={<User_profile/>}/>
       </Routes>
     )}
       {/* <Routes>

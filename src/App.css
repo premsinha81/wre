@@ -4099,3 +4099,14 @@ line-height: 40px;
   width: 100%;
   height: 100%;
 }
+p {
+
+  text-transform: lowercase !important;
+   word-wrap: break-word;
+}
+h2 {
+  word-wrap: break-word !important;
+}
+.MuiBox-root.css-0 h2 {
+  word-wrap: break-word !important;
+}

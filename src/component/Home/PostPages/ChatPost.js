@@ -61,12 +61,9 @@ const ChatPost = ({img,mb}) => {
       comment:commentpostcontent,
       user_posts_id:id
     }
-  
-    console.log(loadingd , "before loading addon");
     
-    setLoadingd(loadingd + 1)
 
-    console.log(loadingd , "after loading addon");
+    alert(id)
 
     // e.preventDefault();
     // setCommentId(e.id)
@@ -82,12 +79,12 @@ const ChatPost = ({img,mb}) => {
     }
    }
 
-  //  if(commentDataPost === "Success"){
-  //   window.alert("Your Post Successfully");
-  //  }
-  //  else{
-  //   console.log("pls check error in comment api");
-  //  }
+   if(commentData === "Success"){
+    window.alert("Your Post Successfully");
+   }
+   else{
+    console.log("pls check error in comment api");
+   }
 
 
 
