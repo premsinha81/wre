@@ -5,22 +5,19 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ShareSharpIcon from "@mui/icons-material/ShareSharp";
 import CusButton from './CusButton'
 import { useEffect } from "react";
-import {  addPostData, commentData } from "../../../API/PostAddApi";
+import { addPostData, commentData } from "../../../API/PostAddApi";
 import Dropdown from "./Dropdown";
 import { useContext } from "react";
 import { loadingContext } from "../../../Context/Loading";
 import FirstComponent from "./PostTimer";
 
-import AddPost from "./AddPost";
 
-const ChatPost = ({img,mb,onClick}) => {
+const ChatPost = ({img,mb}) => {
 
   const [postdata , setPostData] = useState([]);
   const [dropdown , setDropdown] = useState(false);
 
   const [commentid , setCommentId] = useState("");
-  const [addpost , setAddPost] = useState(false)
-
 
   const [idsaved , setIdsaved] = useState(false)
 
@@ -103,13 +100,6 @@ const ChatPost = ({img,mb,onClick}) => {
 
   return (
    <Box>
-   {
-        addpost && 
-        <Box sx={{bgcolor:"rgba(0,0,0,.5)",position:"fixed",top:0,width:"100%",height:"100%",zIndex:"9999",left:0}}>
-        <AddPost addpost={addpost} setAddPost={setAddPost}/>
-        </Box>
-      
-    }
     {
       postdata.map((data)=>{
        
@@ -117,7 +107,6 @@ const ChatPost = ({img,mb,onClick}) => {
 
         return(
           <Grid container sx={{ p: 2, bgcolor: "#fff" }} className="rounded rounded-2 mb-3 priyanka" key={id}>
-
  
           <Grid item sm={1} xs={2}>
             <Box>
@@ -167,10 +156,9 @@ const ChatPost = ({img,mb,onClick}) => {
               </Box>
               {idsaved == id &&
                 dropdown&&
-                <Box sx={{position:"absolute",top:"10px",right:0,bgcolor:"#3C3C3C",color:"#fff",boxShadow:10,minWidth:"150px"}} className="rounded rounded-2">
+                <Box sx={{position:"absolute",top:"100%",right:0,bgcolor:"#3C3C3C",color:"#fff",boxShadow:10,minWidth:"150px"}} className="rounded rounded-2">
                   <Dropdown
                   name1={"Edit"}
-                  onClick={()=>setAddPost(true)} 
                   name2={"Blog"}
                   name3={"Remove"}
                   />
