@@ -92,14 +92,22 @@ const Dropdown = ({setAddPost, name1 , name2 , name3,onClick,onclick}) => {
       return uploadAdapter(loader)
     }
   }
+  const [status, setStatus] = useState('');
+  const handleDelete = ( user_id, user_posts_id) => {
+    const user =  user_id+ " " +  user_posts_id;
+    fetch('https://admin.allnuud.com/api/userpost/delete/'+user_id+'/'+ user_posts_id)
+        .then((res) => res.json())
+        .then((json) => setStatus(json.data))
+        .catch((e) => console.log(e))
+    
+}
 
-   
   return (
     <Box sx={{p:"2px 1px",bgcolor:"#3C3C3C",color:"#fff"}} className="rounded rounded-2">
         <List className="p-0 m-0">
             <ListItem onClick={onClick}  sx={{borderBottom:"1px solid #fff",cursor:"pointer"}}>{name1}</ListItem>
             <ListItem  sx={{borderBottom:"1px solid #fff",cursor:"pointer"}}>{name2}</ListItem>
-            <ListItem sx={{borderBottom:"1px solid #fff",cursor:"pointer"}}>{name3}</ListItem>
+            <ListItem onClick={()=> handleDelete(data.user_id, data.user_posts_id)} sx={{borderBottom:"1px solid #fff",cursor:"pointer"}}>{name3}</ListItem>
         </List>
         {/* <Grid item xs={12} sx={{bgcolor:"#fff",p:3,borderRadius:"0 0 .75rem .75rem"}}>
          

@@ -83,8 +83,10 @@ const ChatPost = ({img,mb,onClick}) => {
    }
 
    if(commentData === "Success"){
-    window.alert("Your Post Successfully");
+    window.alert("Your Comments Successfully");
+
    }
+
    else{
     console.log("pls check error in comment api");
    }
@@ -167,12 +169,13 @@ const ChatPost = ({img,mb,onClick}) => {
               </Box>
               {idsaved == id &&
                 dropdown&&
-                <Box sx={{position:"absolute",top:"10px",right:0,bgcolor:"#3C3C3C",color:"#fff",boxShadow:10,minWidth:"150px"}} className="rounded rounded-2">
+                <Box sx={{position:"absolute",top:"30px",right:0,bgcolor:"#3C3C3C",color:"#fff",boxShadow:10,minWidth:"150px"}} className="rounded rounded-2">
                   <Dropdown
                   name1={"Edit"}
                   onClick={()=>setAddPost(true)} 
                   name2={"Blog"}
                   name3={"Remove"}
+                
                   />
                 </Box>
               }
