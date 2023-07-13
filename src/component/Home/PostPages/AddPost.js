@@ -53,6 +53,7 @@ const AddPost = ({setAddPost}) => {
       apidata.catch((error)=>{
         console.log(error , "erro in post api");
       })
+      
     }
 
     
