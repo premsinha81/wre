@@ -68,14 +68,15 @@ const ChatPost = ({ img, mb }) => {
   }
 
 // Start Delete Post (Akash Dubey)
-  const handleDelete = (id, user_id) => {
-    fetch(`https://admin.allnuud.com/api/userpost/delete/${user_id}/${id}`, {
+  const handleDelete = (user_id, user_posts_id) => {
+    fetch(`https://admin.allnuud.com/api/userpost/delete/${user_posts_id}/${user_id}`, {
       headers: {
         accept: 'application/json'
       }
     })
       .then((res) => res.json())
       .then((json) => {
+        
         if (json.status === "Success") {
           alert(json.messege)
           let data = addPostData();

@@ -181,6 +181,21 @@ $("#imageUpload").change(function() {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<script>
+   function DemoCtrl() {
 
+this.foo = 'foo';
+
+CKEDITOR.editorConfig = function (config) {
+  config.extraPlugins = 'confighelper';
+};
+CKEDITOR.replace('editor1');
+
+}
+
+angular
+.module('gaigDemo', ['gaigUiBootstrap'])
+.controller('DemoCtrl', DemoCtrl);
+</script>
   </body>
 </html>
