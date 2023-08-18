@@ -17,7 +17,7 @@ const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const stickyHeader = useRef();
-
+  const [isLoggedin, setIsLoggedin] = useState(false);
   const[islogin,setislogin]=useState(false)
   const logged_token = localStorage.getItem("token");
   useLayoutEffect(() => {
@@ -42,10 +42,19 @@ if(login){
 }else{
   setislogin('login')
 }
+
+
   },[])
 
+  const handleLogout = async () => {
+    try {
+       localStorage.removeItem('token');
 
-
+     
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  }
 
   return (
     <>
@@ -97,8 +106,8 @@ if(login){
           >
             <div class=" navbar-nav ms-auto ">
               <List>
-                <ListItem>
-                  <a href="/search-program" style={MenuStyle}>
+                <ListItem data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <a  href="/search-program" style={MenuStyle}>
                    <SearchOutlinedIcon sx={{color:"#283b8b"}}/>
                   </a>
                 </ListItem>
@@ -148,25 +157,28 @@ if(login){
                      {islogin} 
                    </a>
                  </ListItem>
+                 
+                 
 
                    }
+                   
                   </>
                 )}
               </List>
 
-              {/* <ul className="border border-success">
+              <ul className="">
               
                            
               
                 {logged_token ? (
                   <li>
-                    <a href="/dashboard" class="nav-item nav-link">
-                      Hello {localStorage.getItem("usr_name")}
-                    </a>
+                    <a href="/"  onClick={handleLogout} class="nav-item nav-link">
+                     logout
+                    </a >
                   </li>
                 ) : (
                   <>
-                    <li>
+                    {/* <li>
                       <a href="/Signup" class="nav-item nav-link">
                         Join us
                       </a>
@@ -175,11 +187,11 @@ if(login){
                       <a class="btn btn-square1 text-white me-2 " href="/Login">
                         Login
                       </a>
-                    </li>
+                    </li> */}
                   </>
                 )}
               </ul>
-              */}
+             
             </div>
           </div>
 
@@ -201,6 +213,7 @@ if(login){
                 </button>*/}
         </div>
       </nav>
+      
     </>
   );
 }

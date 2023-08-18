@@ -341,7 +341,6 @@ Image.iconP {
 .wrappers form .input-box {
   margin: 8px auto !important;
     text-align: center;
-    max-width: 170px;
 }
 
 #spinner {
@@ -4124,4 +4123,88 @@ h2 {
 }
 .MuiBox-root.css-0 h2 {
   word-wrap: break-word !important;
+}
+.wrappers {
+  position: relative;
+  max-width: 390px !important;
+  width: 100%;
+  padding: 30px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
+  margin: 0 auto;
+}
+img.csss {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 52%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup {
+  position: absolute;
+width: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 99999;
+
+  padding: 0px;
+  border-radius: 20px;
+}
+
+
+.bgWhite{
+  background:white;
+  box-shadow:0px 3px 6px 0px #cacaca;
+}
+
+.title{
+  font-weight:600;
+  margin-top:20px;
+  font-size:24px
+}
+
+.customBtn{
+  border-radius:0px;
+  padding:10px;
+}
+
+form input{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+}
+input.otp {
+  margin: 10px !important;
+  border: 1px solid;
+}
+i.fa.fa-window-close {
+  color: #ff2e2e85;
+  font-size: 20px;
+}
+ul.rankingList {
+  color: #fff;
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  button.btn.btn-primary.btnSidebar
+   { border-radius: 20px; padding: 6px 6px; font-size: 15px; 
+    background-color: #3D55A5; border: none; font-family: 'Lato'; 
+    margin-top: 10px; min-width:100px!important; margin-right:5px; }
 }

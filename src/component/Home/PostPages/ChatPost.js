@@ -8,11 +8,13 @@ import { useEffect } from "react";
 import { addPostData, commentData } from "../../../API/PostAddApi";
 import Dropdown from "./Dropdown";
 import { useContext } from "react";
+import { MDBCarousel, MDBCarouselItem,} from 'mdb-react-ui-kit';
 import { loadingContext } from "../../../Context/Loading";
 import FirstComponent from "./PostTimer";
+import EditPost from "./EditPost";
 
 
-const ChatPost = ({ img, mb }) => {
+const ChatPost = ({ img, mb,onclicked }) => {
 
   const [postdata, setPostData] = useState([]);
   const [dropdown, setDropdown] = useState(false);
@@ -20,6 +22,8 @@ const ChatPost = ({ img, mb }) => {
   const [commentid, setCommentId] = useState("");
 
   const [idsaved, setIdsaved] = useState(false)
+
+  const [editShow , setEditShow]=useState(false)
 
   const userName = localStorage.getItem("usr_name")
   const userEmail = localStorage.getItem("usr_email")
@@ -29,6 +33,7 @@ const ChatPost = ({ img, mb }) => {
   const { loadingd, setLoadingd } = useContext(loadingContext)
 
   const idget = localStorage.getItem("usr_id")
+
 
   useEffect(() => {
     let data = addPostData()
@@ -40,18 +45,21 @@ const ChatPost = ({ img, mb }) => {
 
   }, [loadingd])
   const HandlePost = (id) => {
-
     let commentDataPosts = {
       user_id: idget,
       comment: commentpostcontent,
       user_posts_id: id
     }
-
     let data = commentData(commentDataPosts)
-
     if (data) {
       data.then((res) => {
-        alert(res.data.status)
+        let data = addPostData();
+        if (data) {
+          data.then((data) => {
+            setPostData(data.data.result)
+          })
+        }
+        setCommentText('');
       })
         .catch((error) => {
           alert(error.data.status)
@@ -94,6 +102,10 @@ const ChatPost = ({ img, mb }) => {
   return (
     <Box>
       {
+        editShow &&
+        <EditPost/>
+      }
+      {
         postdata.map((data) => {
 
           const { id, post, user_id, comments } = data; // add : id, user_id (Akash Dubey)
@@ -113,10 +125,10 @@ const ChatPost = ({ img, mb }) => {
                         className="fs10-s"
                         sx={{ fontSize: { lg: "16px", xs: "14px" }, color: "#3C3C3C", fontWeight: 500 }}
                       >
-                        {userName}
+                       <Typography sx={{ color: "#3C3C3C", fontSize: "20px", fontWeight: "600", mb: { lg: 1, xs: 0 } }}> {userName}</Typography>
                       </Typography>
                       <Typography className="fs9-s" sx={{ fontSize: { lg: "14px", xs: "10px" }, color: "#3C3C3C" }}>
-                        {userEmail}
+                        {/* {userEmail} */}
                       </Typography>
                     </Box>
                     <Box>
@@ -153,17 +165,16 @@ const ChatPost = ({ img, mb }) => {
                         id={id} // add : (Akash Dubey)
                         user_id={user_id} // add : (Akash Dubey)
                         handleDelete={handleDelete} // add : (Akash Dubey)
+                        onclicked={()=>setEditShow(true)}
+                        
                       />
                     </Box>
                   }
                 </Stack>
               </Grid>
 
-              {
-                img &&
-                <Grid item xs={12} >
-                  <img src={data.post} className={"img-fluid w-100" + mb} />
-                </Grid>}
+             
+               
 
               <Grid item xs={12}>
                 <Box>
@@ -171,9 +182,33 @@ const ChatPost = ({ img, mb }) => {
 
                     Welding Classes In Jersey
                   </Typography>
-                  {/* <Typography  sx={{ color: "#3C3C3C",fontSize:{lg:"14px",xs:"12px"}}}>
-              {post}
-              </Typography> */}
+                  <Grid item xs={12} >
+
+     
+{/* 
+    <MDBCarousel showControls>
+  <MDBCarouselItem
+    className='w-100 d-block'
+    itemId={1}
+    src='https://admin.allnuud.com/public/storage/image/a5wpP4adzfgubdJ2e5IAiB98RCbgmGbqS1FfahvB.jpg'
+   
+    alt='...'
+  />
+  <MDBCarouselItem
+    className='w-100 d-block'
+    itemId={2}
+    src='https://admin.allnuud.com/public/storage/image/a5wpP4adzfgubdJ2e5IAiB98RCbgmGbqS1FfahvB.jpg'
+    alt='...'
+  />
+  <MDBCarouselItem
+    className='w-100 d-block'
+    itemId={3}
+    src='https://admin.allnuud.com/public/storage/image/a5wpP4adzfgubdJ2e5IAiB98RCbgmGbqS1FfahvB.jpg'
+    alt='...'
+  />
+</MDBCarousel> */}
+                  
+                </Grid>
                   <p style={{ color: "#3C3C3C", fontSize: { lg: "14px", xs: "12px" } }} dangerouslySetInnerHTML={{ __html: post }}></p>
                   <Typography
                     sx={{ color: "#3D55A5", fontSize: "14px", mt: 1, pb: 1, borderBottom: "1px solid #3D55A5" }}>
@@ -201,9 +236,7 @@ const ChatPost = ({ img, mb }) => {
               </Grid>
 
               <Grid item sm={1} xs={2}>
-                <Box>
-                  <Avatar className='img_s' src="./img1.png" sx={{ width: { lg: 45, sm: 35, xs: 40 }, height: { lg: 45, sm: 35, xs: 40 } }} />
-                </Box>
+               
               </Grid>
               <Grid item sm={11} xs={10} sx={{ ps: 0 }}>
                 <Stack
@@ -211,7 +244,7 @@ const ChatPost = ({ img, mb }) => {
                   sx={{ justifyContent: "space-between", alignItems: "center" }}
                 >
                   <Stack direction="row" spacing={1}>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={{ fontSize: { lg: "16px", xs: "14px" }, color: "#3C3C3C", fontWeight: "500" }}
                       >
@@ -220,8 +253,8 @@ const ChatPost = ({ img, mb }) => {
                       <Typography className="fs9-s" sx={{ color: "#3C3C3C", fontSize: { lg: "14px", xs: "10px" } }}>
                         @homeowner12
                       </Typography>
-                    </Box>
-                    <Box>
+                    </Box> */}
+                    {/* <Box>
                       <List className="ps-0 pt-0 m-0" sx={{ listStyleType: "number" }}>
                         <ListItem
                           className="p-0 m-0"
@@ -232,7 +265,7 @@ const ChatPost = ({ img, mb }) => {
                           </Typography>
                         </ListItem>
                       </List>
-                    </Box>
+                    </Box> */}
                   </Stack>
                 </Stack>
 
@@ -243,7 +276,7 @@ const ChatPost = ({ img, mb }) => {
                     return (
                       <Box key={id}>
                         <Typography className="mt-2" sx={{ fontSize: { lg: "14px", xs: "12px" } }} >
-                          {user_posts_comment}
+                    <img className="csss" src="./img1.png"></img> <spam sm={{fontSize: "20px", fontWeight: "600"}}>{userName} </spam> {user_posts_comment}
                         </Typography>
                       </Box>
                     )

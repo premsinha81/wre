@@ -54,7 +54,7 @@ function RankingDetails() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 test-design">
-                            
+                        <h3 className='text-black' >{ranking.title}</h3>
                             <p className='m25' dangerouslySetInnerHTML={{__html:ranking.description}}>
                                     
                             

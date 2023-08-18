@@ -45,52 +45,51 @@ const AddPost = ({setAddPost}) => {
     }
 
     
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let apidata = AddPostApi(data);
-
-    if(apidata){
-      apidata.then((res)=>{
-      console.log(res);
-      })
-      apidata.catch((error)=>{
-        console.log(error , "erro in post api");
-      })
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      let apidata = AddPostApi(data);
+  
+      if(apidata){
+        apidata.then((res)=>{
+        console.log(res);
+        })
+        apidata.catch((error)=>{
+          console.log(error , "erro in post api");
+        })
+      }
+      console.log(data);
+  
+      if (data.status === 'Success') {
+        window.alert("Your Post Successfully");
+        console.log("Your Post Successfully");
+        navigate("/");
+        
+      } else {
+        console.log("error");
+      }
+      setAddPost(false);
       
-    }
-
-    
-
-    
-    console.log(data);
-
-    if (data.status === 'Success') {
-      window.alert("Your Post Successfully");
-      console.log("Your Post Successfully");
-      navigate("/");
-    } else {
-      console.log("error");
-    }
-  };
+    };
 
   // const api_URL = "https://noteyard-backend.herokuapp.com"
-  const api_URL = `https://admin.allnuud.com/api/userpost` 
-  const Upload_Endpoint = "image" 
+  const api_URL = `https://admin.allnuud.com/api`
+  const Upload_Endpoint = "userpost/image"
+
   function uploadAdapter(loader){
     return{
       upload:()=>{
         return new Promise((resolve , reject)=>{
           const body = new FormData();
           loader.file.then((file)=>{
-            body.append("fileToUpload",file);
+            body.append("image",file);
+            body.append("user_id",id);
             fetch(`${api_URL}/${Upload_Endpoint}` , {
               method:"post",
               body:body
             })
             .then((res=>res.json()))
             .then((res)=>{
-              resolve({default: `${api_URL}/${res.image}`})
+              resolve({default: `${res.image_url}`})
               console.log(res);
             })
             .catch((err)=>{
@@ -125,7 +124,9 @@ const AddPost = ({setAddPost}) => {
         <Grid item xs={12} sx={{bgcolor:"#fff",p:3,borderRadius:"0 0 .75rem .75rem"}}>
          
           <Box>
+           
           <CKEditor
+
           config={{
             extraPlugins:[uploadPlugin]
           }}
