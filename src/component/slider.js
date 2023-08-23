@@ -184,6 +184,7 @@ function Slider() {
   // Program Filter Code End
 
   useEffect(() => {}, [initialOnline]);
+  console.log(initialOnline)
 
   return (
     <>
@@ -236,7 +237,7 @@ function Slider() {
           </div>
 
           <div className="col-12 col-xl-6 col-lg-6 col-md-6 col-xs-12">
-            {initialOnline ? (
+            {initialOnline.length > 0 ? (
               initialOnline.length > 0 && (
                 <div className="rightSection my-lg-5 mt-3 pt-3">
                   <div className="row">
