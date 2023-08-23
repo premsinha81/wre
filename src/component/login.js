@@ -27,7 +27,7 @@ export default function Login() {
             localStorage.setItem('usr_id',data.user.id);
             localStorage.setItem('usr_email',data.user.email);
             localStorage.setItem('token',data.token);
-            navigate("/Jobpostform");
+            navigate("/");
 
         } else if (data.status === "failed") {
             window.alert("Username and Password Incorrect");

@@ -73,7 +73,9 @@ function Slider() {
           if (result.data.status.status_code == 200) {
             setTrade(result.data.results);
             setSearcResult(result.data.results);
-          } else {
+          }
+          
+          else {
             setTrade(maintrade);
             setSearcResult("");
           }
@@ -254,7 +256,7 @@ function Slider() {
                             <div className="col-8 d-sm-none">
                             <div className="pl_5">
                                 <a href={"search/" + res.slug}>
-                                <h5>
+                                <h5 className="text-truncate">
                                   {res.college_name} - {res.title}
                                 </h5>
                               </a></div>

@@ -14,6 +14,7 @@ const Post = ({onClick,onclick}) => {
 
     const [timer , setTimer]=useState(false)
 
+    const userName = localStorage.getItem("usr_name")
 
 
   return (
@@ -29,7 +30,7 @@ const Post = ({onClick,onclick}) => {
                 <Avatar className='img_s' src='./img1.png'  sx={{width:{lg:45,sm:35,xs:40},height:{lg:45,sm:35,xs:40}}}/>
             </Box>
            
-                <InputBase onClick={onClick} className='form-control border-0 fs10-s ps-0' placeholder='Hi Prem, start a new discussion'/>
+                <InputBase onClick={onClick} className='form-control border-0 fs10-s ps-0' placeholder={userName} />
            
             <Stack direction="row" spacing={1} sx={{justifyContent:"space-between",alignItems:"center"}}>
            

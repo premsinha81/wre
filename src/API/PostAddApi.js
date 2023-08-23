@@ -15,6 +15,7 @@ export const AddPostApi = (postData)=>{
     if(data){
         return data
     }
+    
 }
 
 
@@ -22,8 +23,8 @@ export const addPostData = ()=>{
 
     var id = localStorage.getItem("usr_id")
 
-    //  let data= axios.get(`https://admin.allnuud.com/api/userpost/show_by_user/${id}`)
-     let data= axios.get(`https://admin.allnuud.com/api/userpost/list`)
+     let data= axios.get(`https://admin.allnuud.com/api/userpost/show_by_user/${id}`)
+    //  let data= axios.get(`https://admin.allnuud.com/api/userpost/list`)
     .then((res)=>{
         return res
     })

@@ -5,6 +5,7 @@ import { Padding } from "@mui/icons-material";
 import CusButton from "../PostPages/CusButton";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 import { AddPostApi } from "../../../API/PostAddApi";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
@@ -27,51 +28,52 @@ const AddPost = ({setAddPost}) => {
 
   const idget = localStorage.getItem("usr_id")
 
+  const [image_url, setImage_url] = useState('');
   const [post , setPost]=useState();
   const [id , setId]=useState(idget);
   const {loadingd , setLoadingd} = useContext(loadingContext)
-
+  
   
 
   const navigate = useNavigate();
 
     let data = {
-      post :post, 
+    
+      post :post,
+      
       user_id:id
     }
 
     
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let apidata = AddPostApi(data);
-
-    if(apidata){
-      apidata.then((res)=>{
-      console.log(res);
-      })
-      apidata.catch((error)=>{
-        console.log(error , "erro in post api");
-      })
-    }
-
-    
-
-    
-    console.log(data);
-
-    if (data.status === 'Success') {
-      window.alert("Your Post Successfully");
-      console.log("Your Post Successfully");
-      navigate("/");
-    } else {
-      console.log("error");
-    }
-  };
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      let apidata = AddPostApi(data);
+  
+      if(apidata){
+        apidata.then((res)=>{
+        console.log(res);
+        })
+        apidata.catch((error)=>{
+          console.log(error , "erro in post api");
+        })
+      }
+      console.log(data);
+  
+      if (data.status === 'Success') {
+        window.alert("Your Post Successfully");
+        console.log("Your Post Successfully");
+        navigate("/");
+        
+      } else {
+        console.log("error");
+      }
+      setAddPost(false);
+      
+    };
 
   // const api_URL = "https://noteyard-backend.herokuapp.com"
-  const api_URL = `https://admin.allnuud.com/api/userpost/add`
-  const Upload_Endpoint = "api/blogs/uploading"
+  const api_URL = `https://admin.allnuud.com/api`
+  const Upload_Endpoint = "userpost/image"
 
   function uploadAdapter(loader){
     return{
@@ -79,16 +81,16 @@ const AddPost = ({setAddPost}) => {
         return new Promise((resolve , reject)=>{
           const body = new FormData();
           loader.file.then((file)=>{
-            body.append("uploadImg",file);
+            body.append("image",file);
+            body.append("user_id",id);
             fetch(`${api_URL}/${Upload_Endpoint}` , {
               method:"post",
               body:body
             })
+            .then((res=>res.json()))
             .then((res)=>{
-              res.json()
-            })
-            .then((res)=>{
-              resolve({default: `${api_URL}/${res.url}`})
+              resolve({default: `${res.image_url}`})
+              console.log(res);
             })
             .catch((err)=>{
               //reject(err);
@@ -103,6 +105,7 @@ const AddPost = ({setAddPost}) => {
   function uploadPlugin(editor){
     editor.plugins.get("FileRepository").createUploadAdapter = (loader)=>{
       return uploadAdapter(loader)
+      
     }
   }
 
@@ -121,16 +124,23 @@ const AddPost = ({setAddPost}) => {
         <Grid item xs={12} sx={{bgcolor:"#fff",p:3,borderRadius:"0 0 .75rem .75rem"}}>
          
           <Box>
+           
           <CKEditor
+
           config={{
             extraPlugins:[uploadPlugin]
           }}
+          
                     editor={ ClassicEditor }
+                   
                     data={post}
                     onReady={ editor => {
                        
                         console.log( 'Editor is ready to use!', editor );
                     } }
+                 
+                     
+      
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
                         setPost(data)
@@ -143,6 +153,7 @@ const AddPost = ({setAddPost}) => {
                     onFocus={ ( event, editor ) => {
                         
                     } }
+                    
                 />
           </Box>
          
@@ -151,7 +162,9 @@ const AddPost = ({setAddPost}) => {
             <CusButton onClick={handleSubmit} bgcolor={"#4c62ac"} color={"#fff"} name={<Typography sx={{px:2,py:"5px"}}>POST</Typography>}/>
           </Box>
         </Grid>
+        
       </Grid>
+      
   );
 };
 

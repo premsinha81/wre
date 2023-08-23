@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 function Signup() {
     const navigate = useNavigate();
+    const [isPopupVisible, setPopupVisible] = useState(false);
     const [user, setUser] = useState({
-        name: "", email: "", mob: "", password: ""
+        name: "", email: "", mob: "", password: "", role:"user"
     })
     let name, value
     const handleInputChange = (e) => {
@@ -14,7 +15,8 @@ function Signup() {
         setUser({ ...user, [name]: value });
     }
     const handleSubmit = async (e) => {
-        const { name, email, mob, password } = user;
+        const { name, email, mob, password, role } = user;
+        setPopupVisible(true);
 
         const res = await fetch("https://admin.allnuud.com/api/get/signup", {
             method: "POST",
@@ -23,14 +25,14 @@ function Signup() {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                name, email, mob, password
+                name, email, mob, password,role
             })
             
             
         })
         const data = await res.json();
         console.log(data);
-        if (data.status === "Success") {
+        if (data.status === "Succes") {
             window.alert("Registration Successfully");
             console.log("Registration Successfully");
             navigate("/login");
@@ -126,6 +128,14 @@ function Signup() {
                                 <main>
                                     <div className="wrappers">
                                         <div>
+                                        <input
+                          type="hidden"
+                          className="form-control placeholder-style" 
+                          name="role"
+                          value={user.role}
+                          onChange={handleInputChange}
+                           
+                          />
                                             <div className="form-group">
                                                 <input className="form-control logininpute" type="text" name="name" value={user.name} onChange={handleInputChange} id="Name" placeholder="Name" />
                                             </div>

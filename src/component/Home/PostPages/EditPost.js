@@ -23,7 +23,7 @@ const style = {
     zIndex:"99999"
   };
 
-const EditPost = ({setAddPost}) => {
+const EditPost = ({setEditPost}) => {
 
   const idget = localStorage.getItem("usr_id")
 
@@ -113,8 +113,8 @@ const EditPost = ({setAddPost}) => {
         <Grid item xs={12} sx={{bgcolor:"#4c62ac",p:1,color:"#fff",borderRadius:"0.75rem 0.75rem 0 0"}}>
           <Stack direction="row" sx={{ justifyContent: "space-between"}}>
             <Box></Box>
-            <Box sx={{fontSize:"20px"}}>Add Post</Box>
-            <Box><CancelIcon onClick={()=>setAddPost(false)} sx={{width:30,height:30}}/></Box>
+            <Box sx={{fontSize:"20px"}}>Edit Post</Box>
+            <Box><CancelIcon onClick={()=>setEditPost(false)} sx={{width:30,height:30}}/></Box>
           </Stack>
         </Grid>
 
