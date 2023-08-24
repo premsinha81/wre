@@ -73,9 +73,7 @@ function Slider() {
           if (result.data.status.status_code == 200) {
             setTrade(result.data.results);
             setSearcResult(result.data.results);
-          }
-          
-          else {
+          } else {
             setTrade(maintrade);
             setSearcResult("");
           }
@@ -184,6 +182,7 @@ function Slider() {
   // Program Filter Code End
 
   useEffect(() => {}, [initialOnline]);
+  console.log(initialOnline)
 
   return (
     <>
@@ -236,9 +235,9 @@ function Slider() {
           </div>
 
           <div className="col-12 col-xl-6 col-lg-6 col-md-6 col-xs-12">
-            {initialOnline ? (
+            {initialOnline.length > 0 ? (
               initialOnline.length > 0 && (
-                <div className="rightSection my-lg-5 mt-3 pt-3">
+                <div className="rightSection my-lg-5 ">
                   <div className="row">
                     <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       {initialOnline.map((res, key) => (
@@ -256,7 +255,7 @@ function Slider() {
                             <div className="col-8 d-sm-none">
                             <div className="pl_5">
                                 <a href={"search/" + res.slug}>
-                                <h5 className="text-truncate">
+                                <h5>
                                   {res.college_name} - {res.title}
                                 </h5>
                               </a></div>
@@ -342,7 +341,7 @@ function Slider() {
                 </div>
               )
             ) : (
-              <div className="rightSection">No Record match.</div>
+              <div className="rightSection rightSection1">No Record match.</div>
             )}
           </div>
           <div className="col-12 col-xl-3 col-lg-3 col-md-3 col-xs-12">

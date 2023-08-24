@@ -2635,10 +2635,15 @@ ul.accountTypeDetals {
   margin: 15px;
 }
 h4.gNamell {
-  font-size: 14px;
+  font-size: 16px;
   color: #4700ec;
+  text-align: left;
   font-weight: 500;
-  margin: 0px 2px 0px 8px;
+  line-height: px;
+  margin: 0px 1px 0px 9px;
+}
+.text-blue a:hover {
+  color: #ffa845 !important;
 }
 .rightSection .searchBox ul {
   list-style: none;
@@ -4207,4 +4212,13 @@ ul.rankingList {
    { border-radius: 20px; padding: 6px 6px; font-size: 15px; 
     background-color: #3D55A5; border: none; font-family: 'Lato'; 
     margin-top: 10px; min-width:100px!important; margin-right:5px; }
+}.rightSection1 {
+  margin-top: 110px;
+  color: red;
+  background-color: #cccccc3d;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #cccccc4d;
+  border-radius: 4px;
 }
