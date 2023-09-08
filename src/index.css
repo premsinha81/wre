@@ -3021,11 +3021,7 @@ h4.gName {
   font-size: 18px;
   margin-bottom: 5px;
 }
-.Apply {
-  width: 105px;
-  font-size: 15px;
-  padding: 5px 0px;
-}
+
 .groupFollowersjob {
   font-size: 25px !important;
   font-family: 'Lato';
@@ -3037,11 +3033,7 @@ h4.gName {
   margin-top: 20px;
 }
 
-.Apply {
-  text-align: center;
-  background-color: #FFA845;
-  border-radius: 5px;
-}
+
 
 .groupFollowersjob {
   color: #3D55A5;
@@ -3111,7 +3103,7 @@ text-align: center;
   min-width: 100%;
   max-width: 580px;
 
-  border-radius: 15px;
+  border-radius: 5px;
   width: 48%;
   background: #000;
   cursor: pointer;
@@ -3220,7 +3212,7 @@ h6 {
   padding: 10px;
   /* padding: 2px 0px 10px 0px; */
 
-  border-radius: 7px;
+  border-radius: 5px;
   box-shadow: 0px 3px 6px #00000029;
 }
 .rowpadingsp {

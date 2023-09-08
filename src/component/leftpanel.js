@@ -157,7 +157,7 @@ const Leftpanel = (props) => {
             </button>
            
 
-            <button
+            {/* <button
               type="button"
               className={
                 "btn  btn-primary rounded  btnSidebar fw-bold mt-0 mb-0 mb-md-2 mb-lg-0" +
@@ -171,7 +171,7 @@ const Leftpanel = (props) => {
               }}
             >
               Sort By <ArrowDropUpIcon className={transform2}/>
-            </button>
+            </button> */}
             
           </div>
         </div>

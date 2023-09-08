@@ -213,6 +213,8 @@ function Slider() {
               <button
                 className="btn btn-primary button btnSearch"
                 onClick={() => handleSearchChange}
+                onInputChange={handletradeChange}
+                onChange={handleSearchChange}
               >
                 <i class="fa fa-search"></i>
               </button>

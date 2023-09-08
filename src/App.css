@@ -814,7 +814,7 @@ input[type=checkbox] {
 .loadBtn button {
   background: #3D55A5;
   padding: 5px 30px;
-  border-radius: 19px;
+  border-radius: 5px;
   font-size: 14px;
   border: 1px solid #3D55A5;
   color: #fff;
@@ -1263,7 +1263,7 @@ button .inner-pulse {
 /* Footer Css Start */
 footer.footerSection {
   padding: 80px 0px 20px 0px;
-margin-top: 60px ;
+margin-top: 5px ;
   background-image: linear-gradient(0deg, #ECECEC, #ECECEC, #ECECEC03);
 
 }
@@ -1339,13 +1339,13 @@ h1.subscribeTitle {
 button.subscribeBtn {
   position: absolute;
   right: 0;
-  background: #3D55A5;
+  /* background: #3D55A5; */
   border: none;
   height: 100%;
-  border-radius: 22px;
+  /* border-radius: 22px; */
   color: #fff;
-  padding: 0px 20px;
-  font-size: 14px;
+  padding: 0px 20px !important;
+  font-size: 20px !important;
 }
 
 .followUs {
@@ -3910,6 +3910,20 @@ ul.tandcLink {
 
 
 @media (max-width:768px){
+  a.nav-item.nav-link.noti {
+    border-radius: 50% !important;
+    /* width: 60px; */
+    background-color: #fff1f1;
+    width: 20%;
+    padding: 10px !important;
+    margin: 20px !important;
+}
+button#dropdown-basic img {
+  width: auto !important;
+  border-radius: 50%;
+  background-color: #e6dfdf;
+  height: 49px;
+}
   .wrappers {
     border-radius: 19px;
     position: relative;
@@ -4221,4 +4235,150 @@ ul.rankingList {
   text-align: center;
   border: 1px solid #cccccc4d;
   border-radius: 4px;
+}
+.slider1 {
+  
+  background: url(../img/userback.png) no-repeat 0 0;
+  background-size: 100%;
+  min-height: 520px;
+  
+  background-position: center;
+}
+.slider1 .gradient {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  min-height: 380px;
+}
+.searchPanel.job {
+  top: 80%;
+}
+.groupName p {
+  font-size: 16px;
+}
+.daysAndDetails p {
+  font-weight: 700;
+}
+.Apply {
+  text-align: center;
+  background-color: #3d55a5;
+  border-radius: 5px;
+  color: #fff;
+}
+.Apply {
+  width: 105px;
+  font-size: 18px;
+  padding: 8px 19px;
+}
+.login_btn 
+{ 
+background-color: #3d55a5;
+  color: #fff !important;
+  border: 1px solid;
+  border-radius: 5px;
+}
+button#dropdown-basic i {
+  width: 600px !important;
+  border-radius: 50%;
+  background-color: #e6dfdf;
+  height: 45px;
+}
+button#dropdown-basic img {
+  width: 650px !important;
+  border-radius: 50%;
+  background-color: #e6dfdf;
+  height: 42px;
+  /* margin-left: -7%; */
+  margin-left: -45%;
+}
+a.nav-item.nav-link.noti {
+
+  border-radius: 50% !important;
+  /* width: 60px; */
+  background-color: #fff1f1;
+  width: 50%;
+}
+.navbar .dropdown-toggle::after {
+  display:none !important;
+}
+a.nav-item.nav-link.noti {
+  border-radius: 50% !important;
+  /* width: 60px; */
+  background-color: #fff1f1;
+  width: 50%;
+  padding: 10px !important;
+  margin: 20px !important;
+}
+input, input[type="text"], input[type="search"], isindex, textarea, button {
+  outline: none;
+  margin: 0 auto;
+  text-align: left;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+h1.subscribeTitle {
+  font-size: 20px!important;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.dropdown {
+    /* background-image: none !important; */
+    background-repeat: no-repeat;
+    background-position: right center;
+   
+}
+button#dropdown-basic:hover {
+  background-color: transparent !important;
+  border: none !important;
+}
+.num-count {
+  position: absolute;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-size: 0.6rem;
+  background: #169e11;
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #ecf0f1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  top: 20px;
+  /* right: -0.2px !important; */
+  box-sizing: border-box;
+}
+button#dropdown-basic {
+  border: none !important;
+}
+.col-lg-8.col-xl-8.rowpadresponshive h2 {
+  font-weight: 600;
+}
+.tabPanel.rounded {
+  border-radius: 5px !important;
+}
+button.btn.btn-primary.btnBSidebar.RefilterBtn.mt-3 {
+  border-radius: 5px !important;
+}
+.css-1c1ao4h-MuiGrid-root {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 75% !important;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

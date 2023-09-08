@@ -8,10 +8,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Grid, List, ListItem, Stack } from "@mui/material";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import img1 from "../iconG.svg"
 //import { useState } from React
-
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 const Iconstyle = { width:35,height:35,borderRadius:"50%",border:0,bgcolor:"#283b8b",color:"#fff",p:"5px"};
 const MenuStyle = {color:"#3d55a5",fontWeight:600,textTransform:"uppercase",fontSize:14,whiteSpace:" nowrap"}
+const MenuStyle1 = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize:14,whiteSpace:" nowrap"}
 const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize:14,backgroundColor:"#3d55a5",borderRadius:"50rem",padding:"5px 24px"}
 
 function Header() {
@@ -106,51 +110,86 @@ if(login){
           >
             <div class=" navbar-nav ms-auto ">
               <List>
-                <ListItem data-bs-toggle="modal" data-bs-target="#exampleModal">
+                {/* <ListItem data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <a  href="/search-program" style={MenuStyle}>
                    <SearchOutlinedIcon sx={{color:"#283b8b"}}/>
                   </a>
-                </ListItem>
+                </ListItem> */}
                 <ListItem>
-                  <a href="#" style={MenuStyle}>
+                  <a href="http://community.allnuud.com/" style={MenuStyle}>
                     Community
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="/carrier" style={MenuStyle}>
-                    Career
+                  <a href="/search-program" style={MenuStyle}>
+                  Trade Programs
                   </a>
                 </ListItem>
                 <ListItem>
                   <a href="/Job" style={MenuStyle}>
-                    Jobs
+                  Trade Jobs
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="#" style={MenuStyle}>
+                  <a href="https://resources.allnuud.com/" style={MenuStyle}>
                     
-                    Newsroom
+                  News & Articles
                   </a>
                 </ListItem>
+                
+              
+              
+                           
+              
+              {logged_token ? (
+                   <ListItem>
+                  <a href="/"  onClick={handleLogout} class="nav-item nav-link noti">
+                  <i class="fa fa-bell"></i>
+                  <span class="num-count">13</span>
+                  </a >
+                  </ListItem>
+              ) : (
+                <>
+                  {/* <li>
+                    <a href="/Signup" class="nav-item nav-link">
+                      Join us
+                    </a>
+                  </li>
+                  <li className="login_btn">
+                    <a class="btn btn-square1 text-white me-2 " href="/Login">
+                      Login
+                    </a>
+                  </li> */}
+                </>
+              )}
+           
                 {logged_token ? (
                   <ListItem>
-                    <a href="/dashboard" style={MenuStyle}>
+                    {/* <a href="/dashboard" style={MenuStyle}>
                       Hello {localStorage.getItem("usr_name")}
-                    </a>
+                    </a> */}
+                    <Dropdown>
+      <Dropdown.Toggle variant="" id="dropdown-basic">
+       <img width="100%" src={img1}  />
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Account Details</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Need Help</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown> 
                   </ListItem>
                 ) : (
                   <>
-                    <ListItem>
-                      <a href="/Signup" style={MenuStyle}>
-                        Join us
-                      </a>
-                    </ListItem>
+                    
                    {islogin ?
-                    <ListItem className="login_btn">
+                    <ListItem className="login_btn css">
                      
-                    <a href="/Login" style={Loginbtn}>
-                   {islogin}
-                    </a>
+                     <a href="/login" style={MenuStyle1}>
+                       {islogin} / </a><a href="/Signup" style={MenuStyle1}>Signup
+                      </a>
                   </ListItem> :
                    <ListItem className="login_btn">
                    <a href="/Login" style={Loginbtn}>
@@ -166,31 +205,6 @@ if(login){
                 )}
               </List>
 
-              <ul className="">
-              
-                           
-              
-                {logged_token ? (
-                  <li>
-                    <a href="/"  onClick={handleLogout} class="nav-item nav-link">
-                     logout
-                    </a >
-                  </li>
-                ) : (
-                  <>
-                    {/* <li>
-                      <a href="/Signup" class="nav-item nav-link">
-                        Join us
-                      </a>
-                    </li>
-                    <li className="login_btn">
-                      <a class="btn btn-square1 text-white me-2 " href="/Login">
-                        Login
-                      </a>
-                    </li> */}
-                  </>
-                )}
-              </ul>
              
             </div>
           </div>
