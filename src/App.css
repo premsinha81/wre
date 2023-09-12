@@ -813,7 +813,7 @@ input[type=checkbox] {
 
 .loadBtn button {
   background: #3D55A5;
-  padding: 5px 30px;
+  padding: 10px 10px;
   border-radius: 5px;
   font-size: 14px;
   border: 1px solid #3D55A5;
@@ -1055,7 +1055,7 @@ div#slider-range {
   background: #3D55A5;
   border: 1px solid #3D55A5;
   color: #fff;
-  text-transform: lowercase;
+  text-transform: unset;
   padding: 4px 95px;
   border-radius: 20px;
   font-size: 18px;
@@ -4381,4 +4381,25 @@ button.btn.btn-primary.btnBSidebar.RefilterBtn.mt-3 {
   flex-direction: row;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+p.MuiTypography-root.MuiTypography-body1.css-193rcbo-MuiTypography-root {
+  text-align: center !important;
+}
+p.MuiTypography-root.MuiTypography-body1.px-2.px-lg-0.fs10-s.css-1e4icwu-MuiTypography-root {
+  text-align: center;
+}
+.groupName p {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 900px;
+  word-wrap: break-word !important;
+  /* min-width: 3000px; */
+}
+header.bg-surface-primary.border-bottom.pt-6 {
+width: 1220px !important;
+}
+.form-group img {
+  width: 22%;
 }

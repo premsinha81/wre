@@ -32,7 +32,8 @@ import Index from './component/Home/Index';
 import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
-
+import JobDetails from './component/JobDetails';
+import Profile from './component/admin/Profile'
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -49,13 +50,14 @@ function App() {
     <Loading>
       <Header/>
     <Router>
-  
+   
       <Routes>
         <Route path="/search-program" element={<Home />} />
         <Route path="/" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
+      <Route path='JobDetails/:user_id/:id' element={<JobDetails />}/>
       </Routes>
       
     { !logged_token ? (
@@ -88,7 +90,10 @@ function App() {
         <Route path="/about" element={<About />} />
         
       </Routes>
-     
+      <Routes>
+        <Route path="/Profile" element={<Profile />} />
+        
+      </Routes>
 
       <Routes>
       <Route path = "/carrier" element={<Carrier/>}/>
@@ -97,6 +102,7 @@ function App() {
       <Routes>
         <Route path='/BusinessInformation' element={<BusinessInformation />}/>
       </Routes>
+      
       <Routes>
         <Route path='/AccountInformation' element={<AccountInformation />}/>
       </Routes>
@@ -116,6 +122,7 @@ function App() {
       <Routes>
         <Route path='/OnlineCoursesSearch' element={<OnlineCoursesSearch />} />
       </Routes>
+     
       <Routes>
         <Route path='/RankingDetail' element={<RankingDetail />} />
       </Routes>

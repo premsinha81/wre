@@ -6,7 +6,9 @@ import LeftTabsExample from "./tabs"
 import Resources from "./resources";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import { useParams } from 'react-router-dom';
 function Job() {
+  const {user_id, id } = useParams();
     const [post, setPost] = useState([])
   const [isCompleted, setIsCompleted] = useState(false)
   const [index, setIndex] = useState(2)
@@ -643,7 +645,7 @@ console.log(post);
             </h6>
             {initialJob.map((item) => {
 
-return(
+          return(
             <div className="row commentbox py-lg-5">
               <div className="col-sm-12 col-md-12 ps-0">
                 <div className="d-flex gap-5">
@@ -669,8 +671,8 @@ return(
                     </p>
                     <div className="daysAndDetails">
                       <p>{item.created_at}</p>
-                      <p style={{ textAlign: "right" }}>
-                       {item.employer_name}{" "}
+                   
+                      <p style={{ textAlign: "right" }}><a href={"JobDetails/"+ item.user_id + "/" + item.id} >Details </a>
                         <i className="fa fa-long-arrow-right detailsArrow" />
                       </p>
                     </div>

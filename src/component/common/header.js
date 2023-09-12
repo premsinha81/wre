@@ -174,7 +174,7 @@ if(login){
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+        <Dropdown.Item href="/profile">Profile</Dropdown.Item>
         <Dropdown.Item href="#/action-2">Account Details</Dropdown.Item>
         <Dropdown.Item href="#/action-2">Need Help</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
@@ -188,7 +188,7 @@ if(login){
                     <ListItem className="login_btn css">
                      
                      <a href="/login" style={MenuStyle1}>
-                       {islogin} / </a><a href="/Signup" style={MenuStyle1}>Signup
+                       {islogin} / </a><a href="/login" style={MenuStyle1}>Signup
                       </a>
                   </ListItem> :
                    <ListItem className="login_btn">

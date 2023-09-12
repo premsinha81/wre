@@ -10,7 +10,7 @@ import CallToActionRoundedIcon from '@mui/icons-material/CallToActionRounded';
 import AddPost from './AddPost';
 import PostTimer from './PostTimer';
 
-const Post = ({onClick,onclick}) => {
+const Post = ({onClick, onclick}) => {
 
     const [timer , setTimer]=useState(false)
 
@@ -109,6 +109,7 @@ const Post = ({onClick,onclick}) => {
         bgcolor={"#3D55A5"}
         color={"#fff"}
         size={"14px"}
+        alignItems={"center"}
         />
        
 
@@ -122,6 +123,7 @@ const Post = ({onClick,onclick}) => {
         </Stack>
         }
         bgcolor={"#3D55A5"}
+        alignItems={"center"}
         color={"#FFFFFF"}
         size={"14px"}
         />
@@ -129,7 +131,7 @@ const Post = ({onClick,onclick}) => {
 
        
        <CusButton 
-       
+        alignItems={"center"}
         name={"Welding"}
         bgcolor={"#3C3C3C"}
         color={"#FFFFFF"}
@@ -139,7 +141,7 @@ const Post = ({onClick,onclick}) => {
 
         
         <CusButton
-         
+          alignItems={"center"}
         name={"Courses"}
         bgcolor={"#3C3C3C"}
         color={"#FFFFFF"}
@@ -149,7 +151,7 @@ const Post = ({onClick,onclick}) => {
         
        
         <CusButton
-         
+          alignItems={"center"}
         name={"Philadelphia"}
         bgcolor={"#3C3C3C"}
         color={"#FFFFFF"}
@@ -159,7 +161,7 @@ const Post = ({onClick,onclick}) => {
         
        
         <CusButton
-         
+          alignItems={"center"}
         name={"Jobs"}
         bgcolor={"#3C3C3C"}
         color={"#FFFFFF"}
@@ -169,11 +171,13 @@ const Post = ({onClick,onclick}) => {
         
        
         <CusButton
-         
+         place-items={"center"}
         name={"Institutes"}
         bgcolor={"#3C3C3C"}
         color={"#FFFFFF"}
         size={"14px"}
+        text-align={"center"}
+        style={"text-align='center'"}
         />
        
 

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import { useNavigate, useParams } from "react-router-dom";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 const JobEdit = () => {
+  const [post , setPost]=useState();
   const {userId, id} = useParams();
   const navigate = useNavigate();
   // const [jobData, setJobData] = useState({
@@ -306,10 +309,31 @@ const JobEdit = () => {
                                     <div>
                                       <label>Job Description</label>
                                       <div className="form-group">
-                                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
+                                      <CKEditor
+          
+                    editor={ ClassicEditor }
+                    data={job_description}
+                    onReady={ editor => {
+                       
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        setPost(data)
+                        console.log(data , "pppppp")
+                       
+                    } }
+                    onBlur={ ( event, editor ) => {
+                       
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        
+                    } }
+                />
+                                        {/* <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
                                           value={job_description}
                                           onChange={(e) => setJob_description(e.target.value)}
-                                        ></textarea>
+                                        ></textarea> */}
 
                                       </div>
                                     </div>

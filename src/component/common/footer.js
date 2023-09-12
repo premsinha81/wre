@@ -18,7 +18,7 @@ export default function Footer() {
                       required=""
                     />
                     <button type="submit" class="subscribeBtn">
-                      Subscribe button
+                      Subscribe
                     </button>
                   </div>
                 </form>
