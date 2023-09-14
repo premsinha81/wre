@@ -21,8 +21,9 @@ const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const stickyHeader = useRef();
-  const [isLoggedin, setIsLoggedin] = useState(false);
   const[islogin,setislogin]=useState(false)
+  const [isLoggedin, setIsLoggedin] = useState(!!localStorage.getItem('token'));
+
   const logged_token = localStorage.getItem("token");
   useLayoutEffect(() => {
     const mainHeader = document.getElementById("mainHeader");
@@ -48,17 +49,18 @@ if(login){
 }
 
 
-  },[])
-
-  const handleLogout = async () => {
-    try {
-       localStorage.removeItem('token');
-
-     
-    } catch (error) {
-      console.error('Logout failed:', error);
-    }
   }
+  
+  ,[])
+
+  const handleLogout = () => {
+    // Remove the token from local storage
+    localStorage.removeItem('token');
+
+    // Update the authentication state to indicate that the user is logged out
+    setIsLoggedin(false);
+  };
+  
 
   return (
     <>
@@ -110,11 +112,7 @@ if(login){
           >
             <div class=" navbar-nav ms-auto ">
               <List>
-                {/* <ListItem data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <a  href="/search-program" style={MenuStyle}>
-                   <SearchOutlinedIcon sx={{color:"#283b8b"}}/>
-                  </a>
-                </ListItem> */}
+               
                 <ListItem>
                   <a href="http://community.allnuud.com/" style={MenuStyle}>
                     Community
@@ -143,12 +141,12 @@ if(login){
               
               {logged_token ? (
                    <ListItem>
-                  <a href="/"  onClick={handleLogout} class="nav-item nav-link noti">
+                  <a href="/"  class="nav-item nav-link noti">
                   <i class="fa fa-bell"></i>
                   <span class="num-count">13</span>
                   </a >
                   </ListItem>
-              ) : (
+                ) : (
                 <>
                   {/* <li>
                     <a href="/Signup" class="nav-item nav-link">
@@ -163,7 +161,7 @@ if(login){
                 </>
               )}
            
-                {logged_token ? (
+                {isLoggedin ? (
                   <ListItem>
                     {/* <a href="/dashboard" style={MenuStyle}>
                       Hello {localStorage.getItem("usr_name")}
@@ -177,7 +175,7 @@ if(login){
         <Dropdown.Item href="/profile">Profile</Dropdown.Item>
         <Dropdown.Item href="#/action-2">Account Details</Dropdown.Item>
         <Dropdown.Item href="#/action-2">Need Help</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+        <Dropdown.Item  onClick={handleLogout} >Logout</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown> 
                   </ListItem>

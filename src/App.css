@@ -3336,11 +3336,11 @@ button.btn.btn-primary.btnBSidebar.RefilterBtn {
   justify-content: center;
   align-items: center;
 }
-.content1 {
+/* .content1 {
  
 
   display: none;
-}
+} */
 #loadMore {
   width: 200px;
   color: #fff;
@@ -4402,4 +4402,11 @@ width: 1220px !important;
 }
 .form-group img {
   width: 22%;
+}
+.slider .searchPanel input[type="text"] {
+  border-radius: 26px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  font-weight: 500;
+  width: 500px !important;
 }

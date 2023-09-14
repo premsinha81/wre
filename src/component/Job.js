@@ -7,11 +7,12 @@ import Resources from "./resources";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useParams } from 'react-router-dom';
+import Autosuggest from 'react-autosuggest';
 function Job() {
   const {user_id, id } = useParams();
     const [post, setPost] = useState([])
   const [isCompleted, setIsCompleted] = useState(false)
-  const [index, setIndex] = useState(2)
+  const [index, setIndex] = useState(3)
   const initialJob = slice(post, 0, index)
   const getData = () => {
     fetch('https://admin.allnuud.com/api/job_list_all')
@@ -32,7 +33,60 @@ function Job() {
     getData()
   }, [])
 
+  
+
 console.log(post);
+const [suggestions, setSuggestions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+ 
+  // const getSearchData = () => {
+  //   fetch(`https://admin.allnuud.com/api/job_by_title/${searchTerm}`)
+  //     .then((res) => res.json())
+  //     .then((json) => console.log("ak",json.data))
+  //     .catch((e) => console.log(e))
+  // }
+  // useEffect(() => {
+  //   getSearchData()
+  // }, [])
+  console.log("dhruv",suggestions)
+  const apiUrl = 'https://admin.allnuud.com/api/job_by_title/';
+
+  const getSuggestions = async (value) => {
+    setPost(true);
+    
+    try {
+      const response = await fetch(apiUrl + value);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      return [];
+    }
+  };
+
+  const onSuggestionsFetchRequested = async ({ value }) => {
+    const suggestions = await getSuggestions(value);
+    setPost(suggestions.data);
+  };
+
+  const onSuggestionsClearRequested = () => {
+    setSuggestions([]);
+  };
+
+  const onSuggestionSelected = (event, { suggestionValue }) => {
+    // Handle when a suggestion is selected (e.g., set the search term or navigate to a result page)
+    setSearchTerm(suggestionValue);
+  };
+
+  const inputProps = {
+    placeholder: 'Search for job title...',
+    value: searchTerm,
+    onChange: (event, { newValue }) => setSearchTerm(newValue),
+  };
+
    return (
       <div>
  
@@ -47,26 +101,26 @@ console.log(post);
             <h2 className="text-white"> SEARCH FOR A JOB</h2>
               <div className="position-relative">
               
-              <Autocomplete
-                id="combo-box-demo"
-                className="rounded-pill"
-                
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    type="text"
-                    labal="SEARCH FOR A JOB"
-                    className="p-0 w-100"
-                  />
-                )}
-              />
+              <Autosuggest
+               id="combo-box-demo"
+               className="rounded-pill"
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        onSuggestionSelected={onSuggestionSelected}
+        getSuggestionValue={(suggestion) => suggestion.job_titile}
+        renderSuggestion={(suggestion) => <div>{suggestion.job_titile}</div>}
+        inputProps={inputProps}
+      />
               <button
                 className="btn btn-primary button btnSearch"
                
               >
                 <i class="fa fa-search"></i>
               </button>
-              </div>
+             
+    </div>
+  
             </div>
           </div>
         </div>
