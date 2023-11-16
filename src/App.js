@@ -33,7 +33,8 @@ import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 import JobDetails from './component/JobDetails';
-import Profile from './component/admin/Profile'
+import Profile from './component/admin/Profile';
+import Homepage from './component/home'
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -52,6 +53,7 @@ function App() {
     <Router>
    
       <Routes>
+        <Route path='/homepage' element={<Homepage />} />
         <Route path="/search-program" element={<Home />} />
         <Route path="/" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />

@@ -56,7 +56,10 @@ if(login){
   const handleLogout = () => {
     // Remove the token from local storage
     localStorage.removeItem('token');
-
+    localStorage.removeItem('usr_name');
+    localStorage.removeItem('usr_id');
+    localStorage.removeItem('usr_email');
+    
     // Update the authentication state to indicate that the user is logged out
     setIsLoggedin(false);
   };
@@ -183,14 +186,14 @@ if(login){
                   <>
                     
                    {islogin ?
-                    <ListItem className="login_btn css">
-                     
-                     <a href="/login" style={MenuStyle1}>
-                       {islogin} / </a><a href="/login" style={MenuStyle1}>Signup
+                    <ListItem>
+                     <a href="/login" className="login_btn css" style={MenuStyle1}>
+                       {islogin} </a>
+                       <a href="/signup" className="btn btn-outline-primary" style={MenuStyle1}>Signup
                       </a>
                   </ListItem> :
-                   <ListItem className="login_btn">
-                   <a href="/Login" style={Loginbtn}>
+                   <ListItem>
+                   <a className="login_btn" href="/Login" style={Loginbtn}>
                      {islogin} 
                    </a>
                  </ListItem>
