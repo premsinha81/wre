@@ -1302,10 +1302,7 @@ margin-top: 60px ;
   border: 5px solid #dedbdb !important;
 }
 
-.footerBody ul li a {
-  color: #000;
-  font-family: 'Lato', sans-serif !important;
-}
+
 
 .subscirpSection {
   width: 50%;
@@ -3415,11 +3412,9 @@ p.groupFollowers {
 li.about {
   width: 250px;
 }
-
-
-
-
-
+.footerBody li.about{
+  width:auto;
+}
 
 
 @import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/dashboard.scss";

@@ -4350,3 +4350,33 @@ li.nav-item1 {
   padding:7px 25px;
   border:0!important;
 }
+.copyright{
+  padding:25px 0 0 0;
+}
+.footerBody ul li a{
+  font-size:14px;
+}
+.footerBody ul li a:hover{
+  color:#3d55a5!important;
+  text-decoration: underline!important;
+}
+.text-left{
+  text-align:left;
+  font-size: 14px;
+}
+.text-right{
+  text-align: right;
+}
+.footerBottom a{
+  padding:5px 10px;
+}
+.color-primary{
+  color:#3D55A5!important;
+}
+
+.solialLink li .fa{
+  font-size: 20px;;
+}
+a,.footerBody ul li a{
+  font-family: 'Roboto', sans-serif !important;
+}

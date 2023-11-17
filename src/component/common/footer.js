@@ -1,3 +1,4 @@
+import logoImg from '../../img/WRE.png';
 export default function Footer() {
   return (
     <>
@@ -30,7 +31,7 @@ export default function Footer() {
             <div class="footerBox footer1">
 
               <div class="footerTitle">
-                <h3>WRE </h3>
+                <img src={logoImg} className='img-fluid' />
               </div>
               <div class="footerBody">
                 <ul>
@@ -49,7 +50,7 @@ export default function Footer() {
           <div class="col-lg-3">
             <div class="footerBox footer1">
               <div class="footerTitle">
-                <h3>Services</h3>
+                <h4>Services</h4>
               </div>
               <div class="footerBody">
                 <ul>
@@ -75,7 +76,7 @@ export default function Footer() {
           <div class="col-lg-3">
             <div class="footerBox footer1">
               <div class="footerTitle">
-                <h3>Popular Links</h3>
+                <h4>Popular Links</h4>
               </div>
               <div class="footerBody">
                 <ul>
@@ -99,7 +100,7 @@ export default function Footer() {
           <div class="col-lg-2">
             <div class="footerBox footer1">
               <div class="footerTitle1">
-                <h3>Contact Us</h3>
+                <h4>Contact Us</h4>
               </div>
               <div class="footerBody">
                 <div class="followUs11">
@@ -124,18 +125,17 @@ export default function Footer() {
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
+                    <li>
+                      <a href="" class="socialLinkItem">
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </li>
                   </ul>
                 </div>
-                <ul>
-
-                  <br></br>
-                  <li>
-                    <a href="" class="socialLinkItem1">
-                      <i class="fa fa-envelope"> </i>
-                      <span> wre@gmail.com </span>
-                    </a>
-                  </li>
-                </ul>
+                <br />
+                <p><strong>Get in Touch</strong><br />
+                1901 West Girard Ave Philadelphia, PA 19130</p>
+                <p>215-381-9403 <a href="mailto:info@ptt.edu">info@ptt.edu</a></p>
               </div>
             </div>
           </div>
@@ -154,20 +154,6 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-              <div class="termsLink">
-                <ul class="tandcLink">
-                  <li>
-                    <a href="" class="">
-                      Terms of Use
-                    </a>
-                  </li>
-                  <li>
-                    <a href="" class="">
-                      Privacy Policy
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -176,8 +162,14 @@ export default function Footer() {
       <div class="footerBottom">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <div class="copyright">
+          <div class="col-lg-6">
+              <div class="copyright text-left">
+                <a href="#" className='color-primary'>Privacy Policy </a> |
+                <a href="#" className='color-primary'>Terms of Use </a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="copyright text-right">
                 <p>©2023 Work Ready Education, All Rights Reserved</p>
               </div>
             </div>

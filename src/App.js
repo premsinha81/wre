@@ -53,9 +53,9 @@ function App() {
     <Router>
    
       <Routes>
-        <Route path='/homepage' element={<Homepage />} />
+        <Route path='/' element={<Homepage />} />
         <Route path="/search-program" element={<Home />} />
-        <Route path="/" element={<Index />} />
+        <Route path="/index" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
