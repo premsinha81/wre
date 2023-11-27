@@ -21,6 +21,7 @@ import Footer from './component/common/footer';
 import Ranking from './component/ranking-details';
 import CollgeDetails from './component/CollegeDetails';
 import RankingDetail from './component/RankingDetail';
+import Testimonial from './component/testimonial';
 import UserprofileCommunities from './component/userprofileCommunities';
 import Ranking_view from './component/Ranking_view';
 import Jobpostform from './component/Jobpostform';
@@ -88,6 +89,10 @@ function App() {
       </Routes> */}
       <Routes>
         <Route path="/about" element={<About />} />
+        
+      </Routes>
+      <Routes>
+        <Route path="/testimonial" element={<Testimonial />} />
         
       </Routes>
       <Routes>

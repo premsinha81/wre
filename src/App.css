@@ -4410,3 +4410,24 @@ width: 1220px !important;
   font-weight: 500;
   width: 500px !important;
 }
+h5.mb-3 {
+    text-align: center;
+}
+h6.text-primary.mb-3 {
+  text-align: center;
+}
+.px-xl-3 {
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
+  text-align: center;
+}
+.swiper .swiper-slide {
+  /* margin: 0; */
+  /* height: auto; */
+  width: 100%;
+  padding: 0;
+  opacity: 0.9 !important;
+  /* background: rgba(255, 255, 255, .3); */
+  /* border-radius: 6px; */
+  /* transition: all 0.5s ease-in-out; */
+}

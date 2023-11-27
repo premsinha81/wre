@@ -8,6 +8,10 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useParams } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
 function Job() {
   const {user_id, id } = useParams();
     const [post, setPost] = useState([])

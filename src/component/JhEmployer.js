@@ -4,15 +4,17 @@ import Resources from "./resources";
 import Imagesection2 from '../Image/Group 697.svg';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
+// import { Pagination } from 'swiper';  
+import { EffectFade, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
 import SwiperCore, { Autoplay } from 'swiper';
-import { EffectFade } from 'swiper';
+// import { EffectFade } from 'swiper';
 import 'swiper/css/effect-fade';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const JhEmployer = () => {
-  SwiperCore.use([Autoplay])
+  // SwiperCore.use([Autoplay]);
   return (
     <div>
 
