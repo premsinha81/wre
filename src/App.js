@@ -34,7 +34,9 @@ import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 import JobDetails from './component/JobDetails';
-import Profile from './component/admin/Profile'
+import Profile from './component/admin/Profile';
+import Homepage from './component/home';
+import Program from './component/Program';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -53,8 +55,9 @@ function App() {
     <Router>
    
       <Routes>
-        <Route path="/search-program" element={<Home />} />
-        <Route path="/" element={<Index />} />
+        <Route path='/' element={<Homepage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/index" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
@@ -87,6 +90,10 @@ function App() {
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes> */}
+      <Routes>
+        <Route path="/program" element={<Program />} />
+        
+      </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
         

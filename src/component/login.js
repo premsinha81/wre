@@ -53,7 +53,7 @@ export default function Login() {
                                     </div>
                                     <div className="form-group">
                                         <input className="form-control logininpute" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-                                        <div className="forgetP"> <a href="#">Forgot password?</a></div>
+                                        <div className="forgetP"> <small><a href="#">Forgot password?</a></small></div>
                                     </div>
                                     <div className="col-md-12 section-h py-4">
                                         <div className="input-box">
@@ -62,16 +62,13 @@ export default function Login() {
                                     </div>
                                 </div>
                                 <div className="col-md-12 section-h py-4">
-                                    <article>
-                                        <p className="h11">or</p>
-                                    </article>
+                                    <div className="orPosition">
+                                        <p className="h11">OR</p>
+                                    </div>
                                     <div className="input-box">
-                                      <a href="signup">  <input type="submit" name="submitButton"  className="searchBtn" id="submitButton2" value="Sign Up" /></a >
+                                        <small>New User</small> <input type="submit" name="submitButton"  className="btn btn-outline-primary" id="submitButton2" value="Sign Up" />
                                     </div>
-                                    <div className="countryFlag">
-                                        <img src="https://cdn.britannica.com/73/4473-050-0D875725/Grand-Union-Flag-January-1-1776.jpg" alt="" />
-                                        <i className="fa fa-angle-down"></i>
-                                    </div>
+                                    
                                 </div>
 
                             </div>
