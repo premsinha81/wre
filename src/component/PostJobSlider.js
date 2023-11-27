@@ -1,9 +1,11 @@
 import React from 'react'
 // Import Swiper styles
 // import Swiper core and required modules
-//import { Navigation, Autoplay, Pagination, A11y } from 'swiper/modules';
-import { Navigation,Autoplay,Pagination,A11y } from 'swiper';
+import { Navigation, Autoplay, Pagination, A11y } from 'swiper/modules';
+// import { Navigation,Autoplay,Pagination,A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 const testimonial = () => {
   return (

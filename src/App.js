@@ -21,6 +21,7 @@ import Footer from './component/common/footer';
 import Ranking from './component/ranking-details';
 import CollgeDetails from './component/CollegeDetails';
 import RankingDetail from './component/RankingDetail';
+import Testimonial from './component/testimonial';
 import UserprofileCommunities from './component/userprofileCommunities';
 import Ranking_view from './component/Ranking_view';
 import Jobpostform from './component/Jobpostform';
@@ -35,7 +36,8 @@ import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 import JobDetails from './component/JobDetails';
 import Profile from './component/admin/Profile';
-import HomePage from './component/HomePage';
+import Homepage from './component/home';
+import Program from './component/Program';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -54,8 +56,8 @@ function App() {
     <Router>
    
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path="/search-program" element={<Home />} />
+        <Route path='/' element={<Homepage />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/index" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
@@ -90,7 +92,15 @@ function App() {
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes> */}
       <Routes>
+        <Route path="/program" element={<Program />} />
+        
+      </Routes>
+      <Routes>
         <Route path="/about" element={<About />} />
+        
+      </Routes>
+      <Routes>
+        <Route path="/testimonial" element={<Testimonial />} />
         
       </Routes>
       <Routes>

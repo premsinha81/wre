@@ -4,6 +4,14 @@ import Imagesection2 from '../Image/1556727.png';
 import imgv from '../Image/hian-oliveira-1417174-unsplash.png';
 import LeftTabsExample from "./tabs"
 import Resources from "./resources";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { useParams } from 'react-router-dom';
+import Autosuggest from 'react-autosuggest';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
 function Job() {
     const [post, setPost] = useState([])
   const [isCompleted, setIsCompleted] = useState(false)
