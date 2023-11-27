@@ -13,15 +13,15 @@ import img1 from "../iconG.svg"
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
-const Iconstyle = { width:35,height:35,borderRadius:"50%",border:0,bgcolor:"#283b8b",color:"#fff",p:"5px"};
-const MenuStyle = {color:"#3d55a5",fontWeight:600,textTransform:"uppercase",fontSize:14,whiteSpace:" nowrap"}
-const MenuStyle1 = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize:14,whiteSpace:" nowrap"}
-const Loginbtn = {color:"#fff",fontWeight:600,textTransform:"uppercase",fontSize:14,backgroundColor:"#3d55a5",borderRadius:"50rem",padding:"5px 24px"}
+const Iconstyle = { width: 35, height: 35, borderRadius: "50%", border: 0, bgcolor: "#283b8b", color: "#fff", p: "5px" };
+const MenuStyle = { color: "#3d55a5", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const MenuStyle1 = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const Loginbtn = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, backgroundColor: "#3d55a5", borderRadius: "50rem", padding: "5px 24px" }
 
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const stickyHeader = useRef();
-  const[islogin,setislogin]=useState(false)
+  const [islogin, setislogin] = useState(false)
   const [isLoggedin, setIsLoggedin] = useState(!!localStorage.getItem('token'));
 
   const logged_token = localStorage.getItem("token");
@@ -36,22 +36,25 @@ function Header() {
       }
     };
     window.addEventListener("scroll", fixedHeader);
-  
+
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     const login = localStorage.getItem("usr_name");
-if(login){
-  setislogin(login)
+    if (login) {
+      setislogin(login)
 
-}else{
-  setislogin('login')
-}
-
+    } else {
+      setislogin('login')
+    }
 
   }
-  
-  ,[])
+
+    , [])
+
+    function refreshPage() {
+      window.location.reload(false);
+    }
 
   const handleLogout = () => {
     // Remove the token from local storage
@@ -59,11 +62,13 @@ if(login){
     localStorage.removeItem('usr_name');
     localStorage.removeItem('usr_id');
     localStorage.removeItem('usr_email');
-    
+
     // Update the authentication state to indicate that the user is logged out
     setIsLoggedin(false);
+    setislogin('login');
+    refreshPage()
   };
-  
+
 
   return (
     <>
@@ -115,7 +120,7 @@ if(login){
           >
             <div class=" navbar-nav ms-auto ">
               <List>
-               
+
                 <ListItem>
                   <a href="http://community.allnuud.com/" style={MenuStyle}>
                     Community
@@ -123,35 +128,35 @@ if(login){
                 </ListItem>
                 <ListItem>
                   <a href="/search-program" style={MenuStyle}>
-                  Trade Programs
+                    Trade Programs
                   </a>
                 </ListItem>
                 <ListItem>
                   <a href="/Job" style={MenuStyle}>
-                  Trade Jobs
+                    Trade Jobs
                   </a>
                 </ListItem>
                 <ListItem>
                   <a href="https://resources.allnuud.com/" style={MenuStyle}>
-                    
-                  News & Articles
+
+                    News & Articles
                   </a>
                 </ListItem>
-                
-              
-              
-                           
-              
-              {logged_token ? (
-                   <ListItem>
-                  <a href="/"  class="nav-item nav-link noti">
-                  <i class="fa fa-bell"></i>
-                  <span class="num-count">13</span>
-                  </a >
+
+
+
+
+
+                {logged_token ? (
+                  <ListItem>
+                    <a href="/" class="nav-item nav-link noti">
+                      <i class="fa fa-bell"></i>
+                      <span class="num-count">13</span>
+                    </a >
                   </ListItem>
                 ) : (
-                <>
-                  {/* <li>
+                  <>
+                    {/* <li>
                     <a href="/Signup" class="nav-item nav-link">
                       Join us
                     </a>
@@ -161,52 +166,52 @@ if(login){
                       Login
                     </a>
                   </li> */}
-                </>
-              )}
-           
+                  </>
+                )}
+
                 {isLoggedin ? (
                   <ListItem>
                     {/* <a href="/dashboard" style={MenuStyle}>
                       Hello {localStorage.getItem("usr_name")}
                     </a> */}
                     <Dropdown>
-      <Dropdown.Toggle variant="" id="dropdown-basic">
-       <img width="100%" src={img1}  />
-      </Dropdown.Toggle>
+                      <Dropdown.Toggle variant="" id="dropdown-basic">
+                        <img width="100%" src={img1} />
+                      </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Account Details</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Need Help</Dropdown.Item>
-        <Dropdown.Item  onClick={handleLogout} >Logout</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown> 
+                      <Dropdown.Menu>
+                        <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Account Details</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Need Help</Dropdown.Item>
+                        <Dropdown.Item onClick={handleLogout} >Logout</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </ListItem>
                 ) : (
                   <>
-                    
-                   {islogin ?
-                    <ListItem>
-                     <a href="/login" className="login_btn css" style={MenuStyle1}>
-                       {islogin} </a>
-                       <a href="/signup" className="btn btn-outline-primary" style={MenuStyle1}>Signup
-                      </a>
-                  </ListItem> :
-                   <ListItem>
-                   <a className="login_btn" href="/Login" style={Loginbtn}>
-                     {islogin} 
-                   </a>
-                 </ListItem>
-                 
-                 
 
-                   }
-                   
+                    {islogin ?
+                      <ListItem>
+
+                        <a href="/login" className="login_btn css" style={MenuStyle1}>
+                          {islogin} </a><a href="/signup" className="btn btn-outline-primary" style={MenuStyle1}>Signup
+                        </a>
+                      </ListItem> :
+                      <ListItem className="login_btn">
+                        <a href="/Login" style={Loginbtn}>
+                          {islogin}
+                        </a>
+                      </ListItem>
+
+
+
+                    }
+
                   </>
                 )}
               </List>
 
-             
+
             </div>
           </div>
 
@@ -228,7 +233,7 @@ if(login){
                 </button>*/}
         </div>
       </nav>
-      
+
     </>
   );
 }

@@ -4283,11 +4283,10 @@ a.nav-item.nav-link.noti {
 }
 a.nav-item.nav-link.noti {
   border-radius: 50% !important;
-  /* width: 60px; */
-  background-color: #fff1f1;
   width: 50%;
   padding: 10px !important;
-  margin: 20px !important;
+  margin: 0 !important;
+  background-color: transparent!important;
 }
 input, input[type="text"], input[type="search"], isindex, textarea, button {
   outline: none;
@@ -4328,9 +4327,12 @@ button#dropdown-basic:hover {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  top: 20px;
+  top: 8px;
   /* right: -0.2px !important; */
   box-sizing: border-box;
+}
+#dropdown-basic {
+  margin-right: 10px;
 }
 button#dropdown-basic {
   border: none !important;
@@ -4510,4 +4512,11 @@ width: 1220px !important;
   font-size: 14px!important;
   text-transform: uppercase;
   font-weight:bold;
+}
+.navigation-menu li .dropdown-menu a{
+  width: 100%;
+  margin: 0 0px;
+  border-bottom: 1px dotted #ccc;
+  font-size: 13px;
+  line-height: 35px;
 }

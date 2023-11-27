@@ -28,13 +28,14 @@ import Showdata from './component/showdata';
 import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
-import Index from './component/Home/Index';
+//import Index from './component/home/index';
+import Index from './Home/component/home';
 import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 import JobDetails from './component/JobDetails';
 import Profile from './component/admin/Profile';
-import Homepage from './component/home'
+import HomePage from './component/HomePage';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -53,7 +54,7 @@ function App() {
     <Router>
    
       <Routes>
-        <Route path='/' element={<Homepage />} />
+        <Route path='/' element={<HomePage />} />
         <Route path="/search-program" element={<Home />} />
         <Route path="/index" element={<Index />} />
         <Route path='search/:slug' element={<Ranking />} />

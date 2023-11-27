@@ -4380,3 +4380,12 @@ li.nav-item1 {
 a,.footerBody ul li a{
   font-family: 'Roboto', sans-serif !important;
 }
+.mainHeader{
+  padding:0!important;
+}
+.dropdown button{
+  padding:0!important;
+}
+#dropdown-basic {
+  width: 50px!important;
+}
