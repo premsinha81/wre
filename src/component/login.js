@@ -66,7 +66,7 @@ export default function Login() {
                                         <p className="h11">OR</p>
                                     </div>
                                     <div className="input-box">
-                                        <small>New User</small> <a href="/signup" className="btn btn-outline-primary">Signup</a>
+                                        <small>New User</small> <input type="submit" name="submitButton"  className="btn btn-outline-primary" id="submitButton2" value="Sign Up" />
                                     </div>
                                     
                                 </div>

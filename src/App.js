@@ -29,8 +29,7 @@ import Showdata from './component/showdata';
 import Dashboard from './component/admin/dashboard';
 import Jobpost from './component/admin/jobpost';
 import Jobedit from './component/admin/jobedit';
-//import Index from './component/home/index';
-import Index from './Home/component/home';
+import Index from './component/Home/Index';
 import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';

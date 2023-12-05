@@ -62,6 +62,7 @@ function Header() {
     localStorage.removeItem('usr_name');
     localStorage.removeItem('usr_id');
     localStorage.removeItem('usr_email');
+
     // Update the authentication state to indicate that the user is logged out
     setIsLoggedin(false);
     setislogin('login');
@@ -126,7 +127,7 @@ function Header() {
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="/program" style={MenuStyle}>
+                  <a href="/search-program" style={MenuStyle}>
                     Trade Programs
                   </a>
                 </ListItem>
