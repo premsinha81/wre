@@ -15,7 +15,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 const Iconstyle = { width: 35, height: 35, borderRadius: "50%", border: 0, bgcolor: "#283b8b", color: "#fff", p: "5px" };
 const MenuStyle = { color: "#3d55a5", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
-const MenuStyle1 = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const MenuStyle1 = { color: "#3d55a5", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
 const Loginbtn = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, backgroundColor: "#3d55a5", borderRadius: "50rem", padding: "5px 24px" }
 
 function Header() {
@@ -191,13 +191,42 @@ function Header() {
                   <>
 
                     {islogin ?
-                      <ListItem className="login_btn css">
+                      <ListItem className=" Loginbtn login_btn
+
+
+                      ">
 
                         <a href="/login" style={MenuStyle1}>
-                          {islogin} / </a><a href="/login" style={MenuStyle1}>Signup
-                        </a>
+                          {islogin}  </a>
                       </ListItem> :
-                      <ListItem className="login_btn">
+                      <ListItem className="login_btn Loginbtn " >
+                        <a href="/Login" style={Loginbtn}>
+                          {islogin}
+                        </a>
+                      </ListItem>
+
+
+
+                    }
+                     {islogin ?
+                      <ListItem className="btn-outline-primary btn-primary-outline
+
+
+
+
+
+                      ">
+
+                        <a href="/signup" style={MenuStyle1}>
+                        Signup  </a>
+                      </ListItem> :
+                      <ListItem className="btn-outline-primary btn-primary-outline
+
+
+
+
+
+                      " >
                         <a href="/Login" style={Loginbtn}>
                           {islogin}
                         </a>

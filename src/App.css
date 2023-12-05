@@ -4520,3 +4520,18 @@ width: 1220px !important;
   font-size: 13px;
   line-height: 35px;
 }
+.login_btn {
+  background-color: #3d55a5;
+  color: #fff !important;
+  border: 1px solid;
+  border-radius: 5px;
+  gap: 30px !important;
+  margin-right: 5px !important;
+}
+.btn-outline-primary {
+  color: #fff;
+  border-color: #0d6efd;
+  margin-right: 10px !important;
+  color: #0000 !important;
+  border-radius: 5px !important;
+}
