@@ -190,7 +190,7 @@ function Header() {
                   <>
 
                     {islogin ?
-                      <ListItem className=" Loginbtn login_btn
+                      <ListItem className="Loginbtn login_btn
 
 
                       ">
@@ -198,7 +198,7 @@ function Header() {
                         <a href="/login" style={MenuStyle1}>
                           {islogin}  </a>
                       </ListItem> :
-                      <ListItem className="login_btn Loginbtn " >
+                      <ListItem className="login_btn Loginbtn" >
                         <a href="/Login" style={Loginbtn}>
                           {islogin}
                         </a>
