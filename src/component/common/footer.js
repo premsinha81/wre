@@ -1,25 +1,80 @@
 import logoImg from '../../img/WRE.png';
+import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 export default function Footer() {
+
+  const [mail, setMail] = useState("");
+const [showSuccessMessage, setShowSuccessMessage] = useState('');
+const [errorMessage, setErrorMessage] = useState('');
+
+const isValidEmail = (email) => {
+  // Simple email validation using a regular expression
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const Jobbtn = async (e) => {
+  e.preventDefault();
+
+  if (!isValidEmail(mail)) {
+    setErrorMessage('Please enter a valid email address');
+    return;
+  }
+
+  const res = await fetch("https://admin.allnuud.com/api/subscribe-mail", {
+    method: 'POST',
+    body: JSON.stringify({
+      mail
+    }),
+    headers: {
+      "Content-Type": 'application/json',
+      "Accept": 'application/json'
+    }
+  });
+
+  const data = await res.json();
+  console.log(data['status']);
+
+  if (data['status'] === 'true') {
+    setShowSuccessMessage(data['message']);
+  } else {
+    setErrorMessage(data['message']);
+  }
+};
+
   return (
+   
     <>
       <footer class="footerSection">
         <div className="subscribeNow">
           <ul>
             <li className="text-right">Be up to date across industries</li>
-            <li><form action="" class="subscribeForm">
+            <li><form onSubmit={Jobbtn} class="subscribeForm">
                 <div class="inputField">
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="e-Mail ID"
                     required=""
+                    value={mail}
+                    onChange={(e) => setMail(e.target.value)}
                   />
-                  <button type="submit" class="subscribeBtn">
+
+              
+                  <button  type="submit" class="subscribeBtn">
                     Subscribe
                   </button>
+                  
                 </div>
-              </form></li>
+              </form>
+             
+              </li>
+             
+                    
           </ul>
+       <p class="mess">   {showSuccessMessage && <div>{showSuccessMessage}</div>}
+    {errorMessage && <div>{errorMessage}</div>}</p>
+
         </div>
         <div class="container">
           

@@ -4535,3 +4535,9 @@ width: 1220px !important;
   color: #0000 !important;
   border-radius: 5px !important;
 }
+.btn-outline-primary,.btn-primary-outline a{
+  color:#3d55a5!important;
+}
+.btn-outline-primary:hover,.btn-primary-outline a:hover{
+  color:#fff!important;
+}
