@@ -45,7 +45,9 @@ useEffect(() => {
           <div className="col-md-8 section-h">
             <div className="bannerHeading">
               <br></br>
-              <h1>Job Details</h1>
+              <h1 className="groupFollowersjob">{jobs.job_titile}</h1>
+              <h4 className="groupFollowersjob fw-500">{jobs.job_company}</h4>
+                           
             </div>
           </div>
           <div className="col-md-4">
@@ -60,15 +62,14 @@ useEffect(() => {
     <div className="container">
     <div className="jobList">
                       <div className="jobPostion" >
-                        <h6 className="groupFollowersjob">{jobs.job_titile}</h6>
-                        <h4 className="gName fw-500">{jobs.job_company}</h4>
+                         <h4 className="gName fw-500">{jobs.job_location}</h4>
                          <p>{jobs.employer_name}</p> 
                       </div>
                       <div
                         className="unfollow-btn1"
                         style={{ textAlign: "right" }}
                       >
-                       <a href='/Signup' > <div className="Apply">Apply</div></a>
+                       <a href='/Studentapplicatin' > <div className="Apply">Apply</div></a>
                       </div>
                     </div>
       {/* Programs Section End*/}
@@ -81,7 +82,7 @@ useEffect(() => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 test-design">
-                        <h3 className='text-black' >{jobs.job_titile}</h3>
+                        <h3 className='text-black jobhrad' >{jobs.job_titile}</h3>
                            
                                     
                             <p className='m25' dangerouslySetInnerHTML={{__html:jobs.job_description}}>
@@ -101,7 +102,7 @@ useEffect(() => {
                         className="unfollow-btn1"
                         style={{ textAlign: "right" }}
                       >
-                       <a href='/Signup' > <div className="Apply">Apply</div></a>
+                       <a href='/Studentapplicatin' > <div className="Apply">Apply</div></a>
                       </div>
                     </div>
       {/* Programs Section End*/}

@@ -14,8 +14,8 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 const Iconstyle = { width: 35, height: 35, borderRadius: "50%", border: 0, bgcolor: "#283b8b", color: "#fff", p: "5px" };
-const MenuStyle = { color: "#3d55a5", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
-const MenuStyle1 = { color: "#3d55a5", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const MenuStyle = { color: "#3d55a5",  fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const MenuStyle1 = { color: "#fff", bgcolor: "#283b8b", fontWeight: 600, backgroundColor: "#3d55a5", textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
 const Loginbtn = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, backgroundColor: "#3d55a5", borderRadius: "50rem", padding: "5px 24px" }
 
 function Header() {
@@ -175,7 +175,7 @@ function Header() {
                     </a> */}
                     <Dropdown>
                       <Dropdown.Toggle variant="" id="dropdown-basic">
-                        <img width="100%" src={img1} />
+                        <img width="100%" src={img1} /> <i className="	fa fa-caret-down"></i>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
@@ -208,7 +208,7 @@ function Header() {
 
                     }
                      {islogin ?
-                      <ListItem className="btn-outline-primary btn-primary-outline
+                      <ListItem style={MenuStyle1} className="btn-outline-primary btn-primary-outline
 
 
 

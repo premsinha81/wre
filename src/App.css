@@ -309,14 +309,14 @@ Image.iconP {
   max-width: 100%;
   width: 100%;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 15px !important;
   background: #fff;
   box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
 }
 
 .wrappers h2 {
   position: relative;
-  font-size: 22px;
+  font-size: 18px !important;
   font-weight: 600;
   color: #090909;
   text-align: center;
@@ -561,7 +561,7 @@ form h3 {
   min-height: 60px;
   max-height: 300px;
   border-radius: 15px;
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(117, 107, 107);
   box-shadow: 2px 4px 8px #c5c5c5;
   transition: all 300ms;
 }
@@ -571,7 +571,7 @@ form h3 {
 }
 
 select.form-control.selectOption {
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
   border-radius: 20px!important;
 
 }
@@ -599,13 +599,18 @@ select.form-control.selectOption {
   border-radius: 20px;
   background-color: #ECECEC;
   color: #000;
-  font-size: 14px;
+  font-size: 12px !important;
 }
 
 /* Program Section Css Start */
 .programsSection {
   padding: 0;
   margin-top: 30px;
+  overflow: hidden;
+}
+.programsSection_job {
+  padding: 0;
+  margin-top: 0px;
   overflow: hidden;
 }
 .m25{
@@ -1425,13 +1430,10 @@ body {
   width: 40px;
 }
 
-.profileIconPost,
-.postPImage,
-.commentUserImage,
-.groupIcon {
-  width: 35px;
-  height: 35px;
-  border-radius: 30px;
+.profileIconPost, .postPImage, .commentUserImage, .groupIcon {
+  width: 90px !important;
+  height: 50px !important;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -1928,7 +1930,7 @@ ul.accourdionCourseBullot {
 
 h1.coreModuleH {
   color: #3D55A5 !important;
-  font-family: 'Lato' !important;
+  /* font-family: 'Lato' !important; */
   font-size: 25px !important;
   font-weight: bold!important;
   margin-bottom: 20px !important;
@@ -3885,12 +3887,72 @@ ul.tandcLink {
 }
 }
 
-
-
+hr.jobborder {
+  background: #000 !important;
+  color: #000 !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.des {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 900px;
+  word-wrap: break-word !important;
+  height: 70px;
+  color: #696969;
+  font-size: 12px !important;
+}
 /* small devic  */
 
 
 @media (max-width:768px){
+  p.heading {
+    padding: 0px 20px !important;
+}
+  .headerImageuesr {
+   
+    background-position: inherit !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  p.heading {
+    font-size: 20px;
+}
+h6.jobsearch {
+  font-size: 24px;
+  margin-bottom: 20px !important;
+ 
+}
+  .row.rowpadingsp {
+    display: none;
+}
+  .subscribeNow ul li {
+    display:contents !important;
+    width: 100% !important;
+    padding: 15px 25px !important;
+}
+.bannerHeadingjob h1 {
+  font-size: 40px !important;
+  /* font-family: 'Lato' !important; */
+  font-weight: 700 !important;
+  margin-bottom: 30px !important;
+}
+.subscribeNow {
+  width: 100% !important;
+  padding: 10px !important;
+}
+  h6.jobsearch {
+    margin-bottom: 0px;
+    margin-top: 40px !important;
+}
+  .wrappers.p_position {
+    margin-top: 30px !important;
+    bottom: 20px !important;
+}
+.col-lg-8.col-xl-8.rowpadresponshive {
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+}
   a.nav-item.nav-link.noti {
     border-radius: 50% !important;
     /* width: 60px; */
@@ -3950,7 +4012,42 @@ footer.footerSection {
 }
 
 .background1 {
-    padding-top: 30px!important;
+    padding-top: 210px!important;
+}
+.tags ul li a {
+  background-color: #3d55a5;
+  padding: 5px 10px;
+  color: #fff;
+  /* margin: 9px 0px !important; */
+  font-size: 18px;
+  border-radius: 5px;
+}
+button.btn.d-md-none.btn-primary.rounded.btnSidebar.fw-bold.mt-0.mb-0.mb-md-2.mb-lg-0.bg-lgrey.text-dark {
+  color: #fff !important;
+}
+.des {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 900px;
+  word-wrap: break-word !important;
+  height: 70px;
+  color: #696969;
+  font-size: 16px !important;
+}
+.commentbox {
+  padding: 17px 10px;
+  margin: 0px 0px !important;
+}
+.tags.job ul li a {
+  background-color: #3d55a5 !important;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+.loadBtn {
+  margin-bottom: 0px !important;
+  margin-top: 30px !important;
+  text-align: center;
 }
 }
 
@@ -4237,18 +4334,21 @@ ul.rankingList {
   font-size: 16px;
 }
 .daysAndDetails p {
-  font-weight: 700;
+  font-size: 12px !important;
+  font-weight: 600;
+  color: #454545;
+  margin-top: 20px !important;
+}
+.Apply {
+  /* width: 105px; */
+  font-size: 12px;
+  padding: 4px 19px;
 }
 .Apply {
   text-align: center;
-  background-color: #3d55a5;
+  background-color: #FFA845;
   border-radius: 5px;
-  color: #fff;
-}
-.Apply {
-  width: 105px;
-  font-size: 18px;
-  padding: 8px 19px;
+  color: #454545;
 }
 .login_btn 
 { 
@@ -4257,19 +4357,18 @@ background-color: #3d55a5;
   border: 1px solid;
   border-radius: 5px;
 }
-button#dropdown-basic i {
-  width: 600px !important;
-  border-radius: 50%;
-  background-color: #e6dfdf;
-  height: 45px;
-}
+
 button#dropdown-basic img {
-  width: 650px !important;
-  border-radius: 50%;
-  background-color: #e6dfdf;
-  height: 42px;
-  /* margin-left: -7%; */
-  margin-left: -45%;
+  width: 34px !important;
+    border-radius: 50%;
+    background-color: #e6dfdf;
+    height: 32px !important;
+ 
+}
+.dropdown {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 a.nav-item.nav-link.noti {
 
@@ -4282,11 +4381,14 @@ a.nav-item.nav-link.noti {
   display:none !important;
 }
 a.nav-item.nav-link.noti {
-  border-radius: 50% !important;
-  width: 50%;
-  padding: 10px !important;
-  margin: 0 !important;
-  background-color: transparent!important;
+  background-color: initial!important;
+  border-radius: 50%!important;
+  margin: 0!important;
+  padding: 7px 11px!important;
+  background-color: #3C3C3C !important;
+  width: 100%;
+  height: auto !important;
+  color: #fff !important;
 }
 input, input[type="text"], input[type="search"], isindex, textarea, button {
   outline: none;
@@ -4346,36 +4448,69 @@ button#dropdown-basic {
 button.btn.btn-primary.btnBSidebar.RefilterBtn.mt-3 {
   border-radius: 5px !important;
 }
-.css-1c1ao4h-MuiGrid-root {
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 75% !important;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
+
 p.MuiTypography-root.MuiTypography-body1.css-193rcbo-MuiTypography-root {
   text-align: center !important;
 }
 p.MuiTypography-root.MuiTypography-body1.px-2.px-lg-0.fs10-s.css-1e4icwu-MuiTypography-root {
   text-align: center;
 }
-.groupName p {
-  font-size: 16px;
-  white-space: nowrap;
+.des{
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 900px;
   word-wrap: break-word !important;
+  height: 70px;
+}
+.filterBody {
+  padding: 10px;
+}
+
+.filterArea {
+  margin-bottom: 10px;
+}
+button.btn.btn-primary.btnSidebar.filterBtn {
+  color: #fff !important;
+}
+input.form-control.selectOption.selected {
+ 
+  margin: 15px 0px !important;
+  height: 32px !important;
+  text-align: left;
+  background-color: #ececec;
+  font-size: 12px !important;
+  border-radius: 27px;
+  font-style: italic;
+}
+#submitButton {
+    color: #fff !important;
+    font-size: 16px !important;
+    background-color: #3D55A5 !important;
+    border-radius: 26px !important;
+    font-size: 16px !important;
+    width: auto;
+    padding: 8px 25px;
+    justify-content: center;
+    text-align: center;
+    margin: 0px 0px;
+    text-align: center;
+    justify-content: center;
+    /* display: flex; */
+    /* align-items: center; */
+}
+@media only screen and (min-width: 768px) {
+  .tags {
+    display: none;
+}
+}
+
+.groupName p {
+  font-size: 16px;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 900px;
+  word-wrap: break-word !important; */
   /* min-width: 3000px; */
 }
 header.bg-surface-primary.border-bottom.pt-6 {
@@ -4540,4 +4675,101 @@ p.mess {
   font-size: 18;
   color: green !important;
   font-size: 15px !important;
+}
+.button {
+  background-color: #3D55A5 !important;
+  border-radius: 26px !important;
+  font-size: 16px !important;
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  margin: 0px 50px;
+}
+.wrappers.p_position {
+  bottom: -56px;
+}
+h6.jobsearch {
+  font-size: 20px;
+  margin-top: 35px !important;
+  color: #454545 !important;
+}
+h3.text-black.jobhrad {
+  margin: 10px 22px;
+}
+select.form-control.selectOptionSidebar.job {
+  padding: 6px;
+  font-size: 12px;
+}
+
+
+.apply_box {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ccc0;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 15px;
+}
+.small{
+  font-size: 17px;
+}
+.form_container{
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+.form_control{
+  display: flex;
+  flex-direction: column;
+
+}
+label{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+input,select,textarea{
+  padding: 8px 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-size: 13px;
+}
+input:focus{
+  outline-color: rgb(210, 21, 147);
+}
+.button_container{
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+  padding: 5px;
+}
+button{
+  background-color: rgb(61 85 165);
+      border-radius: 5px;
+     
+      padding: 5px 10px;
+      color: whitesmoke;
+      padding: 10px;
+}
+button:hover{
+  background-color: rgb(15, 117, 225);
+  color: rgb(15, 14, 14);
+  cursor: pointer;
+}
+.textarea_control {
+  grid-column: 1 / span 2 ;
+  
+}
+.textarea_control textarea{
+  width: 100%;
+}
+form.stu input {
+  width: 100% !important;
+  text-align: left !important;
+}
+.apply_box h1 {
+  color: #3d55a5;
+  font-size: 25px;
 }

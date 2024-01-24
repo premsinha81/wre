@@ -34,10 +34,11 @@ import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 import EmailAPIGET from './component/user_profile/EmailAPIGET';
-import JobDetails from './component/JobDetails';
+import Studentapplicatin from './component/studentapplicatin';
 import Profile from './component/admin/Profile';
 import Homepage from './component/home';
 import Program from './component/Program';
+import JobDetails from './component/JobDetails';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -68,7 +69,7 @@ function App() {
     { !logged_token ? (
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path='/signup' element={<Signup />}/>
+      
       </Routes>
     ):(
       <Routes>
@@ -77,6 +78,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
         <Route path = "/User_post" element={<User_profile/>}/>
+        <Route path="/Studentapplicatin" element={<Studentapplicatin/>}/>
       </Routes>
     )}
       {/* <Routes>
@@ -93,7 +95,7 @@ function App() {
       </Routes> */}
       <Routes>
         <Route path="/EmailAPIGET" element={<EmailAPIGET />} />
-        
+        <Route path='/signup' element={<Signup />}/>
       </Routes>
       <Routes>
         <Route path="/program" element={<Program />} />
@@ -112,6 +114,10 @@ function App() {
         
       </Routes>
 
+      <Routes>
+        <Route path="/Profile" element={<Profile />} />
+        
+      </Routes>
       <Routes>
       <Route path = "/carrier" element={<Carrier/>}/>
       </Routes>
