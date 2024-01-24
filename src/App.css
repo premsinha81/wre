@@ -4728,7 +4728,7 @@ select.form-control.selectOptionSidebar.job {
 
 
 .apply_box {
-  max-width: 600px;
+  max-width: 800px;
   padding: 20px;
   background-color: #ccc0;
   margin: 0 auto;
@@ -4736,6 +4736,9 @@ select.form-control.selectOptionSidebar.job {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 15px;
+}
+.apply_box h1{
+  margin-bottom: 45px;
 }
 .small{
   font-size: 17px;
@@ -4745,6 +4748,10 @@ select.form-control.selectOptionSidebar.job {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 15px;
+}
+.apply_box  textarea{
+  height:60px;
+  resize:none;
 }
 .form_control{
   display: flex;
@@ -4761,9 +4768,7 @@ input,select,textarea{
   border-radius: 5px;
   font-size: 13px;
 }
-input:focus{
-  outline-color: rgb(210, 21, 147);
-}
+
 .button_container{
   display: flex;
   justify-content: end;
@@ -4794,6 +4799,9 @@ form.stu input {
   width: 100% !important;
   text-align: left !important;
 }
+.apply_box,.posRelative {
+  position: relative;
+}
 .apply_box h1 {
   color: #3d55a5;
   font-size: 25px;
@@ -4806,4 +4814,27 @@ button.btn.btn-primary.button.btnSearch {
 }
 a.btn.btn-primary.btnConselling {
   color: #fff !important;
+}
+.inputContainer {
+  height: 132px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.fileupload-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 0;
+}
+.apply_box .form_control{
+  margin: 10px 0!important;
+}
+.apply_box select{
+  height: 50px!important;
 }
