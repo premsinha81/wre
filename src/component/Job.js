@@ -307,7 +307,7 @@ return(
                         className="unfollow-btn1"
                         style={{ textAlign: "right" }}
                       >
-                       <a href='/Studentapplicatin' > <div className="Apply">Apply</div></a>
+                       <a href='/Studentapplication' > <div className="Apply">Apply</div></a>
                       </div>
                     </div>
                     <p className="mb-2">

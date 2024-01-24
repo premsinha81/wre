@@ -78,7 +78,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
         <Route path = "/User_post" element={<User_profile/>}/>
-        <Route path="/Studentapplication" element={<Studentapplication/>}/>
+       
       </Routes>
     )}
       {/* <Routes>
@@ -100,6 +100,8 @@ function App() {
       <Routes>
         <Route path="/program" element={<Program />} />
         
+      </Routes>
+      <Routes> <Route path="/Studentapplication" element={<Studentapplication/>}/>
       </Routes>
       <Routes>
         <Route path="/about" element={<About />} />
