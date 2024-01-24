@@ -1,6 +1,6 @@
 import React from 'react'
 
-const studentapplicatin = () => {
+const Studentapplication = () => {
   return (
     <div>
         <div class="container">
@@ -78,4 +78,4 @@ const studentapplicatin = () => {
   )
 }
 
-export default studentapplicatin
+export default Studentapplication

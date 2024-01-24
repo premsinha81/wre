@@ -4686,7 +4686,6 @@ p.mess {
   color: green !important;
   font-size: 15px !important;
 }
-<<<<<<< HEAD
 .successMsg{
   color:#215e10;
 }
@@ -4695,7 +4694,7 @@ p.mess {
 }
 .mainHeader{
   min-height: 100px;
-=======
+}
 .button {
   background-color: #3D55A5 !important;
   border-radius: 26px !important;
@@ -4792,5 +4791,4 @@ form.stu input {
 .apply_box h1 {
   color: #3d55a5;
   font-size: 25px;
->>>>>>> 4a70b468f1feec14b3e099552254ec948bde01f9
 }
