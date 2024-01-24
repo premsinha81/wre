@@ -176,7 +176,7 @@ function Header() {
                     </a> */}
                     <Dropdown>
                       <Dropdown.Toggle variant="" id="dropdown-basic">
-                        <img width="100%" src={img1} />
+                        <img width="100%" src={img1} /> <i className="	fa fa-caret-down"></i>
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
@@ -209,7 +209,7 @@ function Header() {
 
                     }
                      {islogin ?
-                      <ListItem className="btn-outline-primary btn-primary-outline
+                      <ListItem style={MenuStyle1} className="btn-outline-primary btn-primary-outline
 
 
 
