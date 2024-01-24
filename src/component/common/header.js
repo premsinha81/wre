@@ -14,8 +14,8 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 const Iconstyle = { width: 35, height: 35, borderRadius: "50%", border: 0, bgcolor: "#283b8b", color: "#fff", p: "5px" };
-const MenuStyle = { color: "#3d55a5",  fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
-const MenuStyle1 = { color: "#fff", bgcolor: "#283b8b", fontWeight: 600, backgroundColor: "#3d55a5", textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const MenuStyle = { color: "#3d55a5", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
+const MenuStyle1 = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, whiteSpace: " nowrap" }
 const Loginbtn = { color: "#fff", fontWeight: 600, textTransform: "uppercase", fontSize: 14, backgroundColor: "#3d55a5", borderRadius: "50rem", padding: "5px 24px" }
 
 function Header() {
@@ -62,6 +62,7 @@ function Header() {
     localStorage.removeItem('usr_name');
     localStorage.removeItem('usr_id');
     localStorage.removeItem('usr_email');
+
     // Update the authentication state to indicate that the user is logged out
     setIsLoggedin(false);
     setislogin('login');

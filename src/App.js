@@ -34,11 +34,11 @@ import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
 import EmailAPIGET from './component/user_profile/EmailAPIGET';
-import Studentapplicatin from './component/studentapplicatin';
 import Profile from './component/admin/Profile';
 import Homepage from './component/home';
 import Program from './component/Program';
 import JobDetails from './component/JobDetails';
+import Studentapplication from './component/Studentapplication';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -78,7 +78,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
         <Route path = "/User_post" element={<User_profile/>}/>
-        <Route path="/Studentapplicatin" element={<Studentapplicatin/>}/>
+        <Route path="/Studentapplication" element={<Studentapplication/>}/>
       </Routes>
     )}
       {/* <Routes>
