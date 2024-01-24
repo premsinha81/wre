@@ -1330,6 +1330,9 @@ h1.subscribeTitle {
   border: none;
   background: #fff;
   padding: 5px 10px;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
 }
 
 .inputField input::placeholder {
@@ -3955,7 +3958,8 @@ footer.footerSection {
 }
 
 .btnConselling {
-    border-radius: 0 0 20px 20px!important;
+    border-radius: 0 0 5px 5px!important;
+    color:#fff!important;
 }
 
 .rightSection .searchBox ul li img {
@@ -4387,7 +4391,7 @@ width: 1220px !important;
 .slider .searchPanel input[type="text"] {
   border-radius: 26px;
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 25px 45px;
   font-weight: 500;
   width: 500px !important;
 }
@@ -4540,4 +4544,19 @@ width: 1220px !important;
 }
 .btn-outline-primary:hover,.btn-primary-outline a:hover{
   color:#fff!important;
+}
+p.mess {
+  text-align: center;
+  font-size: 18;
+  color: green !important;
+  font-size: 15px !important;
+}
+.successMsg{
+  color:#215e10;
+}
+.errorMsg{
+  color:#ae0d0d;
+}
+.mainHeader{
+  min-height: 100px;
 }

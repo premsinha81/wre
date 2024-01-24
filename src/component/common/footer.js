@@ -72,8 +72,8 @@ const Jobbtn = async (e) => {
              
                     
           </ul>
-       <p class="mess">   {showSuccessMessage && <div>{showSuccessMessage}</div>}
-    {errorMessage && <div>{errorMessage}</div>}</p>
+       <p className="mess successMsg">   {showSuccessMessage && <div>{showSuccessMessage}</div>}
+    {errorMessage && <div className='successMsg'>{errorMessage}</div>}</p>
 
         </div>
         <div class="container">

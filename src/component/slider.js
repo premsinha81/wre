@@ -207,6 +207,7 @@ function Slider() {
                     type="text"
                     labal="SEARCH FOR A TRADE"
                     className="p-0 w-100"
+                    placeholder="Search Program"
                   />
                 )}
               />

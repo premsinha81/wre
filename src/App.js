@@ -33,6 +33,7 @@ import Index from './component/Home/Index';
 import User_profile from './component/user_profile/Index';
 import Carrier from './component/Carrier'
 import Loading from './Context/Loading';
+import EmailAPIGET from './component/user_profile/EmailAPIGET';
 import JobDetails from './component/JobDetails';
 import Profile from './component/admin/Profile';
 import Homepage from './component/home';
@@ -90,6 +91,10 @@ function App() {
       <Routes>
       <Route path = "/Jobpostform" element={<Jobpostform/>}/>
       </Routes> */}
+      <Routes>
+        <Route path="/EmailAPIGET" element={<EmailAPIGET />} />
+        
+      </Routes>
       <Routes>
         <Route path="/program" element={<Program />} />
         
