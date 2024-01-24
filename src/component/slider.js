@@ -192,7 +192,7 @@ function Slider() {
           <div className="container posRelative search_engine">
             <div className="searchPanel">
             <h2 className="text-white"> Search for a School or Program</h2>
-              <div className="position-relative">
+              <div className="position-relative program">
               
               <Autocomplete
                 id="combo-box-demo"

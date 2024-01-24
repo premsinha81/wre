@@ -3906,6 +3906,12 @@ hr.jobborder {
 
 
 @media (max-width:768px){
+  .profileIconPost, .postPImage, .commentUserImage, .groupIcon {
+    width: 260px !important;
+    height: 50px !important;
+    border-radius: 5px;
+    overflow: hidden;
+}
   p.heading {
     padding: 0px 20px !important;
 }
@@ -4772,4 +4778,13 @@ form.stu input {
 .apply_box h1 {
   color: #3d55a5;
   font-size: 25px;
+}
+.position-relative.program {
+  padding: 0px 52px;
+}
+button.btn.btn-primary.button.btnSearch {
+  width: 40px;
+}
+a.btn.btn-primary.btnConselling {
+  color: #fff !important;
 }
