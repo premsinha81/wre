@@ -39,6 +39,7 @@ import Homepage from './component/home';
 import Program from './component/Program';
 import JobDetails from './component/JobDetails';
 import Studentapplication from './component/Studentapplication';
+import Student from './component/student/index.jsx';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -117,7 +118,7 @@ function App() {
       </Routes>
 
       <Routes>
-        <Route path="/Profile" element={<Profile />} />
+        <Route path="/student-admin" element={<Student />} />
         
       </Routes>
       <Routes>
