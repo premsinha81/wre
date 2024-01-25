@@ -4387,9 +4387,7 @@ a.nav-item.nav-link.noti {
   background-color: #fff1f1;
   width: 50%;
 }
-.navbar .dropdown-toggle::after {
-  display:none !important;
-}
+
 a.nav-item.nav-link.noti {
   background-color: initial!important;
   border-radius: 50%!important;

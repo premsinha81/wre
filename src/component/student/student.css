@@ -11,9 +11,7 @@ body {
 .fade:not(.show) {
     opacity: 0.9;
 }
-nav#mainHeader {
-    display: none;
-}
+
 .dropdown-toggle {
     vertical-align: middle;
     line-height: normal !important;

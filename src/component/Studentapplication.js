@@ -1,6 +1,43 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Studentapplication = () => {
+    const navigate = useNavigate();
+
+    const [user_id, setUser_id] = useState("1");
+    const [job_titile, setJob_titile] = useState("");
+    const [job_company, setJob_company] = useState("");
+    const [job_workplace_type, setJob_workplace_type] = useState("");
+    const [job_location, setJob_location] = useState("");
+    const [job_description, setJob_description] = useState("");
+    const [job_hear_about, setJob_hear_about] = useState("");
+    const [job_skill1, setJob_skill1] = useState("");
+    const [job_skill2, setJob_skill2] = useState("");
+    const [job_type, setJob_type] = useState("");
+    
+  
+    const Jobbtn = async (e) => {
+      e.preventDefault();
+      let jobData = { user_id, job_titile, job_company, job_workplace_type, job_location, job_description, job_hear_about, job_type };
+  
+      const res = await fetch("https://admin.allnuud.com/api/job_post", {
+        method: 'POST',
+        body: JSON.stringify(jobData),
+        headers: {
+          "Content-Type": 'application/json',
+          "Accept": 'application/json'
+        }
+      })
+      const data = await res.json();
+      console.log(data);
+      if (data.status === 'Success') {
+        window.alert("Job Form Successfully");
+        console.log("Job Form Successfully");
+        navigate("/showdata");
+      } else {
+        window.alert("Invalid Registration");
+        console.log("Invalid Registration");
+      }
+    }
     return (
         <div>
             <div class="container">
