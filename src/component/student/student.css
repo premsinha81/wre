@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
 
-/* Color Variables */
-/* #eff3f6 */
-/* Styles */
-body {
-  background: #e3e5e6;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
-}
+
 .fade:not(.show) {
     opacity: 0.9;
 }
