@@ -1,64 +1,73 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useState} from 'react';
+import axios from 'axios';
+// import { useNavigate } from "react-router-dom";
 const Studentapplication = () => {
-    const navigate = useNavigate();
-
-    const [user_id, setUser_id] = useState("1");
-    const [job_titile, setJob_titile] = useState("");
-    const [job_company, setJob_company] = useState("");
-    const [job_workplace_type, setJob_workplace_type] = useState("");
-    const [job_location, setJob_location] = useState("");
-    const [job_description, setJob_description] = useState("");
-    const [job_hear_about, setJob_hear_about] = useState("");
-    const [job_skill1, setJob_skill1] = useState("");
-    const [job_skill2, setJob_skill2] = useState("");
-    const [job_type, setJob_type] = useState("");
-    
-  
-    const Jobbtn = async (e) => {
-      e.preventDefault();
-      let jobData = { user_id, job_titile, job_company, job_workplace_type, job_location, job_description, job_hear_about, job_type };
-  
-      const res = await fetch("https://admin.allnuud.com/api/job_post", {
-        method: 'POST',
-        body: JSON.stringify(jobData),
-        headers: {
-          "Content-Type": 'application/json',
-          "Accept": 'application/json'
-        }
-      })
-      const data = await res.json();
-      console.log(data);
-      if (data.status === 'Success') {
-        window.alert("Job Form Successfully");
-        console.log("Job Form Successfully");
-        navigate("/showdata");
-      } else {
-        window.alert("Invalid Registration");
-        console.log("Invalid Registration");
+   
+      const [name, setName] = useState('');
+      const [dob, setDob] = useState('');
+      const [email, setEmail] = useState('');
+      const [mobile, setMobile] = useState('');
+      const [job_role, setJob_role] = useState('');
+      const [job_exp, setJob_exp] = useState('');
+      const [address, setAddress] = useState('');
+      const [city, setCity] = useState('');
+      const [pincode, setPincode] = useState('');
+      const [cv, setCv] = useState('');
+      function handleChange(e) {
+        setCv(e.target.files[0]);
       }
-    }
+    console.log(cv)
+      
+      function handleSubmit(e) {
+        e.preventDefault();
+        const url = 'https://admin.allnuud.com/api/job_application';
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('dob', dob);
+        formData.append('email', email);
+        formData.append('mobile', mobile);
+        formData.append('job_role', job_role);
+        formData.append('job_exp', job_exp);
+        formData.append('address', address);
+        formData.append('city', city);
+        formData.append('pincode', pincode);
+        formData.append('cv', cv);
+        const config = {
+          headers: {
+            'content-type': 'multipart/form-data',
+          },
+        };
+        axios.post(url, formData, config)
+          .then((response) => {
+            console.log(response.data);
+            console.log(response.data.file);
+          })
+          .catch((error) => {
+            console.error("Error uploading file: ", error);
+            console.log(error);
+          });
+      }
     return (
         <div>
             <div class="container">
                 <div class="apply_box">
                     <h1>Job Application Form</h1>
 
-                    <form className='stu'>
+                    <form className='stu' onSubmit={handleSubmit}>
                         <div className='row'>
                             <div className='col-lg-12'>
-                                <div class="form_control">
-                                    <input id="first name" placeholder="Enter Full Name" required />
+                                <div class="form_controluu">
+                                    <input  type="text" value={name} name="name" onChange={(e)=>{setName(e.target.value)}}  />
                                 </div>
                             </div>
                             <div className='col-lg-12'>
                                 <div class="form_control">
-                                    <input id="first name" placeholder="Enter Email" required />
+                                    <input id="first name" placeholder="Enter Email" name="email"  value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                                 </div>
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <input type='password' placeholder='Enter Password' required />
+                                <input type='password' placeholder='Enter Password'  required />
                                 </div>
                             </div>
                             <div className='col-lg-6'>
@@ -68,46 +77,42 @@ const Studentapplication = () => {
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <input value="2023-02-15" type="date" id=" date" placeholder="Enter Date of Birth" />
+                                <input  type="date" id=" date"  value={dob} name="dob" onChange={(e)=>{setDob(e.target.value)}} placeholder="Enter Date of Birth" />
                                 </div>
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <input type="text" id="mobNum" placeholder="Mobile No" required />
+                                <input type="text" id="mobNum" value={mobile} name="mobile" onChange={(e)=>{setMobile(e.target.value)}} placeholder="Mobile No" required />
                                 </div>
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <select id="job" placeholder='Enter Job Role'>
+                            <input type="text" id="mobNum" value={job_role} name="job_role" onChange={(e)=>{setJob_role(e.target.value)}} placeholder="job_role" required />
+                         
+                                {/* <select id="job" placeholder='Enter Job Role'>
                                     <option value="">Select Job Role</option>
                                     <option value="">Fronted Devloper</option>
                                     <option value="">Backend Devloper</option>
                                     <option value="">Full stack Devloper</option>
                                     <option value="">UI IX Designer</option>
-                                </select>
+                                </select> */}
                                 </div>
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <select id="job" placeholder='Working Experience'>
-                                    <option value="">Working Experience</option>
-                                    <option value="">01 Year</option>
-                                    <option value="">02 Year</option>
-                                    <option value="">03 Year</option>
-                                    <option value="">04 Year</option>
-                                </select>
+                            <input type="text" id="mobNum" value={job_exp} name="job_exp" onChange={(e)=>{setJob_exp(e.target.value)}} placeholder="job_exp" required />
+                         
                             </div>
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <textarea id="address" name="address" row="2" className='form-control' placeholder="Enter Address"></textarea>
+                                <textarea id="address" name="address" value={address} onChange={(e)=>{setAddress(e.target.value)}}  row="2" className='form-control' placeholder="Enter Address"></textarea>
                                 </div>
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <input name="city" placeholder="Enter city name" />
+                                <input name="city" value={city} onChange={(e)=>{setCity(e.target.value)}} placeholder="Enter city name" />
                                 </div>
-
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
@@ -168,7 +173,7 @@ const Studentapplication = () => {
                             </div>
                             <div className='col-lg-6'>
                             <div class="form_control">
-                                <input name="city" placeholder="Enter ZipCode" />
+                                <input name="pincode" value={pincode} onChange={(e)=>{setPincode(e.target.value)}}  placeholder="Enter ZipCode" />
 </div>
                             </div>
                             <div className='col-lg-12'>
@@ -180,14 +185,14 @@ const Studentapplication = () => {
                             <div className='col-lg-12'>
                             <div class="form_control">
                                 <label for="Upload">Upload Your CV</label>
-                                <input className='form-control' type="file" id="upload" name="upload" placeholder='Upload CV' />
+                                <input type="file"  name="cv" onChange={handleChange} className='form-control'  id="upload"  placeholder='Upload CV' />
                                 </div>
                             </div>
                             <div className='clearfix'></div>
                            
                         </div>
                         <div class="button_container">
-                            <button type="submit" className='btn btn-primary'>Apply Now</button>
+                            <button type="submit"  className='btn btn-primary'>Apply Now</button>
                         </div>
                     </form>
                 </div>
