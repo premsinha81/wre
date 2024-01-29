@@ -4836,3 +4836,7 @@ a.btn.btn-primary.btnConselling {
 .apply_box select{
   height: 50px!important;
 }
+p.sucress {
+  text-align: right;
+  color: #0e8f07;
+}

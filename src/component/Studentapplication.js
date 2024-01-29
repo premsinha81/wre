@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import axios from 'axios';
 // import { useNavigate } from "react-router-dom";
 const Studentapplication = () => {
-   
+    const [successMessage, setSuccessMessage] = useState(null);
+
       const [name, setName] = useState('');
       const [dob, setDob] = useState('');
       const [email, setEmail] = useState('');
@@ -40,12 +41,15 @@ const Studentapplication = () => {
         axios.post(url, formData, config)
           .then((response) => {
             console.log(response.data);
+            setSuccessMessage('Application Submitted');
             console.log(response.data.file);
           })
           .catch((error) => {
             console.error("Error uploading file: ", error);
             console.log(error);
           });
+        
+         
       }
     return (
         <div>
@@ -193,7 +197,9 @@ const Studentapplication = () => {
                         </div>
                         <div class="button_container">
                             <button type="submit"  className='btn btn-primary'>Apply Now</button>
+                           
                         </div>
+                        {successMessage && <p className='sucress'>{successMessage}</p>}
                     </form>
                 </div>
             </div>
