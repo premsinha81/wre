@@ -1,10 +1,12 @@
 
 import { slice } from 'lodash'
 import Imagesection2 from '../Image/1556727.png';
+import React, { useEffect, useState } from 'react';
 import imgv from '../Image/hian-oliveira-1417174-unsplash.png';
 import LeftTabsExample from "./tabs"
+
 import Resources from "./resources";
-import { React, useState, useEffect } from "react";
+
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useParams } from 'react-router-dom';
@@ -14,6 +16,11 @@ import Jobsfillters from './Jobsfillters'
 // Import Swiper styles
 import 'swiper/css';
 function Job() {
+  const [jobLocations, setJobLocations] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [jobtype, setJobtype] =useState([]);
+  const [selectedJobtype, setSelectedJobtype] = useState('');
+
     const [post, setPost] = useState([])
   const [isCompleted, setIsCompleted] = useState(false)
   const [index, setIndex] = useState(2)
@@ -38,6 +45,42 @@ function Job() {
   }, [])
 
 console.log(post);
+useEffect(() => {
+  const fetchJobLocations = async () => {
+    try {
+      const response = await fetch('https://admin.allnuud.com/api/job_location');
+      const data = await response.json();
+      setJobLocations(data.data || []); // Assuming the array is in a property called "data"
+    } catch (error) {
+      console.error('Error fetching job locations:', error);
+    }
+  };
+
+  fetchJobLocations();
+}, []); // Empty dependency array ensures the effect runs only once when the component mounts
+
+const handleSelectChange = (event) => {
+  setSelectedLocation(event.target.value);
+};
+console.log("riya", jobLocations);
+useEffect(() => {
+  const fetchJobtype = async () => {
+    try {
+      const response = await fetch('https://admin.allnuud.com/api/job_company');
+      const data = await response.json();
+      setJobtype(data.data || []); // Assuming the array is in a property called "data"
+    } catch (error) {
+      console.error('Error fetching job Type:', error);
+    }
+  };
+
+  fetchJobtype();
+}, []); // Empty dependency array ensures the effect runs only once when the component mounts
+
+const handleSelectChangejobtype = (event) => {
+  setJobtype(event.target.value);
+};
+console.log("riya", jobtype);
    return (
       <div>
  
@@ -68,28 +111,25 @@ console.log(post);
                     </input>
                   </div>
                   <div className="form-group">
-                    <select
-                      name="programs"
-                      id=""
-                      className="form-control selectOption"
-                    >
-                      <option value="">-  Location  -</option>
-                      <option value="">Degree 1</option>
-                      <option value="">Degree 2</option>
-                      <option value="">Degree 3</option>
-                    </select>
+                  <select  className="form-control selectOption" id="jobLocations" value={selectedLocation} onChange={handleSelectChange}>
+        <option value="">- location -</option>
+        {jobLocations.map((location, index) => (
+          <option key={index} value={location}>
+            {location}
+          </option>
+        ))}
+      </select>
+                     
                   </div>
                   <div className="form-group">
-                    <select
-                      name="programs"
-                      id=""
-                      className="form-control selectOption"
-                    >
-                      <option value="">- Job Type -</option>
-                      <option value="">Program 1</option>
-                      <option value="">Program 2</option>
-                      <option value="">Program 3</option>
-                    </select>
+                  <select  className="form-control selectOption" id="jobtype" value={selectedJobtype} onChange={handleSelectChangejobtype}>
+        <option value="">- Job Type -</option>
+        {jobtype.map((jobtypes, index) => (
+          <option key={index} value={jobtypes}>
+            {jobtypes}
+          </option>
+        ))}
+      </select>
                   </div>
                  
                 <center>  <button
