@@ -44,10 +44,16 @@ const Dashboard = () => {
               </a>
             </li>
             <li className="nav-item1 ">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/Jobapplicationform">
+                <i className="bi bi-box-arrow-left" /> Job Application 
+              </a>
+            </li>
+            <li className="nav-item1 ">
+              <a className="nav-link" href="/Jobapplicationform">
                 <i className="bi bi-box-arrow-left" /> Logout
               </a>
             </li>
+           
        
           </ul>
           {/* Divider */}

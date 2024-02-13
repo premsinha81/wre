@@ -4840,3 +4840,12 @@ p.sucress {
   text-align: right;
   color: #0e8f07;
 }
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+  display: none !important;
+}

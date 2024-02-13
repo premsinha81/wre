@@ -40,6 +40,7 @@ import Program from './component/Program';
 import JobDetails from './component/JobDetails';
 import Studentapplication from './component/Studentapplication';
 import Student from './component/student/index.jsx';
+import Jobapplicationform from './component/admin/Jobapplicationform.js';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -79,7 +80,7 @@ function App() {
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
         <Route path = "/Jobpostform" element={<Jobpostform/>}/>
         <Route path = "/User_post" element={<User_profile/>}/>
-       
+        <Route path = "/Jobapplicationform" element={<Jobapplicationform/>}/>
       </Routes>
     )}
       {/* <Routes>
@@ -91,9 +92,9 @@ function App() {
       <Routes>
       <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
       </Routes>
-      <Routes>
-      <Route path = "/Jobpostform" element={<Jobpostform/>}/>
-      </Routes> */}
+      // <Routes>
+      // <Route path = "/Jobpostform" element={<Jobpostform/>}/>
+      // </Routes> */}
       <Routes>
         <Route path="/EmailAPIGET" element={<EmailAPIGET />} />
         <Route path='/signup' element={<Signup />}/>
