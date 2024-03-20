@@ -154,15 +154,12 @@ button.btn.btn-primary.btnSidebar2 {
     overflow-x: hidden;
 }
 }
-.postSection{
-    padding-top: 130px !important;
-    margin-top:-110px!important;
-}
+
 button.ps-5.ms-2.py-2.bg-gray.border-0 {
     background: #ececec;
 }
    .rounded-2 {
-    border-radius: 15px !important;
+    border-radius: 10px !important;
 }
      /* Profile image header */
      .avatar-upload {
@@ -260,7 +257,7 @@ position: absolute;
 
 #m-btns {
   position: absolute;
-  right: 56px;
+  right: 100px;
   bottom: 20px;
   width: 211px;
 }

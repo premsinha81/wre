@@ -108,7 +108,7 @@ const ChatPost = ({ img, mb,onclicked }) => {
       {
         postdata.map((data) => {
 
-          const { id, post, user_id, comments } = data; // add : id, user_id (Akash Dubey)
+          const { id, content,  user_id, comments, user, created_at } = data; // add : id, user_id (Akash Dubey)
           return (
             <Grid container sx={{ p: 2, bgcolor: "#fff" }} className="rounded rounded-2 mb-3 priyanka" key={id}>
               <Grid item sm={1} xs={2}>
@@ -125,7 +125,7 @@ const ChatPost = ({ img, mb,onclicked }) => {
                         className="fs10-s"
                         sx={{ fontSize: { lg: "16px", xs: "14px" }, color: "#3C3C3C", fontWeight: 500 }}
                       >
-                       <Typography sx={{ color: "#3C3C3C", fontSize: "20px", fontWeight: "600", mb: { lg: 1, xs: 0 } }}> {userName}</Typography>
+                       <Typography sx={{ color: "#3C3C3C", fontSize: "20px", fontWeight: "600", mb: { lg: 1, xs: 0 } }}> { user.name}</Typography>
                       </Typography>
                       <Typography className="fs9-s" sx={{ fontSize: { lg: "14px", xs: "10px" }, color: "#3C3C3C" }}>
                         {/* {userEmail} */}
@@ -141,7 +141,7 @@ const ChatPost = ({ img, mb,onclicked }) => {
                           sx={{ display: "list-item", listStyle: "disc" }}
                         >
                           <Typography className="fs8-s ps-0" sx={{ fontSize: { lg: "14px", xs: "10px" }, color: "#3C3C3C" }}>
-                            12th May 2020
+                         {created_at}
                           </Typography>
                         </ListItem>
                       </List>
@@ -180,7 +180,7 @@ const ChatPost = ({ img, mb,onclicked }) => {
                 <Box>
                   <Typography sx={{ color: "#3C3C3C", fontSize: "20px", fontWeight: "500", mb: { lg: 1, xs: 0 } }}>
 
-                    Welding Classes In Jersey
+                   {/* {userName} */}
                   </Typography>
                   <Grid item xs={12} >
 
@@ -209,7 +209,8 @@ const ChatPost = ({ img, mb,onclicked }) => {
 </MDBCarousel> */}
                   
                 </Grid>
-                  <p style={{ color: "#3C3C3C", fontSize: { lg: "14px", xs: "12px" } }} dangerouslySetInnerHTML={{ __html: post }}></p>
+                  <p style={{ color: "#3C3C3C", fontSize: { lg: "14px", xs: "12px" } }} dangerouslySetInnerHTML={{ __html:content }}></p>
+                 
                   <Typography
                     sx={{ color: "#3D55A5", fontSize: "14px", mt: 1, pb: 1, borderBottom: "1px solid #3D55A5" }}>
                     Idea | Welding

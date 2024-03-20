@@ -379,7 +379,7 @@ function Job() {
                     <div className="row commentbox mt-4" key={indexke}>
                       <div className="col-sm-12 col-md-12 mt-4">
                         <div className="d-flex gap-5">
-                          <div className="groupIcon">
+                          <div className="groupIcon jobimg">
                             <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
                           </div>
                           <div className="groupName">

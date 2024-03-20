@@ -1,6 +1,6 @@
 import React from 'react';
 import Resources from "./resources";
-import Popup from './Popup';
+
 import { ReactComponent as YourIcon } from '../icon.svg';
 import {ReactComponent as YourIconG} from './iconG.svg';
 const OnlineCounselling = () => {
@@ -26,14 +26,14 @@ const OnlineCounselling = () => {
                     <div className="col-lg-12 col-xl-12 ">
                         <div className="border1">
                             <div className="onlinecousectin">
-                                <div className="row">
+                                <div className="main-box-futer">
                                     
-                                    <div className="col-md-2 offset-4">
+                                    <div className="iam-design ">
                                         <div className='futurecolor'>
                                         <h1>I am a future</h1>
                                         </div>
                                     </div>
-                                    <div className="col-md-2">
+                                    <div className="futer">
                                         <div className="futureBox">
                                             <select name="programs" id="" className=" programTitle1">
                                                 <option value="">Electrician </option>
@@ -43,9 +43,7 @@ const OnlineCounselling = () => {
                                         </div>
 
                                     </div>
-                                    <div className="col-md-2">
-
-                                    </div>
+                                  
                                 </div>
                             </div>
                             <div className="onlinecousectinp">
@@ -345,7 +343,7 @@ const OnlineCounselling = () => {
                 
 
             </div>
-            <Popup></Popup>
+          
         </div>
         
     )

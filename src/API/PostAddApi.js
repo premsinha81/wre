@@ -23,7 +23,26 @@ export const addPostData = ()=>{
 
     var id = localStorage.getItem("usr_id")
 
-     let data= axios.get(`https://admin.allnuud.com/api/userpost/show_by_user/${id}`)
+    //  let data= axios.get(`https://admin.allnuud.com/api/userpost/show_by_user/${id}`)
+     let data= axios.get(`https://admin.allnuud.com/api/userpost/list`)
+    .then((res)=>{
+        return res
+    })
+    .catch((error)=>{
+       
+        console.log("get post api error" , error);
+        
+    })
+    if(data){
+        return data
+    }
+    
+}
+export const addprofiledata = ()=>{
+
+    var id = localStorage.getItem("usr_id")
+
+      let data= axios.get(`https://admin.allnuud.com/api/userpost/show_by_user/${id}`)
     //  let data= axios.get(`https://admin.allnuud.com/api/userpost/list`)
     .then((res)=>{
         return res

@@ -1,6 +1,8 @@
 import React from 'react'
 import Jobpostform from '../../Jobpostform';
 const jobpost = () => {
+
+
   return (
     <div>
 

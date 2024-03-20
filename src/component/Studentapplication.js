@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 // import { useNavigate } from "react-router-dom";
 const Studentapplication = () => {
-    const [successMessage, setSuccessMessage] = useState(null);
-
+    const [successMessage, setSuccessMessage] = useState('');
       const [name, setName] = useState('');
       const [dob, setDob] = useState('');
       const [email, setEmail] = useState('');

@@ -271,7 +271,7 @@ button.ps-5.ms-2.py-2.bg-gray.border-0 {
   font-family: 'FontAwesome';
   color: #757575;
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 0;
   right: 0;
   text-align: center;
@@ -312,7 +312,7 @@ button.ps-5.ms-2.py-2.bg-gray.border-0 {
 
 #profile-banner-image img {
   width: 100%;
-  margin-top: -20%;
+ 
 }
 
 #profile-pic {
@@ -339,7 +339,7 @@ position: absolute;
 
 #m-btns {
   position: absolute;
-  right: 56px;
+  right: 100px;
   bottom: 20px;
   width: 211px;
 }
@@ -514,6 +514,81 @@ button.btn.btn-primary.btnSidebar2.filterBtn span {
 }
 }
 @media  (max-width:768px){
+    /* .MuiBox-root.css-0 {
+    width: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px !important;
+}
+ */
+    .cusmy {
+        width: calc(44.2% - 2px) !important;
+        margin: 5px !important;
+        padding: 5px !important;
+    }
+   
+    .css-1e1e9zn-MuiButtonBase-root-MuiButton-root {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        vertical-align: middle;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        color: inherit;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        font-size: 0.8125rem;
+        line-height: 1.75;
+        letter-spacing: 0.02857em;
+        text-transform: uppercase;
+        min-width: 104px;
+        padding: 4px 5px;
+        border-radius: 4px;
+        -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        color: #1976d2;
+        font-weight: 100;
+        opacity: .92;
+        background-color: #3C3C3C;
+        color: #FFFFFF;
+    }
+    .futureBox {
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+    } 
+    .main-box-futer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .futurecolor h1 {
+        text-align: left !important;
+        font-size: 30px !important;
+    }
     /* .banner .fs-5{
         font-size: 10px !important;
     }

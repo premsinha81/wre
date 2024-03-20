@@ -27,7 +27,8 @@ export default function Login() {
             localStorage.setItem('usr_id',data.user.id);
             localStorage.setItem('usr_email',data.user.email);
             localStorage.setItem('token',data.token);
-            navigate("/");
+            window.location.reload();
+            navigate("/home");
 
         } else if (data.status === "failed") {
             window.alert("Username and Password Incorrect");
@@ -66,7 +67,9 @@ export default function Login() {
                                         <p className="h11">OR</p>
                                     </div>
                                     <div className="input-box">
-                                        <small>New User</small> <input type="submit" name="submitButton"  className="btn btn-outline-primary" id="submitButton2" value="Sign Up" />
+                                        <small>New User</small> <div className="input-box">
+                                        <a href="/signup">   <button type="submit" className="submitButtons"  >Sign Up</button></a> 
+                                        </div> 
                                     </div>
                                     
                                 </div>

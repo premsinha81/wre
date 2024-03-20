@@ -1,13 +1,51 @@
-import React from 'react';
 import profile from '../img/profile2.jpg';
+import { Avatar, Box, Button, Grid, InputBase, Stack, Typography,ListItem  } from '@mui/material'
 import Profilep from '../img/profile.jpg';
 import Img1 from '../img/css-gradient.webp';
 import background from '../img/profile1.jpg';
+import ChatProfile from './Home/PostPages/ChatProfile'
+import AddPost from "./Home/PostPages/AddPost";
 import  './Responshive.css';
-const UserProfileposts = () => {
-  return (
-    <div class="body1">   
+import PostProfile from './Home/PostPages/PostProfile';
+import CusButton from './Home/PostPages/CusButton2'
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import PostTimer from './Home/PostPages/PostTimer';
+import Dropdown from 'react-bootstrap/Dropdown';
+import React, { useState, useEffect } from 'react';
+import { Home } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
+const UserProfileposts = ({onClick, onclick}) => {
+  const [timer , setTimer]=useState(false)
+
+  const userName = localStorage.getItem("usr_name")
+
+  const [profileData, setProfileData] = useState(null);
+  const navigate = useNavigate();
+  const [addpost, setAddPost] = useState(false);
+  const Id = localStorage.getItem("usr_id")
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await fetch(`https://admin.allnuud.com/api/profile/${Id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch profile data');
+        }
+        const data = await response.json();
+        setProfileData(data.data);
+      } catch (error) {
+        console.error(error);
+        // Handle error (e.g., show error message to the user)
+      }
+    };
+
+    fetchProfileData();
+  }, [Id]);
+  console.log("shiv", profileData);
+  return (
+    <>
+    {profileData ? (
+    <div class="body1">   
 <section className="mb-2">
           <div className="overflow">
             <div id="profile-upper">
@@ -22,15 +60,17 @@ const UserProfileposts = () => {
                       <label htmlFor="imageUpload" />
                     </div>
                     <div className="avatar-preview">
-                      <div id="imagePreview" style={{backgroundImage: `url(${background})`}}>
+                      <div id="imagePreview" style={{backgroundImage: `url(${profileData.image_path})`}}>
                       </div>
                     </div>
                   </div>
                 </div>
+              
                 <div id="u-name" className="row">
-                  <span>Prem Sinha</span>
-                  <div className="ptop">@homeowner12<ul><li>Joined 2022</li></ul></div>
+                  <span>{profileData.name}</span>
+                  <div className="ptop">{profileData.email}<ul><li>{profileData.joined}</li></ul></div>
                 </div>
+                
                 <div className="tb image-upload" id="m-btns">
                   <div className="filterArea  ">
                     <button type="button" className=" btn btn-primary btnSidebar1 filterBtn position-relative bg-dark ">
@@ -48,6 +88,7 @@ const UserProfileposts = () => {
         </section>
         <div className="container">
           <div className="row justify-content-end">
+          <div className="col-md-2"></div>
             <div className="col-md-8">
               <div className="postAccessoryIcons ">
                 <ul className="ps-0">
@@ -55,25 +96,38 @@ const UserProfileposts = () => {
                   <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn">268 <br /><span>Followers</span></button></li>
                   <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn ">1,999<br /><span>Following</span></button></li>
                   <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn">695 <br /><span>Communities</span></button></li>
-                  <li><button type="button" className=" fs-2 custom-btn border-0"><i className=" fa fa-angle-down   " /></button></li>
-                </ul>
+                   </ul>
               </div>
+            </div>
+            <div className='col-md-2'>
+              <ul className='margen'> 
+              <li className='dawn-left'><button type="button" className=" fs-2 custom-btn border-0">
+                <ListItem>
+                    {/* <a href="/dashboard" style={MenuStyle}>
+                      Hello {localStorage.getItem("usr_name")}
+                    </a> */}
+                    <Dropdown >
+                      <Dropdown.Toggle variant="" id="dropdown-basic ">
+                      <i className=" fa fa-angle-down" />
+               </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                      
+                        <Dropdown.Item href="/UserProfileposts">Unfollow </Dropdown.Item>
+                        <Dropdown.Item href="/Loginandsecurity"> Block</Dropdown.Item>
+                        <Dropdown.Item href="/Needhelp">Report</Dropdown.Item>
+                            </Dropdown.Menu>
+                    </Dropdown>
+                  </ListItem>
+                </button></li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="postSection">
+       <br></br>     <br></br> 
+        <div className="postSection mt-4">
           <div className="container">
-            <div className="row justify-content-end">
-              <div className="col-md-8">
-                <div className="postAccessoryIcons postAccessoryIcons1">
-                  <ul className="ps-0">
-                    <li className="active">POSTS</li>
-                    <li>COMMENTS</li>
-                    <li>COMMUNITIES</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+           
             <div className="row">
               <div className="col-lg-4">
                 <div className="sideBarSearchProgram mt-0">
@@ -84,7 +138,8 @@ const UserProfileposts = () => {
                           <div className="groupSection2">
                             <div className="groupName">
                               <h3 className="gName">About</h3>
-                              <p className="groupFollowers1">An associate degree in healthcare is a two-year degree that students may complete on campus, online, or in a combination of on-campus and online learning. Healthcare is a major part of the US economy, and an associate in health, health information management, health services management, or a healthcare administration program can open many paths to employment opportunities in the healthcare industry. Population changes drivestudents earning a healthcare</p>
+                              <p className="groupFollowers1">
+                                {profileData.about}</p>
                             </div>
                             <div className="arrayright">
                               <div className="gPlus"> <i className="fa fa-arrow-right" /></div>
@@ -105,7 +160,7 @@ const UserProfileposts = () => {
                               </div>
                               <div className="mb-3">
                                 <p className=" groupFollowers1 fw-bold">Lives in</p>
-                                <p className="groupFollowers1 mb-3">London, United kingdom</p>
+                                <p className="groupFollowers1 mb-3">{profileData.lives}</p>
                                 <p className="groupFollowers1"><b>12.3K</b> Content Views </p>
                                 <p className="groupFollowers1">71 this month</p>
                               </div>
@@ -121,8 +176,9 @@ const UserProfileposts = () => {
                           <div className="groupSection2 d-flex justify-content-between">
                             <div className="groupName">
                               <h3 className="gName">Additional Info</h3>
-                              <p className="groupFollowers1"><i className="fa fa-birthday-cake me-2" /> 9th Nov 2000</p>
-                              <p className="groupFollowers1"><i className="fa fa-birthday-cake me-2" /> 9th Nov 2000</p>
+                              <p className="groupFollowers1"><i className="fa fa-birthday-cake me-2" /> {profileData.birthday}</p>
+                              <p className="groupFollowers1"><i className="fa fa-birthday-cake me-2" /> {profileData.joined}
+                              </p>
                             </div>
                             <div className="arrayright">
                               <div className="gPlus"> <i className="fa fa-arrow-right" /></div>
@@ -247,269 +303,784 @@ const UserProfileposts = () => {
                 </div>
               </div>
               <div className="col-lg-8">
-                <div className="row bg-white rounded-4 first-text">
-                  <div className="px-1">
-                    <div className="commentProfile mt-0">
-                      <div className="commentUserImg">
-                        <img src={profile} alt="" />
+            <div className="container">
+                <div className="postAccessoryIcons postAccessoryIcons1">
+                 
+              
+  <ul   className="ps-0" id="pills-tab" role="tablist">
+    <li  role="presentation">
+      <button
+     className='nav-link'
+        id="pills-home-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-home"
+        type="button"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+      >
+       POSTS
+      </button>
+    </li>
+    <li  role="presentation">
+      <button
+        className="nav-link"
+        id="pills-profile-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-profile"
+        type="button"
+        role="tab"
+        aria-controls="pills-profile"
+        aria-selected="false"
+      >
+       COMMENTS
+      </button>
+    </li>
+    <li  role="presentation">
+      <button
+        className="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+      >
+     COMMUNITIES
+      </button>
+    </li>
+   
+  </ul>
+  </div>
+  <div className="tab-content" id="pills-tabContent">
+    <div
+      className="tab-pane fade show active"
+      id="pills-home"
+      role="tabpanel"
+      aria-labelledby="pills-home-tab"
+      tabIndex={0}
+    >
+      {
+        addpost &&
+        <Box sx={{ bgcolor: "rgba(0,0,0,.5)", position: "absolute", top: 0, left:0, width: "100%", height: "100%", zIndex: "9999" }}>
+          <AddPost addpost={addpost} setAddPost={setAddPost} />
+        </Box>
+      }
+       <Box>
+                <PostProfile
+                  onClick={() => {{
+                    if(localStorage.getItem("usr_id")){
+                      setAddPost(true)
+                    }else{
+                      setAddPost(false)
+                      navigate("/Login");
+                    }
+                    }}}
+                />
+              </Box>
+   
+    <ChatProfile/>
+    </div>
+    <div
+      className="tab-pane fade"
+      id="pills-profile"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab"
+      tabIndex={0}
+    >
+      <ChatProfile/>
+    </div>
+    <div
+      className="tab-pane fade"
+      id="pills-contact"
+      role="tabpanel"
+      aria-labelledby="pills-contact-tab"
+      tabIndex={0}
+    >
+     <div className="row">
+            <div className="col-md-12">
+              <div className="row">
+                <div className="container">
+                  <div className="row commentbox">
+                    {/* first img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
                       </div>
-                      <div className="commentInput bg-white custom_input">
-                        <input type="text" placeholder="Hi Prem , start a new discussion" />
-                        <p className="mb-0"><i className="fa fa-clock-o pe-5 me-3 fs-5" /></p>
-                        <button>Post</button>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
                       </div>
+                    </div>
+                    {/* end  */}
+                    {/* second Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">North Dakota Electricians</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Third Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/g3.png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">GTG Hospitals N. Jersey</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fourth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            North Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i5.walmartimages.com/asr/411e603d-f8d2-4fb9-b319-456f35f66a66.5649795a8484e5183652b0b237088ceb.jpeg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/profile.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* first img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* second Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">North Dakota Electricians</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Third Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/g3.png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">GTG Hospitals N. Jersey</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fourth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            North Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i5.walmartimages.com/asr/411e603d-f8d2-4fb9-b319-456f35f66a66.5649795a8484e5183652b0b237088ceb.jpeg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/profile.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* first img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* second Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">North Dakota Electricians</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Third Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/g3.png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">GTG Hospitals N. Jersey</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fourth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            North Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i5.walmartimages.com/asr/411e603d-f8d2-4fb9-b319-456f35f66a66.5649795a8484e5183652b0b237088ceb.jpeg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/profile.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* first img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* second Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">North Dakota Electricians</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Third Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/g3.png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">GTG Hospitals N. Jersey</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fourth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            North Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i5.walmartimages.com/asr/411e603d-f8d2-4fb9-b319-456f35f66a66.5649795a8484e5183652b0b237088ceb.jpeg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/profile.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* first img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* second Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">North Dakota Electricians</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Third Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/g3.png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">GTG Hospitals N. Jersey</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fourth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            North Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i5.walmartimages.com/asr/411e603d-f8d2-4fb9-b319-456f35f66a66.5649795a8484e5183652b0b237088ceb.jpeg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fifth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/profile.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* first img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            West Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* second Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">North Dakota Electricians</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Third Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="img/g3.png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">GTG Hospitals N. Jersey</h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    {/* Fourth Img  */}
+                    <div className="col-sm-8">
+                      <div className="d-flex gap-5">
+                        <div className="groupIcon">
+                          <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" />
+                        </div>
+                        <div className="groupName">
+                          <h4 className="gName">
+                            North Philly Welders Association
+                          </h4>
+                          <p className="groupFollowers">4,602 Followers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="unfollow-btn">
+                        <div className="follow">Unfollow</div>
+                      </div>
+                    </div>
+                    {/* end  */}
+                    <div className="col-md-12 text-center mt-3">
+                      <button className="load-btn">Load More</button>
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-md-12 ms-5 mt-2">
-                    <p className="ps-2">
-                      <i className="fa fa-image me-3" />
-                      <i className="fa fa-building  me-3" />
-                      <i className="fa fa-suitcase  me-3" />
-                      <i className="fa fa-book" />
-                    </p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className>       
-                    <div className="viewPostSection1">
-                      <div className="viewShowProfile">
-                        <div className="postProfileLeft">
-                          <div className="postPimg">
-                            <img src={Profilep} alt="" />
-                          </div>
-                          <div className="postAutorName">
-                            <p className="postAuthor">Priti Sinha</p>
-                            <small className="postAuthorUsername">@homeowner12</small>
-                          </div>
-                          <div className="postDate">
-                            <ul>
-                              <li>12<sup>th</sup> May 2020</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="postProfileRight">
-                          <div className="postDownArrow">
-                            <i className="fa fa-caret-down" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="postContent">
-                        <div className="postImg">
-                          <img src="img/pexels-photo-1709003.jpeg" alt="" />
-                        </div>
-                        <div className="postTitle">
-                          <h1>Welding Classes In Jersey</h1>
-                          <p>We know that carbon emissions have sharply fallen during lockdown. But will all these changes
-                            actually be good for the environment in the long run?</p>
-                        </div>
-                        <div className="postTag">
-                          <a href="#">Idea</a> | <a href="#">Welding</a>
-                        </div>
-                        <div className="row">
-                          <div className="col-lg-7">
-                            <div className="postShareLike">
-                              <div className="postLike"><i className="fa fa-thumbs-up" /> Like</div>
-                              <div className="postShare"><i className="fa fa-share-alt" /> Share</div>
-                            </div>
-                          </div>
-                          <div className="col-lg-5">
-                            <div className="postAccessoryIcons">
-                              <ul>
-                                <li><i className="fa fa-repeat" /> 2.3k</li>
-                                <li><i className="fa fa-eye" /> 6.9K</li>
-                                <li><i className="fa fa-comments-o" /> 563</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space30" />
-                      <div className="jobCProfile">
-                        <div className="viewShowProfile">
-                          <div className="postProfileLeft">
-                            <div className="postPimg">
-                              <img src={Profilep} alt="" />
-                            </div>
-                            <div className="postAutorName">
-                              <p className="postAuthor">Prem Sinha</p>
-                              <small className="postAuthorUsername">@homeowner12</small>
-                            </div>
-                            <div className="postDate">
-                              <ul>
-                                <li>12<sup>th</sup> May 2020</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="autorComment">
-                          <p>First image is of clouds, called Australian glory cloud. Second one is the vortex of Saturn.
-                            These are called solitons, the best known non-dispersive object which can't be perturbed
-                            easily. ...</p>
-                        </div>
-                      </div>
-                      <div className="commentProfile">
-                        <div className="commentUserImg">
-                          <img src={profile} alt="" />
-                        </div>
-                        <div className="commentInput">
-                          <input type="text" placeholder="Start Typing your Comment here" />
-                          <button>Send</button>
-                        </div>
-                      </div>
-                      <div className="space15" />
-                    </div>
-                    <div className="viewPostSection1">
-                      <div className="viewShowProfile">
-                        <div className="postProfileLeft">
-                          <div className="postPimg">
-                            <img src={Profilep} alt="" />
-                          </div>
-                          <div className="postAutorName">
-                            <p className="postAuthor">Prem Sinha</p>
-                            <small className="postAuthorUsername">@homeowner12</small>
-                          </div>
-                          <div className="postDate">
-                            <ul>
-                              <li>12<sup>th</sup> May 2020</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="postProfileRight">
-                          <div className="postDownArrow">
-                            <i className="fa fa-caret-down" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="postContent">
-                        <div className="postImg">
-                        </div>
-                        <div className="postTitle">
-                          <h1>Welding Classes In Jersey</h1>
-                          <p>We know that carbon emissions have sharply fallen during lockdown. But will all these changes
-                            actually be good for the environment in the long run?</p>
-                        </div>
-                        <div className="postTag">
-                          <a href="#">Idea</a> | <a href="#">Welding</a>
-                        </div>
-                        <div className="postShareLike">
-                          <div className="postLike"><i className="fa fa-thumbs-up" /> Like</div>
-                          <div className="postShare"><i className="fa fa-share-alt" /> Share</div>
-                        </div>
-                      </div>
-                      <div className="space30" />
-                      <div className="jobCProfile">
-                        <div className="viewShowProfile">
-                          <div className="postProfileLeft">
-                            <div className="postPimg">
-                              <img src={Profilep} alt="" />
-                            </div>
-                            <div className="postAutorName">
-                              <p className="postAuthor">Prem Sinha</p>
-                              <small className="postAuthorUsername">@homeowner12</small>
-                            </div>
-                            <div className="postDate">
-                              <ul>
-                                <li>12<sup>th</sup> May 2020</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="autorComment">
-                          <p>First image is of clouds, called Australian glory cloud. Second one is the vortex of Saturn.
-                            These are called solitons, the best known non-dispersive object which can't be perturbed
-                            easily. ...</p>
-                        </div>
-                      </div>
-                      <div className="commentProfile">
-                        <div className="commentUserImg">
-                          <img src={profile} alt="" />
-                        </div>
-                        <div className="commentInput">
-                          <input type="text" placeholder="Start Typing your Comment here" />
-                          <button>Send</button>
-                        </div>
-                      </div>
-                      <div className="space15" />
-                    </div>
-                    <div className="viewPostSection1">
-                      <div className="viewShowProfile">
-                        <div className="postProfileLeft">
-                          <div className="postPimg">
-                            <img src={Profilep} alt="" />
-                          </div>
-                          <div className="postAutorName">
-                            <p className="postAuthor">Prem Sinha</p>
-                            <small className="postAuthorUsername">@homeowner12</small>
-                          </div>
-                          <div className="postDate">
-                            <ul>
-                              <li>12<sup>th</sup> May 2020</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="postProfileRight">
-                          <div className="postDownArrow">
-                            <i className="fa fa-caret-down" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="postContent">
-                        <div className="postImg">
-                        </div>
-                        <div className="postTitle">
-                          <h1>Welding Classes In Jersey</h1>
-                          <p>We know that carbon emissions have sharply fallen during lockdown. But will all these changes
-                            actually be good for the environment in the long run?</p>
-                        </div>
-                        <div className="postTag">
-                          <a href="#">Idea</a> | <a href="#">Welding</a>
-                        </div>
-                        <div className="postShareLike">
-                          <div className="postLike"><i className="fa fa-thumbs-up" /> Like</div>
-                          <div className="postShare"><i className="fa fa-share-alt" /> Share</div>
-                        </div>
-                      </div>
-                      <div className="space30" />
-                      <div className="jobCProfile">
-                        <div className="viewShowProfile">
-                          <div className="postProfileLeft">
-                            <div className="postPimg">
-                              <img src={Profilep} alt="" />
-                            </div>
-                            <div className="postAutorName">
-                              <p className="postAuthor">Prem Sinha</p>
-                              <small className="postAuthorUsername">@homeowner12</small>
-                            </div>
-                            <div className="postDate">
-                              <ul>
-                                <li>12<sup>th</sup> May 2020</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="autorComment">
-                          <p>First image is of clouds, called Australian glory cloud. Second one is the vortex of Saturn.
-                            These are called solitons, the best known non-dispersive object which can't be perturbed
-                            easily. ...</p>
-                        </div>
-                      </div>
-                      <div className="commentProfile">
-                        <div className="commentUserImg">
-                          <img src={profile} alt="" />
-                        </div>
-                        <div className="commentInput">
-                          <input type="text" placeholder="Start Typing your Comment here" />
-                          <button>Send</button>
-                        </div>
-                      </div>
-                      <div className="space15" />
-                    </div>
-                    <div className="space30" />
-                    <div className="space30" />
-                  </div>
-                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div
+      className="tab-pane fade"
+      id="pills-disabled"
+      role="tabpanel"
+      aria-labelledby="pills-disabled-tab"
+      tabIndex={0}
+    >
+      ...
+    </div>
+  </div>
+
+               
+              </div>
               </div>
             </div>
           </div></div>
@@ -517,7 +1088,10 @@ const UserProfileposts = () => {
   
      
     </div>
-    
+     ) : (
+      <p></p>
+    )}
+    </>
   )
 }
 

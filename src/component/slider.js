@@ -245,7 +245,9 @@ function Slider() {
                     <div className="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       {initialOnline.map((res, key) => (
                         <div className="w-100 mb-3 shadox_box rounded">
-                          <div className="row p-2">
+                            <a href={"search/" + res.slug}>
+                          <div className="row p-2 ">
+                            
                             <div className="col-lg-3 col-sm-4 col-4 mb-3 mb-sm-0 ">
                             <div className="home_img">
                               <img
@@ -255,10 +257,10 @@ function Slider() {
                               />
                               </div>
                             </div>
-                            <div className="col-8 d-sm-none">
+                            <div className="col-8 d-sm-none ">
                             <div className="pl_5">
                                 <a href={"search/" + res.slug}>
-                                <h5>
+                                <h5 className="proheading">
                                   {res.college_name} - {res.title}
                                 </h5>
                               </a></div>
@@ -266,7 +268,7 @@ function Slider() {
                             <div className="col-lg-9 ps-sm-0 col-sm-8">
                               <div className="d-sm-block d-none">
                                 <a href={"search/" + res.slug}>
-                                <h5>
+                                <h5 className="proheading">
                                   {res.college_name} - {res.title}
                                 </h5>
                               </a></div>
@@ -310,6 +312,7 @@ function Slider() {
                            
 
                           </div>
+                          </a>
                           <ul>
                            
                             <li>

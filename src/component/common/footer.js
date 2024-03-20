@@ -1,5 +1,6 @@
 import logoImg from '../../img/WRE.png';
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 // import { useNavigate } from "react-router-dom";
 export default function Footer() {
 
@@ -230,7 +231,10 @@ const Jobbtn = async (e) => {
             </div>
           </div>
         </div>
+        <a href="/Onlinecounselling" className='btn btn-primary btnConselling' > Online Counselling</a> 
       </div>
+
+      
     </>
   );
 }

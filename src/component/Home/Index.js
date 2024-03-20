@@ -116,9 +116,9 @@ const Index = () => {
                 />
               </Box>
 
-              <Box sx={{ mt: 2 }}>
+              {/* <Box sx={{ mt: 2 }}>
                 <ChatPost />
-              </Box>
+              </Box> */}
 
               <Box sx={{ mt: 2 }}>
                 <HomeSlider
@@ -135,18 +135,18 @@ const Index = () => {
                 />
               </Box>
 
-              <Box sx={{ mt: 2 }}>
+              {/* <Box sx={{ mt: 2 }}>
                 <ChatPost />
-              </Box>
+              </Box> */}
 
               <Box sx={{ mt: 2 }}>
                 <img src="./form_img.jpg" className="img-fluid w-100 rounded rounded-2" style={{ maxHeight: "400px", width: "100%", height: "100%" }} />
               </Box>
 
 
-              <Box sx={{ mt: 2 }}>
+              {/* <Box sx={{ mt: 2 }}>
                 <ChatPost img={"./post_banner.jpeg"} mb={" mb-lg-5 mb-2 "} />
-              </Box>
+              </Box> */}
               <Box sx={{ mt: 2 }}>
                 <HomeSlider
                   img1="./slider1.jpg"

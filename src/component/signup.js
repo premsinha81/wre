@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Signup() {
+    const [successMessage, setSuccessMessage] = useState(null);
+
     const navigate = useNavigate();
     const [isPopupVisible, setPopupVisible] = useState(false);
     const [user, setUser] = useState({
@@ -33,12 +35,12 @@ function Signup() {
         const data = await res.json();
         console.log(data);
         if (data.status === "Succes") {
-            window.alert("Registration Successfully");
-            console.log("Registration Successfully");
-            navigate("/login");
+            setSuccessMessage("Registration Successfully");
+            setSuccessMessage("Registration Successfully");
+           
 
         } else if (data.status === "Failed") {
-            window.alert("User Already Exist");
+            setSuccessMessage("User Already Exist");
             console.log("User Already Exist");
 
         } else {
@@ -156,6 +158,7 @@ function Signup() {
                                                     <button type="submit" onClick={() => handleSubmit()} className="submitButton" >Sign Up</button>
                                                 </div>
                                             </div>
+                                              {successMessage && <p className='sucressful'>{successMessage}</p>}
                                         </div>
 
 

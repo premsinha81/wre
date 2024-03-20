@@ -9,6 +9,7 @@ import Pathfinder from './component/pathfinder'
 import Signup from './component/signup';
 import Job from './component/Job';
 import JhEmployer from './component/JhEmployer';
+import OnlineCounselling from './component/OnlineCounselling.js'
 import Onlinecounsellingform from './component/Onlinecounsellingform';
 import OnlineCoursesDetail from './component/OnlineCoursesDetail';
 import OnlineCoursesSearch from './component/OnlineCoursesSearch';
@@ -41,6 +42,8 @@ import JobDetails from './component/JobDetails';
 import Studentapplication from './component/Studentapplication';
 import Student from './component/student/index.jsx';
 import Jobapplicationform from './component/admin/Jobapplicationform.js';
+import Loginandsecurity from './component/account/Loginandsecurity.js';
+import Needhelp from './component/account/needhelp.js';
 function App() {
   
   const logged_token = localStorage.getItem('token');
@@ -59,9 +62,9 @@ function App() {
     <Router>
    
       <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/index" element={<Index />} />
+ 
+      
+     
         <Route path='search/:slug' element={<Ranking />} />
         <Route path='search_Ranking/:id' element={<RankingDetail />} />
         <Route path='collegeDetails/:id' element={<CollgeDetails />} />
@@ -71,10 +74,13 @@ function App() {
     { !logged_token ? (
       <Routes>
         <Route path="/login" element={<Login />} />
-      
+        <Route path="/home" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
       </Routes>
     ):(
       <Routes>
+           <Route path="/home" element={<Index />} />
+           <Route path="/" element={<Index />} />
         <Route path = "/dashboard" element={<Dashboard/>}/>
         <Route path = "/jobpost" element={<Jobpost/>}/>
         <Route path = "/jobedit/:userId/:id" element={<Jobedit/>}/>
@@ -105,12 +111,22 @@ function App() {
       </Routes>
       <Routes> <Route path="/Studentapplication" element={<Studentapplication/>}/>
       </Routes>
+   
       <Routes>
         <Route path="/about" element={<About />} />
         
       </Routes>
       <Routes>
+        <Route path="/OnlineCounselling" element={<OnlineCounselling />} />
+        
+      </Routes>
+      <Routes>
         <Route path="/testimonial" element={<Testimonial />} />
+        
+      </Routes>
+     
+      <Routes>
+        <Route path="/Needhelp" element={< Needhelp />} />
         
       </Routes>
       <Routes>
@@ -142,7 +158,9 @@ function App() {
       <Routes>
       <Route path = "/UserProfileposts" element={<UserProfileposts/>}/>
       </Routes>
-      
+      <Routes>
+      <Route path = "/Loginandsecurity" element={<Loginandsecurity/>}/>
+      </Routes>
       <Routes>
         <Route path='/userprofileCommunities' element={<UserprofileCommunities />} />
       </Routes>

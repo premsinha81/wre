@@ -1,4 +1,3 @@
-import React from 'react';
 import Img1 from '../Image/css-gradient.webp';
 import profile from '../Image/profile2.jpg';
 import Profilep from '../Image/profile.jpg';
@@ -8,7 +7,9 @@ import { faCamera, faEdit, faThumbsUp, faShare, faRetweet, faEye, faComment } fr
 import './userprofile.css';
 //import  './Responshive.css';
 
+
 const UserProfileposts = () => {
+ 
   return (
     <div>   
 

@@ -3207,7 +3207,7 @@ h4.gName {
   font-weight: 600;
 }
 
-.groupIcon {
+.groupIcons {
   width: 40%;
   border-radius: 1px;
   min-height: 70px;
@@ -4304,10 +4304,19 @@ li.nav-item1 {
     margin: 38px auto 0;
   }
 
-
+  .nav-item.nav-link.noti {
+    background-color: #000;
+    color: #fff !important;
+    height: 35px !important;
+    width: 40px !important;
+}
   .sideBarFooter {
     margin-top: 20px;
   }
+  img.imgnotification {
+    width: 40px;
+    border-radius: 50%;
+}
 
   .commentbox {
     margin: 8px 0;

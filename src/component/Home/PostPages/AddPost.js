@@ -29,7 +29,7 @@ const AddPost = ({setAddPost}) => {
   const idget = localStorage.getItem("usr_id")
 
   const [image_url, setImage_url] = useState('');
-  const [post , setPost]=useState();
+  const [content , setContent]=useState();
   const [id , setId]=useState(idget);
   const {loadingd , setLoadingd} = useContext(loadingContext)
   
@@ -39,7 +39,7 @@ const AddPost = ({setAddPost}) => {
 
     let data = {
     
-      post :post,
+      post :content,
       
       user_id:id
     }
@@ -52,6 +52,7 @@ const AddPost = ({setAddPost}) => {
       if(apidata){
         apidata.then((res)=>{
         console.log(res);
+      
         })
         apidata.catch((error)=>{
           console.log(error , "erro in post api");
@@ -60,8 +61,9 @@ const AddPost = ({setAddPost}) => {
       console.log(data);
   
       if (data.status === 'Success') {
+      
         window.alert("Your Post Successfully");
-        console.log("Your Post Successfully");
+   
         navigate("/");
         
       } else {
@@ -73,7 +75,7 @@ const AddPost = ({setAddPost}) => {
 
   // const api_URL = "https://noteyard-backend.herokuapp.com"
   const api_URL = `https://admin.allnuud.com/api`
-  const Upload_Endpoint = "userpost/image"
+  const Upload_Endpoint = "userpost/"
 
   function uploadAdapter(loader){
     return{
@@ -133,7 +135,7 @@ const AddPost = ({setAddPost}) => {
           
                     editor={ ClassicEditor }
                    
-                    data={post}
+                    data={content}
                     onReady={ editor => {
                        
                         console.log( 'Editor is ready to use!', editor );
@@ -143,7 +145,7 @@ const AddPost = ({setAddPost}) => {
       
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        setPost(data)
+                        setContent(data)
                         console.log(data , "pppppp")
                        
                     } }

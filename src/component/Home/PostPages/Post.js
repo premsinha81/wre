@@ -18,6 +18,7 @@ const Post = ({onClick, onclick}) => {
 
 
   return (
+    
    <Grid container sx={{p:0,justifyContent:"right"}} >
 
    
