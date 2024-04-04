@@ -14,6 +14,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import React, { useState, useEffect } from 'react';
 import { Home } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import fetchProfileData from '../API/getDataApi';
 
 const UserProfileposts = ({onClick, onclick}) => {
   const [timer , setTimer]=useState(false)
@@ -23,25 +24,33 @@ const UserProfileposts = ({onClick, onclick}) => {
   const [profileData, setProfileData] = useState(null);
   const navigate = useNavigate();
   const [addpost, setAddPost] = useState(false);
+  const [followersList,setFollowersList]=useState([])
   const Id = localStorage.getItem("usr_id")
-  useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const response = await fetch(`https://admin.allnuud.com/api/profile/${Id}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch profile data');
-        }
-        const data = await response.json();
-        setProfileData(data.data);
-      } catch (error) {
-        console.error(error);
-        // Handle error (e.g., show error message to the user)
-      }
-    };
+  useEffect(()=>{(async() =>  {
+  
 
-    fetchProfileData();
-  }, [Id]);
-  console.log("shiv", profileData);
+  const data= await fetchProfileData();  
+  setProfileData(data);
+  console.log('profile',profileData);
+   
+  })()
+  getFollowersList();}, [Id]);
+
+  const getFollowersList=async ()=>{
+  try {
+      const followersData=await fetch(`https://admin.allnuud.com/api/user/followersList/${Id}`)
+      if (!followersData.ok) {
+        throw new Error('Failed to fetch followers data');
+      }
+      const listData = await followersData.json();
+     setFollowersList(listData.data)
+      console.log(followersList);
+  } catch (error) {
+    console.log('error while getting followers list');
+  }
+    
+  }
+  
   return (
     <>
     {profileData ? (
@@ -92,10 +101,10 @@ const UserProfileposts = ({onClick, onclick}) => {
             <div className="col-md-8">
               <div className="postAccessoryIcons ">
                 <ul className="ps-0">
-                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn ">1,025<br /><span>Posts</span></button></li>
-                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn">268 <br /><span>Followers</span></button></li>
-                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn ">1,999<br /><span>Following</span></button></li>
-                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn">695 <br /><span>Communities</span></button></li>
+                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn ">{profileData.posts}<br /><span>Posts</span></button></li>
+                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn">{profileData.followers} <br /><span>Followers</span></button></li>
+                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn ">{profileData.following}<br /><span>Following</span></button></li>
+                  <li><button type="button" className="btn btn-primary btnSidebar2 filterBtn custom-btn"> 23<br /><span>Communities</span></button></li>
                    </ul>
               </div>
             </div>
@@ -194,25 +203,30 @@ const UserProfileposts = ({onClick, onclick}) => {
                     <div className="row">
                       <div className="col-12">
                         <div className="sideBarTitle">
-                          <h1>Recommended Groups</h1>
+                          <h1>{followersList.length>0 ? followersList.length : 0} Followers</h1>
                         </div>
                         <div className="divider" />
                       </div>
-                      <div className="col-12">
+                      {followersList.length>0?followersList.map((follower)=>{
+                        return  < div key={follower.id} className="col-12">
                         <div className="groupSection">
                           <div className="groupIcon">
                             <img src="https://www.mnghealth.com/wp-content/uploads/pexels-icsa-1708936-640x427.jpg" alt="" />
                           </div>
                           <div className="groupName">
-                            <h4 className="gName">West Philly Welders Association</h4>
-                            <p className="groupFollowers">4,602 Followers</p>
+                            <h4 className="gName">{follower.user.name}</h4>
+                            <p className="groupFollowers">following</p>
                           </div>
                           <div className="groupAdd">
                             <div className="gPlus">+</div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-12">
+                      }):'No on following you followers'}
+                     
+
+
+                      {/* <div className="col-12">
                         <div className="groupSection">
                           <div className="groupIcon">
                             <img src="https://i.pinimg.com/236x/86/9b/cf/869bcfea3080797cdbf733451fe312a8.jpg" alt="" />
@@ -225,8 +239,8 @@ const UserProfileposts = ({onClick, onclick}) => {
                             <div className="gPlus">+</div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-12">
+                      </div> */}
+                      {/* <div className="col-12">
                         <div className="groupSection">
                           <div className="groupIcon">
                             <img src="img/g3.png" alt="" />
@@ -239,8 +253,8 @@ const UserProfileposts = ({onClick, onclick}) => {
                             <div className="gPlus">+</div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-12">
+                      </div> */}
+                      {/* <div className="col-12">
                         <div className="groupSection">
                           <div className="groupIcon">
                             <img src="https://tr.rbxcdn.com/63f683e1d9cd1d4eab0361ad13b4eaa9/420/420/Image/Png" alt="" />
@@ -295,7 +309,7 @@ const UserProfileposts = ({onClick, onclick}) => {
                             <div className="gPlus">+</div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="space30" />

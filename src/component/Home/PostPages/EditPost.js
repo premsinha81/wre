@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Modal, Stack, TextareaAutosize, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import CancelIcon from '@mui/icons-material/Cancel';
 import { Padding } from "@mui/icons-material";
 import CusButton from "../PostPages/CusButton";
@@ -9,6 +9,9 @@ import { AddPostApi } from "../../../API/PostAddApi";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { loadingContext } from "../../../Context/Loading";
+import { addPostData } from "../../../API/PostAddApi";
+import { updatePostApi } from "../../../API/PostAddApi";
+
 
 
 const style = {
@@ -23,6 +26,9 @@ const style = {
     zIndex:"99999"
   };
 
+
+ 
+  
 const EditPost = ({setEditPost}) => {
 
   const idget = localStorage.getItem("usr_id")
@@ -30,8 +36,26 @@ const EditPost = ({setEditPost}) => {
   const [post , setPost]=useState();
   const [id , setId]=useState(idget);
   const {loadingd , setLoadingd} = useContext(loadingContext)
+  const [updatedPost,setUpdatedPost]=useState({});
 
+  const postId=localStorage.getItem("update_post_id");
+  useEffect(() => {
+    // localStorage.removeItem('update_post_id')
+    (async()=>{
+     const res= await addPostData()
+     if(res)
+     {
+      
+     const postData= res.data.result.filter((item)=>{
+              return item.id == postId
+      })
+      if(postData) setUpdatedPost({id:postData[0].id,content:postData[0].content})
+      console.log(updatedPost);
+     }
+    })()
   
+    
+  }, [postId])
 
   const navigate = useNavigate();
 
@@ -42,7 +66,28 @@ const EditPost = ({setEditPost}) => {
 
     
 
-  const handleSubmit = (e) => {
+    const handleUpdatePost=async (e)=>{
+      e.preventDefault()
+      
+      let apiData= updatePostApi({post_id:updatedPost.id,content:updatedPost.content,user_id:id})
+      if(apiData)
+      {
+       apiData.then((res)=>{
+        console.log(res);
+        // console.log(updatedPost);
+        if(res){
+          localStorage.removeItem('update_post_id')
+          alert(res.data.messege)
+          //  location.reload()
+           window.location.reload()
+        }
+       }).catch((error)=>{
+        console.log('error while updating post data',error);
+       })
+      }
+    }
+
+  const handleAddPost = (e) => {
     e.preventDefault()
     let apidata = AddPostApi(data);
 
@@ -58,7 +103,6 @@ const EditPost = ({setEditPost}) => {
     
 
     
-    console.log(data);
 
     if (data.status === 'Success') {
       window.alert("Your Post Successfully");
@@ -126,15 +170,15 @@ const EditPost = ({setEditPost}) => {
             extraPlugins:[uploadPlugin]
           }}
                     editor={ ClassicEditor }
-                    data={post}
+                    data={postId ?(updatedPost.content || '') :post}
                     onReady={ editor => {
                        
-                        console.log( 'Editor is ready to use!', editor );
+                        console.log( 'Editor is ready to use!', data);
                     } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        setPost(data)
-                        console.log(data , "pppppp")
+                        postId? setUpdatedPost({id:postId,content:data}):  setPost(data)
+                        console.log(updatedPost.content)
                        
                     } }
                     onBlur={ ( event, editor ) => {
@@ -148,7 +192,7 @@ const EditPost = ({setEditPost}) => {
          
        
           <Box className="d-flex justify-content-center mt-5">
-            <CusButton onClick={handleSubmit} bgcolor={"#4c62ac"} color={"#fff"} name={<Typography sx={{px:2,py:"5px"}}>POST</Typography>}/>
+            <CusButton onClick={postId ? handleUpdatePost : handleAddPost} bgcolor={"#4c62ac"} color={"#fff"} name={<Typography sx={{px:2,py:"5px"}}>{postId ?'UPDATE':'POST'}</Typography>}/>
           </Box>
         </Grid>
       </Grid>

@@ -18,6 +18,22 @@ export const AddPostApi = (postData)=>{
     
 }
 
+export const updatePostApi = (postData)=>{
+
+
+    let data = axios.post("https://admin.allnuud.com/api/userpost/edit",{...postData})
+    .then((res)=>{
+        return res
+    }).catch((error)=>{
+        console.log("update post api error" , error);
+    })
+
+    if(data){
+        return data
+    }
+    
+}
+
 
 export const addPostData = ()=>{
 

@@ -14,10 +14,11 @@ import FirstComponent from "./PostTimer";
 import EditPost from "./EditPost";
 
 
-const ChatPost = ({ img, mb,onclicked }) => {
+const ChatProfile = ({ img, mb,onclicked }) => {
 
   const [postdata, setPostData] = useState([]);
   const [dropdown, setDropdown] = useState(false);
+  const [updatePost,setUpdatePost]=useState('')
 
   const [commentid, setCommentId] = useState("");
 
@@ -76,8 +77,9 @@ const ChatPost = ({ img, mb,onclicked }) => {
   }
 
 // Start Delete Post (Akash Dubey)
-  const handleDelete = (user_id, user_posts_id) => {
-    fetch(`https://admin.allnuud.com/api/userpost/delete/${user_posts_id}/${user_id}`, {
+  const handleDelete = (user_posts_id,user_id) => {
+    console.log(user_posts_id);
+    fetch(`https://admin.allnuud.com/api/userpost/delete/${user_posts_id}`, {
       headers: {
         accept: 'application/json'
       }
@@ -109,6 +111,14 @@ const ChatPost = ({ img, mb,onclicked }) => {
         postdata.map((data) => {
 
           const { id, content,  user_id, comments, user, created_at } = data; // add : id, user_id (Akash Dubey)
+         
+          let postDate=''
+          for(let i=0; i<created_at.length; i++)
+          {
+               if(created_at[i] == 'T') break;
+
+               postDate=postDate+created_at[i]
+          }
           return (
             <Grid container sx={{ p: 2, bgcolor: "#fff" }} className="rounded rounded-2 mb-3 priyanka" key={id}>
               <Grid item sm={1} xs={2}>
@@ -125,7 +135,7 @@ const ChatPost = ({ img, mb,onclicked }) => {
                         className="fs10-s"
                         sx={{ fontSize: { lg: "16px", xs: "14px" }, color: "#3C3C3C", fontWeight: 500 }}
                       >
-                       <Typography sx={{ color: "#3C3C3C", fontSize: "20px", fontWeight: "600", mb: { lg: 1, xs: 0 } }}> { user.name}</Typography>
+                       <Typography sx={{ color: "#3C3C3C", fontSize: "20px", fontWeight: "600", mb: { lg: 1, xs: 0 } }}> {user.name}</Typography>
                       </Typography>
                       <Typography className="fs9-s" sx={{ fontSize: { lg: "14px", xs: "10px" }, color: "#3C3C3C" }}>
                         {/* {userEmail} */}
@@ -141,31 +151,32 @@ const ChatPost = ({ img, mb,onclicked }) => {
                           sx={{ display: "list-item", listStyle: "disc" }}
                         >
                           <Typography className="fs8-s ps-0" sx={{ fontSize: { lg: "14px", xs: "10px" }, color: "#3C3C3C" }}>
-                         {created_at}
+                         { postDate}
                           </Typography>
                         </ListItem>
                       </List>
                     </Box>
                   </Stack>
-                  <Box>
-                    <ArrowDropDownIcon className={`fs11-s ${rotate} `} sx={{ fontSize: { lg: "40px", xs: "30px" } }} onClick={(e) => {
+                  {idget == user_id &&  <Box>
+                <ArrowDropDownIcon className={`fs11-s ${rotate} `} sx={{ fontSize: { lg: "40px", xs: "30px" } }} onClick={(e) => {
                       setIdsaved(id)
                       setDropdown(!dropdown)
                     }
                     }
                     />
-                  </Box>
+                  </Box>}
                   {idsaved == id &&
                     dropdown &&
                     <Box sx={{ position: "absolute", top: "100%", right: 0, bgcolor: "#3C3C3C", color: "#fff", boxShadow: 10, minWidth: "150px" }} className="rounded rounded-2">
-                      <Dropdown
+                     <Dropdown
                         name1={"Edit"}
-                        name2={"Blog"}
+                        name2={"Block"}
                         name3={"Remove"}
                         id={id} // add : (Akash Dubey)
                         user_id={user_id} // add : (Akash Dubey)
                         handleDelete={handleDelete} // add : (Akash Dubey)
-                        onclicked={()=>setEditShow(true)}
+                        onclicked={()=>{setEditShow(true)
+                        localStorage.setItem("update_post_id",id)}}
                         
                       />
                     </Box>
@@ -312,5 +323,4 @@ const ChatPost = ({ img, mb,onclicked }) => {
   );
 };
 
-export default ChatPost;
-
+export default ChatProfile;

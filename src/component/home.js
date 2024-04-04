@@ -12,7 +12,7 @@ function Home() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-7">
-                            <h1>Welcome To The<br />Builders' Ecosystem </h1>
+                            <h1>Welcome To The<br />Builders' Ecosystem 1234 </h1>
                             <p>Find Institute Jobs Courses and more</p>
                         </div>
                         <div className="col-lg-5">
