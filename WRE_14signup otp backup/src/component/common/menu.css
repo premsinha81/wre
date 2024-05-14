@@ -1,0 +1,32 @@
+ul.menu{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+ul.menu li{
+    display:inline-block;
+    line-height: 120%;
+}
+ul.menu li a{
+    padding:10px 20px;
+    color:#3D55A5;
+    line-height: 22px;
+    text-decoration: none;
+    font-weight: 500;
+}
+ul.menu li:last-child a{
+    background-color: #3D55A5;
+    color: #FFFFFF;
+    border-radius: 26px;
+    padding:7px 35px;
+}
+.text-right{
+    text-align: right;
+}
+.navbar [class^=container] {
+    position: unset !important;
+}
+.r-180{
+    transform: rotate(90deg);
+    transition: all .4s;
+}
