@@ -37,7 +37,7 @@ const AddPost = ({setAddPost}) => {
   const navigate = useNavigate();
 
     let data = {
-      post :post, 
+      content :post, 
       user_id:id
     }
 

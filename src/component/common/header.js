@@ -128,12 +128,12 @@ function Header() {
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="/program" style={MenuStyle}>
+                  <a href="/wre/program" style={MenuStyle}>
                     Trade Programs
                   </a>
                 </ListItem>
                 <ListItem>
-                  <a href="/Job" style={MenuStyle}>
+                  <a href="/wre/Job" style={MenuStyle}>
                     Trade Jobs
                   </a>
                 </ListItem>
@@ -201,9 +201,9 @@ function Header() {
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu>
-                        <Dropdown.Item href="/UserProfileposts">Profile</Dropdown.Item>
-                        <Dropdown.Item href="/Loginandsecurity">Account Setting</Dropdown.Item>
-                        <Dropdown.Item href="/Needhelp">Need Help</Dropdown.Item>
+                        <Dropdown.Item href="/wre/UserProfileposts">Profile</Dropdown.Item>
+                        <Dropdown.Item href="/wre/Loginandsecurity">Account Setting</Dropdown.Item>
+                        <Dropdown.Item href="/wre/Needhelp">Need Help</Dropdown.Item>
                         <Dropdown.Item onClick={handleLogout} >Logout</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
@@ -217,12 +217,12 @@ function Header() {
 
                       ">
 
-                        <a href="/home" style={MenuStyle1}>
+                        <a href="/wre/home" style={MenuStyle1}>
                           {islogin}  </a>
                       </ListItem> :
                       <ListItem className="login_btn Loginbtn" >
                         
-                        <a href="/home" style={Loginbtn}>
+                        <a href="/wre/home" style={Loginbtn}>
                           {islogin}
                         </a>
                       </ListItem>
@@ -239,7 +239,7 @@ function Header() {
 
                       ">
 
-                        <a href="/signup" style={MenuStyle1}>
+                        <a href="/wre/signup" style={MenuStyle1}>
                         Signup  </a>
                       </ListItem> :
                       <ListItem className="btn-outline-primary btn-primary-outline
@@ -249,7 +249,7 @@ function Header() {
 
 
                       " >
-                        <a href="/Login" style={Loginbtn}>
+                        <a href="/wre/Login" style={Loginbtn}>
                           {islogin}
                         </a>
                       </ListItem>
